@@ -30,11 +30,11 @@ twitter_username: bamr87
 github_username:  bamr87
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-assets
+  # - jekyll-seo-tag
+  # - jekyll-assets
 
 # Exclude from processing.
 # The following items will not be processed, by default.
