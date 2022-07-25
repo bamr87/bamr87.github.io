@@ -1,35 +1,50 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+<!-- 
+  _includes/footer.html 
+  Social Links and Branding
+-->
 
-  <div class="wrapper">
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-sm d-flex align-items-center">
+    
+    <!-- Branding and Powered By: -->
+    <span class="text-muted">
+      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Powered by 
+      {% for power in site.powered_by %}
+      <a href="{{ power.url }}" rel="nofollow">{{ power.name }} -</a>
+      {% endfor %}
+    </span>
+    
+    <ul class="nav col-sm justify-content-end list-unstyled d-flex">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
-    </div>
+      <!-- Search for Site Identity links in config file -->
+      {% for link in site.author.links %}
+      <li class="ms-3">
+        <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
+          <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true">
+          </i>
+          <!-- display name if there's enough space, else icon only -->
+          <span class="d-none d-md-inline"> 
+            {{ link.label }}
+          </span>
+        </a>
+        </li>
+      {% endfor %}
+      
+      <!-- RSS Feed -->
+      <li class="ms-3">
+        <a href="{{ '/feed.xml' | relative_url }}">
+          <i class="fas fa-fw fa-rss-square" aria-hidden="true">
+          </i>
+          <span class="d-none d-md-inline">
+            {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}
+          </span>
+        </a>
+      </li>
+    </ul>
 
   </div>
-
 </footer>
+ 
+<!-- Boot Strap source location -->
+<!-- <script src="{{ '/assets/js/bootstrap.bundle.min.js'| relative_url }}"></script>
+<script src="{{ '/assets/js/docs.min.js' | relative_url }}"></script> -->

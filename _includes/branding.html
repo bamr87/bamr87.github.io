@@ -1,0 +1,24 @@
+<!-- banding.html
+    _includes/branding.html
+    logo
+    title/sub-title
+-->
+
+    <!-- Logo -->
+    {% capture logo_path %}{{ site.logo }}{% endcapture %}
+    <div>
+    <a class="site-logo" href="{{ site.logo_source}}{{ page.url }}"><img src="{{ logo_path | relative_url }}"></a>
+    </div>
+
+    <!-- Title Section  -->
+    <div>
+        <a class="navbar-brand" href="https://{{ site.github_username}}.github.io{{ page.url }}">
+        {{ site.masthead_title | default: site.title }}
+        </a>
+        {%- if site.subtitle -%}
+            <br>
+            <a class="navbar-brand" href="http://localhost:{{ site.port }}{{ page.url }}">
+                {{ site.subtitle }}
+            </a>
+        {% endif %}
+    </div>

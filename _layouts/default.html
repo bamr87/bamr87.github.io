@@ -1,20 +1,39 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+---
+---
+<!--
+  Zer0 Mistakes Jekyll Theme 0.1 by Amr Abdel-Motaleb
+  Copyright 2022 Amr Abdel-Motaleb - amrabdel.com | @bamr87
+  _layouts/default.html
+-->
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: en }}" class="no-js">
 
+<head>
+  <!-- _includes/head.html  -->
   {%- include head.html -%}
+</head>
 
   <body>
 
+      <!-- _includes/header.html - Header section with main Navigation and Search engine -->
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+      <div class="container-xxl my-md-4 bd-layout sidebar-item">
         {{ content }}
       </div>
     </main>
 
-    {%- include footer.html -%}
+<!-- include/halfmoon.html -->
+    {% include halfmoon.html %}
+
+    <!-- _include/footer.html -->
+    <div class="container-xxl">
+      {%- include footer.html -%}
+    </div>
+
+  <!-- Javascript CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
 
   </body>
-
 </html>

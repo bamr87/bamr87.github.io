@@ -18,7 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: zer0-mistakes
+title                    : zer0-mistakes
+subtitle                 : Jekyll Theme
+subtitle_url             : "localhost"
 email: bamr87@zer0-mistakes.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this

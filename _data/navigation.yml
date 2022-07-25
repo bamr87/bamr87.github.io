@@ -1,0 +1,197 @@
+# FIXME: NO SPACES IN THE TITLE. IT WILL BREAK THE NAVIGATION. 
+
+# Main Navigation (top)
+main:
+  - nav-title: "Main Menu"
+  - title: "Home"
+    url: /home/
+  - title: "Quick-Start"
+    url: /quick-start/
+    sublinks:
+      - title: "Home"
+        url: /quickstart/
+      - title: "Machine Setup"
+        url: /quickstart/machine-setup/home
+      - title: "IDE"
+        url: /quickstart/ide/home
+      - title: "Web Server"
+        url: /quickstart/web-server/home
+  - title: "Journal"
+    url: /posts/
+    sublinks:
+    - title: "Quests"
+      url: /quest/
+    - title: "Posts"
+      url: /posts/
+  - title: "Library"
+    url: /docs/
+    sublinks:
+    - title: "Home"
+      url: /docs/
+    - title: "Jekyll"
+      url: /docs/jekyll/
+    - title: "Command Line"
+      url: /docs/command-line/
+  # - title: "Research"
+  #   url: /research/
+  #   sublinks:
+  #     - title: "Data"
+  #       url: /research/data/
+  #     - title: "Analysis"
+  #       url: /research/analysis/
+  - title: "Hobbies"
+    url: /hobbies/
+    sublinks:
+    - title: "home"
+      url: /hobbies/
+    - title: "Music"
+      url: /hobbies/music/
+    - title: "Gaming"
+      url: /hobbies/gaming/
+    - title: "Art"
+      url: /hobbies/art/
+    - title: "Cooking"
+      url: /hobbies/cooking/
+  - title: "Notes"
+    url: /notes/
+    sublinks:
+    - title: "home"
+      url: /notes/
+    - title: "shell"
+      url: /notes/shell/
+    - title: "Javascript"
+      url: /notes/js/
+    - title: "Jekyll"
+      url: /notes/jekyll/
+  - title: "Map"
+    url: /map/
+  - title: "About"
+    url: /about/
+
+
+# Notes
+notes:
+  - title: "Notes"
+    url: /notes/
+    sublinks:
+      - title: "home"
+        url: /notes/
+      - title: "Shell"
+        url: /notes/shell/
+      - title: "Programming"
+        url: /notes/programming-languages/
+      - title: "Web-Dev"
+        url: /notes/web-dev/
+      - title: "Cloud"
+        url: /notes/cloud/
+  - title: "Cheatsheets"
+    url: /test/
+  - title: "Cheatsheets"
+    url: /test/
+
+# Quick Start
+quickstart:
+  - nav-title: "Quick-Start"
+  - title: "Machine-Setup"
+    sublinks:
+      - title: "Home"
+        url: /quickstart/machine-setup/home/
+      - title: "Mac"
+        url: /quickstart/machine-setup/mac/
+      - title: "Windows"
+        url: /quickstart/machine-setup/windows/
+      - title: "Linux"
+        url: /quickstart/machine-setup/linux/
+    url: /quickstart/
+  - title: "IDE"
+    sublinks:
+      - title: "Home"
+        url: /quickstart/ide/home/
+      - title: "VS-Code"
+        url: /quickstart/ide/vscode/
+    url: /ide/
+  - title: "Source-Code"
+    sublinks:
+      - title: "github"
+        url: /quickstart/github/home
+  - title: "Web-Server"
+    sublinks:
+      - title: "Jekyll"
+        url: /quickstart/Jekyll/home
+    url: /quickstart/web-server/home
+
+# documentation links
+docs:
+  - title: Getting Started
+    children:
+      - title: "Quick-Start Guide"
+        url: /docs/quick-start-guide/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Installation"
+        url: /docs/installation/
+      - title: "Upgrading"
+        url: /docs/upgrading/
+  - title: Customization
+    children:
+      - title: "Configuration"
+        url: /docs/configuration/
+      - title: "Overriding Theme Defaults"
+        url: /docs/overriding-theme-defaults/
+      - title: "Navigation"
+        url: /docs/navigation/
+      - title: "UI Text"
+        url: /docs/ui-text/
+      - title: "Authors"
+        url: /docs/authors/
+      - title: "Layouts"
+        url: /docs/layouts/
+  - title: Content
+    children:
+      - title: "Working with Posts"
+        url: /docs/posts/
+      - title: "Working with Pages"
+        url: /docs/pages/
+      - title: "Working with Collections"
+        url: /docs/collections/
+      - title: "Helpers"
+        url: /docs/helpers/
+      - title: "Utility Classes"
+        url: /docs/utility-classes/
+  - title: Extras
+    children:
+      - title: "Stylesheets"
+        url: /docs/stylesheets/
+      - title: "JavaScript"
+        url: /docs/javascript/
+  - title: Meta
+    children:
+      - title: "History"
+        url: /docs/history/
+      - title: "Contributing"
+        url: /docs/contributing/
+      - title: "Old 2.2 Docs"
+        url: /docs/docs-2-2/
+      - title: "License"
+        url: /docs/license/
+      - title: "Terms &amp; Privacy Policy"
+        url: /terms/
+
+about:
+  - nav-title: "About"
+  - title: "about"
+    sublinks:
+      - title: "Home"
+        url: /about/
+      - title: "Purpose"
+        url: /about/purpose/
+      - title: "Approach"
+        url: /about/approach/
+
+cooking:
+  - title: "cooking"
+    children:
+      - title: "Chinese-Egg-plant"
+        url: /cooking/egg-plant/
+      - title: "Mapo-Tofu"
+        url: /cooking/egg-plant/
