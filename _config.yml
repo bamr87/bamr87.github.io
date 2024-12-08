@@ -42,10 +42,10 @@ portfolio                : [*github_user, '.', 'github.io']
 
 ## Site Information ---------------------------------------------------------------
 
-title                    : GitHub Profile
+title                    : Prod
 title_url                : "/"
 title_icon               : "globe"
-subtitle                 : "Amr"
+subtitle                 : "Dev"
 subtitle_url             : "localhost"
 subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name

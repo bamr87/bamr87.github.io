@@ -23,9 +23,6 @@ Go to [bookmark]({{ page.bookmark }})
 I want to build an integration from Github to an LLM (such as Gemini) to review markdown files for grammar, spelling, completeness, etc., and then commit the changes for review.
 ```
 
-
-
-
 ## TODO 
 
 {{ page.TODO }}
@@ -173,7 +170,3 @@ local_git_mac            : [ *home-mac, 'GitHub/' ]
 
 NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal.
 {: .alert .alert-primary }
-
-## Sitemap
-
-{% include sitemap.html %}
