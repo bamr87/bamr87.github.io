@@ -1,0 +1,35 @@
+- title: Journey
+  url: /posts
+  sublinks:
+    - title: Quests
+      url: /quests
+    - title: Pages
+      url: /pages
+- title: Library
+  url: /docs/
+  sublinks:
+    - title: Jekyll
+      url: /docs/jekyll
+    - title: Categories
+      url: /categories
+- title: Notebook
+  url: /notes
+  sublinks:
+    - title: Notes
+      url: /notes
+    - title: Jupyter
+      url: /notes/jupyter
+- title: About
+  url: /about/
+  sublinks:
+    - title: Config
+      url: /about/config
+    - title: Theme
+      url: /about/theme
+    - title: Contributing
+      url: /about/contributing
+    - title: Sitemap
+      url: /about/sitemap
+    - title: Features
+      url: /about/features
+
