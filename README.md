@@ -6,14 +6,21 @@ layout: default
 permalink: /
 ---
 
-<!---
-bamr87/bamr87 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+lastmod: 2025-11-11T00:00:00.000Z
+
+
 
 ## About Me
 
 With over 10 years of battling the dark forces of accounting systems (e.g., QAD, OneStream, Infor, Oracle) for multi-national manufacturing empires, I have conjured deep insight and understanding of complex IT architectures that weave business operations with financial sorcery, designed to scale like a dragon's hoard.
+
+<!-- Simple GitHub badges for quick view -->
+[![Followers](https://img.shields.io/github/followers/bamr87?label=Followers&style=flat-square)](https://github.com/bamr87)
+[![Repo Stars](https://img.shields.io/github/stars/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/stargazers)
+[![Top Language](https://img.shields.io/github/languages/top/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io)
+[![License](https://img.shields.io/github/license/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/commits/main)
+
 
 Throughout these epic quests, I have aided many manufacturing realms as they embark on perilous journeys into system upgrades, cloud migrations, and ERP modernizations, with some even dabbling in the arcane arts (ML, Git, DevOps). This exposure from a financial system perspective during my career is continuously refined by my master's degree in information systems and bachelor's in finance, bestowed upon me by the ancient scholars.
 
@@ -23,6 +30,61 @@ In my previous escapade at a stealthy electronics conjurer, I also managed and c
 
 My current mission is to transfer my arcane skillset by collaborating with IT and finance adventurers who wish to advance our collective needs (i.e., people over profits). I seek to educate curious minds who are looking to wield these advanced tools for ease of management and financial enlightenment. I am passionate about manufacturing systems, accounting enchantments, financial alchemy, data divination, DevOps, and full stack spellcraft.
 
+---
+
+## Quick Dashboard — GitHub Repositories
+
+This repository serves double-duty: my personal profile/CV and a central dashboard of my most active public projects. Each repository listed below includes quick badges, links, and a short summary. You can use this as a starting point to explore project docs, live demos, and how to contribute.
+
+> Badges are created with Shields.io and GitHub. Some badges depend on CI or releases; where a workflow or release is not configured the badge may show `unknown`.
+
+### Quick Stats & Profile
+![Followers](https://img.shields.io/github/followers/bamr87?style=social)
+![Repo Count](https://img.shields.io/github/repo-size/bamr87/bamr87.github.io?label=Profile+Repo&style=flat-square)
+
+### Featured Projects
+| Project | Description | Quick Links |
+|---|---|---|
+| [it-journey](https://github.com/bamr87/it-journey) | Educational hub (Jekyll) with quests, tutorials, and repository-driven learning content. | [Repo](https://github.com/bamr87/it-journey) • [Pages](https://it-journey.dev) • ![Stars](https://img.shields.io/github/stars/bamr87/it-journey?style=social) |
+| [barodybroject](https://github.com/bamr87/barodybroject) | Django + OpenAI parody demo app highlighting containerized workflows and AI integration patterns. | [Repo](https://github.com/bamr87/barodybroject) • ![Issues](https://img.shields.io/github/issues/bamr87/barodybroject) |
+| [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) | Jekyll theme with Docker-first development, documentation, and self-healing install scripts. | [Repo](https://github.com/bamr87/zer0-mistakes) • [Theme](https://github.com/bamr87/zer0-mistakes/releases) |
+| [bashconsultants](https://github.com/bamr87/bashconsultants) | Company site with consulting materials, scripts, and client-facing resources (Jekyll). | [Repo](https://github.com/bamr87/bashconsultants) • [Site](https://bashconsultants.com) |
+| [bamr87](https://github.com/bamr87/bamr87) | Personal tooling and front-end components — portfolio pieces and dev assets. | [Repo](https://github.com/bamr87/bamr87) |
+| [bamr87.github.io](https://github.com/bamr87/bamr87.github.io) | My profile site (this repo). This README demonstrates GitHub Pages features like YAML front matter, badges, and task lists. | [Repo](https://github.com/bamr87/bamr87.github.io) • [Live](https://bamr87.github.io) |
+
+### How to Use this Dashboard
+```bash
+# Clone a project
+git clone https://github.com/bamr87/it-journey.git
+
+# Preview a Jekyll site (recommended with Docker Compose)
+docker-compose up -d
+# or: bundle exec jekyll serve --livereload
+```
+
+### Contributing & Support
+
+- Prefer small PRs and descriptive commit messages. See `CONTRIBUTING.md` in each repo.  
+- For content updates on this site or `it-journey`, follow the `README-FIRST` / `README-LAST` workflow.  
+- To propose a new guide or a quest, open an issue on `it-journey` and reference the target audience and learning objectives.
+
+### Contact & Social
+- Email: info@bashconsultants.com  
+- LinkedIn: https://linkedin.com/in/amrabdel  
+- GitHub: https://github.com/bamr87  
+
+### Example Diagram (mermaid) — Repo Relationship
+```mermaid
+graph LR
+  A[Profile] --> B[it-journey]
+  A --> C[barodybroject]
+  A --> D[zer0-mistakes]
+  A --> E[bashconsultants]
+  A --> F[bamr87]
+  A --> G[bamr87.github.io]
+```
+
+---
 
 ## CV
 
