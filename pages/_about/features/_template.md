@@ -1,11 +1,4 @@
 ---
-layout: default
-title: "Features Index (Consolidated)"
-lastmod: 2025-11-11T23:45:58Z
----
-
-
----
 title: "Consolidated Feature Index"
 description: "Automatically generated index of features implemented or in backlog across all of the org's repositories."
 type: default
@@ -45,30 +38,3 @@ features:
 The site runbook contains a validator `scripts/validate_features.py` and a workflow template `scripts/feature-validator-template.yml` that repository maintainers can adopt to ensure PRs validate the `features` metadata before merge.
 
 ---
-
-## Current Features
-
-
-| Title | Repo | Tags | Link |
-| --- | --- | --- | --- |
-| OpenAI service integration | barodybroject | openai, api | /src/services/openai_service.py |
-| Django feature testing and CI | barodybroject | ci, django, testing | /.github/workflows/feature-test.yml |
-| Jekyll site generation | it-journey | site, jekyll, build | / |
-| Algolia Search indexing | it-journey | search, algolia | /search/ |
-| Auto features index generation | it-journey | automation, features | /about/features/ |
-| Bootstrap theme - Zer0-Mistakes | zer0-mistakes | jekyll, theme, bootstrap | / |
-| Docker-first development | zer0-mistakes | docker, devops | / |
-
-
-## Requested / Backlog Features
-
-
-*No backlog items found.*
-
-
----
-
-*This index is generated automatically by `/scripts/generate_features_index.py`.
-
-
-Last updated: 2025-11-11T23:45:58Z

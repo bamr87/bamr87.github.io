@@ -1,0 +1,21 @@
+name: Validate Features Metadata
+
+on:
+  pull_request:
+    branches: [main, master, develop]
+  push:
+    branches: [main, master, develop]
+
+jobs:
+  validate-features:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r scripts/requirements.txt
+      - name: Validate features metadata
+        run: python3 scripts/validate_features.py features/features.yml
