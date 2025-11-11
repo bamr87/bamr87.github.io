@@ -12,6 +12,8 @@ source "https://rubygems.org"
 gem 'github-pages'
 
 # Jekyll Theme
+## Use the remote theme via `remote_theme:`; avoid requiring a local gem to prevent dependency conflicts
+## If you need to install the theme as a gem, publish it to rubygems or set a proper path local gemspec
 gem 'jekyll-theme-zer0'
 
 # If you have plugins enabled in the _config.yml, add them here too:

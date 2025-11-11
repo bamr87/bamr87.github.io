@@ -8,4 +8,4 @@ layout: home
 
 ## Sitemap
 
-{% include sitemap.html %}
+{% include content/sitemap.html %}

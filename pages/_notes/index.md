@@ -6,7 +6,7 @@ permalink: /notes/
 lastmod: 2024-05-24T04:34:37.380Z
 ---
 
-## Randmon Notes
+## Random Notes
 
 [Devops](https://docs.gitlab.com/ee/topics/autodevops/stages.html)
 
