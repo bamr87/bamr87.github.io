@@ -1,11 +1,4 @@
 ---
-layout: default
-title: "Features Index (Consolidated)"
-lastmod: 2025-11-11T23:45:58Z
----
-
-
----
 title: "Consolidated Feature Index"
 description: "Automatically generated index of features implemented or in backlog across all of the org's repositories."
 type: default
