@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Features Index (Consolidated)"
-lastmod: 2025-11-23T02:44:34Z
+lastmod: 2025-11-24T02:41:00Z
 ---
 
 
@@ -66,4 +66,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2025-11-23T02:44:34Z
+Last updated: 2025-11-24T02:41:00Z
