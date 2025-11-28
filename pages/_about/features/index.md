@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Features Index (Consolidated)"
-lastmod: 2025-11-27T02:37:34Z
+lastmod: 2025-11-28T02:36:54Z
 ---
 
 
@@ -53,9 +53,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | --- | --- | --- | --- |
 | OpenAI service integration | barodybroject | openai, api | /src/services/openai_service.py |
 | Django feature testing and CI | barodybroject | ci, django, testing | /.github/workflows/feature-test.yml |
-| Jekyll site generation | it-journey | site, jekyll, build | / |
-| Algolia Search indexing | it-journey | search, algolia | /search/ |
-| Auto features index generation | it-journey | automation, features | /about/features/ |
 
 
 ## Requested / Backlog Features
@@ -69,4 +66,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2025-11-27T02:37:34Z
+Last updated: 2025-11-28T02:36:54Z
