@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Features Index (Consolidated)"
-lastmod: 2025-12-06T02:36:16Z
+lastmod: 2025-12-07T02:44:30Z
 ---
 
 
@@ -53,6 +53,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | --- | --- | --- | --- |
 | OpenAI service integration | barodybroject | openai, api | /src/services/openai_service.py |
 | Django feature testing and CI | barodybroject | ci, django, testing | /.github/workflows/feature-test.yml |
+| Bootstrap theme - Zer0-Mistakes | zer0-mistakes | jekyll, theme, bootstrap | / |
+| Docker-first development | zer0-mistakes | docker, devops | / |
+| AI Preview Image Generator | zer0-mistakes | ai, images, automation, openai, content | /docs/features/preview-image-generator/ |
 
 
 ## Requested / Backlog Features
@@ -66,4 +69,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2025-12-06T02:36:16Z
+Last updated: 2025-12-07T02:44:30Z
