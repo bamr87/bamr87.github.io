@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Features Index (Consolidated)"
-lastmod: 2026-02-18T03:07:04Z
+lastmod: 2026-02-19T03:06:03Z
 ---
 
 
@@ -49,10 +49,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 ## Current Features
 
 
-| Title | Repo | Tags | Link |
-| --- | --- | --- | --- |
-| OpenAI service integration | barodybroject | openai, api | /src/services/openai_service.py |
-| Django feature testing and CI | barodybroject | ci, django, testing | /.github/workflows/feature-test.yml |
+*No implemented features found.*
 
 
 ## Requested / Backlog Features
@@ -66,4 +63,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-02-18T03:07:04Z
+Last updated: 2026-02-19T03:06:03Z
