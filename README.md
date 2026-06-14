@@ -50,7 +50,7 @@ This repository serves double-duty: my personal profile/CV and a central dashboa
 |---|---|---|
 | **[it-journey](https://github.com/bamr87/it-journey)** | From zero to hero — a Jekyll-powered hub of docs, tools, scripts, and interactive quests for learning IT and software craft. | [Repo](https://github.com/bamr87/it-journey) • [Live](https://it-journey.dev/) |
 | **[zer0-mistakes](https://github.com/bamr87/zer0-mistakes)** | A GitHub Pages-compatible Jekyll theme built on Bootstrap 5, with Docker-first development and self-healing install scripts. Powers this site. | [Repo](https://github.com/bamr87/zer0-mistakes) • [Live](https://zer0-mistakes.com/) |
-| **[barodybroject](https://github.com/bamr87/barodybroject)** | Full-stack, responsive web app with OpenAI integration — a containerized parody-news demo of AI content workflows. | [Repo](https://github.com/bamr87/barodybroject) • [Live](https://barodybroject.com) |
+| **[barodybroject](https://github.com/bamr87/barodybroject)** | Full-stack, responsive web app with OpenAI integration — a containerized parody-news demo of AI content workflows. | [Repo](https://github.com/bamr87/barodybroject) |
 | **[bamr87](https://github.com/bamr87/bamr87)** | The monorepo: a self-managing dashboard tying together my projects, docs, and automation via Git submodules. | [Repo](https://github.com/bamr87/bamr87) • [Live](https://bamr87.github.io/bamr87/) |
 
 _See the full [portfolio](/about/portfolio/) for every project._

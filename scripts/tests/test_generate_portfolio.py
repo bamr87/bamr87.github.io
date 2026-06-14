@@ -6,6 +6,7 @@ Run from the repo root: python -m pytest -q scripts/tests
 from scripts.generate_portfolio import (
     merge_project,
     pages_url,
+    resolve_site_url,
     render_readme_block,
     render_portfolio_page,
     splice_readme,
@@ -64,6 +65,27 @@ def test_splice_readme_replaces_existing_span():
 def test_splice_readme_appends_when_no_span():
     out = splice_readme('just intro', f"{README_BEGIN}\nNEW\n{README_END}")
     assert 'just intro' in out and 'NEW' in out and '## Portfolio' in out
+
+
+def test_live_url_override():
+    meta = {'has_pages': True}  # would normally auto-derive a Pages URL
+    # explicit false/none suppresses the Live link (e.g. a dead custom domain)
+    assert resolve_site_url('bamr87', 'foo', {'repo': 'foo', 'live_url': False}, meta) is None
+    assert resolve_site_url('bamr87', 'foo', {'repo': 'foo', 'live_url': 'none'}, meta) is None
+    # a string repoints the Live link
+    assert resolve_site_url('bamr87', 'foo', {'repo': 'foo', 'live_url': 'https://x.io'}, meta) == 'https://x.io'
+    # key absent -> auto-derive
+    assert resolve_site_url('bamr87', 'foo', {'repo': 'foo'}, meta) == 'https://bamr87.github.io/foo/'
+
+
+def test_readme_block_table_has_blank_line_before_it():
+    # kramdown only parses the table as a table if a blank line precedes it;
+    # otherwise the homepage shows raw '| ... |' pipes. Guard against regression.
+    projects = [merge_project('bamr87', {'repo': 'feat', 'featured': True, 'blurb': 'A'}, {})]
+    block = render_readme_block(projects)
+    lines = block.splitlines()
+    header_idx = next(i for i, l in enumerate(lines) if l.startswith('| Project'))
+    assert lines[header_idx - 1] == '', "table header must be preceded by a blank line"
 
 
 def test_strip_volatile_ignores_timestamps():

@@ -114,6 +114,21 @@ def pages_url(owner: str, repo: str, meta: dict) -> Optional[str]:
     return None
 
 
+def resolve_site_url(owner: str, repo: str, entry: dict, meta: dict) -> Optional[str]:
+    """Registry `live_url` overrides the auto-derived link.
+
+    - key absent           -> auto-derive from GitHub homepage / Pages
+    - live_url: false/none  -> suppress the Live link (e.g. a dead custom domain)
+    - live_url: "https://…" -> use that URL verbatim (repoint)
+    """
+    if 'live_url' in entry:
+        val = entry['live_url']
+        if val in (False, None, '', 'none', 'false'):
+            return None
+        return str(val)
+    return pages_url(owner, repo, meta)
+
+
 def merge_project(owner: str, entry: dict, meta: Optional[dict]) -> dict:
     """Combine a registry entry (curated overrides) with live GitHub metadata."""
     repo = entry['repo']
@@ -132,7 +147,7 @@ def merge_project(owner: str, entry: dict, meta: Optional[dict]) -> dict:
         'license': ((meta.get('license') or {}).get('spdx_id') or '').replace('NOASSERTION', ''),
         'pushed_at': meta.get('pushed_at', ''),
         'repo_url': meta.get('html_url') or f"https://github.com/{owner}/{repo}",
-        'site_url': pages_url(owner, repo, meta),
+        'site_url': resolve_site_url(owner, repo, entry, meta),
     }
 
 

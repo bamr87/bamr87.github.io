@@ -17,6 +17,7 @@ exclude:
   - skills-github-pages
   - zer0-pages
   - bamr87.github.io   # this site itself — linked from the profile, not the showcase
+  - djangoerp          # superseded by django-fin / amrs-project (avoid duplicate Django apps)
 
 projects:
   # ---- Featured ---------------------------------------------------------------
@@ -34,6 +35,7 @@ projects:
     featured: true
     category: "Apps & AI"
     blurb: "Full-stack, responsive web app with OpenAI integration — a containerized parody-news demo of AI content workflows."
+    live_url: false   # barodybroject.com custom domain is currently unreachable — hide Live link until restored
 
   - repo: bamr87
     featured: true
@@ -69,6 +71,10 @@ projects:
     category: "Apps & AI"
     blurb: "A Django-based finance application exploring accounting and reporting workflows."
 
+  - repo: amrs-project
+    category: "Apps & AI"
+    blurb: "AMRS — a modular Django + DRF accounting & management reporting system with JWT auth and a Bootstrap 5 frontend, built to run standalone or integrate with larger ERP platforms."
+
   # ---- Editor tooling ---------------------------------------------------------
   - repo: vs-sonic-pi
     category: "Editor Tooling"
@@ -87,6 +93,10 @@ projects:
     category: "Knowledge Bases"
     blurb: "A self-growing knowledge base about the year 1987 — history, people, and culture."
 
+  - repo: "1990"
+    category: "Knowledge Bases"
+    blurb: "A self-growing knowledge base about the year 1990 — history, science, technology, arts, and society."
+
   - repo: "1897"
     category: "Knowledge Bases"
     blurb: "A self-growing knowledge base about the year 1897."
@@ -94,3 +104,12 @@ projects:
   - repo: "1764"
     category: "Knowledge Bases"
     blurb: "All things 1764 — history, events, and culture from the year."
+
+  # ---- Infrastructure ---------------------------------------------------------
+  - repo: README
+    category: "Infrastructure"
+    blurb: "Documentation engine and content hub (MkDocs) powering the monorepo's docs site."
+
+  - repo: scripts
+    category: "Infrastructure"
+    blurb: "A collection of reusable Bash and Python automation scripts for the monorepo."
