@@ -1,4 +1,4 @@
-name: Generate Features Index
+name: Regenerate site indexes
 
 on:
   schedule:
@@ -24,21 +24,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Run tests and generator (remote GitHub mode)
+      - name: Run tests and regenerate indexes (remote GitHub mode)
         env:
           FEATURES_GITHUB_TOKEN: ${{ secrets.FEATURES_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python -m pytest -q scripts/tests || true
           python3 scripts/generate_features_index.py --mode=remote --owner=bamr87 --token=${FEATURES_GITHUB_TOKEN}
+          python3 scripts/generate_portfolio.py --owner=bamr87
 
-      - name: Commit and push generated features index
+      - name: Commit and push regenerated content
         run: |
           git config user.email "actions@github.com"
           git config user.name "github-actions"
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git add pages/_about/features/index.md
-            git commit -m "ci: regenerate features index [skip ci]"
-            git push origin HEAD:${{ github.ref_name }}
-          else
+          git add pages/_about/features/index.md pages/_about/portfolio/index.md README.md
+          if git diff --cached --quiet; then
             echo "No changes to commit"
+          else
+            git commit -m "ci: regenerate site indexes [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
           fi
