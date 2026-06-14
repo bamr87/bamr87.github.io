@@ -1,6 +1,6 @@
 - title: "hobbies"
   url: /hobbies/
-  sublinks:
+  children:
   - title: "home"
     url: /hobbies
   - title: "Music"

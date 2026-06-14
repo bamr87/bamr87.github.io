@@ -1,11 +1,11 @@
 - title: Setup
-  sublinks:
+  children:
     - title: Configuration
       url: /docs/configuration
     - title: Overriding Theme Defaults
       url: /docs/overriding-theme-defaults
 - title: Features
-  sublinks:
+  children:
     - title: Navigation
       url: /docs/navigation
     - title: UI Text
@@ -15,12 +15,12 @@
     - title: Layouts
       url: /docs/layouts
 - title: Programming
-  sublinks:
+  children:
     - title: Liquid
       url: /
       source: null
 - title: Headless CMS
-  sublinks:
+  children:
     - title: Working with Posts
       url: /docs/posts
     - title: Working with Collections
@@ -30,12 +30,12 @@
     - title: Utility Classes
       url: /docs/utility-classes
 - title: Design
-  sublinks:
+  children:
     - title: Stylesheets
       url: /docs/stylesheets
     - title: JavaScript
       url: /docs/javascript
 - title: Releases
-  sublinks:
+  children:
     - title: History
       url: /docs/history

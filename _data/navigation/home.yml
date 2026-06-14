@@ -1,13 +1,13 @@
 - title: Home
   icon: bi-house
   url: /home
-  sublinks:
+  children:
     - title: Style
       url: /home/style/
 - title: Map
   icon: bi-map
   url: /search/index
-  sublinks:
+  children:
     - title: Search
       url: /search/
     - title: Roadmap

@@ -1,5 +1,5 @@
 - title: About
-  sublinks:
+  children:
     - title: Home
       url: /about
     - title: Purpose

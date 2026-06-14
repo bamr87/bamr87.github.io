@@ -1,6 +1,6 @@
 - icon: world
   url: /posts/world/
-  sublinks: []
+  children: []
   title: World
 - title: Technology
   icon: tech

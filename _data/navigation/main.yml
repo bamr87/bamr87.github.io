@@ -1,7 +1,7 @@
 - title: Projects
   icon: bi-grid-3x3-gap-fill
   url: /#projects
-  sublinks:
+  children:
     - title: All Projects (Dashboard)
       url: /#projects
     - title: Portfolio
@@ -20,26 +20,26 @@
       url: https://github.com/bamr87?tab=repositories
 - title: Journey
   url: /posts
-  sublinks:
+  children:
     - title: Pages
       url: /pages
 - title: Library
   url: /docs/
-  sublinks:
+  children:
     - title: Jekyll
       url: /docs/jekyll
     - title: Categories
       url: /categories
 - title: Notebook
   url: /notes
-  sublinks:
+  children:
     - title: Notes
       url: /notes
     - title: Jupyter
       url: /notes/jupyter
 - title: About
   url: /about/
-  sublinks:
+  children:
     - title: Résumé / Profile
       url: /profile/
     - title: Config
