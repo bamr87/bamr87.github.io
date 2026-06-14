@@ -46,7 +46,7 @@ All content lives under `pages/` (`collections_dir: pages` in `_config.yml`). Co
 
 Per-path **`defaults`** in `_config.yml` assign each collection its `layout`, `sidebar.nav`, and permalink — set defaults there rather than repeating front matter in every file.
 
-**Homepage:** [`index.html`](index.html) at the repo root is the site homepage (`permalink: /`, `layout: home`) — a full-bleed, animated showcase/dashboard built from `site.data.portfolio` (see below) with self-contained inline CSS/JS scoped under `.dash`; its JS is wrapped in `{% raw %}` so Liquid leaves it alone. **`README.md`** is the GitHub profile/CV and renders on the site at **`/profile/`** (`permalink: /profile/`) — it is no longer the homepage.
+**Homepage:** [`index.html`](index.html) at the repo root is the site homepage (`permalink: /`, `layout: home`) — a full-bleed, animated showcase/dashboard built from `site.data.portfolio` (see below) with self-contained inline CSS/JS scoped under `.dash`; its JS is wrapped in a Liquid `raw`/`endraw` block so Liquid leaves it alone. **`README.md`** is the GitHub profile/CV and renders on the site at **`/profile/`** (`permalink: /profile/`) — it is no longer the homepage.
 
 Navigation is data-driven via `_data/navigation/*.yml`. The navbar reads `main.yml`; sidebars are selected by a page's `sidebar.nav` key. **The theme's navbar and `nav-tree` consume `children:` (not `sublinks:`)** — use `children:` for nested items or dropdowns silently won't render.
 

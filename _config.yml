@@ -385,6 +385,11 @@ exclude:
   - vendor/
   # - "*.sh"
   - submodules/
+  # Dev/agent docs — not site content. (Also keeps their Liquid-looking
+  # snippets like {% raw %}/{{ }} from being parsed by jekyll-optional-front-matter.)
+  - CLAUDE.md
+  - AGENTS.md
+  - scripts/
 
 # Sass/SCSS
 sass:
