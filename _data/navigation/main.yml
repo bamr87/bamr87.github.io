@@ -1,3 +1,23 @@
+- title: Projects
+  icon: bi-grid-3x3-gap-fill
+  url: /#projects
+  sublinks:
+    - title: All Projects (Dashboard)
+      url: /#projects
+    - title: Portfolio
+      url: /about/portfolio/
+    - title: Features Index
+      url: /about/features/
+    - title: "★ it-journey"
+      url: https://github.com/bamr87/it-journey
+    - title: "★ zer0-mistakes"
+      url: https://github.com/bamr87/zer0-mistakes
+    - title: "★ barodybroject"
+      url: https://github.com/bamr87/barodybroject
+    - title: "★ bamr87 (monorepo)"
+      url: https://github.com/bamr87/bamr87
+    - title: All repos on GitHub →
+      url: https://github.com/bamr87?tab=repositories
 - title: Journey
   url: /posts
   sublinks:
@@ -20,6 +40,8 @@
 - title: About
   url: /about/
   sublinks:
+    - title: Résumé / Profile
+      url: /profile/
     - title: Config
       url: /about/config
     - title: Theme
@@ -30,4 +52,3 @@
       url: /about/sitemap
     - title: Features
       url: /about/features
-

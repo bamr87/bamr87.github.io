@@ -1,9 +1,9 @@
 ---
-title: Profile
+title: Profile & Résumé
 author: Amr
 class: Wizard
 layout: default
-permalink: /
+permalink: /profile/
 ---
 
 lastmod: 2025-11-11T00:00:00.000Z

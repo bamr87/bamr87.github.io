@@ -1,0 +1,458 @@
+---
+layout: home
+permalink: /
+title: "Amr Abdel-Motaleb — Builder, Solutions Architect & Open-Source Engineer"
+description: "A living showcase, portfolio and dashboard of Amr Abdel-Motaleb's GitHub projects, skills, and experience — from ERP & finance systems to AI, Jekyll themes, and developer tooling."
+rss_subscribe: false   # zer0-mistakes home layout: suppress the RSS subscribe link (see theme PR)
+hide_title: true       # keep title for SEO but don't render the theme's <h1> (hero has its own)
+sidebar:
+  nav: false
+---
+{%- assign P = site.data.portfolio -%}
+{%- assign cats = P.projects | map: "category" | uniq -%}
+
+<!-- ============================================================= -->
+<!-- EPIC SHOWCASE HOMEPAGE — generated content driven by          -->
+<!-- _data/portfolio.yml (built by scripts/generate_portfolio.py). -->
+<!-- Curate projects in _data/projects.yml, not here.              -->
+<!-- ============================================================= -->
+
+<style>
+/* Scope everything under .dash to avoid clobbering the theme. */
+.home > .page-heading,
+.home > .rss-subscribe { display: none !important; }    /* hide theme home chrome */
+html { scroll-behavior: smooth; }
+
+.dash {
+  --d-accent: var(--zer0-color-primary, var(--bs-primary, #007bff));
+  --d-accent2: #7b5cff;
+  --d-accent3: #19d3da;
+  --d-bg: var(--bs-body-bg, #0d1117);
+  --d-surface: rgba(255,255,255,.03);
+  --d-surface-2: rgba(255,255,255,.05);
+  --d-border: rgba(255,255,255,.10);
+  --d-text: var(--bs-body-color, #e6edf3);
+  --d-muted: #9aa7b4;
+  --d-radius: 16px;
+  color: var(--d-text);
+  font-synthesis: none;
+}
+.dash * { box-sizing: border-box; }
+.dash section { position: relative; }
+.dash .wrap { max-width: 1180px; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+.dash .eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: .72rem; font-weight: 700;
+  color: var(--d-accent3); margin: 0 0 .6rem; }
+.dash h2.d-title { font-size: clamp(1.6rem, 3.4vw, 2.5rem); font-weight: 800; letter-spacing: -.02em; margin: 0 0 .4rem; }
+.dash .d-lead { color: var(--d-muted); max-width: 60ch; margin: 0 0 2rem; font-size: 1.02rem; }
+
+/* ---------- HERO ---------- */
+.dash-hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden; padding: 7rem 1rem 5rem;
+  width: 100vw; margin-left: calc(50% - 50vw);   /* full-bleed regardless of wrapper */
+}
+.dash-hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: var(--d-bg); }
+.dash-hero__bg::before {            /* animated gradient mesh */
+  content: ""; position: absolute; inset: -30%;
+  background:
+    radial-gradient(40% 40% at 20% 25%, rgba(0,123,255,.45), transparent 70%),
+    radial-gradient(35% 35% at 80% 20%, rgba(123,92,255,.40), transparent 70%),
+    radial-gradient(40% 45% at 70% 80%, rgba(25,211,218,.32), transparent 70%),
+    radial-gradient(35% 40% at 25% 85%, rgba(255,92,182,.28), transparent 70%);
+  filter: blur(20px); animation: meshDrift 22s ease-in-out infinite alternate;
+}
+.dash-hero__bg::after {             /* faint dot grid */
+  content: ""; position: absolute; inset: 0; opacity: .5;
+  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 34px 34px; mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 75%);
+}
+@keyframes meshDrift {
+  0%   { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1.05); }
+  100% { transform: translate3d(4%, 3%, 0) rotate(8deg) scale(1.15); }
+}
+.dash-hero__inner { position: relative; z-index: 2; max-width: 900px; }
+.dash-hero .badge-pill {
+  display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .9rem; border-radius: 999px;
+  background: var(--d-surface-2); border: 1px solid var(--d-border); color: var(--d-muted);
+  font-size: .8rem; font-weight: 600; margin-bottom: 1.5rem; backdrop-filter: blur(6px);
+}
+.dash-hero .badge-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #2ecc71;
+  box-shadow: 0 0 0 0 rgba(46,204,113,.6); animation: pulse 2.4s infinite; }
+@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(46,204,113,.5)} 70%{box-shadow:0 0 0 10px rgba(46,204,113,0)} 100%{box-shadow:0 0 0 0 rgba(46,204,113,0)} }
+.dash-hero h1 {
+  font-size: clamp(2.6rem, 8vw, 5.2rem); font-weight: 900; line-height: 1.02; letter-spacing: -.03em; margin: 0;
+  background: linear-gradient(110deg, #fff 10%, var(--d-accent) 45%, var(--d-accent2) 70%, var(--d-accent3) 95%);
+  background-size: 220% auto; -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; animation: shine 8s linear infinite;
+}
+@keyframes shine { to { background-position: 220% center; } }
+.dash-hero .role { height: 2.4rem; margin: 1.1rem 0 .4rem; font-size: clamp(1.1rem,2.6vw,1.6rem); font-weight: 700; color: var(--d-text); }
+.dash-hero .role .type { color: var(--d-accent3); border-right: 2px solid var(--d-accent3); padding-right: 2px; animation: caret 1s step-end infinite; }
+@keyframes caret { 50% { border-color: transparent; } }
+.dash-hero .tagline { color: var(--d-muted); max-width: 62ch; margin: .4rem auto 2rem; font-size: clamp(1rem,1.6vw,1.18rem); line-height: 1.6; }
+.dash-cta { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; }
+.dash-btn {
+  display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1.5rem; border-radius: 999px;
+  font-weight: 700; font-size: .95rem; text-decoration: none; border: 1px solid transparent;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease; cursor: pointer;
+}
+.dash-btn--primary { color: #fff; background: linear-gradient(100deg, var(--d-accent), var(--d-accent2)); box-shadow: 0 8px 24px rgba(0,123,255,.35); }
+.dash-btn--ghost { color: var(--d-text); background: var(--d-surface-2); border-color: var(--d-border); }
+.dash-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,123,255,.45); }
+.dash-scroll { position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); z-index: 2; color: var(--d-muted);
+  font-size: 1.5rem; animation: bob 2s ease-in-out infinite; text-decoration: none; }
+@keyframes bob { 50% { transform: translate(-50%, 8px); } }
+
+/* ---------- STAT DASHBOARD ---------- */
+.dash-stats { padding: 3.5rem 0; border-block: 1px solid var(--d-border); background: var(--d-surface); }
+.dash-stats .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+.dash-stat { text-align: center; padding: 1.2rem .8rem; border-radius: var(--d-radius); background: var(--d-surface);
+  border: 1px solid var(--d-border); transition: transform .2s ease, border-color .2s ease; }
+.dash-stat:hover { transform: translateY(-4px); border-color: var(--d-accent); }
+.dash-stat .num { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; line-height: 1;
+  background: linear-gradient(120deg, var(--d-accent3), var(--d-accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.dash-stat .lbl { margin-top: .5rem; color: var(--d-muted); font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+
+/* ---------- SECTIONS ---------- */
+.dash-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.dash-featured .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+.dash-card {
+  position: relative; display: flex; flex-direction: column; padding: 1.5rem; border-radius: var(--d-radius);
+  background: var(--d-surface); border: 1px solid var(--d-border); overflow: hidden;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.dash-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: linear-gradient(90deg, var(--d-accent), var(--d-accent2), var(--d-accent3)); opacity: .85; }
+.dash-card:hover { transform: translateY(-6px); border-color: var(--d-accent); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+.dash-card.is-featured { background: linear-gradient(180deg, rgba(123,92,255,.10), var(--d-surface)); }
+.dash-card .name { display: flex; align-items: center; gap: .5rem; font-size: 1.2rem; font-weight: 800; margin: .3rem 0 .2rem; }
+.dash-card .name a { color: var(--d-text); text-decoration: none; }
+.dash-card .name a:hover { color: var(--d-accent); }
+.dash-card .desc { color: var(--d-muted); font-size: .92rem; line-height: 1.55; flex: 1; margin: .4rem 0 .9rem; }
+.dash-card .meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: .82rem; color: var(--d-muted); margin-bottom: .8rem; }
+.dash-card .meta .item { display: inline-flex; align-items: center; gap: .35rem; }
+.dash-card .topics { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
+.dash-card .topics span { font-size: .68rem; padding: .2rem .55rem; border-radius: 999px; background: var(--d-surface-2); border: 1px solid var(--d-border); color: var(--d-muted); }
+.dash-card .links { display: flex; gap: .5rem; margin-top: auto; }
+.dash-card .links a { flex: 1; text-align: center; padding: .5rem .8rem; border-radius: 10px; font-size: .82rem; font-weight: 700; text-decoration: none;
+  background: var(--d-surface-2); border: 1px solid var(--d-border); color: var(--d-text); transition: background .15s ease, color .15s ease; }
+.dash-card .links a:hover { background: var(--d-accent); color: #fff; border-color: var(--d-accent); }
+.dash-card .links a.live { background: linear-gradient(100deg, var(--d-accent), var(--d-accent2)); color: #fff; border-color: transparent; }
+
+.lang-dot { width: 11px; height: 11px; border-radius: 50%; background: #8b949e; display: inline-block; }
+.lang-dot[data-lang="Python"]{background:#3572A5}.lang-dot[data-lang="Shell"]{background:#89e051}
+.lang-dot[data-lang="TypeScript"]{background:#3178c6}.lang-dot[data-lang="JavaScript"]{background:#f1e05a}
+.lang-dot[data-lang="Ruby"]{background:#701516}.lang-dot[data-lang="HTML"]{background:#e34c26}
+.lang-dot[data-lang="CSS"]{background:#563d7c}.lang-dot[data-lang="Jupyter Notebook"]{background:#DA5B0B}
+
+/* ---------- FILTER GRID ---------- */
+.dash-controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; justify-content: space-between; margin-bottom: 1.8rem; }
+.dash-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.dash-chip { padding: .42rem .9rem; border-radius: 999px; font-size: .82rem; font-weight: 600; cursor: pointer;
+  background: var(--d-surface-2); border: 1px solid var(--d-border); color: var(--d-muted); transition: all .15s ease; }
+.dash-chip:hover { color: var(--d-text); }
+.dash-chip.active { background: var(--d-accent); color: #fff; border-color: var(--d-accent); }
+.dash-search { padding: .5rem 1rem; border-radius: 999px; background: var(--d-surface-2); border: 1px solid var(--d-border);
+  color: var(--d-text); min-width: 200px; font-size: .9rem; }
+.dash-search:focus { outline: none; border-color: var(--d-accent); }
+.dash-grid .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.1rem; }
+.dash-grid .dash-card.hide { display: none; }
+.dash-empty { color: var(--d-muted); text-align: center; padding: 2rem; display: none; }
+
+/* ---------- SKILLS ---------- */
+.dash-skills .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+@media (max-width: 768px){ .dash-skills .cols { grid-template-columns: 1fr; } }
+.dash-bar { margin-bottom: 1rem; }
+.dash-bar .top { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .35rem; }
+.dash-bar .top .pct { color: var(--d-muted); }
+.dash-bar .track { height: 8px; border-radius: 999px; background: var(--d-surface-2); overflow: hidden; }
+.dash-bar .fill { height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--d-accent), var(--d-accent3)); transition: width 1.2s cubic-bezier(.2,.8,.2,1); }
+.dash-tags { display: flex; flex-wrap: wrap; gap: .55rem; }
+.dash-tags span { padding: .4rem .85rem; border-radius: 10px; font-size: .85rem; font-weight: 600; color: var(--d-text);
+  background: var(--d-surface-2); border: 1px solid var(--d-border); transition: transform .15s ease, border-color .15s ease; }
+.dash-tags span:hover { transform: translateY(-3px); border-color: var(--d-accent3); }
+
+/* ---------- TIMELINE ---------- */
+.dash-timeline .line { position: relative; margin-top: 1rem; padding-left: 2rem; }
+.dash-timeline .line::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px;
+  background: linear-gradient(var(--d-accent), var(--d-accent2), transparent); }
+.dash-tl { position: relative; padding: 0 0 1.8rem 0; }
+.dash-tl::before { content: ""; position: absolute; left: -1.6rem; top: 4px; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--d-bg); border: 3px solid var(--d-accent); }
+.dash-tl .when { font-size: .78rem; font-weight: 700; color: var(--d-accent3); text-transform: uppercase; letter-spacing: .08em; }
+.dash-tl .what { font-size: 1.05rem; font-weight: 700; margin: .15rem 0; }
+.dash-tl .where { color: var(--d-muted); font-size: .9rem; }
+
+/* ---------- CTA BAND ---------- */
+.dash-band { width: 100vw; margin-left: calc(50% - 50vw); padding: clamp(3.5rem,8vw,5.5rem) 1rem; text-align: center;
+  background: linear-gradient(120deg, rgba(0,123,255,.14), rgba(123,92,255,.14)); border-top: 1px solid var(--d-border); }
+.dash-band h2 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; margin: 0 0 .6rem; }
+.dash-band p { color: var(--d-muted); margin: 0 auto 1.8rem; max-width: 50ch; }
+
+/* ---------- REVEAL ANIMATION ---------- */
+.dash-reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.dash-reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .dash *, .dash *::before, .dash *::after { animation: none !important; transition: none !important; }
+  .dash-reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<div class="dash">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="dash-hero">
+    <div class="dash-hero__bg" aria-hidden="true"></div>
+    <div class="dash-hero__inner">
+      <span class="badge-pill"><span class="dot"></span> Available for collaboration · {{ P.totals.public_repos }} public repos</span>
+      <h1>Amr Abdel-Motaleb</h1>
+      <div class="role">I build <span class="type" data-type-target>systems</span></div>
+      <p class="tagline">Solutions architect and engineer weaving business operations with financial precision — and shipping open-source tools, learning platforms, and AI experiments along the way.</p>
+      <div class="dash-cta">
+        <a class="dash-btn dash-btn--primary" href="#projects"><i class="bi bi-grid-3x3-gap-fill"></i> Explore the work</a>
+        <a class="dash-btn dash-btn--ghost" href="https://github.com/{{ P.owner }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+        <a class="dash-btn dash-btn--ghost" href="/profile/"><i class="bi bi-person-vcard"></i> Résumé</a>
+      </div>
+    </div>
+    <a class="dash-scroll" href="#stats" aria-label="Scroll down"><i class="bi bi-chevron-double-down"></i></a>
+  </section>
+
+  <!-- ===================== STAT DASHBOARD ===================== -->
+  <section class="dash-stats" id="stats">
+    <div class="wrap grid">
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.public_repos }}" data-live="repos">0</div><div class="lbl">Public Repos</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.stars }}" data-live="stars">0</div><div class="lbl">Stars Earned</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.followers }}" data-live="followers">0</div><div class="lbl">Followers</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.shown }}">0</div><div class="lbl">Showcased</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.languages | size }}">0</div><div class="lbl">Languages</div></div>
+      <div class="dash-stat"><div class="num" data-count="14" data-suffix="+">0</div><div class="lbl">Years Building</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED ===================== -->
+  <section class="dash-section dash-featured">
+    <div class="wrap">
+      <p class="eyebrow dash-reveal">Flagship work</p>
+      <h2 class="d-title dash-reveal">Featured Projects</h2>
+      <p class="d-lead dash-reveal">The projects I pour the most into — learning platforms, a Jekyll theme that powers this site, AI apps, and the monorepo that ties it all together.</p>
+      <div class="cards">
+        {%- for p in P.projects -%}{%- if p.featured -%}
+        <article class="dash-card is-featured dash-reveal">
+          <div class="name"><i class="bi bi-star-fill" style="color:var(--d-accent2);font-size:.9rem"></i> <a href="{{ p.repo_url }}" target="_blank" rel="noopener">{{ p.repo }}</a></div>
+          <p class="desc">{{ p.description }}</p>
+          <div class="meta">
+            {%- if p.language %}<span class="item"><span class="lang-dot" data-lang="{{ p.language }}"></span> {{ p.language }}</span>{% endif -%}
+            <span class="item"><i class="bi bi-star"></i> {{ p.stars }}</span>
+          </div>
+          <div class="topics">{% for t in p.topics limit: 4 %}<span>{{ t }}</span>{% endfor %}</div>
+          <div class="links">
+            <a href="{{ p.repo_url }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
+            {%- if p.site_url %}<a class="live" href="{{ p.site_url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>{% endif -%}
+          </div>
+        </article>
+        {%- endif -%}{%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ALL PROJECTS (FILTERABLE) ===================== -->
+  <section class="dash-section dash-grid" id="projects" style="background:var(--d-surface)">
+    <div class="wrap">
+      <p class="eyebrow dash-reveal">The full catalog</p>
+      <h2 class="d-title dash-reveal">All Projects</h2>
+      <p class="d-lead dash-reveal">Every showcased repository, live from GitHub. Filter by focus area or search by name, description, or topic.</p>
+      <div class="dash-controls dash-reveal">
+        <div class="dash-chips">
+          <button class="dash-chip active" data-filter="all">All <span style="opacity:.6">{{ P.projects | size }}</span></button>
+          {%- for c in cats -%}
+          <button class="dash-chip" data-filter="{{ c }}">{{ c }}</button>
+          {%- endfor -%}
+        </div>
+        <input class="dash-search" type="search" placeholder="🔍 Search projects…" aria-label="Search projects" data-search>
+      </div>
+      <div class="cards" data-cards>
+        {%- for p in P.projects -%}
+        <article class="dash-card dash-reveal" data-category="{{ p.category }}" data-search-text="{{ p.repo }} {{ p.description }} {{ p.topics | join: ' ' }} {{ p.language }}">
+          <div class="name"><a href="{{ p.repo_url }}" target="_blank" rel="noopener">{{ p.repo }}</a></div>
+          <p class="desc">{{ p.description | default: "—" }}</p>
+          <div class="meta">
+            {%- if p.language %}<span class="item"><span class="lang-dot" data-lang="{{ p.language }}"></span> {{ p.language }}</span>{% endif -%}
+            <span class="item"><i class="bi bi-star"></i> {{ p.stars }}</span>
+            <span class="item" style="opacity:.7">{{ p.category }}</span>
+          </div>
+          <div class="topics">{% for t in p.topics limit: 4 %}<span>{{ t }}</span>{% endfor %}</div>
+          <div class="links">
+            <a href="{{ p.repo_url }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
+            {%- if p.site_url %}<a class="live" href="{{ p.site_url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>{% endif -%}
+          </div>
+        </article>
+        {%- endfor -%}
+      </div>
+      <div class="dash-empty" data-empty>No projects match that search.</div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="dash-section dash-skills">
+    <div class="wrap">
+      <p class="eyebrow dash-reveal">Capabilities</p>
+      <h2 class="d-title dash-reveal">Skills &amp; Tech</h2>
+      <p class="d-lead dash-reveal">Languages drawn live from the showcased repositories, alongside the domains I've shipped in for over a decade.</p>
+      <div class="cols">
+        <div class="dash-reveal">
+          <h3 style="font-size:1rem;color:var(--d-muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 1rem">Languages in the repos</h3>
+          {%- assign maxlang = 0 -%}
+          {%- for l in P.totals.languages -%}{%- if l[1] > maxlang %}{% assign maxlang = l[1] %}{% endif -%}{%- endfor -%}
+          {%- for l in P.totals.languages -%}
+          {%- assign pct = l[1] | times: 100 | divided_by: maxlang -%}
+          <div class="dash-bar">
+            <div class="top"><span>{{ l[0] }}</span><span class="pct">{{ l[1] }} repo{% if l[1] != 1 %}s{% endif %}</span></div>
+            <div class="track"><div class="fill" data-fill="{{ pct }}"></div></div>
+          </div>
+          {%- endfor -%}
+        </div>
+        <div class="dash-reveal">
+          <h3 style="font-size:1rem;color:var(--d-muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 1rem">Domains &amp; tooling</h3>
+          <div class="dash-tags">
+            <span>ERP Systems</span><span>Financial Systems</span><span>Data &amp; BI</span><span>Cloud (AWS · Azure · GCP)</span>
+            <span>Python</span><span>Django</span><span>Jekyll</span><span>Bash</span><span>SQL</span><span>JavaScript / TS</span>
+            <span>DevOps &amp; CI/CD</span><span>Docker</span><span>GitHub Actions</span><span>PowerBI</span><span>OpenAI / AI Apps</span>
+            <span>System Integration</span><span>Cost Accounting</span><span>Data Modeling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE TIMELINE ===================== -->
+  <section class="dash-section dash-timeline" style="background:var(--d-surface)">
+    <div class="wrap">
+      <p class="eyebrow dash-reveal">The journey</p>
+      <h2 class="d-title dash-reveal">Experience</h2>
+      <p class="d-lead dash-reveal">A decade-plus turning enterprise finance and IT challenges into working systems. Full résumé on the <a href="/profile/" style="color:var(--d-accent3)">profile page</a>.</p>
+      <div class="line">
+        <div class="dash-tl dash-reveal"><div class="when">2020 — Present</div><div class="what">Solutions Architect · IT / Finance</div><div class="where">BASH Consulting LLC — enterprise software, cloud integrations, BI, and small-business app development.</div></div>
+        <div class="dash-tl dash-reveal"><div class="when">2022 — 2023</div><div class="what">Sr. Mgr. Accounting Systems &amp; IT Business Partner</div><div class="where">Valmont Industries — led IT/Finance strategy, OneStream &amp; ERP, $4B+ data models across instances.</div></div>
+        <div class="dash-tl dash-reveal"><div class="when">2018 — 2020</div><div class="what">Global Business Analyst &amp; Process Owner — Finance</div><div class="where">AsteelFlash — worldwide IT-Finance projects, COA &amp; reporting foundations, global QAD ERP.</div></div>
+        <div class="dash-tl dash-reveal"><div class="when">2014 — 2018</div><div class="what">Finance IT &amp; EPM Consultant</div><div class="where">QAD Inc. &amp; Wolters Kluwer (Tagetik) — ERP upgrades, financial report models, CPM implementations.</div></div>
+        <div class="dash-tl dash-reveal"><div class="when">2010 — 2014</div><div class="what">ERP Specialist &amp; Financial Analyst</div><div class="where">Infor &amp; Navistar — SyteLine / ERP LN implementations, HFM reporting, cost &amp; pricing analytics.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BAND ===================== -->
+  <section class="dash-band">
+    <div class="dash-reveal">
+      <h2>Let's build something.</h2>
+      <p>Browse the full portfolio, dig into the code, or reach out — I'm always up for a good systems problem.</p>
+      <div class="dash-cta">
+        <a class="dash-btn dash-btn--primary" href="/about/portfolio/"><i class="bi bi-grid-3x3-gap-fill"></i> Full portfolio</a>
+        <a class="dash-btn dash-btn--ghost" href="https://github.com/{{ P.owner }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> @{{ P.owner }}</a>
+        <a class="dash-btn dash-btn--ghost" href="https://linkedin.com/in/amrabdel" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a class="dash-btn dash-btn--ghost" href="mailto:info@bashconsultants.com"><i class="bi bi-envelope"></i> Email</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% raw %}
+<script>
+(function () {
+  var root = document.querySelector('.dash');
+  if (!root) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Typewriter for the hero role ---- */
+  var roles = ['systems.', 'ERP & finance platforms.', 'full-stack apps.', 'AI experiments.', 'open-source tools.', 'learning journeys.'];
+  var el = root.querySelector('[data-type-target]');
+  if (el && !reduce) {
+    var ri = 0, ci = 0, deleting = false;
+    (function tick() {
+      var word = roles[ri];
+      el.textContent = word.slice(0, ci);
+      if (!deleting && ci < word.length) { ci++; }
+      else if (!deleting) { deleting = true; setTimeout(tick, 1600); return; }
+      else if (deleting && ci > 0) { ci--; }
+      else { deleting = false; ri = (ri + 1) % roles.length; }
+      setTimeout(tick, deleting ? 45 : 85);
+    })();
+  } else if (el) { el.textContent = 'systems.'; }
+
+  /* ---- Count-up + bar fills + reveal via one observer ---- */
+  function countUp(node) {
+    var target = parseFloat(node.getAttribute('data-count')) || 0;
+    var suffix = node.getAttribute('data-suffix') || '';
+    if (reduce) { node.textContent = target + suffix; return; }
+    var start = performance.now(), dur = 1400;
+    (function frame(now) {
+      var t = Math.min((now - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - t, 3);
+      node.textContent = Math.round(target * eased) + suffix;
+      if (t < 1) requestAnimationFrame(frame);
+    })(start);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var node = e.target;
+      node.classList.add('is-visible');
+      if (node.hasAttribute('data-count')) countUp(node);
+      node.querySelectorAll && node.querySelectorAll('[data-fill]').forEach(function (f) {
+        f.style.width = (reduce ? f.getAttribute('data-fill') : f.getAttribute('data-fill')) + '%';
+      });
+      io.unobserve(node);
+    });
+  }, { threshold: 0.2 });
+
+  root.querySelectorAll('.dash-reveal, [data-count]').forEach(function (n) { io.observe(n); });
+  // Bars live inside reveal blocks; observe their containers too.
+  root.querySelectorAll('.dash-skills .dash-reveal').forEach(function (n) { io.observe(n); });
+
+  /* ---- Filter + search ---- */
+  var chips = root.querySelectorAll('.dash-chip');
+  var cards = Array.prototype.slice.call(root.querySelectorAll('[data-cards] .dash-card'));
+  var search = root.querySelector('[data-search]');
+  var empty = root.querySelector('[data-empty]');
+  var activeCat = 'all';
+
+  function apply() {
+    var q = (search && search.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (c) {
+      var okCat = activeCat === 'all' || c.getAttribute('data-category') === activeCat;
+      var okText = !q || (c.getAttribute('data-search-text') || '').toLowerCase().indexOf(q) !== -1;
+      var show = okCat && okText;
+      c.classList.toggle('hide', !show);
+      if (show) shown++;
+    });
+    if (empty) empty.style.display = shown ? 'none' : 'block';
+  }
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      activeCat = chip.getAttribute('data-filter');
+      apply();
+    });
+  });
+  if (search) search.addEventListener('input', apply);
+
+  /* ---- Live refresh of the headline stats from the GitHub API (best-effort) ---- */
+  fetch('https://api.github.com/users/{% endraw %}{{ P.owner }}{% raw %}')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (u) {
+      if (!u) return;
+      var set = function (key, val) {
+        var n = root.querySelector('[data-live="' + key + '"]');
+        if (n && typeof val === 'number') { n.setAttribute('data-count', val); n.textContent = val; }
+      };
+      set('repos', u.public_repos);
+      set('followers', u.followers);
+    })
+    .catch(function () {/* offline / rate-limited — baked values stand */});
+})();
+</script>
+{% endraw %}
