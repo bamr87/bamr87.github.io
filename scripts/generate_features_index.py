@@ -254,7 +254,7 @@ def build_markdown(features: List[dict], header_template: Optional[str] = None) 
             if isinstance(tags_val, str):
                 # convert simple string list formats like "[a, b]" into real list
                 tags_val = [t.strip() for t in tags_val.strip('[]').split(',') if t.strip()]
-            tags = ', '.join(tags_val)
+            tags = ', '.join(str(t) for t in tags_val)
             link = f.get('link', '')
             if link and not (link.startswith('http') or link.startswith('/')):
                 link = f"/{repo}/{link.lstrip('/') }"
@@ -273,7 +273,7 @@ def build_markdown(features: List[dict], header_template: Optional[str] = None) 
             tags_val = f.get('tags', []) or []
             if isinstance(tags_val, str):
                 tags_val = [t.strip() for t in tags_val.strip('[]').split(',') if t.strip()]
-            tags = ', '.join(tags_val)
+            tags = ', '.join(str(t) for t in tags_val)
             link = f.get('link', '')
             if link and not (link.startswith('http') or link.startswith('/')):
                 link = f"/{repo}/{link.lstrip('/') }"

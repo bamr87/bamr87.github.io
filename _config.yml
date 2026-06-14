@@ -192,6 +192,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-relative-links
+  - jekyll-include-cache
 
 ## Gisgus Plugin #################################################################
 
