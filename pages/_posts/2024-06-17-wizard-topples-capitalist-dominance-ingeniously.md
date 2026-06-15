@@ -1,7 +1,7 @@
 ---
 categories: gpt breaking
 date: 2024-06-17 20:03:39
-layout: journals
+layout: article
 title: Wizard Topples Capitalist Dominance Ingeniously
 lastmod: 2024-06-30T14:16:11.378Z
 draft: true

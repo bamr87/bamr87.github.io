@@ -2,9 +2,9 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-06-14T19:39:26Z'
+generated_at: '2026-06-15T04:25:06Z'
 totals:
-  public_repos: 31
+  public_repos: 30
   followers: 14
   shown: 21
   featured: 4
@@ -27,7 +27,7 @@ projects:
   - github-pages
   - jekyll
   - travis-ci
-  pushed_at: '2026-06-14T05:27:00Z'
+  pushed_at: '2026-06-15T03:50:45Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -43,7 +43,7 @@ projects:
   - github-pages
   - headless-cms
   - jekyll
-  pushed_at: '2026-06-14T14:47:36Z'
+  pushed_at: '2026-06-15T03:18:08Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -87,7 +87,7 @@ projects:
   stars: 0
   language: Python
   topics: []
-  pushed_at: '2026-06-14T19:33:57Z'
+  pushed_at: '2026-06-15T04:18:40Z'
   license: ''
   repo_url: https://github.com/bamr87/bashcrawl
   site_url: https://bamr87.github.io/bashcrawl/

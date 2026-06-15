@@ -1,16 +1,13 @@
 ---
 layout: default
 title: "Features Index (Consolidated)"
-lastmod: 2026-06-15T03:17:49Z
----
-
-
----
-title: "Consolidated Feature Index"
-description: "Automatically generated index of features implemented or in backlog across all of the org's repositories."
-type: default
+description: "Automatically generated index of features across the bamr87 repositories."
 permalink: /about/features/
+sidebar:
+  nav: about
+lastmod: 2026-06-15T04:24:59Z
 ---
+
 
 # Consolidated Features Index
 
@@ -51,6 +48,11 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 
 | Title | Repo | Tags | Link |
 | --- | --- | --- | --- |
+| OpenAI service integration | barodybroject | openai, api | /src/services/openai_service.py |
+| Django feature testing and CI | barodybroject | ci, django, testing | /.github/workflows/feature-test.yml |
+| Jekyll site generation | it-journey | site, jekyll, build | / |
+| Algolia Search indexing | it-journey | search, algolia | /search/ |
+| Auto features index generation | it-journey | automation, features | /about/features/ |
 | Bootstrap 5.3.3 Theme Integration | zer0-mistakes | jekyll, theme, bootstrap, ui, responsive | / |
 | Docker-First Development Environment | zer0-mistakes | docker, devops, development, cross-platform | / |
 | Modular AI-Powered Installer | zer0-mistakes | ai, automation, installation, error-handling, bash, installer | / |
@@ -123,4 +125,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-06-15T03:17:49Z
+Last updated: 2026-06-15T04:24:59Z

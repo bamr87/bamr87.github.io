@@ -1,7 +1,7 @@
 ---
 title: test
 author: null
-layout: javascript
+layout: article
 description: null
 categories:
   - Posts

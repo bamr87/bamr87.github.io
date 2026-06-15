@@ -11,7 +11,7 @@ sub-title: null
 excerpt: null
 snippet: null
 author: bamr87
-layout: null
+layout: article
 keywords: {}
 lastmod: 2024-05-28T21:40:13.289Z
 slug: null

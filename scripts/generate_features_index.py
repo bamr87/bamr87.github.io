@@ -231,9 +231,24 @@ def collect_from_github(owner: str, token: Optional[str] = None, repos: Optional
 
 def build_markdown(features: List[dict], header_template: Optional[str] = None) -> str:
     header = header_template or ''
+    # Strip any leading front-matter block from the template — we emit our own
+    # below. Without this the page ends up with TWO front-matter blocks; Jekyll
+    # honors only the first, the template's `permalink` is ignored, and the page
+    # 404s at /about/features/ (the second block renders as stray body text).
+    header = re.sub(r'^---\s*\n.*?\n---\s*\n', '', header, flags=re.S)
     now = datetime.utcnow().replace(microsecond=0).isoformat() + 'Z'
     title = "Features Index (Consolidated)"
-    front = f"---\nlayout: default\ntitle: \"{title}\"\nlastmod: {now}\n---\n\n"
+    front = (
+        "---\n"
+        "layout: default\n"
+        f"title: \"{title}\"\n"
+        "description: \"Automatically generated index of features across the bamr87 repositories.\"\n"
+        "permalink: /about/features/\n"
+        "sidebar:\n"
+        "  nav: about\n"
+        f"lastmod: {now}\n"
+        "---\n\n"
+    )
     content_lines = [front]
     if header:
         content_lines.append(header)

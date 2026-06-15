@@ -2,7 +2,7 @@
 assistant: Title Generator
 categories: gpt
 date: '2024-06-18 12:13:07'
-layout: journals
+layout: article
 prompt: write me a satirical article about a company with good intentions to help
   poor countires irrigate their dessert land but only to have their equipment fail
   and polute the land that was intended to be used to grow wheat. Eventually, the

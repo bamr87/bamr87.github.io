@@ -28,8 +28,8 @@
   children:
     - title: Jekyll
       url: /docs/jekyll
-    - title: Categories
-      url: /categories
+    - title: All Docs
+      url: /docs/
 - title: Notebook
   url: /notes
   children:

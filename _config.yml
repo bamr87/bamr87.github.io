@@ -316,7 +316,8 @@ defaults:
     scope:
       path: pages/_posts
     values:
-      layout: journals
+      layout: article   # zer0-mistakes theme layout for blog posts (was "journals", which no longer exists)
+      post_type: standard
       author_profile: true
       read_time: true
       comments: # true

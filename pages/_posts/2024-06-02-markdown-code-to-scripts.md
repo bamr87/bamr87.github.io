@@ -10,7 +10,7 @@ sub-title: null
 excerpt: null
 snippet: null
 author: bamr87
-layout: null
+layout: article
 keywords: {}
 lastmod: 2024-06-02T21:11:53.991Z
 slug: null
