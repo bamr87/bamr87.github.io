@@ -188,9 +188,7 @@ GitHub Copilot: Yes, the format for the version number in the front matter of yo
 
 This is in line with the Semantic Versioning specification. In your case, `0.0.0` is a valid version number, representing the initial development phase.
 
-bamr87: here;s the error: 2024-05-28 15:29:46.407 [info] pre-commit hook triggered
-grep: invalid option -- P
-usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]
+bamr87: here;s the error: 2024-05-28 15:29:46.407 [info] pre-commit hook triggered grep: invalid option -- P usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] [-C[num]]
 	[-e pattern] [-f file] [--binary-files=value] [--color=when]
 	[--context[=num]] [--directories=action] [--label] [--line-buffered]
 	[--null] [pattern] [file ...]
@@ -238,8 +236,7 @@ done
 
 This script should work on macOS and increment the version number in the front matter of your markdown files.
 
-bamr87: now i'm getting this error: .git/hooks/pre-commit: line 25: version_parts: bad array subscript
-.git/hooks/pre-commit: line 25: version_parts[-1]: bad array subscript
+bamr87: now i'm getting this error: .git/hooks/pre-commit: line 25: version_parts: bad array subscript .git/hooks/pre-commit: line 25: version_parts[-1]: bad array subscript
 
 
 GitHub Copilot: The error message indicates that the array subscript is not working as expected. This is likely because the version of Bash you're using does not support negative array indices. Negative array indices (like `-1` for the last element) are a feature of Bash 4.0 and later, but macOS ships with Bash 3.2 for licensing reasons.

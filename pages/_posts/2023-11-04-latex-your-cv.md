@@ -14,9 +14,7 @@ type: Article
 
 Installing LaTeX on a Mac, integrating it with Visual Studio Code, and using GitHub for source control involves several steps. Below is a comprehensive manual detailing each step in the process.
 
-Installing LaTeX on macOS using Terminal
-Install Homebrew:
-If you don't have Homebrew installed, open Terminal and run the following command:
+Installing LaTeX on macOS using Terminal Install Homebrew: If you don't have Homebrew installed, open Terminal and run the following command:
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.```sh)"
@@ -24,8 +22,7 @@ If you don't have Homebrew installed, open Terminal and run the following comman
 
 Follow the on-screen instructions to complete the installation.
 
-Update Homebrew:
-Before installing any package, it's good practice to update Homebrew:
+Update Homebrew: Before installing any package, it's good practice to update Homebrew:
 
 ```sh
 brew update
@@ -41,8 +38,7 @@ brew install --cask mactex
 
 This process may take a while, as MacTeX is a large download (~4GB).
 
-Verify Installation:
-To check if LaTeX has been installed successfully, run:
+Verify Installation: To check if LaTeX has been installed successfully, run:
 
 ```sh
 which latex
@@ -50,9 +46,7 @@ which latex
 
 This should output the path to the LaTeX binary.
 
-Integrating LaTeX with Visual Studio Code
-Install Visual Studio Code:
-If you don't have Visual Studio Code installed, you can download and install it from the official website, or install it via Homebrew:
+Integrating LaTeX with Visual Studio Code Install Visual Studio Code: If you don't have Visual Studio Code installed, you can download and install it from the official website, or install it via Homebrew:
 
 ```sh
 brew install --cask visual-studio-code
@@ -60,17 +54,9 @@ brew install --cask visual-studio-code
 
 Install LaTeX Workshop Extension:
 
-Open Visual Studio Code.
-Go to Extensions by clicking on the square icon on the left sidebar or pressing Cmd+Shift+X.
-Search for "LaTeX Workshop".
-Click on the install button next to the LaTeX Workshop extension.
-Using LaTeX to Build a Resume
-Create a LaTeX Resume Template:
+Open Visual Studio Code. Go to Extensions by clicking on the square icon on the left sidebar or pressing Cmd+Shift+X. Search for "LaTeX Workshop". Click on the install button next to the LaTeX Workshop extension. Using LaTeX to Build a Resume Create a LaTeX Resume Template:
 
-Open Visual Studio Code.
-Create a new file with the .tex extension, for example, resume.tex.
-Write or paste your LaTeX resume code into this file.
-Here's a simple example of a LaTeX resume template:
+Open Visual Studio Code. Create a new file with the .tex extension, for example, resume.tex. Write or paste your LaTeX resume code into this file. Here's a simple example of a LaTeX resume template:
 
 ```latex
 
@@ -108,18 +94,13 @@ Here's a simple example of a LaTeX resume template:
 
 Build the Resume:
 
-Save the resume.tex file.
-Press Cmd+Alt+B or go to the TeX badge in the status bar at the bottom and click on Build LaTeX project to compile the .tex file to a PDF.
-Using GitHub as a Source Code Repository
-Install Git:
-If Git is not installed on your Mac, install it via Homebrew:
+Save the resume.tex file. Press Cmd+Alt+B or go to the TeX badge in the status bar at the bottom and click on Build LaTeX project to compile the .tex file to a PDF. Using GitHub as a Source Code Repository Install Git: If Git is not installed on your Mac, install it via Homebrew:
 
 ```sh
 brew install git
 ```
 
-Configure Git:
-Set up your user name and email address for your Git commits:
+Configure Git: Set up your user name and email address for your Git commits:
 
 ```sh
 git config --global user.name "Your Name"
@@ -128,14 +109,9 @@ git config --global user.email "your_email@example.com"
 
 Create a GitHub Repository:
 
-Visit GitHub and sign in.
-Click on the "+" icon at the top right and select "New repository".
-Fill in the repository name, description, and set the visibility.
-Click "Create repository".
-Initialize Your Local Repository:
+Visit GitHub and sign in. Click on the "+" icon at the top right and select "New repository". Fill in the repository name, description, and set the visibility. Click "Create repository". Initialize Your Local Repository:
 
-Go to the folder where your LaTeX project is located in Terminal.
-Initialize the repository:
+Go to the folder where your LaTeX project is located in Terminal. Initialize the repository:
 
 ```sh
 git init

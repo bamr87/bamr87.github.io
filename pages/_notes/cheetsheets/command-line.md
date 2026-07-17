@@ -39,9 +39,7 @@ $gh_repo = "bamr87/it-journey"
 gh repo fork $gh_repo --clone=true
 ```
 
-wmic 
-/output:C:\Temp\list.txt product get name, version
-exit
+wmic /output:C:\Temp\list.txt product get name, version exit
 
 ```powershell
 

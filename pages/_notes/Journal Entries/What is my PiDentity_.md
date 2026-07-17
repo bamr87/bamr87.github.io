@@ -7,10 +7,4 @@ longitude: -104.97393330
 altitude: 0.0000
 ---
 
-What is my PiDentity?
-3.14[id] 
-userName:
-email:
-github:
-X:
-phone:
+What is my PiDentity? 3.14[id] userName: email: github: X: phone:

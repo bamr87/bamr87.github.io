@@ -28,8 +28,7 @@ lastmod: 2022-08-07T14:49:51.999Z
 
 test
 
-Getting started
-{: .cols-3 }
+Getting started {: .cols-3 }
 
 ---------------
 

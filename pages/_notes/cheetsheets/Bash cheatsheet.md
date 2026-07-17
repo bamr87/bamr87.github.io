@@ -11,8 +11,7 @@ TODO: create a cheatsheet layout based on devhints.io
 lastmod: 2024-05-14T15:14:49.051Z
 ---
 
-Getting started
-{: .cols-3 }
+Getting started {: .cols-3 }
 
 ---------------
 

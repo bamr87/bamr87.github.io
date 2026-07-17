@@ -15,11 +15,7 @@ lastmod: 2025-11-11T00:00:00.000Z
 With over 10 years of battling the dark forces of accounting systems (e.g., QAD, OneStream, Infor, Oracle) for multi-national manufacturing empires, I have conjured deep insight and understanding of complex IT architectures that weave business operations with financial sorcery, designed to scale like a dragon's hoard.
 
 <!-- Simple GitHub badges for quick view -->
-[![Followers](https://img.shields.io/github/followers/bamr87?label=Followers&style=flat-square)](https://github.com/bamr87)
-[![Repo Stars](https://img.shields.io/github/stars/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/stargazers)
-[![Top Language](https://img.shields.io/github/languages/top/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io)
-[![License](https://img.shields.io/github/license/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/blob/main/LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/commits/main)
+[![Followers](https://img.shields.io/github/followers/bamr87?label=Followers&style=flat-square)](https://github.com/bamr87) [![Repo Stars](https://img.shields.io/github/stars/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/stargazers) [![Top Language](https://img.shields.io/github/languages/top/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io) [![License](https://img.shields.io/github/license/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/blob/main/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/commits/main)
 
 
 Throughout these epic quests, I have aided many manufacturing realms as they embark on perilous journeys into system upgrades, cloud migrations, and ERP modernizations, with some even dabbling in the arcane arts (ML, Git, DevOps). This exposure from a financial system perspective during my career is continuously refined by my master's degree in information systems and bachelor's in finance, bestowed upon me by the ancient scholars.
@@ -39,8 +35,7 @@ This repository serves double-duty: my personal profile/CV and a central dashboa
 > Badges are created with Shields.io and GitHub. Some badges depend on CI or releases; where a workflow or release is not configured the badge may show `unknown`.
 
 ### Quick Stats & Profile
-![Followers](https://img.shields.io/github/followers/bamr87?style=social)
-![Repo Count](https://img.shields.io/github/repo-size/bamr87/bamr87.github.io?label=Profile+Repo&style=flat-square)
+![Followers](https://img.shields.io/github/followers/bamr87?style=social) ![Repo Count](https://img.shields.io/github/repo-size/bamr87/bamr87.github.io?label=Profile+Repo&style=flat-square)
 
 ### Featured Projects
 <!-- AUTO:portfolio:start -->

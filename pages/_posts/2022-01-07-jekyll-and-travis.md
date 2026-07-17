@@ -20,15 +20,13 @@ slug: jekyll-and-travis
  
 Jekyll compiles your website into a `_site` available for FTP to your web server. This can be automated if your source code is already on GitHub.
 
-Travis CI is a free Continuous Integration service for testing and deploying your open source GitHub projects.
-A config file `.travis.yml` stored in the root directory of your project will instruct Travis CI when you push your code or merge a pull request on GitHub. Travis CI can then build your Jekyll site in a VM and deploys your code as per the settings in the config.
+Travis CI is a free Continuous Integration service for testing and deploying your open source GitHub projects. A config file `.travis.yml` stored in the root directory of your project will instruct Travis CI when you push your code or merge a pull request on GitHub. Travis CI can then build your Jekyll site in a VM and deploys your code as per the settings in the config.
 
 ## Create a Travis CI config file
 
 Create a new file in the root of your Jekyll project and name it `.travis.yml`.  The contents of this file will tell Travis CI how to build and deploy your site.
 
-Since this is a ‘Dotfile’, it may be hidden in Finder or file explorer, but should appear in your text editor.
-{: .alert .alert-primary }
+Since this is a ‘Dotfile’, it may be hidden in Finder or file explorer, but should appear in your text editor. {: .alert .alert-primary }
 
 This is the contents of my file:
 
@@ -73,8 +71,7 @@ addons:
 
 ```
 
-NOTE: You need to udate `<youremail>@<domain>.<sub-domain>` with your email address.
-{: .alert .alert-primary }
+NOTE: You need to udate `<youremail>@<domain>.<sub-domain>` with your email address. {: .alert .alert-primary }
 
 ### Define the build environment and dependencies
 
@@ -94,9 +91,7 @@ env:
     - JEKYLL_ENV=production
 ```
 
-This section tells Travis CI that the build requires Ruby and sets the version to 2.3.1. It also lists any Gem dependencies. ‘jekyll-sitemap’ and ‘emoji_for_jekyll’ are specific to my project.
-The branches section allows you to control which branch in your repository you want to build. In my case I am just building the master branch but this section can be used to set up a staging environment too.
-Setting JEKYLL_ENV to production means we can test for this environment variable while doing local testing to ignore things like Google Analytics.
+This section tells Travis CI that the build requires Ruby and sets the version to 2.3.1. It also lists any Gem dependencies. ‘jekyll-sitemap’ and ‘emoji_for_jekyll’ are specific to my project. The branches section allows you to control which branch in your repository you want to build. In my case I am just building the master branch but this section can be used to set up a staging environment too. Setting JEKYLL_ENV to production means we can test for this environment variable while doing local testing to ignore things like Google Analytics.
 
 ## Building and Deploying the site
 
@@ -116,8 +111,7 @@ addons:
       - ncftp
 ```
 
-This section is telling Travis CI to find and execute the file located at _scripts/build.sh and on success execute the file at _scripts/deploy.sh.
-The addons section tells Travis CI to also install an FTP client called ncftp. This will be used to deploy your site.
+This section is telling Travis CI to find and execute the file located at _scripts/build.sh and on success execute the file at _scripts/deploy.sh. The addons section tells Travis CI to also install an FTP client called ncftp. This will be used to deploy your site.
 
 ## Create a folder in the root called _scripts and inside create a build and deploy shell script.
 
@@ -165,15 +159,13 @@ For the deploy script to work you need to configure the environment variables fo
 
 ## Environment Variables settings
 
-Note: Build logs for open source projects are publicly visible so remember to keep the ‘Display value in build log’ option off.
-{: .alert .alert-primary }
+Note: Build logs for open source projects are publicly visible so remember to keep the ‘Display value in build log’ option off. {: .alert .alert-primary }
 
 ## Automate all the things
 
 Now that everything is set up and configured, its simply a case of pushing your code to your GitHub master branch. Travis CI will watch your repository for changes and automatically trigger a build. If, and only when, the build is successful, Travis CI will deploy your site to your FTP host.
 
-With a Pull Request workflow, Travis CI will run a build on the PR and only when it is successful will it allow the branch to be merged into master.
-The notifications section in .travis.yml file can be used to manage who receives build status email notifications.
+With a Pull Request workflow, Travis CI will run a build on the PR and only when it is successful will it allow the branch to be merged into master. The notifications section in .travis.yml file can be used to manage who receives build status email notifications.
 
 ```yaml
 notifications:

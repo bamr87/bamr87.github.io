@@ -20,9 +20,7 @@ I have my personal website hosted on two domains, [{{ site.github_user }}.github
 
 ### 1.2 Header Security
 
-Visit [securityheaders.com](https://securityheaders.com) and scan headers for site https://{{ site.github_user }}.github.io.w
-![image](/assets/images/jekyll/8133/header_githubpages.png)
-All the checks on header are failed. If we scan site https://{{ site.github_user }}.netlify.com, same result will be returned.
+Visit [securityheaders.com](https://securityheaders.com) and scan headers for site https://{{ site.github_user }}.github.io.w ![image](/assets/images/jekyll/8133/header_githubpages.png) All the checks on header are failed. If we scan site https://{{ site.github_user }}.netlify.com, same result will be returned.
 
 ### 1.3 Resolution
 
@@ -51,8 +49,7 @@ In the root directory of repository, create a file named `netlify.toml` with the
       s-max-age=604800'''
 ```
 
-Submit this file, wait for a while to let Netlify deploy the change. Once this file is deployed, run the scan for https://{{ site.github_user }}.netlify.com. This time, we can see all tests for header security are passed.
-![image](/assets/images/jekyll/8133/header_netlify_fixed.png)
+Submit this file, wait for a while to let Netlify deploy the change. Once this file is deployed, run the scan for https://{{ site.github_user }}.netlify.com. This time, we can see all tests for header security are passed. ![image](/assets/images/jekyll/8133/header_netlify_fixed.png)
 
 ## 2. SSL
 

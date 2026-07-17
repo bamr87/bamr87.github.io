@@ -209,8 +209,7 @@ Open browser, access the favorite page.
 ![image](/assets/images/jekyll/8112/favorite.png)  
 
 ## 7. Collection
-Use `Collection` to create similar pages. The [portfolio index page](http://{{ site.github_user }}.github.io/portfolio/) is created by collection.
-Edit `_config.yml`, add following lines.
+Use `Collection` to create similar pages. The [portfolio index page](http://{{ site.github_user }}.github.io/portfolio/) is created by collection. Edit `_config.yml`, add following lines.
 ```
 collections:
   portfolio:
@@ -268,8 +267,7 @@ Same Package Sub-Class  | N       | Y       | Y         | Y
 Other Package Class     | N       | N       | N         | Y
 Other Package Sub-Class | N       | N       | Y         | Y
 ```
-The table in html looks like this.
-![image](/assets/images/jekyll/8112/table_markdown.png)
+The table in html looks like this. ![image](/assets/images/jekyll/8112/table_markdown.png)
 
 If we want to add class to html table, we can append class to the table in markdown, see sample below. Class `table-striped` is defined in Bootstrap 4, which is used to add zebra-stripes to a table.
 ```raw
@@ -333,13 +331,10 @@ Once the table is generated in html, it looks like this.
   </tbody>
 </table>
 ```
-Now, the table has striped rows.
-![image](/assets/images/jekyll/8112/table_striped.png)
+Now, the table has striped rows. ![image](/assets/images/jekyll/8112/table_striped.png)
 
 ## 9. Responsive Tables
-If table has many columns, some of them may be cut off in small screen.
-![image](/assets/images/jekyll/8112/table_partial.png){:width="450px"}
-One solution is to create a responsive table. We can embed the table into a div, which has the class `table-responsive-sm`. Class table-responsive-sm is defined in Bootstrap 4 for creating responsive tables.
+If table has many columns, some of them may be cut off in small screen. ![image](/assets/images/jekyll/8112/table_partial.png){:width="450px"} One solution is to create a responsive table. We can embed the table into a div, which has the class `table-responsive-sm`. Class table-responsive-sm is defined in Bootstrap 4 for creating responsive tables.
 ```raw
 <div class="table-responsive-sm" markdown="block">  
 
@@ -409,8 +404,7 @@ Once the table is generated in html, it looks like this.
 
 </div>
 ```
-One horizontal scrollbar is added to the table on screen.
-![image](/assets/images/jekyll/8112/table_scroll.png){:width="450px"}
+One horizontal scrollbar is added to the table on screen. ![image](/assets/images/jekyll/8112/table_scroll.png){:width="450px"}
 
 ## 10. References
 * [Official Jekyll Document](https://jekyllrb.com/docs/home/)

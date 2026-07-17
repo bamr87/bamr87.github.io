@@ -20,6 +20,5 @@ wsl --install
 wsl --update
 
 ```powershell
-Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
-wsl --set-default-version 2
+Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing wsl --set-default-version 2
 ```
