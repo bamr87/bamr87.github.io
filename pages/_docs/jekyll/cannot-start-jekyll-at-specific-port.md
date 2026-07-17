@@ -70,8 +70,7 @@ sudo /etc/NX/nxserver --shutdown
 sudo /etc/NX/nxserver --startmode manual
 ```
 
-On Windows:
-Open the CMD console as administrator and move to the bin folder under the NoMachine installation directory and run:
+On Windows: Open the CMD console as administrator and move to the bin folder under the NoMachine installation directory and run:
 
 ```raw
 nxserver --shutdown

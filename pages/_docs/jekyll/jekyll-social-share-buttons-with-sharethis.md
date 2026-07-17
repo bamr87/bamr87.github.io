@@ -18,15 +18,11 @@ The [ShareThis](https://www.sharethis.com/) button is an all-in-one widget that 
 ### 2.1 Registration
 Go to https://www.sharethis.com/ to create a new account.
 ### 2.2 Choose Button Type
-ShareThis provides two types of share button, inline buttons and sticky buttons. I choose sticky button for this tutorial.
-![image](/assets/images/jekyll/8118/buttontype.png)
+ShareThis provides two types of share button, inline buttons and sticky buttons. I choose sticky button for this tutorial. ![image](/assets/images/jekyll/8118/buttontype.png)
 ### 2.3 Button Design
-You can design the share buttons. Add or remove buttons based on your needs. Set the alignment, button labels, counts, etc.
-![image](/assets/images/jekyll/8118/buttondesign.png)
+You can design the share buttons. Add or remove buttons based on your needs. Set the alignment, button labels, counts, etc. ![image](/assets/images/jekyll/8118/buttondesign.png)
 ### 2.4 Scripts
-You will get the scripts.
-![image](/assets/images/jekyll/8118/scripts.png)
-Copy and add the scripts into `_layouts/default.html`.
+You will get the scripts. ![image](/assets/images/jekyll/8118/scripts.png) Copy and add the scripts into `_layouts/default.html`.
 ```html
 <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b595ccbf5aa6d001130cf95&product=sticky-share-buttons' async='async'></script>
 ```
@@ -48,8 +44,7 @@ Access the website from mobile device.
 ![image](/assets/images/jekyll/8118/mobile_201.png){:width="400px"}  
 
 ## 5. Cross Domain
-ShareThis supports multiple domains. You can create different share buttons for different domains. For different domains, you will get different urls for sharethis.js.
-![image](/assets/images/jekyll/8118/multi-domain.png)
+ShareThis supports multiple domains. You can create different share buttons for different domains. For different domains, you will get different urls for sharethis.js. ![image](/assets/images/jekyll/8118/multi-domain.png)
 
 I deployed my personal website to two domains, https://{{ site.github_user }}.github.io/ and https://{{ site.github_user }}.github.io/. Both are generated based on the same codes, https://github.com/{{ site.github_user }}/{{ site.github_user }}.github.io.
 

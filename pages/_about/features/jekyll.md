@@ -10,8 +10,7 @@ draft: draft
 {% raw %}
 [Cheatsheet](https://learn-the-web.algonquindesign.ca/topics/jekyll-cheat-sheet/)
 
-Setup and use
-Installation
+Setup and use Installation
 
 All these commands should be executed in Terminal, one-by-one, in order.
 
@@ -24,8 +23,7 @@ echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 
 Then open your repo in Terminal, from GitHub Desktop: Repository > Open in Terminal
 
-bundle init
-Open the new Gemfile, add the following line:
+bundle init Open the new Gemfile, add the following line:
 
 ```bash
 gem "jekyll"
@@ -51,12 +49,9 @@ bundle exec jekyll serve
 
 View your website in a browser:
 
-'http://localhost:4000/'
-Stop Jekyll:
+'http://localhost:4000/' Stop Jekyll:
 
-Control + C
-Or just quit Terminal.
-☛ Jekyll terminal guide.
+Control + C Or just quit Terminal. ☛ Jekyll terminal guide.
 
 If hosting on GitHub, don’t forget baseurl
 
@@ -72,8 +67,7 @@ permalink: pretty
 
 ## Add the baseurl if hosting on GitHub
 
-baseurl: /your-folder-on-github
-Sample folder setup:
+baseurl: /your-folder-on-github Sample folder setup:
 
 ```bash
 _config.yml
@@ -94,8 +88,7 @@ index.html
 meat-eaters.html
 ```
 
-Files & paths
-Linking pages
+Files & paths Linking pages
 
 With permalink: pretty turned on the .html extension can be left off URLs.
 
@@ -137,11 +130,9 @@ Or for GitHub Pages folder hosting:
 <img src="{{site.baseurl}}/images/trex.jpg" alt="">
 ```
 
-Layouts
-Common header & footer
+Layouts Common header & footer
 
-First create a new file inside the _layouts folder, name it whatever you want. Inside that file put the common
-HTML.
+First create a new file inside the _layouts folder, name it whatever you want. Inside that file put the common HTML.
 
 `Use {{content}} as the placeholder for the HTML from each page.`
 
@@ -430,23 +421,13 @@ Usage:
 
   jekyll <subcommand> [options]
 
-Options:
-  -s, --source [DIR]  Source directory (defaults to ./)
-  -d, --destination [DIR]  Destination directory (defaults to ./_site)
+Options: -s, --source [DIR]  Source directory (defaults to ./) -d, --destination [DIR]  Destination directory (defaults to ./_site)
       --safe         Safe mode (defaults to false)
   -p, --plugins PLUGINS_DIR1[,PLUGINS_DIR2[,...]]  Plugins directory (defaults to ./_plugins)
       --layouts DIR  Layouts directory (defaults to ./_layouts)
-  -h, --help         Show this message
-  -v, --version      Print the name and version
-  -t, --trace        Show the full backtrace when an error occurs
+-h, --help         Show this message -v, --version      Print the name and version -t, --trace        Show the full backtrace when an error occurs
 
-Subcommands:
-  serve, server, s      Serve your site locally
-  docs                  Launch local server with docs for Jekyll v2.5.3
-  build, b              Build your site
-  doctor, hyde          Search site and print specific deprecation warnings
-  new                   Creates a new Jekyll site scaffold in PATH
-  help                  Show the help message, optionally for a given subcommand.
+Subcommands: serve, server, s      Serve your site locally docs                  Launch local server with docs for Jekyll v2.5.3 build, b              Build your site doctor, hyde          Search site and print specific deprecation warnings new                   Creates a new Jekyll site scaffold in PATH help                  Show the help message, optionally for a given subcommand.
 ```
 
 ### `build` Command
@@ -470,8 +451,7 @@ Options:
   -D, --drafts       Render posts in the _drafts folder
       --unpublished  Render posts that were marked as unpublished
 
-  -q, --quiet        Silence output.
-  -V, --verbose      Print verbose output.
+-q, --quiet        Silence output. -V, --verbose      Print verbose output.
 ```
 
 ### `serve` Command
@@ -565,9 +545,7 @@ or result in (with `permalink: /:title.html`):
     └── index.html                  # index page
 ```
 
-Note: See the `jekyll-minimal-theme` starter kit for an example
-[source repo](https://github.com/feedreader/jekyll-minimal-theme) and
-[live demo](http://feedreader.github.io/jekyll-minimal-theme).
+Note: See the `jekyll-minimal-theme` starter kit for an example [source repo](https://github.com/feedreader/jekyll-minimal-theme) and [live demo](http://feedreader.github.io/jekyll-minimal-theme).
 
 With post drafts, page collections, data stores and shared building blocks:
 
@@ -599,15 +577,11 @@ With post drafts, page collections, data stores and shared building blocks:
 └── index.html                         # site index template
 ```
 
-Note: The `_post`, `_drafts`, `_layouts`, `_includes`, `_data`, `_books`, `_site` folders must start
-with an underscore (`_`).
+Note: The `_post`, `_drafts`, `_layouts`, `_includes`, `_data`, `_books`, `_site` folders must start with an underscore (`_`).
 
 ## `_posts` Folder
 
-The post file name must follow the format: _YEAR-MONTH-DAY-TITLE.MARKUP_
-(e.g. `2015-01-15-week-3-slideshow.md`).
-The permalinks can be customized for each post,
-but the date and markup language are determined by the file name.
+The post file name must follow the format: _YEAR-MONTH-DAY-TITLE.MARKUP_ (e.g. `2015-01-15-week-3-slideshow.md`). The permalinks can be customized for each post, but the date and markup language are determined by the file name.
 
 ```
 ├── _posts             
@@ -711,10 +685,7 @@ site.tags.TAG              -- The list of all Posts with tag TAG.
 
 **Your Own (Custom)**
 
-All variables set via the command line and 
-in your `_config.yml`  site configuration are available through the `site` variable.
-For example, if you have `url: http://openfootball.github.io` in your configuration file,
-then in your Posts and Pages it will be stored in `site.url`.
+All variables set via the command line and in your `_config.yml`  site configuration are available through the `site` variable. For example, if you have `url: http://openfootball.github.io` in your configuration file, then in your Posts and Pages it will be stored in `site.url`.
 
 If you add in your `_config.yml` site configuration, for example:
 
@@ -730,8 +701,7 @@ site.url     -- your site's url
 site.title   -- your site's title
 ```
 
-Note: Jekyll does not parse changes to `_config.yml` in watch mode,
-you must restart Jekyll to see changes to variables.
+Note: Jekyll does not parse changes to `_config.yml` in watch mode, you must restart Jekyll to see changes to variables.
 
 
 ## Page Variables
@@ -1009,9 +979,7 @@ page.previous     --  The previous post relative to the position of the current 
 ```
 {% raw %}
 {% highlight ruby %}
-def main
-  puts 'Hello World'
-end
+def main puts 'Hello World' end
 {% endhighlight %}
 {% endraw %}
 
@@ -1019,9 +987,7 @@ end
 
 ```
 {% highlight ruby linenos %}         -- Use line numbers
-def main
-  puts 'Hello World'
-end
+def main puts 'Hello World' end
 {% endhighlight %}
 ```
 
@@ -1036,14 +1002,7 @@ The default `date` permalink is defined as:
 ### Permalink Variables
 
 ```
-year        -- Year from the Post’s filename
-month       -- Month from the Post’s filename
-i_month     -- Month from the Post’s filename without leading zeros.
-day         -- Day from the Post’s filename
-i_day       -- Day from the Post’s filename without leading zeros.
-short_year  -- Year from the Post’s filename without the century.
-title       -- Title from the Post’s filename
-categories  -- The specified categories for this Post.
+year        -- Year from the Post’s filename month       -- Month from the Post’s filename i_month     -- Month from the Post’s filename without leading zeros. day         -- Day from the Post’s filename i_day       -- Day from the Post’s filename without leading zeros. short_year  -- Year from the Post’s filename without the century. title       -- Title from the Post’s filename categories  -- The specified categories for this Post.
                If a post has multiple categories, Jekyll will create a hierarchy
                (e.g. /category1/category2). Also Jekyll automatically parses out double slashes in the URLs,
                so if no categories are present, it will ignore this.
@@ -1054,9 +1013,7 @@ categories  -- The specified categories for this Post.
 **Built-in**
 
 ```
-date     /:categories/:year/:month/:day/:title.html
-pretty   /:categories/:year/:month/:day/:title/
-none     /:categories/:title.html
+date     /:categories/:year/:month/:day/:title.html pretty   /:categories/:year/:month/:day/:title/ none     /:categories/:title.html
 ```
 
 **Examples**
@@ -1064,10 +1021,7 @@ none     /:categories/:title.html
 Given a post named: /2015-01-15-week-3-slideshow.md
 
 ```
-None specified (date)             /2015/01/15/week-3-slideshow.html
-pretty                            /2015/01/15/week-3-slideshow/index.html
-/:month-:day-:year/:title.html    /01-15-2015/week-3-slideshow.html
-/blog/:year/:month/:day/:title    /blog/2015/01/15/week-3-slideshow/index.html
+None specified (date)             /2015/01/15/week-3-slideshow.html pretty                            /2015/01/15/week-3-slideshow/index.html /:month-:day-:year/:title.html    /01-15-2015/week-3-slideshow.html /blog/:year/:month/:day/:title    /blog/2015/01/15/week-3-slideshow/index.html
 ```
 
 
@@ -1075,8 +1029,7 @@ pretty                            /2015/01/15/week-3-slideshow/index.html
 
 
 ```
-├── _config.yml            # site configuration (add sass settings)
-└── css 
+├── _config.yml            # site configuration (add sass settings) └── css
     ├── _settings.scss     # include / partial settings
     └── style.scss         # main styles 
 ```
@@ -1092,8 +1045,7 @@ will result in:
 Example - `_config.yml`:
 
 ```
-sass:
-  sass_dir: css    # gets used for partial lookup (default is _sass)
+sass: sass_dir: css    # gets used for partial lookup (default is _sass)
 ```
 
 Example - `_settings.scss`:
@@ -1101,8 +1053,7 @@ Example - `_settings.scss`:
 ```
 $font-family:    Helvetica, Arial, sans-serif;
 
-$color-primary:  #8b0000;    // dark red (ruby)
-...
+$color-primary:  #8b0000;    // dark red (ruby) ...
 ```
 
 Exampe - `style.scss`:
@@ -1113,9 +1064,7 @@ Exampe - `style.scss`:
 
 @import 'settings';           // include partial (will use sass_dir for lookup)
 
-body {
-  font-family:  $font-family; // use variables, nested rules, and more
-}
+body { font-family:  $font-family; // use variables, nested rules, and more }
 ```
 
 ```yaml
@@ -1134,8 +1083,7 @@ or with comments
 ---
 ```
 
-required; ensures Jekyll converts `style.scss` to `style.css`; 
-include all partials (e.g. `_settings.scss`, and so on) with `@import` directives.
+required; ensures Jekyll converts `style.scss` to `style.css`; include all partials (e.g. `_settings.scss`, and so on) with `@import` directives.
 
 (Source: [jekyll-sass-converter gem](https://github.com/jekyll/jekyll-sass-converter))
 

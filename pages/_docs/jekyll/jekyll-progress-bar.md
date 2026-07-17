@@ -78,8 +78,7 @@ Create nanobar with javascript and assign it to div with classname `nanobar`. No
 
 ### 2.6 Test
 
-Access any page, there is a green top bar below the navigation bar.
-![image](/assets/images/jekyll/8113/progress_bar.png)
+Access any page, there is a green top bar below the navigation bar. ![image](/assets/images/jekyll/8113/progress_bar.png)
 
 ## 3. Reference
 

@@ -162,8 +162,7 @@ Include the share bar html file in the `_layouts/tutorial.html` template.
 {% endraw %}
 
 ## 4. Wrapping Up
-We see the share buttons below the pagination bar.
-![image](/assets/images/jekyll/8117/sharelinks.png)
+We see the share buttons below the pagination bar. ![image](/assets/images/jekyll/8117/sharelinks.png)
 
 ## 5. References:
 * [Social Media Share Bar for Jekyll blog/website](https://mycyberuniverse.com/web/social-media-share-bar-jekyll-blog-website.html)

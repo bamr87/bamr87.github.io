@@ -93,8 +93,7 @@ table.hljs-ln td {
   padding-left: 10px !important;
 }
 ```
-The line numbers are displayed as follows.
-![image](/assets/images/jekyll/8123/line-numbers.png)
+The line numbers are displayed as follows. ![image](/assets/images/jekyll/8123/line-numbers.png)
 
 ### 2.4 Styles
 If you don't like the default style, you can change it with other styles. highlight.js supports 185 languages and 89 styles. Check all styles through the [demo page](https://highlightjs.org/static/demo/), then pick up your favorite one.
@@ -103,8 +102,7 @@ For example, I choose the style which is named `Atom One Light`. Concatenate all
 ```raw
 https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-light.min.css
 ```
-Replace the URL for the default style with the URL for the new style. Refresh the page to see the new style.
-![image](/assets/images/jekyll/8123/custom-style.png)
+Replace the URL for the default style with the URL for the new style. Refresh the page to see the new style. ![image](/assets/images/jekyll/8123/custom-style.png)
 
 ## 3. Reference
 * [Code highlighting in Jekyll blog using highlight.js](http://www.vishalsinha.in/2017/04/23/highlight-code-jekyll.html)

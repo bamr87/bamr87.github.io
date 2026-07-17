@@ -30,13 +30,9 @@ The tables below list the available settings for Jekyll, and the various `option
 
 # Destination folders are cleaned on site builds
 
- The contents of `<destination>` are automatically
- cleaned, by default, when the site is built. Files or folders that are not
- created by your site will be removed. Some files could be retained
- by specifying them within the `<keep_files>` configuration directive.
+The contents of `<destination>` are automatically cleaned, by default, when the site is built. Files or folders that are not created by your site will be removed. Some files could be retained by specifying them within the `<keep_files>` configuration directive.
  
- Do not use an important location for `<destination>`; instead, use it as
- a staging area and copy files from there to your web server.
+Do not use an important location for `<destination>`; instead, use it as a staging area and copy files from there to your web server.
  
 # Build Command Options
 
@@ -65,9 +61,7 @@ The tables below list the available settings for Jekyll, and the various `option
 
 # Serve Command Options
 
-In addition to the options below, the `serve` sub-command can accept any of the options
-for the `build` sub-command, which are then applied to the site build which occurs right
-before your site is served.
+In addition to the options below, the `serve` sub-command can accept any of the options for the `build` sub-command, which are then applied to the site build which occurs right before your site is served.
 
 | Setting | Options and Flags |
 | --- | --- |
@@ -86,6 +80,5 @@ before your site is served.
 
 # Do not use tabs in configuration files
 
- This will either lead to parsing errors, or Jekyll will revert to the
- default settings. Use spaces instead.
+This will either lead to parsing errors, or Jekyll will revert to the default settings. Use spaces instead.
  

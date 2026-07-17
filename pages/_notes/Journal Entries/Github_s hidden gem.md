@@ -7,8 +7,6 @@ longitude: -104.97393330
 altitude: 0.0000
 ---
 
-title: "github's hidden gem"
-description: 
-GPT Promt: 
+title: "github's hidden gem" description: GPT Promt:
 
 

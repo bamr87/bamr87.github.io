@@ -132,9 +132,7 @@ convert_md_to_files('zer0.md')
 
 This script reads a markdown file named 'zer0.md' and writes the converted scripts to files with the appropriate extensions for each language block found in the markdown file. The shebang line is added at the top of each script file. You can replace 'zer0.md' with your actual file name.
 
-bamr87: ---------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
-Cell In[9], line 32
+bamr87: --------------------------------------------------------------------------- ValueError                                Traceback (most recent call last) Cell In[9], line 32
      29     if language_file:
      30         language_file.close()
 ---> 32 convert_md_to_files('zer0.md')

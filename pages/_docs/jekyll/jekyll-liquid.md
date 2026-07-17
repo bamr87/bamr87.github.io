@@ -42,8 +42,7 @@ is turned into a comment.
 Raw temporarily disables tag processing. This is useful for generating content (eg, Mustache, Handlebars) which uses conflicting syntax.  
 Input:  
 <div class="highlighter-rouge"><pre class="highlight"><code>&#123;&#37; raw &#37;&#125;
-  In Handlebars, {% raw %} {{ this }} {% endraw %}will be HTML-escaped, but {% raw %}{{{ that }}}{% endraw %} will not.
-&#123;&#37; endraw &#37;&#125;
+In Handlebars, {% raw %} {{ this }} {% endraw %}will be HTML-escaped, but {% raw %}{{{ that }}}{% endraw %} will not. &#123;&#37; endraw &#37;&#125;
 </code></pre>
 </div>
 Output:  

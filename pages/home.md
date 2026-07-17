@@ -25,15 +25,11 @@ I want to build an integration from Github to an LLM (such as Gemini) to review 
 
 ## TODO 
 
-{{ page.TODO }}
-{:.dev-settings .alert .alert-warning}
+{{ page.TODO }} {:.dev-settings .alert .alert-warning}
 
 ## Introduction
 
-This is where we begin our journey. The place where we return after getting lost or wandering off.
-Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world.
-There are [journals](/posts) to capture our experiences and findings, [notes](/notes) to quickly reference when our memories fail, and a [library](/docs) of documentation that gives us the depth of knowledge to build upon and share.
-Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
+This is where we begin our journey. The place where we return after getting lost or wandering off. Think of this as our home base with a collection of maps, tools, and information we need to traverse through this chaotic digital world. There are [journals](/posts) to capture our experiences and findings, [notes](/notes) to quickly reference when our memories fail, and a [library](/docs) of documentation that gives us the depth of knowledge to build upon and share. Everything here is open source and free to use, and the goal is to make this repository a comprehensive learning tool for everyone to use and share.
 
 ## Abstract
 
@@ -81,8 +77,7 @@ For those who are intermediate/advanced and want to work on a specific stack:
 5. Infrastructure (AWS, Azure, GCP, Linux)
 6. Solutions (LAMP, Jamstack, MERN, WINS)
 
-[Source](https://devopedia.org/full-stack-developer)
-[Wiki](https://en.wikipedia.org/wiki/Solution_stack)
+[Source](https://devopedia.org/full-stack-developer) [Wiki](https://en.wikipedia.org/wiki/Solution_stack)
 
 ### Specialization route
 
@@ -168,5 +163,4 @@ local_git_pc             : [ *home-win, 'github\' ]
 local_git_mac            : [ *home-mac, 'GitHub/' ]
 ```
 
-NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal.
-{: .alert .alert-primary }
+NOTE: Replace `$HOME` with your home directory. Normally, it is the user id of the machine. Just type `echo $HOME` in the terminal. {: .alert .alert-primary }

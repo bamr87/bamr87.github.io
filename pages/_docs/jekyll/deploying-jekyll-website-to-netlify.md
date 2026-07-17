@@ -35,38 +35,15 @@ If you don't have netlify account yet, go to [Netlify](https://app.netlify.com/s
 
 ### 2.3 New Site from GitHub
 
-After login, you are in the app home page, click 'New site from Git'.
-![image](/assets/images/jekyll/8143/app.png)
-Choose 'Github', next.
-![image](/assets/images/jekyll/8143/newsite.png)
-Authorize Netlify to access your GitHub account, next.
-![image](/assets/images/jekyll/8143/authorize.png)
-Choose the repository '{{ site.github_user }}.github.io', next.
-![image](/assets/images/jekyll/8143/repository.png)
-Choose `master` for the Branch to deploy, set `jekyll build` to the Build command, and set `_site/` to the Publish directory, click the 'Deploy site' button.
-![image](/assets/images/jekyll/8143/options.png)
-Netlify will start to deploy your site.
-![image](/assets/images/jekyll/8143/inprogress.png)
-Switch to 'Deploy' tab to monitor the status and check the logs.
-![image](/assets/images/jekyll/8143/monitor.png)
-If no issue occurs, the publish will be done after few seconds(or minutes).
-![image](/assets/images/jekyll/8143/published.png)
+After login, you are in the app home page, click 'New site from Git'. ![image](/assets/images/jekyll/8143/app.png) Choose 'Github', next. ![image](/assets/images/jekyll/8143/newsite.png) Authorize Netlify to access your GitHub account, next. ![image](/assets/images/jekyll/8143/authorize.png) Choose the repository '{{ site.github_user }}.github.io', next. ![image](/assets/images/jekyll/8143/repository.png) Choose `master` for the Branch to deploy, set `jekyll build` to the Build command, and set `_site/` to the Publish directory, click the 'Deploy site' button. ![image](/assets/images/jekyll/8143/options.png) Netlify will start to deploy your site. ![image](/assets/images/jekyll/8143/inprogress.png) Switch to 'Deploy' tab to monitor the status and check the logs. ![image](/assets/images/jekyll/8143/monitor.png) If no issue occurs, the publish will be done after few seconds(or minutes). ![image](/assets/images/jekyll/8143/published.png)
 
 ### 2.4 Testing
 
-Click on the green link. Our app is now running in the domain of Netlify.
-![image](/assets/images/jekyll/8143/homepage.png)
-Try to switch other pages, all work fine.
-![image](/assets/images/jekyll/8143/portfolio.png)
+Click on the green link. Our app is now running in the domain of Netlify. ![image](/assets/images/jekyll/8143/homepage.png) Try to switch other pages, all work fine. ![image](/assets/images/jekyll/8143/portfolio.png)
 
 ### 2.5 Changing Site Name
 
-Switch to Settings tab, scroll down and click the 'Change site name' button.
-![image](/assets/images/jekyll/8143/settings.png)
-Change the name to '{{ site.github_user }}' and save.
-![image](/assets/images/jekyll/8143/changename.png)
-Access your site with the new URL, it should work.
-![image](/assets/images/jekyll/8143/newname.png)
+Switch to Settings tab, scroll down and click the 'Change site name' button. ![image](/assets/images/jekyll/8143/settings.png) Change the name to '{{ site.github_user }}' and save. ![image](/assets/images/jekyll/8143/changename.png) Access your site with the new URL, it should work. ![image](/assets/images/jekyll/8143/newname.png)
 
 ## 3. Reference
 
