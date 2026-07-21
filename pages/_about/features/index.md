@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-07-20T03:08:50Z
+lastmod: 2026-07-21T03:07:26Z
 ---
 
 
@@ -63,4 +63,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-07-20T03:08:50Z
+Last updated: 2026-07-21T03:07:26Z
