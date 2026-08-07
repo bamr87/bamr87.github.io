@@ -7,8 +7,11 @@ It reads a curated registry (`_data/projects.yml`), fetches live metadata for ea
 repo from the GitHub API (description, stars, language, homepage, GitHub Pages URL,
 topics, license, last push), merges the two, and renders:
 
-  1. A full showcase page  -> pages/_about/portfolio/index.md
-  2. A featured subset      -> the AUTO:portfolio span inside README.md (the homepage)
+  1. Enriched data + totals -> _data/portfolio.yml (the homepage dashboard at /
+     renders it via site.data.portfolio)
+  2. A full showcase page   -> pages/_about/portfolio/index.md
+  3. A featured subset      -> the AUTO:portfolio span inside README.md (the
+     GitHub profile/CV, rendered on the site at /profile/)
 
 This is the sibling of `generate_features_index.py`: same urllib + optional-token
 approach so it runs unchanged in CI, but it falls back to `gh auth token` locally.
@@ -240,7 +243,7 @@ def render_portfolio_page(projects: List[dict], now: str) -> str:
 
 
 def render_readme_block(projects: List[dict]) -> str:
-    """A compact featured table for the README homepage."""
+    """A compact featured table for the README (GitHub profile, /profile/)."""
     featured = [p for p in projects if p['featured']]
     rows = ["| Project | Description | Links |", "|---|---|---|"]
     for p in featured:
