@@ -1,14 +1,16 @@
 # Portfolio registry — the single source of truth for the profile/portfolio
 # landing page. `scripts/generate_portfolio.py` reads this file, fetches live
 # metadata from GitHub (stars, language, homepage, GitHub Pages URL, topics),
-# and renders pages/_about/portfolio/index.md plus the featured block in README.md.
+# and renders _data/portfolio.yml (homepage dashboard data), pages/_about/portfolio/index.md,
+# and the featured block in README.md (the GitHub profile, served at /profile/).
 #
 # To add or reorder a project: edit this file and rerun the generator. Display
 # order follows the order here. Per-project fields:
 #   repo:      (required) the GitHub repo name under `owner`
-#   featured:  show in the homepage table + the "Featured" section (default false)
+#   featured:  show in the homepage cards, the "Featured" section + README table (default false)
 #   category:  grouping heading on the portfolio page (default "Projects")
 #   blurb:     overrides the GitHub description when the upstream one is weak/empty
+#   live_url:  override the auto Live link (false/none suppresses, a URL string repoints)
 
 owner: bamr87
 

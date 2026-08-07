@@ -14,16 +14,17 @@ description: >-
 
 # Profile / Portfolio landing page
 
-This site (`bamr87.github.io`) is the user's profile + portfolio landing page. The showcase of their GitHub work is **data-driven**: a curated registry plus live GitHub metadata, rendered into two surfaces by one generator. Editing the rendered output by hand is a dead end — it gets overwritten on the next run. Always change the source and regenerate.
+This site (`bamr87.github.io`) is the user's profile + portfolio landing page. The showcase of their GitHub work is **data-driven**: a curated registry plus live GitHub metadata, rendered into three surfaces by one generator. Editing the rendered output by hand is a dead end — it gets overwritten on the next run. Always change the source and regenerate.
 
 ## The pipeline at a glance
 
 ```
-_data/projects.yml   →   scripts/generate_portfolio.py   →   pages/_about/portfolio/index.md   (full showcase page)
-(curated registry)       (fetches live GitHub metadata)  →   README.md  AUTO:portfolio span     (featured table on homepage)
+_data/projects.yml   →   scripts/generate_portfolio.py   →   _data/portfolio.yml                (enriched data + totals — homepage dashboard)
+(curated registry)       (fetches live GitHub metadata)  →   pages/_about/portfolio/index.md    (full showcase page)
+                                                         →   README.md  AUTO:portfolio span     (featured table on the GitHub profile)
 ```
 
-`README.md` is the site homepage (`permalink: /`), so the featured table appears on the landing page; the full grouped showcase lives at `/about/portfolio/`.
+The site homepage is `index.html` at `/` (`layout: home`) — a showcase/dashboard that renders from `_data/portfolio.yml` via `site.data.portfolio`. `README.md` is the GitHub profile/CV and renders on the site at `/profile/` — it is **no longer the homepage**. The full grouped showcase lives at `/about/portfolio/`.
 
 This is the sibling of `scripts/generate_features_index.py` (which aggregates *feature* metadata across repos). Same philosophy: a registry + the GitHub API + deterministic, committable output.
 
@@ -37,18 +38,21 @@ exclude:                 # repos that must never appear (clones, scratch, WIP)
   - some-clone
 projects:
   - repo: it-journey     # required — the repo name under `owner`
-    featured: true       # optional — show in homepage table + "Featured" section
+    featured: true       # optional — homepage featured cards + portfolio "Featured" section + README table
     category: "Apps & AI" # optional — grouping heading on the portfolio page (default "Projects")
     blurb: "..."         # optional — overrides the GitHub description when it's weak/empty
+    live_url: false      # optional — override the auto Live link: false/none suppresses, a URL string repoints
 ```
 
 Only `repo` is required. Everything else (stars, language, homepage/Pages URL, topics, license, last commit) is fetched live from GitHub at generation time, so the registry stays small and the page stays current without manual edits.
 
 ## Common tasks
 
-**Add or feature a project** — append (or move) an entry in `_data/projects.yml`, set `featured:`/`category:`/`blurb:` as desired, then regenerate. Put featured projects where you want them in the homepage table; order matters.
+**Add or feature a project** — append (or move) an entry in `_data/projects.yml`, set `featured:`/`category:`/`blurb:` as desired, then regenerate. Put featured projects where you want them; registry order drives the homepage cards and README table alike.
 
 **Remove a project from the showcase** — delete its entry, or add it to `exclude:` if it keeps reappearing from some auto-source.
+
+**Repoint or hide a Live link** — set `live_url:` on the entry: a URL string replaces the auto-derived homepage/GitHub Pages link; `false`/`none` suppresses the Live link entirely (e.g. a dead custom domain). Key absent = auto-derive. Then regenerate.
 
 **Refresh metadata** (stars/descriptions/links changed upstream) — just rerun the generator; no registry edit needed.
 
@@ -62,8 +66,8 @@ The generator resolves a GitHub token from `--token`, then `FEATURES_GITHUB_TOKE
 
 ## Conventions to preserve
 
-- **Don't hand-edit** `pages/_about/portfolio/index.md` or the
-`<!-- AUTO:portfolio:start -->…<!-- AUTO:portfolio:end -->` span in `README.md`. Both carry a "generated — edit the registry instead" banner. Change `_data/projects.yml` and regenerate.
+- **Don't hand-edit** `_data/portfolio.yml`, `pages/_about/portfolio/index.md`, or the
+`<!-- AUTO:portfolio:start -->…<!-- AUTO:portfolio:end -->` span in `README.md`. All three carry a "generated — edit the registry instead" banner. Change `_data/projects.yml` and regenerate.
 - A repo that fails to fetch (network off, renamed, private) renders from registry
   data alone and logs a warning — fix the `repo:` name if you see a 404 warning.
 - After regenerating, review the diff, then commit registry + generated files
@@ -73,4 +77,4 @@ The generator resolves a GitHub token from `--token`, then `FEATURES_GITHUB_TOKE
 
 ## Why this design
 
-The user wants the site to be the definitive, low-maintenance showcase of their work. A hand-maintained project list rots — stars go stale, links break, new repos never get added. By curating *intent* (which repos, in what order, how described) in a tiny YAML file and pulling *facts* (stars, language, live URL) from GitHub on every build, the page stays accurate with near-zero upkeep, and the homepage + portfolio page can never disagree because one generator writes both.
+The user wants the site to be the definitive, low-maintenance showcase of their work. A hand-maintained project list rots — stars go stale, links break, new repos never get added. By curating *intent* (which repos, in what order, how described) in a tiny YAML file and pulling *facts* (stars, language, live URL) from GitHub on every build, the page stays accurate with near-zero upkeep, and the homepage dashboard, portfolio page, and profile README can never disagree because one generator writes all three.
