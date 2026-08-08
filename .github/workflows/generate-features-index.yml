@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
 
@@ -27,7 +27,6 @@ jobs:
       - name: Run tests and regenerate indexes (remote GitHub mode)
         env:
           FEATURES_GITHUB_TOKEN: ${{ secrets.FEATURES_GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python -m pytest -q scripts/tests || true
           python3 scripts/generate_features_index.py --mode=remote --owner=bamr87 --token=${FEATURES_GITHUB_TOKEN}
