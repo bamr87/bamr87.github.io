@@ -9,7 +9,18 @@ source "https://rubygems.org"
 # For more detailed instructions, look here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll
 
 # Github Pages Gems:
-gem 'github-pages'
+#
+# MUST be in the :jekyll_plugins group so Bundler requires it during Jekyll's
+# boot, BEFORE jekyll-remote-theme. Both gems register a `site, :after_reset`
+# hook and Jekyll runs them in registration order. github-pages' hook reassigns
+# `site.config`, which makes Jekyll re-derive the theme from the plain string
+# `config["theme"]`. jekyll-remote-theme's munger sets that string to
+# "zer0-mistakes" (and site.theme to its own downloaded Theme object), so if
+# github-pages runs *second* it clobbers the remote theme and the build dies
+# with "The zer0-mistakes theme could not be found" — there is no gem by that
+# name. Loading it here registers its hook first, where its one-shot `processed?`
+# guard makes it a no-op by the time the remote theme is wired up.
+gem 'github-pages', group: :jekyll_plugins
 
 # Jekyll Theme
 ## Use the remote theme via `remote_theme:`; avoid requiring a local gem to prevent dependency conflicts
