@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-08-30T02:20:04Z
+lastmod: 2026-08-31T02:21:09Z
 ---
 
 
@@ -50,6 +50,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | --- | --- | --- | --- |
 | OpenAI service integration | barodybroject | openai, api | /src/services/openai_service.py |
 | Django feature testing and CI | barodybroject | ci, django, testing | /.github/workflows/feature-test.yml |
+| Jekyll site generation | it-journey | site, jekyll, build | / |
+| Algolia Search indexing | it-journey | search, algolia | /search/ |
+| Auto features index generation | it-journey | automation, features | /about/features/ |
 
 
 ## Requested / Backlog Features
@@ -63,4 +66,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-08-30T02:20:04Z
+Last updated: 2026-08-31T02:21:09Z
