@@ -1,5 +1,5 @@
 # Use an official Ruby runtime as a parent image
-FROM ruby:2.7.4
+FROM ruby:3.4
 
 # Set environment variables
 ENV GITHUB_GEM_VERSION 231
