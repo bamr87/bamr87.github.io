@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-10-12T02:36:30Z
+lastmod: 2026-10-13T02:32:03Z
 ---
 
 
@@ -48,17 +48,18 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 
 | Title | Repo | Tags | Link |
 | --- | --- | --- | --- |
-| Portfolio + dashboard from the registry | bamr87 | dash, registry, jekyll | /dashboard/ |
-| Monitor board | bamr87 | dash, monitoring | /monitor/ |
-| Fleet triage inbox | bamr87 | dash, triage, fleet-pulse | /triage/ |
-| Issue pipeline board | bamr87 | dash, issues, agents | /issue-pipeline/ |
-| AI harnesses inventory board | bamr87 | dash, harness, schedule | /harnesses/ |
-| Six-layer harness scorecard | bamr87 | dash, harness, scorecard | /harness/ |
-| Fleet features index | bamr87 | dash, verification, coverage, agents | /features/ |
+| Portfolio + dashboard from the registry | bamr87 | dash, registry, portfolio | /portfolio |
+| Projects board | bamr87 | dash, monitoring | /projects |
+| Fleet triage inbox | bamr87 | dash, triage, fleet-pulse | /inbox |
+| Issue pipeline board | bamr87 | dash, issues, agents | /loops/issue_pipeline |
+| AI harnesses inventory board | bamr87 | dash, harness, schedule | /harnesses |
+| Six-layer harness scorecard | bamr87 | dash, harness, scorecard | /harnesses/health |
+| Fleet features index | bamr87 | dash, verification, coverage, agents | /features |
 | Harness Console (local control plane UI) | bamr87 | console, local, fastapi | /bamr87/tools/console/ |
-| Roadmap | bamr87 | dash, roadmap | /roadmap/ |
-| Engagements ledger | bamr87 | dash, finance | /engagements/ |
-| Actions usage analytics | bamr87 | dash, actions, cost | /actions/ |
+| The public site is the console (GitHub Pages) | bamr87 | dash, console, pages, portfolio, github | /connect |
+| Roadmap | bamr87 | dash, roadmap | /roadmap |
+| Engagements ledger | bamr87 | dash, finance | /engagements |
+| Actions usage analytics | bamr87 | dash, actions, cost | /costs |
 | Drift gate | bamr87 | gate, ci, drift | /bamr87/tools/check-drift.sh |
 | Fan-out engine | bamr87 | fanout, kits, standardization | /bamr87/tools/fanout.sh |
 | Agent verification kit + fleet-verify gate | bamr87 | verification, kits, agents, playwright | /bamr87/templates/verify/ |
@@ -84,4 +85,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-12T02:36:30Z
+Last updated: 2026-10-13T02:32:03Z
