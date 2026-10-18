@@ -1,11 +1,6 @@
-- icon: world
-  url: /posts/world/
-  children: []
-  title: World
-- title: Technology
-  icon: tech
-  url: /posts/tech/
-- title: Business
-  icon: Cash
-  url: /posts/business/
-
+- title: All posts
+  icon: bi-journal-text
+  url: /posts/
+- title: Tags
+  icon: bi-tags
+  url: /tags/

@@ -1,15 +1,9 @@
 - title: Home
   icon: bi-house
   url: /home
-  children:
-    - title: Style
-      url: /home/style/
 - title: Map
   icon: bi-map
   url: /search/index
   children:
     - title: Search
       url: /search/
-    - title: Roadmap
-      url: /roadmap/
-

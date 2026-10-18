@@ -33,7 +33,7 @@ A link to [Jekyll Now](http://github.com/barryclark/jekyll-now/). A big ass lite
   
 An image, located within /images
 
-![an image alt text]({{ site.baseurl }}/images/jekyll-logo.png "an image title")
+![an image alt text]({{ "/assets/images/jekyll-seo-preview.png" | relative_url }} "an image title")
 
 * A bulletted list
 - alternative syntax 1
@@ -101,7 +101,7 @@ A link to [Jekyll Now](http://github.com/barryclark/jekyll-now/). A big ass lite
   
 An image, located within /images
 
-![an image alt text]({{ site.baseurl }}/images/jekyll-logo.png "an image title")
+![an image alt text]({{ "/assets/images/jekyll-seo-preview.png" | relative_url }} "an image title")
 
 * A bulletted list
 - alternative syntax 1
