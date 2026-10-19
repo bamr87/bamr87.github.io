@@ -15,7 +15,7 @@ lastmod: 2025-11-11T00:00:00.000Z
 With over 10 years of battling the dark forces of accounting systems (e.g., QAD, OneStream, Infor, Oracle) for multi-national manufacturing empires, I have conjured deep insight and understanding of complex IT architectures that weave business operations with financial sorcery, designed to scale like a dragon's hoard.
 
 <!-- Simple GitHub badges for quick view -->
-[![Followers](https://img.shields.io/github/followers/bamr87?label=Followers&style=flat-square)](https://github.com/bamr87) [![Repo Stars](https://img.shields.io/github/stars/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/stargazers) [![Top Language](https://img.shields.io/github/languages/top/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io) [![License](https://img.shields.io/github/license/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/blob/main/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/commits/main)
+[![Followers](https://img.shields.io/github/followers/bamr87?label=Followers&style=flat-square)](https://github.com/bamr87) [![Repo Stars](https://img.shields.io/github/stars/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/stargazers) [![Top Language](https://img.shields.io/github/languages/top/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io) [![License](https://img.shields.io/github/license/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/blob/main/LICENSE.txt) [![Last Commit](https://img.shields.io/github/last-commit/bamr87/bamr87.github.io?style=flat-square)](https://github.com/bamr87/bamr87.github.io/commits/main)
 
 
 Throughout these epic quests, I have aided many manufacturing realms as they embark on perilous journeys into system upgrades, cloud migrations, and ERP modernizations, with some even dabbling in the arcane arts (ML, Git, DevOps). This exposure from a financial system perspective during my career is continuously refined by my master's degree in information systems and bachelor's in finance, bestowed upon me by the ancient scholars.
@@ -43,10 +43,10 @@ This repository serves double-duty: my personal profile/CV and a central dashboa
 
 | Project | Description | Links |
 |---|---|---|
-| **[it-journey](https://github.com/bamr87/it-journey)** | From zero to hero — a Jekyll-powered hub of docs, tools, scripts, and interactive quests for learning IT and software craft. | [Repo](https://github.com/bamr87/it-journey) |
-| **[zer0-mistakes](https://github.com/bamr87/zer0-mistakes)** | A GitHub Pages-compatible Jekyll theme built on Bootstrap 5, with Docker-first development and self-healing install scripts. Powers this site. | [Repo](https://github.com/bamr87/zer0-mistakes) |
+| **[it-journey](https://github.com/bamr87/it-journey)** | From zero to hero — a Jekyll-powered hub of docs, tools, scripts, and interactive quests for learning IT and software craft. | [Repo](https://github.com/bamr87/it-journey) • [Live](https://it-journey.dev/) |
+| **[zer0-mistakes](https://github.com/bamr87/zer0-mistakes)** | A GitHub Pages-compatible Jekyll theme built on Bootstrap 5, with Docker-first development and self-healing install scripts. Powers this site. | [Repo](https://github.com/bamr87/zer0-mistakes) • [Live](https://zer0-mistakes.com/) |
 | **[barodybroject](https://github.com/bamr87/barodybroject)** | Full-stack, responsive web app with OpenAI integration — a containerized parody-news demo of AI content workflows. | [Repo](https://github.com/bamr87/barodybroject) |
-| **[bamr87](https://github.com/bamr87/bamr87)** | The monorepo: a self-managing dashboard tying together my projects, docs, and automation via Git submodules. | [Repo](https://github.com/bamr87/bamr87) |
+| **[bamr87](https://github.com/bamr87/bamr87)** | The monorepo: a self-managing dashboard tying together my projects, docs, and automation via Git submodules. | [Repo](https://github.com/bamr87/bamr87) • [Live](https://bamr87.github.io/bamr87/) |
 
 _See the full [portfolio](/about/portfolio/) for every project._
 <!-- AUTO:portfolio:end -->
