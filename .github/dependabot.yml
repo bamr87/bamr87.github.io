@@ -1,0 +1,20 @@
+# kit: community v0.1.0 — UPS-QA-41: github-actions only, weekly,
+# grouped, `ci` commit prefix. No package ecosystems: the fleet installs latest
+# (docs/DEPENDENCIES.md), which makes them redundant. This is also what moves
+# callers of the hub's reusable workflows from one tag to the next (UPS-WORK-10).
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    labels: ["ci", "agent:queued"]
+    groups:
+      github-actions:
+        patterns:
+          - "*"
