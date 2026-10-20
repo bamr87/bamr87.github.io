@@ -19,6 +19,6 @@ bamr87: Based on the provided color scheme and theme of the desired image, gener
 
 image_theme: "retro computers"
 
-![](../_resources/favicon_gpt_computer_retro.png)
+![](/assets/images/favicon_gpt_computer_retro.png)
 
 https://www.favicon-generator.org/

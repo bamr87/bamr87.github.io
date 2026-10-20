@@ -1,41 +1,50 @@
-- title: Setup
+- title: Docs
+  url: /docs/
   children:
-    - title: Configuration
-      url: /docs/configuration
-    - title: Overriding Theme Defaults
-      url: /docs/overriding-theme-defaults
-- title: Features
+    - title: Docs index
+      url: /docs/
+- title: Jekyll
+  url: /docs/jekyll/
   children:
-    - title: Navigation
-      url: /docs/navigation
-    - title: UI Text
-      url: /docs/ui-text
-    - title: Authors
-      url: /docs/authors
-    - title: Layouts
-      url: /docs/layouts
-- title: Programming
-  children:
-    - title: Liquid
-      url: /
-      source: null
-- title: Headless CMS
-  children:
-    - title: Working with Posts
-      url: /docs/posts
-    - title: Working with Collections
-      url: /docs/collections
-    - title: Helpers
-      url: /docs/helpers
-    - title: Utility Classes
-      url: /docs/utility-classes
-- title: Design
-  children:
-    - title: Stylesheets
-      url: /docs/stylesheets
-    - title: JavaScript
-      url: /docs/javascript
-- title: Releases
-  children:
-    - title: History
-      url: /docs/history
+    - title: "Cannot Start Jekyll at Specific Port"
+      url: /docs/cannot-start-jekyll-at-specific-port/
+    - title: "Continuously Deploy Jekyll to GitHub Pages with Travis-CI"
+      url: /docs/continuously-deploy-jekyll-website-to-github-pages-with-travis-ci/
+    - title: "Deploying Jekyll Website to Netlify"
+      url: /docs/deploying-jekyll-website-to-netlify/
+    - title: "Deploying Personal Website with Custom Domain"
+      url: /docs/deploying-personal-website-with-custom-domain/
+    - title: "Generating Diagrams and Flowcharts with Mermaid"
+      url: /docs/generating-diagrams-and-flowcharts-with-mermaid/
+    - title: "Jekyll - Comments with Disqus"
+      url: /docs/jekyll-comments-with-disqus/
+    - title: "Configuration Options | Jekyll • Simple, blog-aware, static sites"
+      url: /docs/jekyll-config/
+    - title: "Jekyll - Diagram with Mermaid"
+      url: /docs/jekyll-diagram-with-mermaid/
+    - title: "Jekyll Frontmatter CMS"
+      url: /docs/jekyll-frontmatter-cms/
+    - title: "Jekyll - Google Analytics - Draft"
+      url: /docs/jekyll-google-analytics/
+    - title: "Jekyll - Highlighting"
+      url: /docs/jekyll-highlighting/
+    - title: "Jekyll - Liquid"
+      url: /docs/jekyll-liquid/
+    - title: "Jekyll - Math Symbols with MathJax"
+      url: /docs/jekyll-math-symbols-with-mathjax/
+    - title: "Jekyll - Pagination"
+      url: /docs/jekyll-pagination/
+    - title: "Jekyll - Performance Optimization"
+      url: /docs/jekyll-performance-optimization/
+    - title: "Jekyll - Progress Bar"
+      url: /docs/jekyll-progress-bar/
+    - title: "Jekyll - Search Function for Static Website - draft"
+      url: /docs/jekyll-search-function-for-static-website/
+    - title: "Jekyll - Security"
+      url: /docs/jekyll-security/
+    - title: "Jekyll - Social Share Buttons with ShareThis"
+      url: /docs/jekyll-social-share-buttons-with-sharethis/
+    - title: "Jekyll - Social Share Buttons"
+      url: /docs/jekyll-social-share-buttons/
+    - title: "Jekyll - Usage and Customization"
+      url: /docs/jekyll-usage-and-customization/

@@ -17,11 +17,11 @@ lastmod: 2024-05-20T17:37:08.794Z
 
 ## Krita Settings - Pen Pressure
 
-![](../../assets/images/krita-config.png)
+![](/assets/images/krita-config.png)
 
 
 
-![](../../assets/images/krita-config-tablet-api.png)
+![](/assets/images/krita-config-tablet-api.png)
 
 
 ## Power Toys Color Picker

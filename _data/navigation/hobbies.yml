@@ -4,10 +4,4 @@
   - title: "home"
     url: /hobbies
   - title: "Music"
-    url: /hobbies/music
-  - title: "Gaming"
-    url: /hobbies/gaming
-  - title: "Art"
-    url: /hobbies/art
-  - title: "Cooking"
-    url: /hobbies/cooking
+    url: /hobbies/hobbies/music/

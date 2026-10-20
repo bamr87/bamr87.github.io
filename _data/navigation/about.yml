@@ -4,17 +4,12 @@
       url: /about
     - title: Purpose
       url: /about/purpose
-    - title: Approach
-      url: /about/approach
     - title: Contributing
       url: /about/contributing
     - title: License
-      url: /about/license
-    - title: Terms &amp; Privacy Policy
-      url: /terms
+      url: https://github.com/bamr87/bamr87.github.io/blob/main/LICENSE.txt
     - title: Theme
       url: /about/theme
     - title: Sitemap
       url: /about/sitemap
   url: /about/
-
