@@ -69,14 +69,6 @@ projects:
     category: "Apps & AI"
     blurb: "WTD (What To Do) — a recursive TODO engine that turns vague goals into actionable steps."
 
-  - repo: django-fin
-    category: "Apps & AI"
-    blurb: "A Django-based finance application exploring accounting and reporting workflows."
-
-  - repo: amrs-project
-    category: "Apps & AI"
-    blurb: "AMRS — a modular Django + DRF accounting & management reporting system with JWT auth and a Bootstrap 5 frontend, built to run standalone or integrate with larger ERP platforms."
-
   # ---- Editor tooling ---------------------------------------------------------
   - repo: vs-sonic-pi
     category: "Editor Tooling"
@@ -86,26 +78,13 @@ projects:
     category: "Editor Tooling"
     blurb: "A VS Code extension for working with CSV files."
 
-  - repo: edgar-data-parse
+  - repo: fredgar-ai   # renamed from edgar-data-parse; blurb comes from the GitHub description
     category: "Data"
-    blurb: "Tools for parsing financial filings from the SEC's EDGAR database."
 
   # ---- Knowledge bases --------------------------------------------------------
   - repo: "1987"
     category: "Knowledge Bases"
     blurb: "A self-growing knowledge base about the year 1987 — history, people, and culture."
-
-  - repo: "1990"
-    category: "Knowledge Bases"
-    blurb: "A self-growing knowledge base about the year 1990 — history, science, technology, arts, and society."
-
-  - repo: "1897"
-    category: "Knowledge Bases"
-    blurb: "A self-growing knowledge base about the year 1897."
-
-  - repo: "1764"
-    category: "Knowledge Bases"
-    blurb: "All things 1764 — history, events, and culture from the year."
 
   # ---- Infrastructure ---------------------------------------------------------
   - repo: README

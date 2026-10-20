@@ -2,32 +2,35 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-06-15T04:25:06Z'
+generated_at: '2026-10-19T03:02:35Z'
 totals:
-  public_repos: 30
-  followers: 14
-  shown: 21
+  public_repos: 48
+  followers: 21
+  shown: 16
   featured: 4
-  stars: 16
+  stars: 49
   languages:
-    Python: 11
-    Shell: 3
+    Python: 9
+    JavaScript: 3
     TypeScript: 2
-    JavaScript: 1
+    HTML: 1
+    Shell: 1
 projects:
 - repo: it-journey
   featured: true
   category: Learning & Docs
   description: From zero to hero — a Jekyll-powered hub of docs, tools, scripts, and interactive quests for learning IT and software craft.
-  stars: 8
+  stars: 10
   language: Python
   topics:
-  - algolia
-  - bash-script
+  - documentation
+  - education
+  - gamification
   - github-pages
   - jekyll
-  - travis-ci
-  pushed_at: '2026-06-15T03:50:45Z'
+  - learning-path
+  - zer0-mistakes
+  pushed_at: '2026-10-19T02:41:05Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -36,14 +39,17 @@ projects:
   category: Jekyll & Web
   description: A GitHub Pages-compatible Jekyll theme built on Bootstrap 5, with Docker-first development and self-healing install scripts. Powers this site.
   stars: 2
-  language: Shell
+  language: JavaScript
   topics:
+  - ai
   - bootstrap5
-  - fullstack-development
+  - docker
   - github-pages
   - headless-cms
   - jekyll
-  pushed_at: '2026-06-15T03:18:08Z'
+  - jekyll-theme
+  - ruby
+  pushed_at: '2026-10-18T23:44:50Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -54,15 +60,15 @@ projects:
   stars: 1
   language: Python
   topics:
-  - ai-assistants
-  - aws-ses
+  - ai
   - azure
-  - bootstrap
+  - claude-code
   - django
   - jekyll
   - openai
+  - postgresql
   - python
-  pushed_at: '2026-04-28T03:51:07Z'
+  pushed_at: '2026-10-18T15:37:33Z'
   license: MIT
   repo_url: https://github.com/bamr87/barodybroject
   site_url: null
@@ -71,42 +77,54 @@ projects:
   category: Infrastructure
   description: 'The monorepo: a self-managing dashboard tying together my projects, docs, and automation via Git submodules.'
   stars: 1
-  language: Shell
+  language: HTML
   topics:
-  - config
-  - github-config
+  - ai-agents
+  - claude-code
+  - devops
+  - git-submodules
+  - github-actions
+  - github-pages
+  - jekyll
   - monorepo
-  pushed_at: '2026-06-11T22:09:37Z'
-  license: ''
+  pushed_at: '2026-10-19T02:34:04Z'
+  license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
 - repo: bashcrawl
   featured: false
   category: Learning & Docs
   description: A terminal game for learning the Linux command line by exploring a dungeon, one `cd` at a time.
-  stars: 0
-  language: Python
-  topics: []
-  pushed_at: '2026-06-15T04:18:40Z'
-  license: ''
+  stars: 27
+  language: JavaScript
+  topics:
+  - bash
+  - education
+  - game
+  - github-pages
+  - javascript
+  - linux
+  - terminal
+  pushed_at: '2026-10-19T02:47:31Z'
+  license: GPL-3.0
   repo_url: https://github.com/bamr87/bashcrawl
   site_url: https://bamr87.github.io/bashcrawl/
 - repo: aieo
   featured: false
   category: Apps & AI
   description: AI Engine Optimization — tooling to optimize content for citation and discovery by AI engines.
-  stars: 1
+  stars: 4
   language: Python
   topics:
   - ai
   - ai-engine-optimization
-  - aieo
-  - content-optimization
   - fastapi
+  - mcp
   - python
   - react
   - seo
-  pushed_at: '2026-06-09T02:03:06Z'
+  - typescript
+  pushed_at: '2026-10-18T02:31:39Z'
   license: MIT
   repo_url: https://github.com/bamr87/aieo
   site_url: null
@@ -116,19 +134,33 @@ projects:
   description: An always-on AI legal assistant for developers.
   stars: 1
   language: Python
-  topics: []
-  pushed_at: '2026-05-08T01:38:06Z'
+  topics:
+  - ai
+  - cli
+  - compliance
+  - experimental
+  - legal-tech
+  - python
+  - vscode-extension
+  pushed_at: '2026-10-17T19:12:30Z'
   license: MIT
   repo_url: https://github.com/bamr87/lawmode
   site_url: null
 - repo: githubai
   featured: false
   category: Apps & AI
-  description: ''
+  description: 'Claude Code SDLC framework: reusable GitHub Actions that triage issues, implement work, review PRs and cut releases.'
   stars: 1
-  language: Python
-  topics: []
-  pushed_at: '2026-06-06T16:22:49Z'
+  language: JavaScript
+  topics:
+  - ai-agents
+  - automation
+  - claude-code
+  - devops
+  - github-actions
+  - github-app
+  - python
+  pushed_at: '2026-10-18T02:27:07Z'
   license: MIT
   repo_url: https://github.com/bamr87/githubai
   site_url: null
@@ -137,44 +169,37 @@ projects:
   category: Apps & AI
   description: Seed scaffolding for AI-first content projects.
   stars: 0
-  language: JavaScript
-  topics: []
-  pushed_at: '2026-06-07T20:49:54Z'
-  license: ''
+  language: Python
+  topics:
+  - ai-agents
+  - automation
+  - claude-code
+  - docker
+  - github-actions
+  - python
+  - template
+  - unmaintained
+  pushed_at: '2026-10-18T02:34:16Z'
+  license: MIT
   repo_url: https://github.com/bamr87/ai-seed
   site_url: null
 - repo: wtd
   featured: false
   category: Apps & AI
   description: WTD (What To Do) — a recursive TODO engine that turns vague goals into actionable steps.
-  stars: 0
+  stars: 1
   language: Python
-  topics: []
-  pushed_at: '2026-05-03T02:23:29Z'
+  topics:
+  - ai-agents
+  - automation
+  - claude-code
+  - cli
+  - python
+  - todo
+  - unmaintained
+  pushed_at: '2026-10-18T02:18:48Z'
   license: MIT
   repo_url: https://github.com/bamr87/wtd
-  site_url: null
-- repo: django-fin
-  featured: false
-  category: Apps & AI
-  description: A Django-based finance application exploring accounting and reporting workflows.
-  stars: 0
-  language: Python
-  topics: []
-  pushed_at: '2026-02-04T05:15:14Z'
-  license: ''
-  repo_url: https://github.com/bamr87/django-fin
-  site_url: null
-- repo: amrs-project
-  featured: false
-  category: Apps & AI
-  description: AMRS — a modular Django + DRF accounting & management reporting system with JWT auth and a Bootstrap 5 frontend, built to run standalone or integrate with larger ERP platforms.
-  stars: 0
-  language: Python
-  topics: []
-  pushed_at: '2025-11-15T23:35:08Z'
-  license: ''
-  repo_url: https://github.com/bamr87/amrs-project
   site_url: null
 - repo: vs-sonic-pi
   featured: false
@@ -182,8 +207,14 @@ projects:
   description: Code. Music. Live. — write and perform Sonic Pi music directly from VS Code.
   stars: 0
   language: TypeScript
-  topics: []
-  pushed_at: '2026-06-12T20:14:25Z'
+  topics:
+  - live-coding
+  - maintenance-mode
+  - music
+  - sonic-pi
+  - typescript
+  - vscode-extension
+  pushed_at: '2026-10-17T19:12:54Z'
   license: ''
   repo_url: https://github.com/bamr87/vs-sonic-pi
   site_url: null
@@ -194,84 +225,79 @@ projects:
   stars: 0
   language: TypeScript
   topics: []
-  pushed_at: '2026-05-28T03:52:13Z'
+  pushed_at: '2026-10-14T20:18:10Z'
   license: MIT
-  repo_url: https://github.com/bamr87/csv-vscoode
-  site_url: null
-- repo: edgar-data-parse
+  repo_url: https://github.com/bash-365/csv-vscoode
+  site_url: https://apps.bash-365.com/
+- repo: fredgar-ai
   featured: false
   category: Data
-  description: Tools for parsing financial filings from the SEC's EDGAR database.
+  description: Django + React app for exploring SEC EDGAR company data and FRED macro series, with AI-assisted summaries.
   stars: 1
   language: Python
-  topics: []
-  pushed_at: '2026-06-04T02:17:45Z'
-  license: ''
-  repo_url: https://github.com/bamr87/edgar-data-parse
-  site_url: null
+  topics:
+  - ai
+  - django
+  - finance
+  - fred
+  - python
+  - react
+  - sec-edgar
+  - typescript
+  pushed_at: '2026-10-18T02:31:17Z'
+  license: MIT
+  repo_url: https://github.com/bamr87/fredgar-ai
+  site_url: https://bamr87.github.io/fredgar-ai/
 - repo: '1987'
   featured: false
   category: Knowledge Bases
   description: A self-growing knowledge base about the year 1987 — history, people, and culture.
   stars: 0
-  language: ''
-  topics: []
-  pushed_at: '2026-06-14T16:07:04Z'
-  license: ''
+  language: Python
+  topics:
+  - ai
+  - claude-code
+  - experimental
+  - github-pages
+  - history
+  - knowledge-base
+  - markdown
+  pushed_at: '2026-10-17T19:47:16Z'
+  license: MIT
   repo_url: https://github.com/bamr87/1987
-  site_url: null
-- repo: '1990'
-  featured: false
-  category: Knowledge Bases
-  description: A self-growing knowledge base about the year 1990 — history, science, technology, arts, and society.
-  stars: 0
-  language: ''
-  topics: []
-  pushed_at: '2026-06-10T03:53:41Z'
-  license: ''
-  repo_url: https://github.com/bamr87/1990
-  site_url: null
-- repo: '1897'
-  featured: false
-  category: Knowledge Bases
-  description: A self-growing knowledge base about the year 1897.
-  stars: 0
-  language: ''
-  topics: []
-  pushed_at: '2026-06-07T22:31:02Z'
-  license: ''
-  repo_url: https://github.com/bamr87/1897
-  site_url: null
-- repo: '1764'
-  featured: false
-  category: Knowledge Bases
-  description: All things 1764 — history, events, and culture from the year.
-  stars: 0
-  language: ''
-  topics: []
-  pushed_at: '2026-06-11T04:09:09Z'
-  license: ''
-  repo_url: https://github.com/bamr87/1764
-  site_url: null
+  site_url: https://bamr87.github.io/1987/
 - repo: README
   featured: false
   category: Infrastructure
   description: Documentation engine and content hub (MkDocs) powering the monorepo's docs site.
   stars: 0
   language: Python
-  topics: []
-  pushed_at: '2026-06-06T05:06:42Z'
-  license: ''
+  topics:
+  - ai
+  - documentation
+  - github-pages
+  - knowledge-base
+  - mcp
+  - mkdocs
+  - python
+  pushed_at: '2026-10-18T02:34:17Z'
+  license: MIT
   repo_url: https://github.com/bamr87/README
-  site_url: null
+  site_url: https://bamr87.github.io/README/
 - repo: scripts
   featured: false
   category: Infrastructure
   description: A collection of reusable Bash and Python automation scripts for the monorepo.
   stars: 0
   language: Shell
-  topics: []
-  pushed_at: '2026-03-08T19:59:40Z'
-  license: ''
+  topics:
+  - automation
+  - bash
+  - cli
+  - developer-tools
+  - github
+  - scaffolding
+  pushed_at: '2026-10-18T02:34:06Z'
+  license: MIT
   repo_url: https://github.com/bamr87/scripts
   site_url: null

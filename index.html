@@ -32,11 +32,12 @@ html { scroll-behavior: smooth; }
   --d-surface-2: rgba(255,255,255,.05);
   --d-border: rgba(255,255,255,.10);
   --d-text: var(--bs-body-color, #e6edf3);
-  --d-muted: #9aa7b4;
+  --d-muted: #57606a; /* light scheme: ~6.4:1 on #fff (WCAG AA) */
   --d-radius: 16px;
   color: var(--d-text);
   font-synthesis: none;
 }
+[data-bs-theme="dark"] .dash { --d-muted: #9aa7b4; } /* dark scheme: keep the original muted tone */
 .dash * { box-sizing: border-box; }
 .dash section { position: relative; }
 .dash .wrap { max-width: 1180px; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
@@ -81,7 +82,7 @@ html { scroll-behavior: smooth; }
 @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(46,204,113,.5)} 70%{box-shadow:0 0 0 10px rgba(46,204,113,0)} 100%{box-shadow:0 0 0 0 rgba(46,204,113,0)} }
 .dash-hero h1 {
   font-size: clamp(2.6rem, 8vw, 5.2rem); font-weight: 900; line-height: 1.02; letter-spacing: -.03em; margin: 0;
-  background: linear-gradient(110deg, #fff 10%, var(--d-accent) 45%, var(--d-accent2) 70%, var(--d-accent3) 95%);
+  background: linear-gradient(110deg, var(--d-text) 10%, var(--d-accent) 45%, var(--d-accent2) 70%, var(--d-accent3) 95%);
   background-size: 220% auto; -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; animation: shine 8s linear infinite;
 }
@@ -116,6 +117,7 @@ html { scroll-behavior: smooth; }
 /* ---------- SECTIONS ---------- */
 .dash-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
 .dash-featured .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+@media (min-width: 768px) { .dash-featured .cards { grid-template-columns: repeat(2, 1fr); } }
 .dash-card {
   position: relative; display: flex; flex-direction: column; padding: 1.5rem; border-radius: var(--d-radius);
   background: var(--d-surface); border: 1px solid var(--d-border); overflow: hidden;
@@ -205,28 +207,28 @@ html { scroll-behavior: smooth; }
   <section class="dash-hero">
     <div class="dash-hero__bg" aria-hidden="true"></div>
     <div class="dash-hero__inner">
-      <span class="badge-pill"><span class="dot"></span> Available for collaboration · {{ P.totals.public_repos }} public repos</span>
+      <span class="badge-pill"><span class="dot"></span> Available for collaboration · <span data-live="repos">{{ P.totals.public_repos }}</span> public repos</span>
       <h1>Amr Abdel-Motaleb</h1>
       <div class="role">I build <span class="type" data-type-target>systems</span></div>
       <p class="tagline">Solutions architect and engineer weaving business operations with financial precision — and shipping open-source tools, learning platforms, and AI experiments along the way.</p>
       <div class="dash-cta">
-        <a class="dash-btn dash-btn--primary" href="#projects"><i class="bi bi-grid-3x3-gap-fill"></i> Explore the work</a>
-        <a class="dash-btn dash-btn--ghost" href="https://github.com/{{ P.owner }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-        <a class="dash-btn dash-btn--ghost" href="/profile/"><i class="bi bi-person-vcard"></i> Résumé</a>
+        <a class="dash-btn dash-btn--primary" href="#projects"><i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i> Explore the work</a>
+        <a class="dash-btn dash-btn--ghost" href="https://github.com/{{ P.owner }}" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> GitHub</a>
+        <a class="dash-btn dash-btn--ghost" href="/profile/"><i class="bi bi-person-vcard" aria-hidden="true"></i> Résumé</a>
       </div>
     </div>
-    <a class="dash-scroll" href="#stats" aria-label="Scroll down"><i class="bi bi-chevron-double-down"></i></a>
+    <a class="dash-scroll" href="#stats" aria-label="Scroll down"><i class="bi bi-chevron-double-down" aria-hidden="true"></i></a>
   </section>
 
   <!-- ===================== STAT DASHBOARD ===================== -->
   <section class="dash-stats" id="stats">
     <div class="wrap grid">
-      <div class="dash-stat"><div class="num" data-count="{{ P.totals.public_repos }}" data-live="repos">0</div><div class="lbl">Public Repos</div></div>
-      <div class="dash-stat"><div class="num" data-count="{{ P.totals.stars }}" data-live="stars">0</div><div class="lbl">Stars Earned</div></div>
-      <div class="dash-stat"><div class="num" data-count="{{ P.totals.followers }}" data-live="followers">0</div><div class="lbl">Followers</div></div>
-      <div class="dash-stat"><div class="num" data-count="{{ P.totals.shown }}">0</div><div class="lbl">Showcased</div></div>
-      <div class="dash-stat"><div class="num" data-count="{{ P.totals.languages | size }}">0</div><div class="lbl">Languages</div></div>
-      <div class="dash-stat"><div class="num" data-count="14" data-suffix="+">0</div><div class="lbl">Years Building</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.public_repos }}" data-live="repos">{{ P.totals.public_repos }}</div><div class="lbl">Public Repos</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.stars }}" data-live="stars">{{ P.totals.stars }}</div><div class="lbl">Stars Earned</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.followers }}" data-live="followers">{{ P.totals.followers }}</div><div class="lbl">Followers</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.shown }}">{{ P.totals.shown }}</div><div class="lbl">Showcased</div></div>
+      <div class="dash-stat"><div class="num" data-count="{{ P.totals.languages | size }}">{{ P.totals.languages | size }}</div><div class="lbl">Languages</div></div>
+      <div class="dash-stat"><div class="num" data-count="14" data-suffix="+">14+</div><div class="lbl">Years Building</div></div>
     </div>
   </section>
 
@@ -239,16 +241,16 @@ html { scroll-behavior: smooth; }
       <div class="cards">
         {%- for p in P.projects -%}{%- if p.featured -%}
         <article class="dash-card is-featured dash-reveal">
-          <div class="name"><i class="bi bi-star-fill" style="color:var(--d-accent2);font-size:.9rem"></i> <a href="{{ p.repo_url }}" target="_blank" rel="noopener">{{ p.repo }}</a></div>
+          <div class="name"><i class="bi bi-star-fill" style="color:var(--d-accent2);font-size:.9rem" aria-hidden="true"></i> <a href="{{ p.repo_url }}" target="_blank" rel="noopener">{{ p.repo }}</a></div>
           <p class="desc">{{ p.description }}</p>
           <div class="meta">
             {%- if p.language %}<span class="item"><span class="lang-dot" data-lang="{{ p.language }}"></span> {{ p.language }}</span>{% endif -%}
-            <span class="item"><i class="bi bi-star"></i> {{ p.stars }}</span>
+            <span class="item"><i class="bi bi-star" aria-hidden="true"></i> {{ p.stars }}</span>
           </div>
           <div class="topics">{% for t in p.topics limit: 4 %}<span>{{ t }}</span>{% endfor %}</div>
           <div class="links">
-            <a href="{{ p.repo_url }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
-            {%- if p.site_url %}<a class="live" href="{{ p.site_url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>{% endif -%}
+            <a href="{{ p.repo_url }}" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> Repo</a>
+            {%- if p.site_url %}<a class="live" href="{{ p.site_url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Live</a>{% endif -%}
           </div>
         </article>
         {%- endif -%}{%- endfor -%}
@@ -278,13 +280,13 @@ html { scroll-behavior: smooth; }
           <p class="desc">{{ p.description | default: "—" }}</p>
           <div class="meta">
             {%- if p.language %}<span class="item"><span class="lang-dot" data-lang="{{ p.language }}"></span> {{ p.language }}</span>{% endif -%}
-            <span class="item"><i class="bi bi-star"></i> {{ p.stars }}</span>
+            <span class="item"><i class="bi bi-star" aria-hidden="true"></i> {{ p.stars }}</span>
             <span class="item" style="opacity:.7">{{ p.category }}</span>
           </div>
           <div class="topics">{% for t in p.topics limit: 4 %}<span>{{ t }}</span>{% endfor %}</div>
           <div class="links">
-            <a href="{{ p.repo_url }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
-            {%- if p.site_url %}<a class="live" href="{{ p.site_url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>{% endif -%}
+            <a href="{{ p.repo_url }}" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> Repo</a>
+            {%- if p.site_url %}<a class="live" href="{{ p.site_url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Live</a>{% endif -%}
           </div>
         </article>
         {%- endfor -%}
@@ -347,10 +349,10 @@ html { scroll-behavior: smooth; }
       <h2>Let's build something.</h2>
       <p>Browse the full portfolio, dig into the code, or reach out — I'm always up for a good systems problem.</p>
       <div class="dash-cta">
-        <a class="dash-btn dash-btn--primary" href="/about/portfolio/"><i class="bi bi-grid-3x3-gap-fill"></i> Full portfolio</a>
-        <a class="dash-btn dash-btn--ghost" href="https://github.com/{{ P.owner }}" target="_blank" rel="noopener"><i class="bi bi-github"></i> @{{ P.owner }}</a>
-        <a class="dash-btn dash-btn--ghost" href="https://linkedin.com/in/amrabdel" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
-        <a class="dash-btn dash-btn--ghost" href="mailto:info@bashconsultants.com"><i class="bi bi-envelope"></i> Email</a>
+        <a class="dash-btn dash-btn--primary" href="/about/portfolio/"><i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i> Full portfolio</a>
+        <a class="dash-btn dash-btn--ghost" href="https://github.com/{{ P.owner }}" target="_blank" rel="noopener"><i class="bi bi-github" aria-hidden="true"></i> @{{ P.owner }}</a>
+        <a class="dash-btn dash-btn--ghost" href="https://linkedin.com/in/amrabdel" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <a class="dash-btn dash-btn--ghost" href="mailto:info@bashconsultants.com"><i class="bi bi-envelope" aria-hidden="true"></i> Email</a>
       </div>
     </div>
   </section>
@@ -387,10 +389,13 @@ html { scroll-behavior: smooth; }
     if (reduce) { node.textContent = target + suffix; return; }
     var start = performance.now(), dur = 1400;
     (function frame(now) {
+      // Re-read the target each frame so a live API update (below) is never overwritten by a stale baked value.
+      target = parseFloat(node.getAttribute('data-count')) || 0;
       var t = Math.min((now - start) / dur, 1);
       var eased = 1 - Math.pow(1 - t, 3);
       node.textContent = Math.round(target * eased) + suffix;
       if (t < 1) requestAnimationFrame(frame);
+      else node.removeAttribute('data-count-anim'); // done: later live updates write the text directly
     })(start);
   }
 
@@ -399,7 +404,7 @@ html { scroll-behavior: smooth; }
       if (!e.isIntersecting) return;
       var node = e.target;
       node.classList.add('is-visible');
-      if (node.hasAttribute('data-count')) countUp(node);
+      if (node.hasAttribute('data-count-anim')) countUp(node);
       node.querySelectorAll && node.querySelectorAll('[data-fill]').forEach(function (f) {
         f.style.width = (reduce ? f.getAttribute('data-fill') : f.getAttribute('data-fill')) + '%';
       });
@@ -407,7 +412,14 @@ html { scroll-behavior: smooth; }
     });
   }, { threshold: 0.2 });
 
-  root.querySelectorAll('.dash-reveal, [data-count]').forEach(function (n) { io.observe(n); });
+  // Real values are rendered server-side and stay in the DOM. Only stats that start below the fold
+  // get the count-up when they scroll into view; anything already visible is left untouched.
+  root.querySelectorAll('[data-count]').forEach(function (n) {
+    if (reduce || n.getBoundingClientRect().top < window.innerHeight) { n.removeAttribute('data-count-anim'); return; }
+    n.setAttribute('data-count-anim', '');
+    io.observe(n);
+  });
+  root.querySelectorAll('.dash-reveal').forEach(function (n) { io.observe(n); });
   // Bars live inside reveal blocks; observe their containers too.
   root.querySelectorAll('.dash-skills .dash-reveal').forEach(function (n) { io.observe(n); });
 
@@ -446,8 +458,12 @@ html { scroll-behavior: smooth; }
     .then(function (u) {
       if (!u) return;
       var set = function (key, val) {
-        var n = root.querySelector('[data-live="' + key + '"]');
-        if (n && typeof val === 'number') { n.setAttribute('data-count', val); n.textContent = val; }
+        if (typeof val !== 'number') return;
+        root.querySelectorAll('[data-live="' + key + '"]').forEach(function (n) {
+          if (n.hasAttribute('data-count')) n.setAttribute('data-count', val);
+          // Write the text now unless a count-up is pending/running; that animation reads data-count each frame.
+          if (!n.hasAttribute('data-count-anim')) n.textContent = val;
+        });
       };
       set('repos', u.public_repos);
       set('followers', u.followers);
