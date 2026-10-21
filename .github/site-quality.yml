@@ -1,0 +1,94 @@
+# =============================================================================
+# .github/site-quality.yml: site-quality config for bamr87.github.io
+# =============================================================================
+# kit: site-quality v0.1.0 (seeded from bamr87/bamr87 templates/site-quality/)
+#
+# Read by the hub's reusable workflow bamr87/bamr87/.github/workflows/site-quality.yml
+# (called from .github/workflows/site-quality.yml). The workflow validates this
+# file against templates/site-quality/site-quality.schema.json before anything
+# runs; an invalid file fails the job with the exact key at fault.
+#
+# EVERY threshold lives here. The hub's defaults only REPORT: with this file as
+# seeded, the job publishes Lighthouse scores, axe findings and contrast counts
+# and no finding fails it (an invalid config, a failed build or a scan that
+# cannot run still fails the job). Tighten one gate at a time, after the report shows the site
+# passes it (see the commented examples), so a gate never starts out red.
+#
+# Levels: `warn` reports (annotation + summary row); `error` fails the job.
+# Dates are QUOTED "YYYY-MM-DD" strings, as in .github/sdlc.yml: an unquoted
+# YAML date is rejected.
+# =============================================================================
+schema: site-quality/v1
+
+site:
+  # Jekyll source directory, relative to the repo root.
+  source: "."
+  # Empty = `bundle exec jekyll build` with remote_theme pinned to the SHA the
+  # workflow resolved. Set a command only if the site needs its own build.
+  # build_command: "bash scripts/build.sh"
+  # site_dir: _site
+  # url mode only (the org-hub weekly scan passes base-url instead):
+  # base_url: https://example.github.io/
+
+# Paths scanned, relative to the site root (baseurl is handled for you).
+pages:
+  - /
+
+# axe viewports (these are the defaults):
+# viewports:
+#   - { name: mobile-390, width: 390, height: 844, mobile: true }
+#   - { name: desktop-1366, width: 1366, height: 768 }
+
+# A page that does not load (HTTP >= 400 or a navigation error).
+load_errors: warn
+
+lighthouse:
+  enabled: true
+  runs: 1
+  # Budgets: absent = report only. Examples (each with its own level):
+  # categories:
+  #   accessibility: { min: 0.9, level: error }
+  #   performance: { min: 0.5, level: warn }
+  # metrics:
+  #   largest-contentful-paint: { max: 4000, level: warn }
+  #   cumulative-layout-shift: { max: 0.1, level: warn }
+  # audits:
+  #   errors-in-console: warn
+  #   unsized-images: warn
+  # sizes:
+  #   total: { max_kib: 1500, level: warn }
+  # overrides:
+  #   - page: /blog/
+  #     metrics: { largest-contentful-paint: { max: 6000, level: warn } }
+
+axe:
+  enabled: true
+  # Absent fail_on = every violation is reported as a warning. To gate:
+  # fail_on:
+  #   tags: [wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22a, wcag22aa]
+  #   impacts: [critical, serious]
+
+contrast:
+  enabled: true
+  # pa11y (HTML_CodeSniffer) WCAG 1.4.3. A page without `max` is report-only.
+  pages:
+    - { path: / }
+  # hide_elements: ".hero-gradient h1"
+
+# Known issues. Each entry needs `rule`, `selector` and/or `page`, a `reason`,
+# an `issue` link tracking the fix, and an `until` date. A matching finding is
+# reported as an allowlisted known issue instead of failing. `selector` is a
+# CSS selector matched in the browser against the failing node and its
+# ancestors (never a text match); `page` is a path, "*", or a prefix such as
+# /blog/*, and "*" or a prefix needs a selector. Past `until`, the entry is
+# reported at `on_expired` (warn during rollout; error later).
+allowlist:
+  on_expired: warn
+  entries: []
+  # entries:
+  #   - rule: color-contrast
+  #     selector: ".site-footer .muted"
+  #     page: /
+  #     reason: Footer palette is being replaced in the theme refresh.
+  #     issue: https://github.com/OWNER/REPO/issues/123
+  #     until: "2026-12-31"

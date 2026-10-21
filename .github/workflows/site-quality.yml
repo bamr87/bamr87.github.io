@@ -1,0 +1,50 @@
+name: Site quality
+
+# kit: site-quality v0.1.0
+# Adopted from bamr87/bamr87 via tools/fanout.sh --kit site-quality.
+# Thin caller: the machinery is shared and versioned in bamr87/bamr87
+# (.github/workflows/site-quality.yml, .github/site-quality/, specs/QUALITY.md
+# "Site quality"). Every threshold lives in .github/site-quality.yml (this
+# repo's config, validated against templates/site-quality/site-quality.schema.json).
+#
+# What runs (mode: build):
+#   build the Jekyll site with a FRESH copy of its theme (remote_theme is
+#   resolved to a commit SHA and pinned for the build; the SHA is recorded in
+#   the job summary and report.json), serve _site locally, then run
+#   Lighthouse CI, axe-core at 390 px and 1366 px, and pa11y contrast.
+#   Reports are uploaded as the `site-quality-report` artifact.
+#
+# Findings fail the job only where .github/site-quality.yml marks them `error`
+# (or `axe.fail_on`, or a contrast `max`); the template config marks none, so
+# no finding fails it as seeded. The job still fails when the config is missing
+# or invalid, the site does not build, or the scan cannot run.
+#
+# Pinned @v2 (major tag; additive releases move it). Never pin a custom tag.
+# Not @v1: the hub's v1 tag (v1.0.0) predates site-quality.yml, so a @v1
+# caller fails at startup with "workflow file issue".
+# (main is substituted on adoption.)
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site-quality:
+    uses: bamr87/bamr87/.github/workflows/site-quality.yml@v2
+    permissions:
+      contents: read
+    with:
+      mode: build
+      config: .github/site-quality.yml
+      # The runner's fallback ref when job.workflow_sha is not exposed (its
+      # default is v1, which has no runner). Keep it equal to the pin above.
+      hub-ref: v2
