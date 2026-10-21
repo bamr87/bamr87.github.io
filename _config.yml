@@ -376,6 +376,7 @@ defaults:
 # their entries' file path in the `include:` list.
 
 exclude:
+  - PRD.md
   - .sass-cache/
   - .jekyll-cache/
   - .obsidian
