@@ -393,6 +393,9 @@ exclude:
   - CHANGELOG.md
   - AGENTS.md
   - scripts/
+  - docs/constitution.md
+  - docs/amendments/
+  - features/
 
 # Sass/SCSS
 sass:
