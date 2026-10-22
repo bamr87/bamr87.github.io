@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-10-21T02:19:55Z
+lastmod: 2026-10-22T02:19:50Z
 ---
 
 
@@ -70,6 +70,10 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Schema vendor loop | bamr87 | loop, schema, vendoring | /bamr87/.github/workflows/schema-vendor.yml |
 | Terminal command center | bamr87 | dash, tui, monitoring | /bamr87/tools/tui/app.py |
 | CV projection | bamr87 | cv, projection | /bamr87/.github/scripts/dash-gen/cv_fragment.py |
+| TODO: the first thing a user does here | bamr87.github.io | todo | / |
+| TODO: the first thing a user does here | bashos | todo | / |
+| TODO: the first thing a user does here | cv-pro | todo | / |
+| TODO: the first thing a user does here | fredgar-ai | todo | / |
 
 
 ## Requested / Backlog Features
@@ -83,4 +87,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-21T02:19:55Z
+Last updated: 2026-10-22T02:19:50Z
