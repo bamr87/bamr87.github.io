@@ -4,11 +4,8 @@ author: Amr
 class: Wizard
 layout: default
 permalink: /profile/
----
-
 lastmod: 2025-11-11T00:00:00.000Z
-
-
+---
 
 ## About Me
 
@@ -376,17 +373,6 @@ Denver, CO 80206
 
 ---
 
-## Edit
-
-```shell
-# Add the GitHub profile repository as a remote repository
-
-gh repo clone bamr87/bamr87.github.io
-
-code README.md
-
-```
-
 ## Favorite Dish
 
 | Qty   |  UM  | Ingredient                    | Notes                               |
@@ -404,3 +390,21 @@ code README.md
 | 5     | tbsp | Cooking oil, for deep-frying  |                                     |
 | 1     | tbsp | Salt                          |                                     |
 
+## Working with this repo
+
+This page is the README of [bamr87/bamr87.github.io](https://github.com/bamr87/bamr87.github.io), a Jekyll site on the [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) theme. To edit it, clone it with `gh repo clone bamr87/bamr87.github.io`, then preview and test it locally:
+
+```bash
+bundle install                                                  # Ruby deps: github-pages + the theme gem
+bundle exec jekyll serve                                        # production-like preview on :4002 (remote theme)
+bundle exec jekyll serve --config _config.yml,_config_dev.yml   # dev preview with the local jekyll-theme-zer0 gem
+python3 -m pip install -r scripts/requirements.txt              # generator deps (PyYAML, pytest)
+python -m pytest -q scripts/tests                               # generator tests — run from the repo root
+python3 tools/unwrap-prose.py --check                           # markdown one-paragraph-per-line gate
+```
+
+The featured-projects table above is generated from `_data/projects.yml` by `scripts/generate_portfolio.py`, so edit the registry rather than the table. How to work in the repo is in [AGENTS.md](https://github.com/bamr87/bamr87.github.io/blob/main/AGENTS.md), and the repository's documentation starts at [docs/README.md](docs/README.md).
+
+## License
+
+Released under the [MIT License](LICENSE.txt).

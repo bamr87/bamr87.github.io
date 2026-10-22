@@ -1,94 +1,95 @@
-# CLAUDE.md
+<!-- kit: sdlc v0.1.0 · AGENTS.md is the CANONICAL agent instructions file (decision D4, UPS-AGENT-07/08). -->
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# bamr87.github.io
+
+> Amr Abdel-Motaleb's GitHub Pages site — profile, résumé and project portfolio plus blog, docs and notes collections — and the rules for changing it.
 
 ## What this repo is
 
-`bamr87.github.io` — Amr Abdel-Motaleb's personal **GitHub Pages site**: a Jekyll site that is simultaneously a profile/CV landing page and a blog/docs/notes collection. It is published at https://bamr87.github.io.
+A Jekyll site on GitHub Pages, published at <https://bamr87.github.io>. It is both a profile/CV landing page and a blog, docs and notes collection, and it serves visitors (recruiters, clients, collaborators) and Amr as author. A change is done when the scripts tests pass, the prose gate is clean, every generator's `--check` is current, and the site still builds with the production config (`bundle exec jekyll build`). Agent, contributor and data files (`AGENTS.md`, `CLAUDE.md`, `CHANGELOG.md`, `PRD.md`, `scripts/`) are excluded from the build. `docs/` is not, so it is published as plain pages.
 
-This repo is also a **submodule of the `bamr87/bamr87` monorepo** (checked out under `projects/bamr87.github.io`). The monorepo's root `CLAUDE.md` (the "dash" / `_data/projects.yml` registry, `tools/dash`, etc.) describes the *parent* — none of that tooling applies here. Treat this as a standalone Jekyll repo with its own `main` branch and release cycle.
+## Stack & commands
 
-## The theme is remote — layouts/includes/CSS are NOT in this repo
+Jekyll 3.10 via the `github-pages` gem, the remote `bamr87/zer0-mistakes` theme, and Python 3 generators (PyYAML, pytest).
 
-`_config.yml` sets `remote_theme: bamr87/zer0-mistakes`. There is **no `_layouts/`, `_includes/`, or `_sass/` directory here.** Every layout referenced in front matter (`root`, `default`, `journals`, `collection`) and every include (e.g. the `setup-banner.html` that uses the `include_cached` tag) lives in the **[bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes)** theme repo.
-
-Consequences:
-- To change page markup, styling, navigation rendering, or fix a Liquid/layout error, edit the **theme repo**, not this one. This repo only supplies content, `_config.yml`, `_data/`, and `assets/`.
-- Theme tags require their plugin to be registered in `_config.yml`'s `plugins:` list (e.g. `include_cached` needs `jekyll-include-cache`). A missing plugin surfaces as `Liquid syntax error … Unknown tag` at build time.
-
-## Production vs. dev theme split (important build gotcha)
-
-There are two build modes that resolve the theme differently:
-
-| Mode | Config | Theme source | Jekyll |
-|------|--------|--------------|--------|
-| **Production (GitHub Pages)** | `_config.yml` | `remote_theme: bamr87/zer0-mistakes` (downloaded at build) | `github-pages` gem (Jekyll 3.9.x) |
-| **Local / Docker dev** | `_config.yml` + `_config_dev.yml` | `_config_dev.yml` sets `remote_theme: false` and `theme: jekyll-theme-zer0` (local gem) | local bundle |
-
-So local dev does **not** exercise the remote theme — it uses the `jekyll-theme-zer0` gem instead. A change that works locally can still break the published site if it depends on theme behavior, and vice versa.
-
-## Deployment
-
-GitHub Pages builds and deploys **automatically from the `main` branch** (the "pages build and deployment" check in Actions — GitHub's built-in Pages pipeline, not a workflow file in `.github/workflows/`). There is no custom deploy workflow. Pushing to `main` publishes the site.
-
-## Content model
-
-All content lives under `pages/` (`collections_dir: pages` in `_config.yml`). Collections:
-
-| Dir | Collection | Notes |
-|-----|-----------|-------|
-| `pages/_posts/` | `posts` | Blog/journal. Filename convention `year-month-day-title.md`. Subfolders (`gpt/`, `recipies/`, `reflections/`, `reports/`) are categories. |
-| `pages/_docs/` | `docs` | Documentation library. |
-| `pages/_notes/` | `notes` | Personal notes/cheatsheets/snippets. |
-| `pages/_hobbies/` | `hobbies` | |
-| `pages/_notebooks/` | `notebooks` | |
-| `pages/_about/` | `about` | Includes the auto-generated `features/index.md` (see below). |
-
-Per-path **`defaults`** in `_config.yml` assign each collection its `layout`, `sidebar.nav`, and permalink — set defaults there rather than repeating front matter in every file.
-
-**Homepage:** [`index.html`](index.html) at the repo root is the site homepage (`permalink: /`, `layout: home`) — a full-bleed, animated showcase/dashboard built from `site.data.portfolio` (see below) with self-contained inline CSS/JS scoped under `.dash`; its JS is wrapped in a Liquid `raw`/`endraw` block so Liquid leaves it alone. **`README.md`** is the GitHub profile/CV and renders on the site at **`/profile/`** (`permalink: /profile/`) — it is no longer the homepage.
-
-Navigation is data-driven via `_data/navigation/*.yml`. The navbar reads `main.yml`; sidebars are selected by a page's `sidebar.nav` key. **The theme's navbar and `nav-tree` consume `children:` (not `sublinks:`)** — use `children:` for nested items or dropdowns silently won't render.
-
-## Generated content (registries → generators → pages)
-
-Two parts of the site are **generated from data, not hand-written**. Edit the source registry and rerun the generator; never edit the rendered output (it gets overwritten). Both are committed to the repo and refreshed nightly by [`.github/workflows/generate-features-index.yml`](.github/workflows/generate-features-index.yml) (workflow display name "Regenerate site indexes", cron `0 2 * * *`, commits with `[skip ci]`). This is the **only** workflow file in the repo.
-
-**Portfolio / project showcase** — `scripts/generate_portfolio.py` reads the curated registry [`_data/projects.yml`](_data/projects.yml), fetches live GitHub metadata (stars, language, homepage/Pages URL, topics, followers, repo counts), and writes three things: [`_data/portfolio.yml`](_data/portfolio.yml) (enriched per-project data + totals — what the homepage dashboard renders from via `site.data.portfolio`), `pages/_about/portfolio/index.md` (full showcase page), and the `<!-- AUTO:portfolio:start -->…<!-- AUTO:portfolio:end -->` span in `README.md` (featured table on the GitHub profile). Per-project `live_url` overrides the auto Live link (`false`/`none` suppresses, a string repoints). Output is idempotent — a rerun with no upstream change writes nothing (timestamps stripped when diffing). `--check` is a drift gate. Token resolves from `--token` → `FEATURES_GITHUB_TOKEN`/`GITHUB_TOKEN`/`GH_TOKEN` → `gh auth token`. Dedicated skill: [`.claude/skills/profile-portfolio/`](.claude/skills/profile-portfolio/SKILL.md).
-
-**Features index** — `scripts/generate_features_index.py` aggregates `features:` metadata across the user's repos into `pages/_about/features/index.md`. Sources per repo (priority order): `features/features.yml`, `FEATURES.yml`/`.yaml`, `FEATURES.md`, then the repo's own `pages/_about/features/`.
-- Remote mode (CI default): `python3 scripts/generate_features_index.py --mode=remote --owner=bamr87 --token=$GH_TOKEN`.
-- Local mode: `--mode=local --root=/path/to/workspace` scans sibling repos on disk.
-- `scripts/validate_features.py` is a standalone validator other repos can run in PR CI.
-- YAML `tags` may contain non-strings (e.g. a bare year) — coerce to `str` before joining in the table-rendering code, or it raises `TypeError` in CI.
-
-## Common commands
-
-**Jekyll (Ruby):**
 ```bash
-bundle install
-bundle exec jekyll serve                                   # production-like: remote theme, port 4002
-bundle exec jekyll serve --config _config.yml,_config_dev.yml   # dev: local jekyll-theme-zer0 gem
+bundle install                                                  # Ruby deps: github-pages + the theme gem
+bundle exec jekyll serve                                        # production-like preview on :4002 (remote theme)
+bundle exec jekyll serve --config _config.yml,_config_dev.yml   # dev preview with the local jekyll-theme-zer0 gem
+python3 -m pip install -r scripts/requirements.txt              # generator deps (PyYAML, pytest)
+python -m pytest -q scripts/tests                               # generator tests — run from the repo root
+python3 tools/unwrap-prose.py --check                           # markdown one-paragraph-per-line gate
 ```
-`_config.yml` is **not** auto-reloaded — restart the server after editing it. Site serves on port **4002** (`port:` in `_config.yml`; `EXPOSE 4002` in the Dockerfile).
 
-**Docker** (uses the local-theme dev config, serves on 4002):
-```bash
-docker build -t bamr87.github.io .
-docker run -d -p 4002:4002 -v "$PWD":/app --name bamr87.github.io-container bamr87.github.io
-```
-(There is no `docker-compose.yml` in this repo despite the README mention; only the `Dockerfile`.)
+## Layout
 
-**Features script (Python):**
-```bash
-python3 -m pip install -r scripts/requirements.txt
-python -m pytest -q scripts/tests                                              # run tests
-pytest scripts/tests/test_generate_features_index.py::test_build_markdown -v   # single test
-```
-Tests import `from scripts.generate_features_index import …`, so **run pytest from the repo root** (not from inside `scripts/`).
+| Path | Holds |
+| --- | --- |
+| `pages/` | All site content (`collections_dir: pages`): one `_<collection>/` per collection — see [docs/reference/collections.md](docs/reference/collections.md) |
+| `_data/` | Project registry, generated portfolio data, navigation menus, UI strings — see [_data/README.md](_data/README.md) |
+| `_config.yml`, `_config_dev.yml` | Production config, and the dev overlay that swaps in the local theme gem |
+| `index.html` | The homepage dashboard (`permalink: /`), built from `site.data.portfolio` |
+| `README.md` | The GitHub profile/CV, published at `/profile/` |
+| `assets/` | Site images, scripts and SVGs (the theme ships the CSS) |
+| `scripts/` | Generators and their tests — see [scripts/README.md](scripts/README.md) |
+| `tools/` | Vendored fleet tools: `unwrap-prose.py`, `docs_index.py` (never edit) |
+| `docs/` | Repo documentation: [the docs index](docs/README.md), ADRs, generated reference |
+| `features/`, `verify/` | Feature index (`features/v1`) and the user-scenario verify kit |
+| `.claude/` | The `profile-portfolio` and `verify-feature` skills and the `verifier` agent |
 
 ## Conventions
 
-- **Commits**: Conventional Commits (`type(scope): description`). CI-authored commits append `[skip ci]`.
-- **Front matter**: prefer setting shared values (`layout`, `sidebar.nav`, permalink) via `_config.yml` `defaults` by path; use `draft: true` for unpublished content; posts carry `date` + `lastmod`.
-- Do not commit `_site/`, `Gemfile.lock`, `vendor/`, or `.jekyll-cache/` (see `.gitignore`).
+- **Backlog of record:** GitHub Issues with the fleet labels (`.github/sdlc.yml`: `backlog.mode: issues`).
+- **Definition of Done:** the pull request checklist inherited from bamr87/.github (no template in this tree), plus the "done" bar above.
+- **Decisions:** ADRs in `docs/adr/NNNN-slug.md`, indexed in `docs/adr/README.md`.
+- **Commits:** Conventional Commits (`type(scope): description`); the PR title is the squash subject. CI-authored commits append `[skip ci]`.
+- **Branches:** `feature/`, `fix/`, `docs/`, `refactor/`, `test/` or `chore/` off `main`.
+- **Changelog:** `CHANGELOG.md` is written by release-please (`release.yml` → the hub's `release-please.yml@v2`, release type `simple`). Never edit it by hand.
+- **Front matter:** set shared values (`layout`, `sidebar.nav`, permalink) through `_config.yml` `defaults:` by path, not per file. Use `draft: true` for unpublished content. Posts carry `date` and `lastmod`.
+- **Never:** push to `main` directly, hand-edit a generated file, or commit `_site/`, `Gemfile.lock`, `vendor/` or `.jekyll-cache/`.
+
+## The theme is remote
+
+- `_config.yml` sets `remote_theme: bamr87/zer0-mistakes`, so there is no `_layouts/`, `_includes/` or `_sass/` here. Every layout (`root`, `default`, `article`, `home`, …) and include lives in [bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes): fix markup, styling, navigation rendering and Liquid/layout errors there. This repo supplies content, `_config.yml`, `_data/` and `assets/`.
+- A theme tag needs its plugin in `_config.yml` `plugins:` (`include_cached` needs `jekyll-include-cache`); a missing one fails the build with `Liquid syntax error … Unknown tag`.
+- The two build modes resolve the theme differently, so a change that works locally can still break the published site:
+
+| Mode | Config | Theme source |
+| --- | --- | --- |
+| Production (GitHub Pages) | `_config.yml` | `remote_theme`, downloaded at build (`github-pages` gem, Jekyll 3.10) |
+| Local / Docker dev | `_config.yml,_config_dev.yml` | `remote_theme: false` + the local `jekyll-theme-zer0` gem |
+
+## Content and navigation
+
+- Collections, their directories, permalinks and resolved defaults are generated into [docs/reference/collections.md](docs/reference/collections.md) from `_config.yml`. Posts are named `YYYY-MM-DD-title.md`; subfolders of `pages/_posts/` (`gpt/`, `recipies/`, `reflections/`, `reports/`) are categories.
+- `index.html` is the homepage: a full-bleed dashboard over `site.data.portfolio`, with inline CSS/JS scoped under `.dash` and its JS wrapped in a Liquid `raw`/`endraw` block so Liquid leaves it alone.
+- `README.md` is a Jekyll page (`permalink: /profile/`), so its links are rendered on the site. Relative links to excluded files 404 there; link those by GitHub URL.
+- Navigation is `_data/navigation/*.yml`: the navbar reads `main.yml`, and a page picks its sidebar with `sidebar.nav`. The theme's navbar and `nav-tree` read `children:`, not `sublinks:`; with `sublinks:` the dropdowns silently do not render.
+
+## Generated content
+
+Edit the source, rerun the generator, never edit the output.
+
+- **Portfolio:** `scripts/generate_portfolio.py` reads `_data/projects.yml`, adds live GitHub metadata, and writes `_data/portfolio.yml`, `pages/_about/portfolio/index.md` and the `AUTO:portfolio` span in `README.md`. `--check` is its drift gate. It needs a token (from `--token`, then `FEATURES_GITHUB_TOKEN`/`GITHUB_TOKEN`/`GH_TOKEN`, then `gh auth token`) or public rate limits. A project's `live_url` overrides the Live link (`false`/`none` hides it). Skill: `.claude/skills/profile-portfolio/`.
+- **Features index:** `scripts/generate_features_index.py --mode=remote --owner=bamr87` (or `--mode=local --root=<workspace>`) writes `pages/_about/features/index.md` from each repo's `features/features.yml` and its fallbacks. YAML `tags` may be non-strings (a bare year): coerce to `str` before joining. `scripts/validate_features.py` is the standalone validator.
+- **Collections reference:** `python3 scripts/generate_collections_reference.py` writes `docs/reference/collections.md`. A test in `scripts/tests` fails when it is stale.
+- **Docs index:** `python3 tools/docs_index.py --write` regenerates the span in `docs/README.md` from each document's summary line (`--check`, `--lint`).
+- The nightly `generate-features-index.yml` ("Regenerate site indexes", 02:00 UTC) reruns the portfolio and features generators and commits with `[skip ci]`.
+
+## Build and CI gotchas
+
+- GitHub Pages builds and deploys from `main` with its built-in pipeline; no workflow here deploys. Pushing to `main` publishes.
+- Workflows: `ci.yml` (hub `standard-ci.yml@v2`), `markdown-oneline.yml` (pushes the unwrap fix back to a PR), `site-quality.yml`, `verify.yml`, `conformance.yml`, `release.yml`, `claude.yml` (`@claude`), and the nightly `generate-features-index.yml`.
+- `_config.yml` is not auto-reloaded: restart `jekyll serve` after editing it. The site serves on port 4002 (`port:` in `_config.yml`; `EXPOSE 4002` in the `Dockerfile`).
+- In a POSIX locale the theme's Sass fails with `Invalid US-ASCII character`; build with `LANG=C.UTF-8`.
+- Docker uses the dev config: `docker build -t bamr87.github.io .` then `docker run -d -p 4002:4002 -v "$PWD":/app --name bamr87.github.io-container bamr87.github.io`. There is no `docker-compose.yml`.
+- The scripts tests import `scripts.*`, so run pytest from the repo root, not from inside `scripts/`.
+
+## Fleet context
+
+Member of the bamr87 fleet, mounted in the hub as the submodule `projects/bamr87.github.io`. Commit and push here first; the hub only bumps its pointer. The hub's own tooling (`tools/dash`, its registry) does not run in this repo. Standards: <https://github.com/bamr87/bamr87/tree/main/specs>. The loops that act on this repo are the hub's shared gates (`standard-ci`, `fleet-conformance`, `fleet-verify`, `site-quality`), the hub's fan-out kits (which seeded `tools/unwrap-prose.py`, the SDLC files and the verify kit), the `@claude` handler and the nightly index regeneration.
+
+## Standard deviations
+
+- UPS-DOC-08: `README.md` is over the 2,000-word budget because it is the published résumé at `/profile/`; its length is the CV itself, not repo documentation.
+- UPS-DOC-10: `README.md` keeps the résumé's own order (front-matter title, About Me, dashboard, CV) instead of the portfolio skeleton's H1, tagline, Overview and Features, because it is a published CV page. It ends with **Working with this repo** and **License**, and links the docs index.
