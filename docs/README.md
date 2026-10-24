@@ -22,7 +22,9 @@
 
 | Document | What it covers |
 | --- | --- |
+| [`docs/constitution.md`](constitution.md) | The rules every change to this repo must satisfy, whoever makes it — a human or an AI agent. Agents read this before [AGENTS.md](../AGENTS.md) conventions, the [PRD](../PRD.md), or the [feature catalog](../features/features.yml). Ratified… |
 | [`docs/adr/`](adr/README.md) | The hard-to-reverse decisions for this site, one numbered file each, and the format every new ADR follows. |
+| [`docs/amendments/`](amendments/README.md) | The append-only log of changes to [the constitution](constitution.md). |
 
 ### `docs/reference/`
 

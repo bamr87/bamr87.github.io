@@ -93,3 +93,7 @@ Member of the bamr87 fleet, mounted in the hub as the submodule `projects/bamr87
 
 - UPS-DOC-08: `README.md` is over the 2,000-word budget because it is the published résumé at `/profile/`; its length is the CV itself, not repo documentation.
 - UPS-DOC-10: `README.md` keeps the résumé's own order (front-matter title, About Me, dashboard, CV) instead of the portfolio skeleton's H1, tagline, Overview and Features, because it is a published CV page. It ends with **Working with this repo** and **License**, and links the docs index.
+
+## Governance
+
+Read [`docs/constitution.md`](docs/constitution.md) before changing anything: it is the highest-precedence rule set here and wins over this file when they disagree. It changes only through a numbered record in [`docs/amendments/`](docs/amendments/), ratified by the maintainer merging the PR; agents propose, never merge. Every user-facing feature has a stable id in [`features/features.yml`](features/features.yml) with `status`, location and the PRD requirement ids it serves; the PRD's "Feature catalog" block is generated from it (`python3 <bamr87/bamr87>/tools/governance_lint.py prd-sync . --write`; check with `… check .`). Never hand-edit that block or `CHANGELOG.md`.
