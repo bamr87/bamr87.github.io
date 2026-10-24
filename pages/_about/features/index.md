@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-10-23T02:19:52Z
+lastmod: 2026-10-24T02:18:02Z
 ---
 
 
@@ -73,7 +73,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | TODO: the first thing a user does here | bamr87.github.io | todo | / |
 | TODO: the first thing a user does here | bashos | todo | / |
 | TODO: the first thing a user does here | cv-pro | todo | / |
-| TODO: the first thing a user does here | fredgar-ai | todo | / |
 
 
 ## Requested / Backlog Features
@@ -87,4 +86,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-23T02:19:52Z
+Last updated: 2026-10-24T02:18:02Z
