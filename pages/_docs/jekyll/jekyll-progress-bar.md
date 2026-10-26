@@ -14,7 +14,7 @@ lastmod: 2023-12-03T08:47:34.515Z
 
 ## 1. Progress Bar
 
-[Nanobar](http://nanobar.jacoborus.codes/) is a very lightweight progress bar which generates a highly customizable top bar.
+[Nanobar](https://web.archive.org/web/20260513010326/http://nanobar.jacoborus.codes/) is a very lightweight progress bar which generates a highly customizable top bar.
 
 ## 2. Generate Top Bar
 
@@ -83,6 +83,6 @@ Access any page, there is a green top bar below the navigation bar. ![image](/as
 ## 3. Reference
 
 * [Adding Top Progress Bar to Websites](https://blog.webjeda.com/top-bar-website/)
-* [Nanobar - A lightweight progress bar](http://nanobar.jacoborus.codes/)
+* [Nanobar - A lightweight progress bar](https://web.archive.org/web/20260513010326/http://nanobar.jacoborus.codes/)
 * [Pro Sidebar Template with Bootstrap 4](https://bootsnipp.com/snippets/Q0dAX)
 * [Navbar example](https://getbootstrap.com/docs/4.1/examples/navbar-static/?)

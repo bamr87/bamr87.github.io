@@ -212,5 +212,5 @@ By following these steps, you should be able to integrate Mermaid diagrams into 
 * [Mermaid Documentation](https://mermaidjs.github.io/)
 * [Mermaid Live Editor](https://mermaidjs.github.io/mermaid-live-editor/)
 * [Mermaid on GitHub](https://github.com/knsv/mermaid)
-* [Embed Mermaid Charts in Jekyll without Plugin](http://kkpattern.github.io/2015/05/15/Embed-Chart-in-Jekyll.html)
+* [Embed Mermaid Charts in Jekyll without Plugin](https://web.archive.org/web/20200809201042/https://kkpattern.github.io/2015/05/15/Embed-Chart-in-Jekyll.html)
 * [Adding Jekyll plugins to a GitHub Pages site](https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/)

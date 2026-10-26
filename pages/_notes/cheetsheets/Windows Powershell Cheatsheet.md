@@ -2784,4 +2784,4 @@ The final command finds entry values containing a given string in keys below the
 
 ```
 
-[Source](https://www.theochem.ru.nl/~pwormer/teachmat/PS_cheat_sheet.html) 
+[Source](https://web.archive.org/web/20231112182344/https://www.theochem.ru.nl/~pwormer/teachmat/PS_cheat_sheet.html) 

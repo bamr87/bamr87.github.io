@@ -119,6 +119,6 @@ document.body.onkeyup = function(e){
 
 ## 5. Reference
 
-* [Creating previous and next links within a Jekyll Collection](http://stories.upthebuzzard.com/jekyll_notes/2017-02-19-prev-and-next-within-a-jekyll-collection.html)
+* [Creating previous and next links within a Jekyll Collection](https://stories.upthebuzzard.com/jekyll_notes/2017-02-19-prev-and-next-within-a-jekyll-collection.html)
 * [Previous Next Links for Jekyll Collections](https://gist.github.com/budparr/3e637e575471401d01ec)
 * [Jekyll Filters - Where and Group_By](https://blog.webjeda.com/jekyll-filters/)

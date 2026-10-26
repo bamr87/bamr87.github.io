@@ -61,7 +61,7 @@ Edit `_layouts/default.html`, use `jekyll.environment` in the condition statemen
 ```
 {% endraw %}
 
-Edit `netlify.toml`, specify a "env-netlify" environment in the build command. Notice, https://{{ site.github_user }}.github.io/ is hosted on http://{{ site.github_user }}.netlify.com/, we reply on netlify to build this website. netlify.toml is the configuration file.
+Edit `netlify.toml`, specify a "env-netlify" environment in the build command. Notice, https://{{ site.github_user }}.github.io/ is hosted on `{{ site.github_user }}.netlify.com` (since retired), we reply on netlify to build this website. netlify.toml is the configuration file.
 ```toml
 [build]
   command = "JEKYLL_ENV=env-netlify jekyll build"

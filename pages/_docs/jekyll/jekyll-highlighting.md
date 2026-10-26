@@ -105,7 +105,7 @@ https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-light
 Replace the URL for the default style with the URL for the new style. Refresh the page to see the new style. ![image](/assets/images/jekyll/8123/custom-style.png)
 
 ## 3. Reference
-* [Code highlighting in Jekyll blog using highlight.js](http://www.vishalsinha.in/2017/04/23/highlight-code-jekyll.html)
+* [Code highlighting in Jekyll blog using highlight.js](https://www.vishalsinha.in/2017/04/23/highlight-code-jekyll.html)
 * [Getting highlight.js](https://highlightjs.org/download/)
 * [highlight.js on GitHub](https://github.com/highlightjs/highlight.js)
 * [Highlight.js line numbers plugin](https://github.com/wcoder/highlightjs-line-numbers.js)

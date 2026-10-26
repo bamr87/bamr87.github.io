@@ -15,7 +15,7 @@ tags:
 
 [AWS Study Guides](https://aws.amazon.com/certification/certification-prep/)
 
-[AWS Test Questions](https://amazonwebservices.benchprep.com/)
+[AWS Test Questions](https://web.archive.org/web/20230130180132/https://amazonwebservices.benchprep.com/)
 
 [docs](https://docs.aws.amazon.com/)
 

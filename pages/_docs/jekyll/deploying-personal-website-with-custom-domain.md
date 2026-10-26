@@ -13,7 +13,7 @@ lastmod: 2023-12-03T08:40:23.773Z
 
 ## 1. Setup website in github page
 
-Refer this post [Creating and Hosting a Personal Site on GitHub](http://jmcglone.com/guides/github-pages/) to create a repository on github and publish it to GitHub Pages.
+Refer this post [Creating and Hosting a Personal Site on GitHub](https://jmcglone.com/guides/github-pages/) to create a repository on github and publish it to GitHub Pages.
 
 For demo purpose, I will use the repository of my personal website, see <https://github.com/>{{ site.github_user }}/{{ site.github_user }}.github.io.
 
