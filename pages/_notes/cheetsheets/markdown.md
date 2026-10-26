@@ -1,10 +1,11 @@
 ---
 title: Markdown
-author: null
+author: bamr87
 layout: default
 description: null
 categories:
   - Posts
+date: '2021-12-27T17:46:18.040Z'
 lastmod: '2021-12-27T17:46:18.040Z'
 draft: true
 ---

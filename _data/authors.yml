@@ -1,0 +1,7 @@
+# Authors, keyed by the `author:` value in front matter (default: bamr87, set in
+# _config.yml `defaults`). Read by the theme's byline (content/intro.html) and by
+# jekyll-seo-tag / jekyll-feed for the author name.
+bamr87:
+  name: "Amr Abdel-Motaleb"
+  github: bamr87
+  website: "https://bamr87.github.io/profile/"

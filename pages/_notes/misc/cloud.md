@@ -1,6 +1,6 @@
 ---
 title: AWS Practice Question Set
-author: null
+author: bamr87
 excerpt: null
 description: null
 snippet: null
@@ -11,6 +11,7 @@ tags:
 meta: null
 draft: true
 slug: /aws-practice/
+date: '2022-01-12T03:07:05.038Z'
 lastmod: '2022-01-12T03:07:05.038Z'
 ---
 

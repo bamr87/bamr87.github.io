@@ -7,6 +7,7 @@ longitude: -104.97393330
 altitude: 0.0000
 tags:
   - test
+date: 2024-12-08T14:08:06-07:00
 ---
 
 # Initialize

@@ -9,6 +9,8 @@ prompt: write me a satirical article about a company with good intentions to hel
   cost to grow wheat increased and the water supply became polluted, which sparked
   a revolution and stance against western imperialism..
 title: AquaAid's Devastating Desert Mission
+redirect_from:
+  - /posts/2024/06/18/aquaaid-s-devastating-desert-mission/
 ---
 In a classic case of good intentions gone awry, the company "AquaAid" embarked on a mission to help impoverished desert countries irrigate their arid lands and transform them into fertile wheat fields. With grand promises of ending hunger and poverty, AquaAid brought in state-of-the-art irrigation equipment and set to work in the vast desert landscapes.
 

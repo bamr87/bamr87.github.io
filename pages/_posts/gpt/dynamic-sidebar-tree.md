@@ -14,7 +14,7 @@ preview: null
 categories: []
 sub-title: null
 snippet: null
-author: null
+author: bamr87
 layout: article
 keywords: {}
 slug: dynamic-sidebar-tree

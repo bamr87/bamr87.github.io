@@ -1,7 +1,7 @@
 ---
 title: LaTex your CV
 sub-title: null
-author: null
+author: bamr87
 excerpt: null
 description: null
 snippet: 2023-11-05T02:50:50.370Z

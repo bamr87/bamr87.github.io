@@ -1,9 +1,8 @@
 ---
 title: Dockering Your IT Journey
 description: How to use Docker to run Jekyll with Ruby 2.7
-author: Amr and Co-pilot
+author: bamr87
 excerpt: If you must use Ruby 2.7, you can specify the versions of Jekyll and Bundler that are compatible with Ruby 2.7 in your Dockerfile.
-date: 2019-08-22T15:20:28.000Z
 lastmod: 2024-04-02T16:06:30.908Z
 draft: true
 tags:
@@ -15,6 +14,8 @@ categories:
 meta: null
 snippet: null
 slug: dockering-your-it-journey
+redirect_from:
+  - /posts/2019/08/22/dockering-your-it-journey/
 ---
 
 bamr87: i need to update this dockerfile to run this repository in a container. 

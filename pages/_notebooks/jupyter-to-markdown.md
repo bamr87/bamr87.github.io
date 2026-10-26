@@ -1,7 +1,7 @@
 ---
 title: Jupyter Notebook to Markdown Converter
 description: Convert Jupyter Notebooks to Markdown
-author: "Amr Abdel-Motaleb"
+author: bamr87
 featured: true
 tags: ["jupyter", "markdown", "converter", "jekyll"]
 date: "2024-05-24"

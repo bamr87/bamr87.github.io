@@ -91,6 +91,7 @@ Tests import `from scripts.generate_features_index import …`, so **run pytest 
 
 - **Commits**: Conventional Commits (`type(scope): description`). CI-authored commits append `[skip ci]`.
 - **Front matter**: prefer setting shared values (`layout`, `sidebar.nav`, permalink) via `_config.yml` `defaults` by path; use `draft: true` for unpublished content; posts carry `date` + `lastmod`.
+- **Authors and dates**: `author:` is a key into [`_data/authors.yml`](_data/authors.yml) (only `bamr87`, also the site-wide default), never a display name. Posts take their date from the file name, so do not copy a `date:` into a new post; if a post's URL changes, keep the old one with `redirect_from:` (`jekyll-redirect-from` is enabled). Every non-post collection page carries a `date:` no later than its `lastmod` (otherwise the theme prints the build time as "Published"); the two generators emit a fixed `PAGE_DATE`. Name new posts in lowercase with no apostrophes, because jekyll-feed derives each Atom `<id>` from the file name. `python -m pytest -q scripts/tests` checks all of this (`test_site_metadata.py`).
 - Do not commit `_site/`, `Gemfile.lock`, `vendor/`, or `.jekyll-cache/` (see `.gitignore`).
 
 ## Governance

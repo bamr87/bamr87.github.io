@@ -20,6 +20,7 @@ keywords:
   - Conditional execution
   - Command substitution
 slug: /shell/
+date: 2022-08-07T14:49:51.999Z
 lastmod: 2022-08-07T14:49:51.999Z
 ---
 

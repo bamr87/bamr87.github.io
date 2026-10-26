@@ -1,6 +1,7 @@
 ---
 title: Jeykll
 permalink: /notes/jekyll/
+date: 2024-05-24T03:19:48.705Z
 lastmod: 2024-05-24T03:19:48.705Z
 draft: draft
 ---

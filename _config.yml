@@ -42,12 +42,9 @@ portfolio                : [*github_user, '.', 'github.io']
 
 ## Site Information ---------------------------------------------------------------
 
-title                    : Prod
+title                    : "Amr Abdel-Motaleb"
 title_url                : "/"
 title_icon               : "globe"
-subtitle                 : "Dev"
-subtitle_url             : "localhost"
-subtitle_icon            : "code"
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "bamr87.github"
 domain_ext               : ".io"
@@ -62,7 +59,7 @@ og_image                 : '/assets/images/wizard-on-journey.png'
 
 ### Owner Information -------------------------------------------------------------
 
-name                     : &name "Amr"
+name                     : &name "Amr Abdel-Motaleb"
 email                    : "amr@it-journey.dev"
 description              : >- # this means to ignore newlines until the next variable
   Collection of articles, notes, and tutorials to build a website
@@ -193,6 +190,7 @@ plugins:
   - jekyll-paginate
   - jekyll-relative-links
   - jekyll-include-cache
+  - jekyll-redirect-from # redirect_from: on posts whose URL changed (#26)
 
 ## Gisgus Plugin #################################################################
 
@@ -273,6 +271,7 @@ defaults:
       path: ""
     values:
       layout: root
+      author: bamr87 # key into _data/authors.yml
       author_profile: false
       read_time: true
       comments: false # true

@@ -1,9 +1,8 @@
 ---
 title: AWS Database Setup for Django Lambda Functions
 description: null
-author: null
+author: bamr87
 excerpt: null
-date: 2019-08-22T15:20:28.000Z
 lastmod: 2024-10-14T16:00:26.339Z
 draft: true
 tags: []
@@ -11,6 +10,8 @@ categories: []
 meta: null
 snippet: null
 slug: null
+redirect_from:
+  - /posts/2019/08/22/aws-database-setup-for-django-lambda-functions/
 ---
 
 ## **Overview**

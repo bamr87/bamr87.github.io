@@ -1,6 +1,6 @@
 ---
 title: GPT - CV Analysis
-author: ChatGPT
+author: bamr87
 date: 2024-03-11T20:53:40.280Z
 excerpt: An analysis of a CV and recommendations for career paths and growth.
 description: An analysis of a CV and recommendations for career paths and growth.

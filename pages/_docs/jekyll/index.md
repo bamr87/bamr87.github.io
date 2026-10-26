@@ -5,6 +5,7 @@ redirect_from:
   - /docs/jekyll/home/
   - /docs/jekyll/quickstart/
   - /docs/jekyll/extras/
+date: '2021-12-06T01:41:06.227Z'
 lastmod: '2021-12-06T01:41:06.227Z'
 ---
 Jekyll is a static site generator. It takes text written in your favorite markup language and uses layouts to create a static website. You can tweak the site's look and feel, URLs, the data displayed on the page, and more.

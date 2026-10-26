@@ -3,6 +3,7 @@ title: Notes (~) Index
 description: Notes Index
 layout: collection
 permalink: /notes/
+date: 2024-05-24T04:34:37.380Z
 lastmod: 2024-05-24T04:34:37.380Z
 ---
 

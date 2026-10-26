@@ -5,6 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
+date: 2024-12-08T14:08:06-07:00
 lastmod: 2026-10-26T02:22:56Z
 ---
 

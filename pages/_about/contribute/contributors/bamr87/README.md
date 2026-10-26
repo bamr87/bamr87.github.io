@@ -1,10 +1,11 @@
 ---
 title: Bamr87
-author: Amr
+author: bamr87
 excerpt: IT Wizard, Software Architect, Tech Enthusiast.
 class: Wizard
 username: bamr87
 permalink: /contributors/bamr87/
+date: 2024-05-25T19:07:27.095Z
 lastmod: 2024-05-25T19:07:27.095Z
 ---
 

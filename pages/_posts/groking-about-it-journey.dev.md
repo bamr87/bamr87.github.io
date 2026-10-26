@@ -13,7 +13,7 @@ categories:
   - it-journey
 sub-title: null
 snippet: null
-author: bamr87 and grok
+author: bamr87
 layout: article
 keywords: {}
 lastmod: 2024-05-16T16:11:20.289Z

@@ -8,6 +8,7 @@ altitude: 0.0000
 tags:
   - quest
   - tutorial
+date: 2024-12-08T14:08:06-07:00
 ---
 
 Title:

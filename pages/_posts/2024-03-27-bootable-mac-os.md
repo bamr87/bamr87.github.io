@@ -1,7 +1,7 @@
 ---
 title: Bootable mac os
 description: null
-author: null
+author: bamr87
 excerpt: null
 date: 2024-03-27T22:53:26.161Z
 lastmod: 2024-03-28T20:36:30.045Z

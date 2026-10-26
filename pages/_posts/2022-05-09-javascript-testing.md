@@ -1,6 +1,6 @@
 ---
 title: test
-author: null
+author: bamr87
 layout: article
 description: null
 categories:

@@ -1,6 +1,7 @@
 ---
 title: Programming
 description: Collection of programming languages notes
+date: '2022-01-02T03:39:23.888Z'
 lastmod: '2022-01-02T03:39:23.888Z'
 ---
 

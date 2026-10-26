@@ -1,6 +1,6 @@
 ---
 title: Mac keyboard shortcuts
-author: Apple
+author: bamr87
 excerpt: null
 description: null
 snippet: null
@@ -12,6 +12,7 @@ tags:
     - mac
 meta: null
 draft: true
+date: 2024-04-29T16:26:31.967Z
 lastmod: 2024-04-29T16:26:31.967Z
 source: https://support.apple.com/en-us/HT201236
 ---

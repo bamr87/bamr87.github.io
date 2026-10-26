@@ -2,6 +2,7 @@
 title: Shell and the CLI
 updated: 2022-01-05 07:55:00Z
 created: 2023-12-15 04:10:54Z
+date: 2024-05-17T01:52:39.490Z
 lastmod: 2024-05-17T01:52:39.490Z
 draft: draft
 ---

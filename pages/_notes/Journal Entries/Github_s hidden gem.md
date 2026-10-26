@@ -5,6 +5,7 @@ created: 2024-02-14 19:41:38Z
 latitude: 39.54807890
 longitude: -104.97393330
 altitude: 0.0000
+date: 2024-12-08T14:08:06-07:00
 ---
 
 title: "github's hidden gem" description: GPT Promt:

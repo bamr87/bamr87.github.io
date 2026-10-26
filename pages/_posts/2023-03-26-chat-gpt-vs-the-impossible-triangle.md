@@ -2,7 +2,7 @@
 title: Chat GPT vs The Impossible Triangle
 sub-title: Machine vs Human
 description: Practical and impractical uses of Chat GPT in programming and graphic design through demonstration of its limitation to comprehend impossible 3D spaces.
-author: Amr Abdel-Motaleb
+author: bamr87
 excerpt: null
 snippet: /svg/penrose-amr-icon-1000.svg
 categories:

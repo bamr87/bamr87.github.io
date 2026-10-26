@@ -1,6 +1,6 @@
 ---
 title: Jekyll and Travis
-author: 
+author: bamr87
 excerpt: Deploying Jekyll using Travis CI and Github
 description: 
 snippet: 
