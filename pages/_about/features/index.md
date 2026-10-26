@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-10-25T02:19:24Z
+lastmod: 2026-10-26T02:22:56Z
 ---
 
 
@@ -75,6 +75,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Terminal command center | bamr87 | dash, tui, monitoring | /bamr87/tools/tui/app.py |
 | CV projection | bamr87 | cv, projection | /bamr87/.github/scripts/dash-gen/cv_fragment.py |
 | Governance kit: constitution, amendments, PRD and feature link | bamr87 | governance, features, prd, fan-out | /bamr87/tools/governance_lint.py |
+| Backlog fan-out routine | bamr87 | fan-out, backlog, automation, activity-log | /bamr87/.github/workflows/backlog-fanout.yml |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -163,17 +164,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Index | README |  | /README/context |
 | Serve | README |  | /README/mcp |
 | Evolve | README |  | /README/hooks.d |
-| arcade/: React + canvas + Web Audio games | rewind-arcade |  | /rewind-arcade/arcade |
-| emulate/ / retro-pi/ | rewind-arcade |  | /rewind-arcade/emulate |
-| catalog/: cartridge-index (stdlib Python): dumps,… | rewind-arcade |  | /rewind-arcade/catalog |
-| systems/registry.yaml + docs encyclopedia | rewind-arcade |  | /rewind-arcade/systems/registry.yaml |
-| Tests that enforce the system-id map across pillars | rewind-arcade |  | /rewind-arcade/catalog/tests |
-| Generate challenges by bits or digits | rsa-challenge |  | /rsa-challenge/rsa_challenge/cli.py |
-| Public challenge file with commitments | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
-| Secrets kept out of git | rsa-challenge |  | /rsa-challenge/scripts/check_no_secrets.py |
-| Verify submissions from the CLI | rsa-challenge |  | /rsa-challenge/rsa_challenge/challenge.py |
-| Client-side verification site | rsa-challenge |  | /rsa-challenge/site/index.html |
-| Seeded challenge ladder | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
 
 
 ## Requested / Backlog Features
@@ -181,6 +171,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 
 | Title | Repo | Tags | Link |
 | --- | --- | --- | --- |
+| Fleet activity log (proposed) | bamr87 | fleet, observability, governance, prd |  |
+| Harness pipeline map (proposed) | bamr87 | harness, console, diagrams, activity-log | /bamr87/docs/prd/HARNESS-PIPELINE-MAP.md |
+| GitHub workflow nodes on the pipeline map (proposed) | bamr87 | harness, console, github, workflows | /bamr87/docs/prd/HARNESS-PIPELINE-MAP.md |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Blog posts | it-journey |  | /posts/ |
 | Documentation section | it-journey |  | /docs/ |
@@ -197,4 +190,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-25T02:19:24Z
+Last updated: 2026-10-26T02:22:56Z
