@@ -39,6 +39,11 @@ group :jekyll_plugins do
   gem 'jekyll-include-cache'
 end
 
+# Internal link check on the built site (.github/workflows/link-check.yml).
+group :test do
+  gem 'html-proofer'
+end
+
 # TODO: build a bootstrap plugin for jekyll
 
 #  bootstrap https://getbootstrap.com/docs/5.1/getting-started/introduction/

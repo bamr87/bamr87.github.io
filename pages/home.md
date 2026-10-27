@@ -6,7 +6,6 @@ excerpt: This is where we begin our journey. The place where we return after get
 purpose: To build a platform for learning and share knowledge and tools
 keywords: Home, Zer0, IT-Journey, programming, development
 permalink: /home/
-bookmark: /zer0/
 sidebar:
    nav: home
 lastmod: 2024-05-15T03:54:48.681Z
@@ -14,8 +13,6 @@ TODO:
    - Add a story line
 draft: draft
 ---
-
-Go to [bookmark]({{ page.bookmark }})
 
 ## What to build today?
 
@@ -35,7 +32,7 @@ This is where we begin our journey. The place where we return after getting lost
 
 From zero to hero collection of docs, tools, scripts, walk-through, and information to help with your IT journey.
 
-### Zer0 to Her0 [Quest](/quest/)
+### Zer0 to Her0 Quest
 
 <!-- TODO: Need story line  -->
 
@@ -108,11 +105,11 @@ For those who are advanced/expert and what to specialize in a field:
 
 For those who are already familiar with core IT concepts, this is the quick start guide to get you going. There are some prerequisites listed before you can clone this repository. Each is linked to a detailed installation instruction.
 
-Master Setup [Local link](\_quickstart\machine-setup.md)  Or [Web link](\quickstart\machine-setup\)
+Master Setup
 
-Integrated Development Environment (Visual Studio Code) [Local link](\_quickstart\vscode.md)  Or [Web link](\quickstart\vscode\)
+Integrated Development Environment (Visual Studio Code)
 
-Static Website Generator (Jekyll) [Local link](\_quickstart\Jekyll.md)  Or [Web link](\quickstart\Jekyll\)
+Static Website Generator (Jekyll) — see the [Jekyll docs](/docs/jekyll/)
 
 ### Site layout
 
@@ -130,7 +127,7 @@ This is a fixed navigation bar that is always visible at the top of the page. It
 
 - [Journals](/posts/)
 - [Library](/docs/)
-- [Notes](/Notes/)
+- [Notes](/notes/)
 
 #### Sidebar Navigation
 
