@@ -81,7 +81,7 @@ maintainers:
 locale                   : "en-US"
 home_dir                 : &home '/Users/bamr87/'
 local_git                : [ *home, 'github' ]
-logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : /assets/images/logo.png  # the headshot cropped from about-profile.png; path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : [ *url, *baseurl ] # URL to link the logo to, e.g. "/"
 
 teaser                   : /assets/images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"

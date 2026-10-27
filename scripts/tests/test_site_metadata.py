@@ -52,6 +52,16 @@ def test_site_identity_is_not_placeholder():
     assert not re.search(r'subtitle(_url)?\s*:\s*"(Dev|localhost)"', CONFIG)
 
 
+def test_logo_is_a_square_headshot_not_the_triangle():
+    logo = _config_value("logo").strip()
+    assert logo != "/assets/images/gravatar-small.png"
+    png = (ROOT / logo.lstrip("/")).read_bytes()
+    # The theme forces the navbar logo into a 30x30 <img>: it must be square and big enough for 2x screens.
+    assert png[:8] == b"\x89PNG\r\n\x1a\n"
+    width, height = int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big")
+    assert width == height >= 60
+
+
 def test_home_title_fits_in_60_chars():
     title = yaml.safe_load(FM.match((ROOT / "index.html").read_text(encoding="utf-8")).group(1))["title"]
     # jekyll-seo-tag renders "<page title> | <site title>"
