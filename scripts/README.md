@@ -1,14 +1,16 @@
 # Site generation scripts
 
-This folder holds the data-driven generators for the site. Both follow the same pattern: a small curated source + live GitHub metadata → committed, deterministic Markdown.
+> The generators that write the site's portfolio, features index and collections reference from curated sources, how to run each one, and the validator other repos use for their features metadata.
+
+The two GitHub-backed generators follow the same pattern: a small curated source plus live GitHub metadata becomes committed, deterministic Markdown. All three are idempotent: a rerun with no input change writes nothing.
 
 ## `generate_portfolio.py` — profile / portfolio landing page
 
-Reads the curated registry `_data/projects.yml`, fetches live metadata for each repo from the GitHub API (stars, language, homepage / GitHub Pages URL, topics, license, last commit), and renders two surfaces:
+Reads the curated registry `_data/projects.yml`, fetches live metadata for each repo from the GitHub API (stars, language, homepage / GitHub Pages URL, topics, license, last commit), and writes three outputs:
 
+- `_data/portfolio.yml` — enriched data and totals the homepage dashboard (`index.html`) renders via `site.data.portfolio`.
 - `pages/_about/portfolio/index.md` — the full showcase, grouped by category.
-- the `<!-- AUTO:portfolio:start -->…<!-- AUTO:portfolio:end -->` span in `README.md` — the
-  featured table on the homepage.
+- the `<!-- AUTO:portfolio:start -->…<!-- AUTO:portfolio:end -->` span in `README.md` — the featured table on the GitHub profile and the `/profile/` page.
 
 ```bash
 python3 scripts/generate_portfolio.py            # regenerate (writes only what changed)
@@ -61,17 +63,22 @@ FEATURES_GITHUB_TOKEN=$GH_TOKEN python3 scripts/generate_features_index.py --mod
 
 The script writes to `pages/_about/features/index.md` by default — make sure the repository has commit access if you plan to have a scheduled GitHub Action commit updates automatically.
 
-Automation idea:
-
-- Add a GitHub Action in this repo to run the script nightly or via `workflow_dispatch`.
-- The action requires a `FEATURES_GITHUB_TOKEN` (Personal Access Token) if it needs to access
-  private repos; otherwise the default `GITHUB_TOKEN` works for public content.
-- Each repo should adopt a short `features/features.yml` file to declare features — see sample
-  `examples` directory.
+Automation: `.github/workflows/generate-features-index.yml` ("Regenerate site indexes") runs both GitHub-backed generators nightly at 02:00 UTC and on `workflow_dispatch` (the features index in remote mode), with the `FEATURES_GITHUB_TOKEN` secret. It runs `scripts/tests` first (non-blocking) and commits any change with `[skip ci]`. Each repo declares its features in a short `features/features.yml` (this repo's is the example).
 
 If you'd like, the script can be extended to fetch additional context (issues, PRs, changelog, release tags) or render richer tables, badges and links.
 
-Validator: A minimal validator is available at `scripts/validate_features.py`. Repositories can add a workflow to run this file during PRs to ensure they publish and maintain good `features` metadata before changes are merged.
+Validator: a minimal validator is available at `scripts/validate_features.py`. Repositories can copy `scripts/feature-validator-template.yml` into `.github/workflows/` to run it on pull requests, so their `features` metadata is checked before changes are merged.
+
+## `generate_collections_reference.py` — collections reference
+
+Reads `_config.yml` (`collections_dir`, `collections:`, `defaults:`) and writes [`docs/reference/collections.md`](../docs/reference/collections.md): every declared collection with its directory, whether that directory exists, its permalink, and the layout and sidebar its front-matter defaults resolve to. No network, no token.
+
+```bash
+python3 scripts/generate_collections_reference.py           # rewrite the reference
+python3 scripts/generate_collections_reference.py --check   # exit 1 if it is stale
+```
+
+`scripts/tests/test_generate_collections_reference.py` runs the same check, so editing a collection or a default without regenerating fails the tests.
 
 ## Tests
 
