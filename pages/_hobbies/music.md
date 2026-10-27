@@ -72,7 +72,7 @@ Not all the scores listed on this site reside on the CPDL server. Some of the sc
 
 
 
-[ezFolk Public Domain Music Library](https://www.ezfolk.com/library/ "ezFolk.com public domain music page")
+[ezFolk Public Domain Music Library](https://web.archive.org/web/20140821214031/http://www.ezfolk.com/library/ "ezFolk.com public domain music page")
 
 
 
@@ -134,7 +134,7 @@ Since this is a directory site, you'll come across a number of different license
 
 
 
-[Musica Viva](https://www.musicaviva.com/index.html "Musica Viva web site")
+[Musica Viva](https://web.archive.org/web/20131206012800/http://www.musicaviva.com/index.html "Musica Viva web site")
 
 
 

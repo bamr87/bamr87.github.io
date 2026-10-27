@@ -15,6 +15,8 @@ DEAD = [
     "amazonwebservices.benchprep.com",
     "wiki.bash-hackers.org",
     "jekyll-sitel",
+    "ezfolk.com/library",  # 301s to the ezfolk home page; the library is gone
+    "musicaviva.com/index.html",  # the domain now 301s to an unrelated site
 ]
 
 
