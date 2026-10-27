@@ -66,9 +66,10 @@ var rawr = ["r", "a", "w", "r"];
 
 creates...
 
-{% highlight javascript %}
-/* Some pointless Javascript */ var rawr = ["r", "a", "w", "r"];
-{% endhighlight %}
+```javascript
+/* Some pointless Javascript */
+var rawr = ["r", "a", "w", "r"];
+```
  
 Use two trailing spaces  
 on the right  

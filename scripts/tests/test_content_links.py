@@ -55,3 +55,9 @@ def test_markdown_cheatsheet_highlight_example_is_raw_code_once():
     assert text.count("Syntax highlighting can be used") == 1
     raw = re.search(r"\{% raw %\}\s*```[a-z]*\n(.*?)```\s*\{% endraw %\}", text, re.S)
     assert raw and "{% highlight javascript %}" in raw.group(1)
+    # The rendered demo must be a fence: unwrap-prose joins lines between bare {% highlight %} tags.
+    demo = re.search(r"creates\.\.\.\s*```javascript\n(.*?)```", text, re.S)
+    assert demo and demo.group(1).splitlines() == [
+        "/* Some pointless Javascript */",
+        'var rawr = ["r", "a", "w", "r"];',
+    ]
