@@ -1,8 +1,6 @@
 # PRD — bamr87.github.io
 
-> Product requirements for [`bamr87/bamr87.github.io`](https://github.com/bamr87/bamr87.github.io).
-> Derived from the README, agent docs, config and code in this repo. Anything not
-> stated in those sources is marked **TBD**; success metrics are proposals.
+> Product requirements for the bamr87.github.io profile and portfolio site — problem, users, goals, features and proposed success metrics — derived from the repo's README, agent docs, config and code, with anything they do not state marked **TBD**.
 
 ## 1. Overview / problem
 

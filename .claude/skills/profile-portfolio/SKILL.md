@@ -68,12 +68,9 @@ The generator resolves a GitHub token from `--token`, then `FEATURES_GITHUB_TOKE
 
 - **Don't hand-edit** `_data/portfolio.yml`, `pages/_about/portfolio/index.md`, or the
 `<!-- AUTO:portfolio:start -->…<!-- AUTO:portfolio:end -->` span in `README.md`. All three carry a "generated — edit the registry instead" banner. Change `_data/projects.yml` and regenerate.
-- A repo that fails to fetch (network off, renamed, private) renders from registry
-  data alone and logs a warning — fix the `repo:` name if you see a 404 warning.
-- After regenerating, review the diff, then commit registry + generated files
-  together so the source and output never drift apart.
-- If you add a fully new automation (e.g. a nightly refresh), mirror the existing
-  `.github/workflows/generate-features-index.yml` workflow and commit with `[skip ci]`.
+- A repo that fails to fetch (network off, renamed, private) renders from registry data alone and logs a warning — fix the `repo:` name if you see a 404 warning.
+- After regenerating, review the diff, then commit registry + generated files together so the source and output never drift apart.
+- If you add a fully new automation (e.g. a nightly refresh), mirror the existing `.github/workflows/generate-features-index.yml` workflow and commit with `[skip ci]`.
 
 ## Why this design
 
