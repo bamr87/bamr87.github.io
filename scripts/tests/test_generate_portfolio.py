@@ -3,6 +3,13 @@
 Run from the repo root: python -m pytest -q scripts/tests
 """
 
+import io
+import json
+import sys
+import time
+import urllib.error
+
+import scripts.generate_portfolio as gp
 from scripts.generate_portfolio import (
     merge_project,
     pages_url,
@@ -86,6 +93,57 @@ def test_readme_block_table_has_blank_line_before_it():
     lines = block.splitlines()
     header_idx = next(i for i, l in enumerate(lines) if l.startswith('| Project'))
     assert lines[header_idx - 1] == '', "table header must be preceded by a blank line"
+
+
+def _fake_api(monkeypatch, repos):
+    """Serve `repos` ({'owner/repo': meta}) from a fake GitHub API; anything else is HTTP 429."""
+    def urlopen(req, timeout=None):
+        path = req.full_url.split('api.github.com/', 1)[1]
+        if path.startswith('users/'):
+            return io.BytesIO(json.dumps({'public_repos': 48, 'followers': 1}).encode())
+        key = path[len('repos/'):]
+        if key in repos:
+            return io.BytesIO(json.dumps(repos[key]).encode())
+        raise urllib.error.HTTPError(req.full_url, 429, 'Too Many Requests', {'Retry-After': '0'}, None)
+    monkeypatch.setattr(gp.urllib.request, 'urlopen', urlopen)
+    monkeypatch.setattr(time, 'sleep', lambda s: None)
+
+
+def _sandbox(monkeypatch, tmp_path, repos):
+    registry = tmp_path / 'projects.yml'
+    registry.write_text('owner: bamr87\nprojects:\n' + ''.join(f'  - repo: {r}\n' for r in repos))
+    outputs = {}
+    for name, attr in (('page.md', 'PORTFOLIO_PAGE'), ('README.md', 'README_FILE'), ('portfolio.yml', 'PORTFOLIO_DATA')):
+        f = tmp_path / name
+        f.write_text(f'GOOD {name}\n')
+        monkeypatch.setattr(gp, attr, str(f))
+        outputs[name] = f
+    monkeypatch.setattr(gp, 'REGISTRY_FILE', str(registry))
+    monkeypatch.setattr(sys, 'argv', ['generate_portfolio.py', '--token', 'x'])
+    return outputs
+
+
+def test_rate_limited_fetch_exits_nonzero_without_writing(monkeypatch, tmp_path, capsys):
+    outputs = _sandbox(monkeypatch, tmp_path, ['ok', 'limited'])
+    _fake_api(monkeypatch, {'bamr87/ok': {'html_url': 'https://github.com/bamr87/ok', 'full_name': 'bamr87/ok'}})
+    assert gp.main() != 0
+    for name, f in outputs.items():
+        assert f.read_text() == f'GOOD {name}\n', f'{name} was overwritten by a degraded run'
+    err = capsys.readouterr().err
+    assert 'bamr87/limited -> HTTP 429' in err and 'nothing written' in err
+
+
+def test_moved_repo_warns_and_uses_resolved_full_name(monkeypatch, tmp_path, capsys):
+    _sandbox(monkeypatch, tmp_path, ['csv-vscoode'])
+    _fake_api(monkeypatch, {'bamr87/csv-vscoode': {
+        'html_url': 'https://github.com/bash-365/csv-vscoode', 'full_name': 'bash-365/csv-vscoode'}})
+    out = gp.build('bamr87', 'x', gp.load_registry(gp.REGISTRY_FILE))
+    err = capsys.readouterr().err
+    assert 'warn:' in err
+    assert 'https://github.com/bamr87/csv-vscoode' in err and 'https://github.com/bash-365/csv-vscoode' in err
+    assert 'github.com/bamr87/csv-vscoode' not in out['page']
+    assert 'img.shields.io/github/stars/bash-365/csv-vscoode' in out['page']
+    assert out['failed'] == []
 
 
 def test_strip_volatile_ignores_timestamps():

@@ -20,6 +20,8 @@ python3 scripts/generate_portfolio.py --owner bamr87 --token "$GH_TOKEN"
 
 To add / reorder / feature a project, edit `_data/projects.yml` (display order = file order) and rerun — do not hand-edit the generated files. A token resolves from `--token`, then `FEATURES_GITHUB_TOKEN`/`GITHUB_TOKEN`/`GH_TOKEN`, then `gh auth token`; public repos work without one but share a low rate limit. Output is timestamp-stable, so a no-op rerun produces no diff. See `.claude/skills/profile-portfolio/SKILL.md` for the full workflow.
 
+The generator **fails closed**: if any GitHub fetch fails (a rate-limited request is retried once, honouring `Retry-After` up to 60 s), it prints `error: N GitHub fetch(es) failed (…); nothing written` and exits 2 without touching any of the three outputs, so a rate-limited CI run can never replace good links with degraded ones. When the API reports a repo under a different owner or name (a rename or transfer), it prints `warn: <registry URL> moved to <actual URL>`, and the links and badges use the resolved `full_name`; update `_data/projects.yml` to match. The nightly `generate-features-index.yml` passes its own `github.token` explicitly and commits `_data/portfolio.yml` alongside the page and the README.
+
 ## `generate_features_index.py` — consolidated features index
 
 This script scans sibling repos in the workspace (local mode) or fetches feature metadata from GitHub (remote mode) and generates `pages/_about/features/index.md` that consolidates features across all repositories.

@@ -19,7 +19,7 @@ exclude:
   - skills-github-pages
   - zer0-pages
   - bamr87.github.io   # this site itself — linked from the profile, not the showcase
-  - djangoerp          # superseded by django-fin / amrs-project (avoid duplicate Django apps)
+  - djangoerp          # legacy Django ERP experiment, not maintained for the showcase
 
 projects:
   # ---- Featured ---------------------------------------------------------------
