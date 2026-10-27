@@ -45,8 +45,6 @@ bundle exec jekyll serve
 {: .note .info} Pass the `--livereload` option to `serve` to automatically refresh the page with each change you make to the source files: `bundle exec jekyll serve --livereload`
 
 
-If you encounter any errors during this process, check that you have installed all the prerequisites in [Requirements](https://jekyllrb.com/docs/installation/#requirements). 
-If you still have issues, see [Troubleshooting](https://jekyllrb.com/docs/troubleshooting/#configuration-problems).
+If you encounter any errors during this process, check that you have installed all the prerequisites in [Requirements](https://jekyllrb.com/docs/installation/#requirements). If you still have issues, see [Troubleshooting](https://jekyllrb.com/docs/troubleshooting/#configuration-problems).
 
-{: .note .info}
-Installation varies based on your operating system. See our [guides](https://jekyllrb.com/docs/installation/#guides) for OS-specific instructions.
+{: .note .info} Installation varies based on your operating system. See our [guides](https://jekyllrb.com/docs/installation/#guides) for OS-specific instructions.
