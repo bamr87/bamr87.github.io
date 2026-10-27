@@ -32,4 +32,8 @@ release:
   type: simple            # release-please release-type: simple | node | python | ruby (decision D5)
 
 # Waived requirements, each also listed in AGENTS.md § Standard deviations.
-deviations: []            # - { id: UPS-WORK-07, reason: "…", until: "2027-01-01" }   # quote the date
+deviations:
+  - id: UPS-DOC-08
+    reason: "README.md is the published résumé at /profile/; its length is the CV itself, not repo documentation."
+  - id: UPS-DOC-10
+    reason: "README.md keeps the résumé's own order instead of the portfolio skeleton's H1, tagline, Overview and Features; it ends with Working with this repo and License and links the docs index."
