@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-10-28T02:13:49Z
+lastmod: 2026-10-29T02:14:16Z
 ---
 
 
@@ -76,6 +76,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | CV projection | bamr87 | cv, projection | /bamr87/.github/scripts/dash-gen/cv_fragment.py |
 | Governance kit: constitution, amendments, PRD and feature link | bamr87 | governance, features, prd, fan-out | /bamr87/tools/governance_lint.py |
 | Backlog fan-out routine | bamr87 | fan-out, backlog, automation, activity-log | /bamr87/.github/workflows/backlog-fanout.yml |
+| Work board: rebalance the loops' work by drag and drop | bamr87 | console, issue-pipeline, roadmap, spec-driven, prioritisation | /work |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -116,6 +117,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Multi-format export | cv-pro |  | /cv-pro/app/src/components/cv/ExportSection.tsx |
 | TODO: the first thing a user does here | djangoerp | todo | / |
 | TODO: the first thing a user does here | fredgar-ai | todo | / |
+| Core finance formulas and ratio metrics | fredgar-ai | metrics, ratios, valuation | /fredgar-ai/src/warehouse/services/finance_formulas.py |
 | TODO: the first thing a user does here | githubai | todo | / |
 | Drag-and-drop canvas | gitorio |  | /gitorio/app/src/canvas |
 | Blueprint → Actions workflow compiler with vitest invariant tests | gitorio |  | /gitorio/app/src/compiler |
@@ -211,6 +213,26 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Recording | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Beautify / Align | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Tutorial webview | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Wagtail admin: pages, revisions, media, workflows | zer0-CMS | platform, admin, wagtail | /admin/ |
+| Agent suggestions, reviewed in the editor | zer0-CMS | platform, agents, governance | /admin/suggestions/page/ |
+| Agent review as a moderation task | zer0-CMS | platform, agents, workflow | /admin/workflows/ |
+| Agent runs report | zer0-CMS | platform, agents, reports | /admin/reports/agent-runs/ |
+| GraphQL API | zer0-CMS | platform, api, graphql | /graphql/ |
+| REST API: agent runs, graph, suggestions, tools | zer0-CMS | platform, api, rest, openapi | /api/v2/docs/ |
+| MCP server over the one tool registry | zer0-CMS | platform, api, mcp, agents | /mcp/ |
+| Jekyll sites imported and exported byte for byte | zer0-CMS | platform, jekyll, import, export | /zer0-CMS/content/importers/jekyll.py |
+| Health, readiness and version probes | zer0-CMS | platform, ops, probes | /readyz |
+| Request ids, the error envelope and structured logs | zer0-CMS | platform, ops, logging, errors | /api/v2/docs/ |
+| The studio: write, create and publish | zer0-CMS | studio, web, editor, publishing | /studio/write |
+| The studio's review inbox and revisions | zer0-CMS | studio, web, review, agents, governance | /studio/review |
+| Agent runs with a live step timeline | zer0-CMS | studio, web, agents | /studio/ai |
+| The studio's AI area: assistants, pipelines, output schemas, providers and models | zer0-CMS | studio, web, ai, assistants, pipelines, providers | /studio/ai |
+| Briefs, conversations and the editor's AI panel | zer0-CMS | studio, web, ai, briefs, conversations, editor | /studio/create/briefs |
+| The studio's Outbox desk: the belt, arena trials and the claim desk | zer0-CMS | studio, web, outbox, belt, claim-desk, pipelines | /studio/outbox |
+| Metadata panel: front matter as typed controls | zer0-CMS | extension, editor | /zer0-CMS/src/panel/panelProvider.ts |
+| Dashboard: every site's content in one place | zer0-CMS | extension, dashboard | /zer0-CMS/src/dashboard/dashboardPanel.ts |
+| Governed publishing: draft → guard → approve → publish → ledger | zer0-CMS | extension, governance | /zer0-CMS/src/core/governance/ |
+| Bundled MCP server for the editor's agents | zer0-CMS | extension, mcp | /zer0-CMS/src/mcp/server.ts |
 
 
 ## Requested / Backlog Features
@@ -246,4 +268,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-28T02:13:49Z
+Last updated: 2026-10-29T02:14:16Z
