@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/bamr87/bamr87.github.io/compare/v0.2.0...v0.2.1) (2026-10-30)
+
+
+### Fixed
+
+* **metadata:** real site identity, one author key, honest publish dates ([081f4cb](https://github.com/bamr87/bamr87.github.io/commit/081f4cb16c1ea68d57ca82295e0980aa2faac134))
+* **portfolio:** fail closed on failed GitHub fetches and follow repo moves ([24f58b6](https://github.com/bamr87/bamr87.github.io/commit/24f58b62e55fe108b7134d6224072cd2a01e26a7))
+
 ## [0.2.0](https://github.com/bamr87/bamr87.github.io/compare/v0.1.0...v0.2.0) (2026-10-27)
 
 
