@@ -1,6 +1,6 @@
 ---
 title: contributing
-author: Amr
+author: bamr87
 username: $GITHUB_USERNAME
 excerpt: null
 description: null
@@ -11,6 +11,7 @@ tags:
   - contributing
 meta: null
 draft: true
+date: 2024-05-20T17:42:21.099Z
 lastmod: 2024-05-20T17:42:21.099Z
 permalink: /about/contributing
 ---

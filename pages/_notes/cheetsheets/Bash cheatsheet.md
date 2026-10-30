@@ -8,6 +8,7 @@ tags:
     - script
     - shell
 TODO: create a cheatsheet layout based on devhints.io
+date: 2024-05-14T15:14:49.051Z
 lastmod: 2024-05-14T15:14:49.051Z
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Jekyll Configuration
 excerpt: Configuration file contents and regeneration steps.
+date: 2024-05-31T01:57:04.547Z
 lastmod: 2024-05-31T01:57:04.547Z
 config-dir: pages/_about/settings
 config-file: _config.yml

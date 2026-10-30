@@ -10,7 +10,7 @@ categories:
 sub-title: null
 excerpt: test
 snippet: null
-author: null
+author: bamr87
 keywords: {}
 slug: jekyll-sidebar
 type: posts

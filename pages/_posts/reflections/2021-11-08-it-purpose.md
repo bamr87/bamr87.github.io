@@ -1,6 +1,6 @@
 ---
 title: IT Purpose
-author: null
+author: bamr87
 description: null
 categories:
   - Posts

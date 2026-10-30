@@ -1,6 +1,6 @@
 ---
 title: Windows Sub-linux Setup
-author: null
+author: bamr87
 excerpt: null
 description: null
 snippet: null

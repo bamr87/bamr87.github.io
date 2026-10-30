@@ -1,6 +1,7 @@
 ---
 title: Bootstrap Theme Examples
 layout: root
+date: 2024-05-31T01:40:37.133Z
 lastmod: 2024-05-31T01:40:37.133Z
 source: https://getbootstrap.com/docs/5.3/examples/cheatsheet/
 draft: draft

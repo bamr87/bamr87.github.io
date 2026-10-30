@@ -46,6 +46,7 @@ python3 tools/unwrap-prose.py --check                           # markdown one-p
 - **Branches:** `feature/`, `fix/`, `docs/`, `refactor/`, `test/` or `chore/` off `main`.
 - **Changelog:** `CHANGELOG.md` is written by release-please (`release.yml` → the hub's `release-please.yml@v2`, release type `simple`). Never edit it by hand.
 - **Front matter:** set shared values (`layout`, `sidebar.nav`, permalink) through `_config.yml` `defaults:` by path, not per file. Use `draft: true` for unpublished content. Posts carry `date` and `lastmod`.
+- **Authors and dates:** `author:` is a key into [`_data/authors.yml`](_data/authors.yml) (only `bamr87`, also the site-wide default), never a display name. Posts take their date from the file name, so do not copy a `date:` into a new post; if a post's URL changes, keep the old one with `redirect_from:` (`jekyll-redirect-from` is enabled). Every non-post collection page carries a `date:` no later than its `lastmod` (otherwise the theme prints the build time as "Published"); the two generators emit a fixed `PAGE_DATE`. Name new posts in lowercase with no apostrophes, because jekyll-feed derives each Atom `<id>` from the file name. `python -m pytest -q scripts/tests` checks all of this (`test_site_metadata.py`).
 - **Never:** push to `main` directly, hand-edit a generated file, or commit `_site/`, `Gemfile.lock`, `vendor/` or `.jekyll-cache/`.
 
 ## The theme is remote

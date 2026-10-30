@@ -1,5 +1,6 @@
 ---
 title: Music Index
+date: '2022-01-09T04:32:39.222Z'
 lastmod: '2022-01-09T04:32:39.222Z'
 category: hobbies
 slug: music

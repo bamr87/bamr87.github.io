@@ -1,7 +1,7 @@
 ---
 title: RetroPie Imaging
 sub-title: null
-author: null
+author: bamr87
 excerpt: null
 description: null
 snippet: 2024-02-10T23:51:06.235Z

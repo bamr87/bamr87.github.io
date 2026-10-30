@@ -3,6 +3,7 @@ title: Configuration Options | Jekyll • Simple, blog-aware, static sites
 url: https://jekyllrb.com/docs/configuration/options/
 date_retrieved: 2024-05-02 16:05:28
 description: The tables below list the available settings for Jekyll, and the various options (specified in the configuration file) and flags (specified on the command-line) that control them.
+date: 2024-05-02T22:07:45.703Z
 lastmod: 2024-05-02T22:07:45.703Z
 ---
 

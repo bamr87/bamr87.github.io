@@ -50,6 +50,8 @@ from typing import List, Dict, Optional
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 OUTPUT_FILE = os.path.join(REPO_ROOT, 'pages', '_about', 'features', 'index.md')
+# The page's first commit. Fixed, so the theme's "Published" date never moves past `lastmod`.
+PAGE_DATE = '2024-12-08T14:08:06-07:00'
 
 
 def read_yaml_bytes(raw_bytes: bytes) -> Optional[dict]:
@@ -246,6 +248,7 @@ def build_markdown(features: List[dict], header_template: Optional[str] = None) 
         "permalink: /about/features/\n"
         "sidebar:\n"
         "  nav: about\n"
+        f"date: {PAGE_DATE}\n"
         f"lastmod: {now}\n"
         "---\n\n"
     )

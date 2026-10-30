@@ -1,7 +1,7 @@
 ---
 title: penrose triangle
 sub-title: null
-author: null
+author: bamr87
 excerpt: null
 description: null
 snippet: 2023-03-11T16:12:28.481Z

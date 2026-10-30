@@ -4,6 +4,7 @@ updated: 2024-02-20 06:17:00Z
 created: 2024-02-19 22:10:32Z
 tags:
   - notes
+date: 2024-12-08T14:08:06-07:00
 ---
 
 https://mailchimp.com/resources/favicon-size/

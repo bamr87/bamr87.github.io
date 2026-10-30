@@ -1,6 +1,6 @@
 ---
 title: Fish Flavored Egg plant
-author: null
+author: bamr87
 layout: default
 description: null
 categories:

@@ -1,6 +1,6 @@
 ---
 title: Angular Tour of Heros
-author: null
+author: bamr87
 excerpt: null
 description: null
 snippet: null

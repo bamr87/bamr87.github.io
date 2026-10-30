@@ -1,6 +1,6 @@
 ---
 title: Docs (~) Index
-author: Amr Abdel Eissa
+author: bamr87
 layout: collection
 permalink: /docs/
 description: Index of all doc pages and instructions on how to add new doc sections

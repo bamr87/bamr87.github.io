@@ -2,6 +2,7 @@
 title: Shell and the CLI
 description: Command Line Interface Notes
 permalink: /notes/shell
+date: '2022-01-05T00:55:02.209Z'
 lastmod: '2022-01-05T00:55:02.209Z'
 ---
 

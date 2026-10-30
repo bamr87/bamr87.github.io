@@ -1,6 +1,6 @@
 ---
 title: side-bar-folders
-author: null
+author: bamr87
 layout: null
 description: null
 slug: side-bar-folders

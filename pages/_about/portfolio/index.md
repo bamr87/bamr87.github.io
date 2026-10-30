@@ -5,6 +5,7 @@ description: "A showcase of the GitHub projects, sites, and experiments I build 
 permalink: /about/portfolio/
 sidebar:
   nav: about
+date: 2026-06-14T00:24:02-06:00
 lastmod: 2026-10-28T08:15:49Z
 ---
 

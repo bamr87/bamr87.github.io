@@ -12,6 +12,7 @@ tags:
   - powershell
 meta: null
 draft: true
+date: 2022-01-10T21:54:00.053Z
 lastmod: 2022-01-10T21:54:00.053Z
 ---
 

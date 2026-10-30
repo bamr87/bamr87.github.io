@@ -2,9 +2,10 @@
 title: AWS Practice Question Set
 updated: 2022-01-12 10:07:00Z
 created: 2023-12-15 04:10:54Z
-author: null
+author: bamr87
 tags:
   - notes
+date: 2024-12-08T14:08:06-07:00
 ---
 
 [AWS vs Azure vs GCP](https://www.bmc.com/blogs/aws-vs-azure-vs-google-cloud-platforms/)

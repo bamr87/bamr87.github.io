@@ -1,6 +1,6 @@
 ---
 title: search
-author: null
+author: bamr87
 description: Search index for the site
 categories:
   - search

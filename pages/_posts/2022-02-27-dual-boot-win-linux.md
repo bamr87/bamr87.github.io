@@ -1,6 +1,6 @@
 ---
 title: dual boot win linux
-author: 
+author: bamr87
 excerpt: 
 description: 
 snippet: 
