@@ -80,7 +80,7 @@ Edit the source, rerun the generator, never edit the output.
 ## Build and CI gotchas
 
 - GitHub Pages builds and deploys from `main` with its built-in pipeline; no workflow here deploys. Pushing to `main` publishes.
-- Workflows: `ci.yml` (hub `standard-ci.yml@v2`), `markdown-oneline.yml` (pushes the unwrap fix back to a PR), `site-quality.yml`, `verify.yml`, `conformance.yml`, `release.yml`, `claude.yml` (`@claude`), and the nightly `generate-features-index.yml`.
+- Workflows: `ci.yml` (hub `standard-ci.yml@v2`), `markdown-oneline.yml` (pushes the unwrap fix back to a PR), `site-quality.yml`, `link-check.yml` (htmlproofer on the built `_site`: no internal link to a missing page), `verify.yml`, `conformance.yml`, `release.yml`, `claude.yml` (`@claude`), and the nightly `generate-features-index.yml`.
 - `_config.yml` is not auto-reloaded: restart `jekyll serve` after editing it. The site serves on port 4002 (`port:` in `_config.yml`; `EXPOSE 4002` in the `Dockerfile`).
 - In a POSIX locale the theme's Sass fails with `Invalid US-ASCII character`; build with `LANG=C.UTF-8`.
 - Docker uses the dev config: `docker build -t bamr87.github.io .` then `docker run -d -p 4002:4002 -v "$PWD":/app --name bamr87.github.io-container bamr87.github.io`. There is no `docker-compose.yml`.

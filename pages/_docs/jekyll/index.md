@@ -18,12 +18,12 @@ Jekyll requires the following:
 * RubyGems
 * GCC and Make
 
-See [Requirements]({{ '/docs/installation/#requirements' | relative_url }}) for guides and details.
+See [Requirements](https://jekyllrb.com/docs/installation/#requirements) for guides and details.
 
 ## Instructions
 
-1. Install all [prerequisites]({{ '/docs/installation/' | relative_url }}).
-2. Install the jekyll and bundler [gems]({{ '/docs/ruby-101/#gems' | relative_url }}).
+1. Install all [prerequisites](https://jekyllrb.com/docs/installation/).
+2. Install the jekyll and bundler [gems](https://jekyllrb.com/docs/ruby-101/#gems).
 ```
 gem install jekyll bundler
 ```
@@ -46,8 +46,6 @@ bundle exec jekyll serve
 {: .note .info} Pass the `--livereload` option to `serve` to automatically refresh the page with each change you make to the source files: `bundle exec jekyll serve --livereload`
 
 
-If you encounter any errors during this process, check that you have installed all the prerequisites in [Requirements]({{ '/docs/installation/#requirements' | relative_url }}). 
-If you still have issues, see [Troubleshooting]({{ '/docs/troubleshooting/#configuration-problems' | relative_url }}).
+If you encounter any errors during this process, check that you have installed all the prerequisites in [Requirements](https://jekyllrb.com/docs/installation/#requirements). If you still have issues, see [Troubleshooting](https://jekyllrb.com/docs/troubleshooting/#configuration-problems).
 
-{: .note .info}
-Installation varies based on your operating system. See our [guides]({{ '/docs/installation/#guides' | relative_url }}) for OS-specific instructions.
+{: .note .info} Installation varies based on your operating system. See our [guides](https://jekyllrb.com/docs/installation/#guides) for OS-specific instructions.

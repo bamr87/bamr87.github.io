@@ -36,7 +36,7 @@ In addition, add `CNAME` record to point the new domain(eg. {{ site.github_user 
 
 Go to the github repository. In Settings, input the custom domain and check 'Enforce HTTPS'. ![image](/assets/images/jekyll/8142/custom_domain.png){:width="700px"}
 
-The settings on GitHub and GoDaddy will be activated after a while. Visit the website with new domain [{{ site.github_user }}.github.io]({{ site.github_user }}.github.io). Notice that the url always starts with `https`. ![image](/assets/images/jekyll/8142/rongzhuang_home.png) Portfolio page. ![image](/assets/images/jekyll/8142/rongzhuang_portfolio.png)
+The settings on GitHub and GoDaddy will be activated after a while. Visit the website with new domain [{{ site.github_user }}.github.io](https://{{ site.github_user }}.github.io/). Notice that the url always starts with `https`. ![image](/assets/images/jekyll/8142/rongzhuang_home.png) Portfolio page. ![image](/assets/images/jekyll/8142/rongzhuang_portfolio.png)
 
 ## 5. Reference
 

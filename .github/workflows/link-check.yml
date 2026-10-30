@@ -1,0 +1,52 @@
+name: Link check
+
+# Builds the site and fails if any internal link points at a page that does not
+# exist (#19: one bad `url:` in _data/navigation/*.yml becomes a 404 on every
+# page of its section). Run the same check locally with:
+#   bundle exec jekyll build && bundle exec htmlproofer ./_site --disable-external \
+#     --checks Links --no-enforce-https --allow-missing-href --no-check-internal-hash
+#
+# The flags narrow the check to missing pages, nothing else:
+#   --no-enforce-https       external URLs are not fetched, so their scheme is out of scope
+#   --allow-missing-href     <a> without href is an anchor target, not a link
+#   --no-check-internal-hash in-page #anchors in converted cheat sheets; a missing
+#                            heading id is not a 404
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: link-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  internal-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Check internal links
+        run: >-
+          bundle exec htmlproofer ./_site
+          --disable-external
+          --checks Links
+          --no-enforce-https
+          --allow-missing-href
+          --no-check-internal-hash

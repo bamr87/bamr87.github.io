@@ -400,7 +400,11 @@ bundle exec jekyll serve --config _config.yml,_config_dev.yml   # dev preview wi
 python3 -m pip install -r scripts/requirements.txt              # generator deps (PyYAML, pytest)
 python -m pytest -q scripts/tests                               # generator tests — run from the repo root
 python3 tools/unwrap-prose.py --check                           # markdown one-paragraph-per-line gate
+bundle exec jekyll build && bundle exec htmlproofer ./_site --disable-external --checks Links \
+  --no-enforce-https --allow-missing-href --no-check-internal-hash   # internal link check (CI: link-check.yml)
 ```
+
+The link check fails on any internal link to a page that does not exist, including a bad `url:` in `_data/navigation/*.yml`. `.github/workflows/link-check.yml` runs it on every pull request and explains each flag.
 
 The featured-projects table above is generated from `_data/projects.yml` by `scripts/generate_portfolio.py`, so edit the registry rather than the table. How to work in the repo is in [AGENTS.md](https://github.com/bamr87/bamr87.github.io/blob/main/AGENTS.md), and the repository's documentation starts at [docs/README.md](docs/README.md).
 
