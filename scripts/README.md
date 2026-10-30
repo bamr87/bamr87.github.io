@@ -81,3 +81,7 @@ python3 scripts/generate_collections_reference.py --check   # exit 1 if it is st
 ```
 
 `scripts/tests/test_generate_collections_reference.py` runs the same check, so editing a collection or a default without regenerating fails the tests.
+
+## Tests
+
+`python -m pytest -q scripts/tests` from the repo root. Besides the generator unit tests, `tests/test_content_links.py` is an offline guard over `pages/`: hosts verified dead may only be linked through a `web.archive.org` snapshot, the retired `{{ site.github_user }}.netlify.*` mirror is never hyperlinked, no image loads over plain `http://` (mixed content), and the Markdown cheat sheet's Liquid example stays a single raw code block. When a link dies, replace it with a Wayback snapshot if one exists (otherwise unlink it and keep the text), and add the host to `DEAD` there.

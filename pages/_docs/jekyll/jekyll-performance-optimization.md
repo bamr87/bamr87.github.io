@@ -46,8 +46,8 @@ Create netlify.toml
 ## 3. Reference
 * [Free Secure Web: Jekyll & Github Pages & Cloudflare](https://martin.ankerl.com/2017/07/22/free-secure-web-jekyll-github-pages-cloudflare/)
 * [How to Deploy Websites on Custom Domains using Cloudflare and Github Pages](https://medium.com/crowdbotics/annie-azana-how-to-deploy-websites-using-cloudflare-and-github-pages-c415c55fea36)
-* [Fix Defer Parsing of Javascript Warning in WordPress Using Async](https://www.collectiveray.com/defer-parsing-of-javascript-wordpress-async)
-* [Demo - Put Scripts at the Bottom](http://stevesouders.com/examples/rule-js-bottom.php)
+* [Fix Defer Parsing of Javascript Warning in WordPress Using Async](https://web.archive.org/web/20240920060443/https://www.collectiveray.com/defer-parsing-of-javascript-wordpress-async)
+* [Demo - Put Scripts at the Bottom](https://stevesouders.com/examples/rule-js-bottom.php)
 * [Search engine optimization for GitHub Pages](https://help.github.com/en/articles/search-engine-optimization-for-github-pages)
 * [The netlify.toml File](https://www.netlify.com/docs/netlify-toml-reference/)
 * [How To Use Cookie-Free Domains](https://www.keycdn.com/support/how-to-use-cookie-free-domains)

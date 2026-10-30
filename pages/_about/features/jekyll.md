@@ -546,7 +546,7 @@ or result in (with `permalink: /:title.html`):
     └── index.html                  # index page
 ```
 
-Note: See the `jekyll-minimal-theme` starter kit for an example [source repo](https://github.com/feedreader/jekyll-minimal-theme) and [live demo](http://feedreader.github.io/jekyll-minimal-theme).
+Note: See the `jekyll-minimal-theme` starter kit for an example [source repo](https://github.com/feedreader/jekyll-minimal-theme) and [live demo](https://web.archive.org/web/20150204172237/http://feedreader.github.io/jekyll-minimal-theme/).
 
 With post drafts, page collections, data stores and shared building blocks:
 

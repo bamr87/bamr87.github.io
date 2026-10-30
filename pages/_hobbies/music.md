@@ -8,23 +8,23 @@ permalink: /hobbies/music/
 ---
 
 
-Libraries are a great place to find free sheet music, especially large city libraries and university libraries. For example, the [Boston Public Library](http://www.bpl.org/research/music/aboutmusic.htm "Home page of Boston Public Library music department") houses one of the finest music libraries in the world, with over 150,000 volumes. If sheet music is in the public domain and in good condition, photocopying is allowed. So ... check your local library.
+Libraries are a great place to find free sheet music, especially large city libraries and university libraries. For example, the [Boston Public Library](https://web.archive.org/web/20180517054445/http://www.bpl.org/research/music/aboutmusic.htm "Home page of Boston Public Library music department") houses one of the finest music libraries in the world, with over 150,000 volumes. If sheet music is in the public domain and in good condition, photocopying is allowed. So ... check your local library.
 
-Indiana University offers a helpful [list of music libraries](http://library.music.indiana.edu/music_resources/musiclib2.html "Indiana University list of music libraries"), sorted by location. You might be able to find a music library near you.
+Indiana University offers a helpful [list of music libraries](https://web.archive.org/web/20120718035301/http://library.music.indiana.edu/music_resources/musiclib2.html "Indiana University list of music libraries"), sorted by location. You might be able to find a music library near you.
 
 Sites that offer free sheet music
 ---------------------------------
 
 Without further ado, here's the list ... happy searching!
 
-[African-American Sheet Music, 1850-1920](http://memory.loc.gov/ammem/collections/sheetmusic/brown/ "Library of Congress web site for African-American Sheet Music, 1850-1920")
+[African-American Sheet Music, 1850-1920](https://web.archive.org/web/20141004150804/http://memory.loc.gov/ammem/collections/sheetmusic/brown/ "Library of Congress web site for African-American Sheet Music, 1850-1920")
 
 **What's there:** More than 1000 pieces of African-American sheet music dating from 1850 through 1920\. The collection includes Civil War and post-Civil War period music, as well as songs from the abolitionist movement. The original sheet music is owned by the John Hay Library, Brown University.
 
-**Using what you find:** Most of the works in this collection are quite likely in the public domain. The terms state that Brown University Library isn't aware of any US copyright or any other restrictions on the documents in this collection, so you're probably all set. But listen ... if you intend to copy or use any of the material, you are responsible for determining its copyright status. Also, some of the sheet music covers include photographs of popular performers of the day --- reproduction of those materials *may* be restricted by [publicity and/or privacy rights](http://www.publicdomainsherpa.com/rights-of-publicity-and-privacy.html "Read more about publicity and privacy rights").
+**Using what you find:** Most of the works in this collection are quite likely in the public domain. The terms state that Brown University Library isn't aware of any US copyright or any other restrictions on the documents in this collection, so you're probably all set. But listen ... if you intend to copy or use any of the material, you are responsible for determining its copyright status. Also, some of the sheet music covers include photographs of popular performers of the day --- reproduction of those materials *may* be restricted by [publicity and/or privacy rights](https://www.publicdomainsherpa.com/rights-of-publicity-and-privacy.html "Read more about publicity and privacy rights").
 
 
-[California Sheet Music Project (UC Berkeley)](http://www.sims.berkeley.edu/~mkduggan/neh.html "California Sheet Music Project web site")
+[California Sheet Music Project (UC Berkeley)](https://web.archive.org/web/20060907160656/http://www2.sims.berkeley.edu/~mkduggan/neh.html "California Sheet Music Project web site")
 
 **What's there:** Collection of 2000 pieces of sheet music published in California between 1852 and 1900, maintained by the Museum Informatics Project, UC Berkeley. The collection also includes related materials such as an 1972 San Francisco publisher's catalog, programs, songsheets, advertisements, and photographs.
 
@@ -32,7 +32,7 @@ Without further ado, here's the list ... happy searching!
 
 
 
-[Chopin Early Editions](http://chopin.lib.uchicago.edu/ "Chopin Early Editions web site")
+[Chopin Early Editions](https://chopin.lib.uchicago.edu/ "Chopin Early Editions web site")
 
 
 
@@ -42,7 +42,7 @@ Without further ado, here's the list ... happy searching!
 
 
 
-[The Choral Public Domain Library](http://www.cpdl.org/wiki/index.php/Main_Page "Choral Public Domain Library web site")
+[The Choral Public Domain Library](https://www.cpdl.org/wiki/index.php/Main_Page "Choral Public Domain Library web site")
 
 
 
@@ -54,7 +54,7 @@ Not all the scores listed on this site reside on the CPDL server. Some of the sc
 
 
 
-[Christian Classics Ethereal Hymnary: Hymn Tune Archive](http://www.ccel.org/cceh/ "Christian Classics Ethereal Hymnary web site")
+[Christian Classics Ethereal Hymnary: Hymn Tune Archive](https://web.archive.org/web/20170409075843/http://www.ccel.org/cceh/ "Christian Classics Ethereal Hymnary web site")
 
 
 
@@ -74,7 +74,7 @@ Not all the scores listed on this site reside on the CPDL server. Some of the sc
 
 
 
-[ezFolk Public Domain Music Library](http://www.ezfolk.com/library/ "ezFolk.com public domain music page")
+[ezFolk Public Domain Music Library](https://web.archive.org/web/20140821214031/http://www.ezfolk.com/library/ "ezFolk.com public domain music page")
 
 
 
@@ -84,17 +84,17 @@ Not all the scores listed on this site reside on the CPDL server. Some of the sc
 
 
 
-[Free Music Editions](http://music.dalitio.de/ "Free Music Editions web site")
+[Free Music Editions](https://music.dalitio.de/ "Free Music Editions web site")
 
 
 
 **What's there:** An archive of free music, with a particular focus on choir music for three parts. The collection consists mostly of works by the site owner, Christoph Dalitz, plus some pieces by old composers that he has arranged or transcribed. You may download the music or order printed and bound copies.
 
-**Using what you find:** All editions from this site may be freely copied and used for public performances under terms of the Creative Commons license. Depending on the work, you'll find either an *attribution* or an *attribution-share-alike* license. (If you don't know what these are, check out the [Creative Commons page](http://www.publicdomainsherpa.com/creative-commons.html) for a brief explanation.)
+**Using what you find:** All editions from this site may be freely copied and used for public performances under terms of the Creative Commons license. Depending on the work, you'll find either an *attribution* or an *attribution-share-alike* license. (If you don't know what these are, check out the [Creative Commons page](https://www.publicdomainsherpa.com/creative-commons.html) for a brief explanation.)
 
 
 
-[Free Sheet Music Directory: Free-Scores.com](http://www.free-scores.com/index_uk.php3 "Free_Scores.com web site")
+[Free Sheet Music Directory: Free-Scores.com](https://www.free-scores.com/index_uk.php3 "Free_Scores.com web site")
 
 
 
@@ -106,7 +106,7 @@ Since this is a directory site, you'll come across a number of different license
 
 
 
-[Historic American Sheet Music](http://library.duke.edu/digitalcollections/hasm/ "Historic American Sheet Music web site")
+[Historic American Sheet Music](https://library.duke.edu/digitalcollections/hasm/ "Historic American Sheet Music web site")
 
 
 
@@ -116,17 +116,17 @@ Since this is a directory site, you'll come across a number of different license
 
 
 
-[Indiana University Sheet Music Collection](http://www.letrs.indiana.edu/s/sheetmusic/ "Indiana University Sheet Music Collection")
+[Indiana University Sheet Music Collection](https://web.archive.org/web/20170715165705/http://www.letrs.indiana.edu/s/sheetmusic/ "Indiana University Sheet Music Collection")
 
 
 
 **What's there:** Web site allowing you to search some of the holdings from approximately 150,000 pieces of sheet music at Indiana University's Lilly Library. Some of the sheet music has been digitized (it looks like the public domain works have been). You can search the collection, or browse by name (composer, lyricist, or arranger) or title.
 
-**Using what you find:** Not all the sheet music is in the public domain, so be aware that if the publication date is after 1923 the material may still be copyrighted. As for the public domain works (which, as I mentioned, have been digitized), Indiana University restricts your use of these reproductions to noncommercial, personal, or research use only. The site terms state that all other use without permission is strictly prohibited. It's [debatable](http://www.publicdomainsherpa.com/license-agreement.html "Read more about licenses and the public domain") whether terms that restrict the use of *public domain materials* are enforceable ... but that's what the site says.
+**Using what you find:** Not all the sheet music is in the public domain, so be aware that if the publication date is after 1923 the material may still be copyrighted. As for the public domain works (which, as I mentioned, have been digitized), Indiana University restricts your use of these reproductions to noncommercial, personal, or research use only. The site terms state that all other use without permission is strictly prohibited. It's [debatable](https://www.publicdomainsherpa.com/license-agreement.html "Read more about licenses and the public domain") whether terms that restrict the use of *public domain materials* are enforceable ... but that's what the site says.
 
 
 
-[The Lester S. Levy Sheet Music Collection](http://levysheetmusic.mse.jhu.edu/ "Levy Sheet Music Collection")
+[The Lester S. Levy Sheet Music Collection](https://levysheetmusic.mse.jhu.edu/ "Levy Sheet Music Collection")
 
 
 
@@ -136,7 +136,7 @@ Since this is a directory site, you'll come across a number of different license
 
 
 
-[Musica Viva](http://www.musicaviva.com/index.html "Musica Viva web site")
+[Musica Viva](https://web.archive.org/web/20131206012800/http://www.musicaviva.com/index.html "Musica Viva web site")
 
 
 
@@ -146,11 +146,11 @@ Since this is a directory site, you'll come across a number of different license
 
 The site owner offers his own compositions and arrangements here, too --- these are copyrighted by him. There are a few compositions copyrighted by other people, also. As for the public domain works ... the site owner claims copyright in his *editions* of these works. Digitizing a public domain music score will **not** get you a copyright here in the US, but that's not so in some other countries. Don't say I didn't tell you.
 
-So what can you do? Print the music for your own use. You can distribute it to your friends, your choir, your band, or whomever ... as long as you don't charge for it, distribute paper copies only, and include the name (Musica Viva) and URL (http://www.musicaviva.com) of your source. You can redistribute the ABC files however you wish as long as you don't charge for them and don't modify them.
+So what can you do? Print the music for your own use. You can distribute it to your friends, your choir, your band, or whomever ... as long as you don't charge for it, distribute paper copies only, and include the name (Musica Viva) and URL (https://www.musicaviva.com) of your source. You can redistribute the ABC files however you wish as long as you don't charge for them and don't modify them.
 
 
 
-[Music for the Nation: American Sheet Music 1870-1885](http://memory.loc.gov/ammem/smhtml/smhome.html "Music for the Nation collection at the Library of Congress")
+[Music for the Nation: American Sheet Music 1870-1885](https://web.archive.org/web/20140831103049/http://memory.loc.gov/ammem/smhtml/smhome.html "Music for the Nation collection at the Library of Congress")
 
 
 
@@ -160,17 +160,17 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 
 
-[The Mutopia Project](http://www.mutopiaproject.org/ "Mutopia Project web site")
+[The Mutopia Project](https://www.mutopiaproject.org/ "Mutopia Project web site")
 
 
 
 **What's there:** More than 700 pieces of sheet music, free to download, print, perform, and distribute. (And the number keeps going up all the time.) Bach, Brahms, Beethoven, Chopin, Mozart, Scott Joplin, and more. You'll also find some modern editions, arrangements, and new music. You can browse by composer, instrument, style, or collection. File formats: Postscript, PDF (in A4 and letter sizes), and Lilypond.
 
-**Using what you find:** All music is either in the public domain, released under the MutopiaBSD license (an older share-alike license that's being phased out), or released under the Creative Commons Attribution and Creative Commons Attribution-ShareAlike licenses. (If you'd like a quick summary of these licenses, see the [Creative Commons](http://www.publicdomainsherpa.com/creative-commons.html) page.) If the piece you want to use is *not* public domain, be sure to read its license terms.
+**Using what you find:** All music is either in the public domain, released under the MutopiaBSD license (an older share-alike license that's being phased out), or released under the Creative Commons Attribution and Creative Commons Attribution-ShareAlike licenses. (If you'd like a quick summary of these licenses, see the [Creative Commons](https://www.publicdomainsherpa.com/creative-commons.html) page.) If the piece you want to use is *not* public domain, be sure to read its license terms.
 
 
 
-[Nineteenth Century American Sheet Music (UNC Chapel Hill)](http://www.lib.unc.edu/dc/sheetmusic/ "19th Century American Sheet Music web site")
+[Nineteenth Century American Sheet Music (UNC Chapel Hill)](https://web.archive.org/web/20160609134017/http://www2.lib.unc.edu/dc/sheetmusic/ "19th Century American Sheet Music web site")
 
 
 
@@ -180,7 +180,7 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 
 
-[Performing Arts in America 1875-1923 (New York Public Library)](http://digital.nypl.org/lpa/nypl/lpa_home4.html "Performing Arts in America collection of the NYPL")
+[Performing Arts in America 1875-1923 (New York Public Library)](https://digital.nypl.org/lpa/nypl/lpa_home4.html "Performing Arts in America collection of the NYPL")
 
 
 
@@ -192,7 +192,7 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 
 
-[Project Gutenberg Sheet Music Subproject](http://www.gutenberg.org/wiki/Gutenberg:The_Sheet_Music_Project "Project Gutenberg Music Subproject")
+[Project Gutenberg Sheet Music Subproject](https://web.archive.org/web/20200808034640/http://www.gutenberg.org/wiki/Gutenberg:The_Sheet_Music_Project "Project Gutenberg Music Subproject")
 
 
 
@@ -202,17 +202,17 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 
 
-[Public Domain Music List (PD Info)](http://www.pdinfo.com/Public-Domain-Music-List.php "Public Domain Music List page")
+[Public Domain Music List (PD Info)](https://www.pdinfo.com/public-domain-music-list.php "Public Domain Music List page")
 
 
 
 **What's there:** Alphabetical reference list of public domain songs, searchable by title. You can also browse alphabetically or by various groupings (Christian Hymns, Christmas Songs, and John Philip Sousa). Some of the sheet music is available in individual reprints or sheet music books for sale though the site.
 
-**Using what you find:** As stated on the site, the list is intended only as an aid in researching public domain materials. Finding a song on the list *isn't conclusive evidence* that the song is in the public domain. It's important to remember (and the site reminds you) that even if a song is in the public domain, *arrangements* of the song may be protected by copyright. Make sure you use a copy of the sheet music that was published before 1923 or, if it's a later copy, that it's an exact copy of the original. For more information about how to deal with arrangements of public domain music, see the [public domain music](http://www.publicdomainsherpa.com/public-domain-sheet-music.html "Read more about arrangements of public domain music") page.
+**Using what you find:** As stated on the site, the list is intended only as an aid in researching public domain materials. Finding a song on the list *isn't conclusive evidence* that the song is in the public domain. It's important to remember (and the site reminds you) that even if a song is in the public domain, *arrangements* of the song may be protected by copyright. Make sure you use a copy of the sheet music that was published before 1923 or, if it's a later copy, that it's an exact copy of the original. For more information about how to deal with arrangements of public domain music, see the [public domain music](https://www.publicdomainsherpa.com/public-domain-sheet-music.html "Read more about arrangements of public domain music") page.
 
 
 
-[Richard Robinson's Tunebook](http://www.leeds.ac.uk/music/Info/RRTuneBk/ "Richard Robinson's Tunebook")
+[Richard Robinson's Tunebook](https://web.archive.org/web/20100929103944/http://www.leeds.ac.uk/music/Info/RRTuneBk/ "Richard Robinson's Tunebook")
 
 
 
@@ -222,7 +222,7 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 
 
-[The Sheet Music Archive](http://www.sheetmusicarchive.net/index.cfm "Sheet Music Archive web site")
+[The Sheet Music Archive](https://web.archive.org/web/20250622213601/http://www.sheetmusicarchive.net/index.cfm "Sheet Music Archive web site")
 
 
 
@@ -232,7 +232,7 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 
 
-[UCLA Digital Archive of Popular American Music](http://digital.library.ucla.edu/apam/ "UCLA Archive of Popular American Music web site")
+[UCLA Digital Archive of Popular American Music](https://digital.library.ucla.edu/apam/ "UCLA Archive of Popular American Music web site")
 
 
 
@@ -242,7 +242,7 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 
 
-[Werner Icking Music Archive](http://icking-music-archive.org/ "Werner Icking Music Archive web site")
+[Werner Icking Music Archive](https://icking-music-archive.org/ "Werner Icking Music Archive web site")
 
 
 
@@ -252,8 +252,8 @@ So what can you do? Print the music for your own use. You can distribute it to y
 
 As for public performance, you're warned that the "right to print the music does not automatically imply the right for public performance; that right is regulated by applicable copyright legislation. Such legislation holds that the copyright on the music itself remains in force until 70 years after the composer's death." One's first thought is that surely this refers to the modern composers only (I mean, Bach died in 1750, you know?). But it would be nice if it were more clearly stated, because some of the arrangements will have their own copyrights. Speaking of which ...
 
-While it's likely that some arrangements of the public domain works here are copyrightable, it's equally likely that some arrangements *don't* merit their own copyright. The records for some pieces merely state that the piece was "edited by" someone. Did the edits rise to the level of copyrightability? Hard to say without investigating. For more info about the copyrightability of arrangements, see [this page](http://www.publicdomainsherpa.com/public-domain-music.html).
+While it's likely that some arrangements of the public domain works here are copyrightable, it's equally likely that some arrangements *don't* merit their own copyright. The records for some pieces merely state that the piece was "edited by" someone. Did the edits rise to the level of copyrightability? Hard to say without investigating. For more info about the copyrightability of arrangements, see [this page](https://www.publicdomainsherpa.com/public-domain-music.html).
 
 ## Source
 
-[Source](http://www.publicdomainsherpa.com/free-sheet-music.html)
+[Source](https://www.publicdomainsherpa.com/free-sheet-music.html)

@@ -74,18 +74,18 @@ Refresh the page. The highlighting is working now.
 In Markdown, we can create hyperlinks to the pages of our own website or external website with the following codes:
 ````
 ```
-[My Website](http://{{ site.github_user }}.github.io/)
+[My Website](https://{{ site.github_user }}.github.io/)
 ```
 ````
-Here is the result after Markdown file is converted to web page: [My Website](http://{{ site.github_user }}.github.io/).
+Here is the result after Markdown file is converted to web page: [My Website](https://{{ site.github_user }}.github.io/).
 
 We can also add `{:target="_blank"}` at end, which makes the browser open a new tab when the link is clicked.
 ````
 ```
-[My Website](http://{{ site.github_user }}.github.io/){:target="_blank"}
+[My Website](https://{{ site.github_user }}.github.io/){:target="_blank"}
 ```
 ````
-Here is the result after Markdown file is converted to web page: [My Website](http://{{ site.github_user }}.github.io/){:target="\_blank"}.
+Here is the result after Markdown file is converted to web page: [My Website](https://{{ site.github_user }}.github.io/){:target="\_blank"}.
 
 The problem of above approach is the url is hard-coded. Suppose we rename our internal page or the external URL is obsolete, then this link would be unreachable, which means it becomes 'dead'. It is impossible for you to know if all your hyperlinks are alive.
 
@@ -131,7 +131,7 @@ Again, use `post.excerpt` to get customized excerpt and display it on page.
 ![image](/assets/images/jekyll/8112/excerpt.png){:width="400px"}  
 
 ## 6. Data File
-All the links in [favorite page](http://{{ site.github_user }}.github.io/favorite/) are from `Data File`.  
+All the links in favorite page are from `Data File`.  
 Create `_data` folder in the root directory, add create a data file named `favorite.yml`.
 ![image](/assets/images/jekyll/8112/datafile.png){:width="400px"}  
 Add following content to `favorite.yml`.
@@ -209,7 +209,7 @@ Open browser, access the favorite page.
 ![image](/assets/images/jekyll/8112/favorite.png)  
 
 ## 7. Collection
-Use `Collection` to create similar pages. The [portfolio index page](http://{{ site.github_user }}.github.io/portfolio/) is created by collection. Edit `_config.yml`, add following lines.
+Use `Collection` to create similar pages. The portfolio index page is created by collection. Edit `_config.yml`, add following lines.
 ```
 collections:
   portfolio:
@@ -411,7 +411,7 @@ One horizontal scrollbar is added to the table on screen. ![image](/assets/image
 * [Post excerpts](https://jekyllrb.com/docs/posts/#post-excerpts)
 * [Links](https://jekyllrb.com/docs/templates/#links)
 * [3 Easy Steps To Implement Jekyll Collections!](https://blog.webjeda.com/jekyll-collections/)
-* [Get Pagination working in Jekyll Collection in Github pages](http://anjesh.github.io/2015/01/25/collection-pagination-working-github-pages/)
+* [Get Pagination working in Jekyll Collection in Github pages](https://web.archive.org/web/20181110203244/http://anjesh.github.io/2015/01/25/collection-pagination-working-github-pages/)
 * [Adding a class to a table in markdown](https://gist.github.com/tamouse/4204dddabb6b072b0242)
 * [Is there a way to overflow a markdown table using HTML?](https://stackoverflow.com/questions/41076390/is-there-a-way-to-overflow-a-markdown-table-using-html)
 * [Bootstrap 4 Tables](https://www.w3schools.com/bootstrap4/bootstrap_tables.asp)

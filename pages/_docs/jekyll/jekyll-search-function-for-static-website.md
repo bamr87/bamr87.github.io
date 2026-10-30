@@ -21,5 +21,5 @@ lastmod: 2023-12-03T08:47:24.633Z
 * [Lunrjs - Searching](https://lunrjs.com/guides/searching.html)
 * [Jekyll Search with Algolia and Webtasks](https://forestry.io/blog/search-with-algolia-in-jekyll/)
 * [Lunr UPGRADING](https://lunrjs.com/guides/upgrading.html)
-* [Jekyll Search Function](http://www.mtlong.me/blog/jekyll-search-function/)
+* [Jekyll Search Function](https://web.archive.org/web/20200203061513/http://www.mtlong.me/blog/jekyll-search-function/)
 * [How to strip newlines in jekyll?](https://stackoverflow.com/questions/45147948/how-to-strip-newlines-in-jekyll)

@@ -78,7 +78,7 @@ Create a file named with `mathjax.html` in `_include` directory as follows:
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
-* See the details about the settings from [here](http://docs.mathjax.org/en/latest/tex.html#tex-and-latex-math-delimiters), especially for the escape character \$ and ().
+* See the details about the settings from [here](https://web.archive.org/web/20190822103112/http://docs.mathjax.org/en/latest/tex.html#tex-and-latex-math-delimiters), especially for the escape character \$ and ().
 
 Update file `_inlude/head.html`, include the above template file if `page.mathjax` is true.
 ```javascript
@@ -142,6 +142,6 @@ Here are some notes about the above example:
 
 ## 4. References
 * [Putting mathematics on the Web with MathJax](https://www.w3.org/Math/MJ/Overview.html)
-* [How to use MathJax in Jekyll generated Github pages](http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/)
+* [How to use MathJax in Jekyll generated Github pages](https://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/)
 * [MathJax basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
-* [Typesetting Math Using MathJax](http://jeffskinnerbox.me/notebooks/typesetting-math-using-mathjax.html)
+* [Typesetting Math Using MathJax](https://web.archive.org/web/20190423064255/http://jeffskinnerbox.me/notebooks/typesetting-math-using-mathjax.html)

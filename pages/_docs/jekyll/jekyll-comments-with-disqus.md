@@ -138,4 +138,4 @@ See the comments count is correctly displayed. Click on the link, it will naviga
 ## References:
 
 * [DISQUS universal code](https://disqus.com/admin/install/platforms/universalcode/)
-* [HOW TO ADD DISQUS TO YOUR JEKYLL SITE?](https://poanchen.github.io/blog/2017/07/27/how-to-add-disqus-to-your-jekyll-sitel)
+* [HOW TO ADD DISQUS TO YOUR JEKYLL SITE?](https://poanchen.github.io/blog/2017/07/27/how-to-add-disqus-to-your-jekyll-site)

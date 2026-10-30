@@ -109,7 +109,7 @@ Multi-line comments use `:'` to open and `'` to close
 | `$-`        | Current options                       |
 | `$_`        | Last argument of the previous command |
 
-See: [Special parameters](http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables)
+See: [Special parameters](https://web.archive.org/web/20240920083544/http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables)
 
 ### Functions
 
@@ -147,7 +147,7 @@ echo {A,B}.js
 | `{A,B}.js` | Same as `A.js B.js` |
 | `{1..5}`   | Same as `1 2 3 4 5` |
 
-See: [Brace expansion](http://wiki.bash-hackers.org/syntax/expansion/brace)
+See: [Brace expansion](https://web.archive.org/web/20250106233012/http://wiki.bash-hackers.org/syntax/expansion/brace)
 
 ### Shell execution
 
@@ -157,7 +157,7 @@ echo "I'm in $(PWD)"
 echo "I'm in `pwd`"
 ```
 
-See: [Command substitution](http://wiki.bash-hackers.org/syntax/expansion/cmdsubst)
+See: [Command substitution](https://web.archive.org/web/20241216065414/http://wiki.bash-hackers.org/syntax/expansion/cmdsubst)
 
 Bash Parameter expansions
 -------------------------
@@ -234,7 +234,7 @@ length=2
 echo ${name:0:length}  # => Jo
 ```
 
-See: [Parameter expansion](http://wiki.bash-hackers.org/syntax/pe)
+See: [Parameter expansion](https://web.archive.org/web/20250402013653/https://wiki.bash-hackers.org/syntax/pe)
 
 ### basepath & dirpath
 
@@ -889,7 +889,7 @@ fi
 | `$$`       | PID of shell                 |
 | `$0`       | Filename of the shell script |
 
-See [Special parameters](http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables).
+See [Special parameters](https://web.archive.org/web/20240920083544/http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables).
 
 ### Grep check  {.col-span-2}
 
@@ -978,9 +978,9 @@ See: [Unofficial bash strict mode](http://redsymbol.net/articles/unofficial-bash
 ## Also see {.cols-1}
 
 * [Devhints](https://devhints.io/bash) _(devhints.io)_
-* [Bash-hackers wiki](http://wiki.bash-hackers.org/) _(bash-hackers.org)_
-* [Shell vars](http://wiki.bash-hackers.org/syntax/shellvars) _(bash-hackers.org)_
+* [Bash-hackers wiki](https://web.archive.org/web/20250314043436/https://wiki.bash-hackers.org/) _(bash-hackers.org)_
+* [Shell vars](https://web.archive.org/web/20240920083544/http://wiki.bash-hackers.org/syntax/shellvars) _(bash-hackers.org)_
 * [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) _(learnxinyminutes.com)_
-* [Bash Guide](http://mywiki.wooledge.org/BashGuide) _(mywiki.wooledge.org)_
+* [Bash Guide](https://mywiki.wooledge.org/BashGuide) _(mywiki.wooledge.org)_
 * [ShellCheck](https://www.shellcheck.net/) _(shellcheck.net)_
 * [shell - Standard Shell](https://devmanual.gentoo.org/tools-reference/bash/index.html) _(devmanual.gentoo.org)_
