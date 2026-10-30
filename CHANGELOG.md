@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/bamr87/bamr87.github.io/compare/v0.2.1...v0.2.2) (2026-10-30)
+
+
+### Fixed
+
+* **content:** repair dead links, mixed-content images and the cheat sheet Liquid example ([d3541e3](https://github.com/bamr87/bamr87.github.io/commit/d3541e310b7f0cbf3886c5c9f5101d00bbe3292c))
+* **nav:** serve music at /hobbies/music/ and gate internal links in CI ([8d37e58](https://github.com/bamr87/bamr87.github.io/commit/8d37e583c94799265a55b4a2cf596642135a36a1))
+
 ## [0.2.1](https://github.com/bamr87/bamr87.github.io/compare/v0.2.0...v0.2.1) (2026-10-30)
 
 
