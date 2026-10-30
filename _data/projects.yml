@@ -19,7 +19,7 @@ exclude:
   - skills-github-pages
   - zer0-pages
   - bamr87.github.io   # this site itself — linked from the profile, not the showcase
-  - djangoerp          # superseded by django-fin / amrs-project (avoid duplicate Django apps)
+  - djangoerp          # legacy Django ERP experiment, not maintained for the showcase
 
 projects:
   # ---- Featured ---------------------------------------------------------------
@@ -33,12 +33,6 @@ projects:
     category: "Jekyll & Web"
     blurb: "A GitHub Pages-compatible Jekyll theme built on Bootstrap 5, with Docker-first development and self-healing install scripts. Powers this site."
 
-  - repo: barodybroject
-    featured: true
-    category: "Apps & AI"
-    blurb: "Full-stack, responsive web app with OpenAI integration — a containerized parody-news demo of AI content workflows."
-    live_url: false   # barodybroject.com custom domain is currently unreachable — hide Live link until restored
-
   - repo: bamr87
     featured: true
     category: "Infrastructure"
@@ -50,14 +44,6 @@ projects:
     blurb: "A terminal game for learning the Linux command line by exploring a dungeon, one `cd` at a time."
 
   # ---- Apps & AI --------------------------------------------------------------
-  - repo: aieo
-    category: "Apps & AI"
-    blurb: "AI Engine Optimization — tooling to optimize content for citation and discovery by AI engines."
-
-  - repo: lawmode
-    category: "Apps & AI"
-    blurb: "An always-on AI legal assistant for developers."
-
   - repo: githubai
     category: "Apps & AI"
 
@@ -80,11 +66,6 @@ projects:
 
   - repo: fredgar-ai   # renamed from edgar-data-parse; blurb comes from the GitHub description
     category: "Data"
-
-  # ---- Knowledge bases --------------------------------------------------------
-  - repo: "1987"
-    category: "Knowledge Bases"
-    blurb: "A self-growing knowledge base about the year 1987 — history, people, and culture."
 
   # ---- Infrastructure ---------------------------------------------------------
   - repo: README

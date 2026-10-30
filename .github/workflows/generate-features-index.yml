@@ -34,15 +34,18 @@ jobs:
       - name: Regenerate indexes (remote GitHub mode)
         env:
           FEATURES_GITHUB_TOKEN: ${{ secrets.FEATURES_GITHUB_TOKEN }}
+          # Separate budget from the features generator, so the portfolio fetch is
+          # never starved by it. The generator fails closed on any failed fetch.
+          PORTFOLIO_GITHUB_TOKEN: ${{ github.token }}
         run: |
           python3 scripts/generate_features_index.py --mode=remote --owner=bamr87 --token=${FEATURES_GITHUB_TOKEN}
-          python3 scripts/generate_portfolio.py --owner=bamr87
+          python3 scripts/generate_portfolio.py --owner=bamr87 --token="${PORTFOLIO_GITHUB_TOKEN}"
 
       - name: Commit and push regenerated content
         run: |
           git config user.email "actions@github.com"
           git config user.name "github-actions"
-          git add pages/_about/features/index.md pages/_about/portfolio/index.md README.md
+          git add pages/_about/features/index.md pages/_about/portfolio/index.md README.md _data/portfolio.yml
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

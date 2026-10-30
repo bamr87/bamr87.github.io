@@ -23,8 +23,11 @@ Usage:
 
 Design notes:
 - Deterministic output: repos render in registry order, so reruns produce clean diffs.
-- Network-tolerant: a repo that fails to fetch is rendered from registry data alone
-  (and noted on stderr) rather than aborting the whole run.
+- Fail-closed: if any GitHub fetch fails (after one retry on a rate limit), the run
+  exits non-zero BEFORE writing, so a rate-limited CI run can never overwrite good
+  committed output with degraded links.
+- Rename/transfer aware: links and badges use the API's resolved `full_name`, and a
+  `warn:` line names both URLs so the registry can be updated.
 """
 
 import argparse
@@ -33,6 +36,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -57,6 +61,9 @@ README_BEGIN = '<!-- AUTO:portfolio:start -->'
 README_END = '<!-- AUTO:portfolio:end -->'
 
 API = 'https://api.github.com'
+
+# Longest `Retry-After` we honour before the single retry of a rate-limited fetch.
+MAX_RETRY_WAIT = 60
 
 
 # --------------------------------------------------------------------------- #
@@ -90,18 +97,39 @@ def resolve_token(cli_token: Optional[str]) -> Optional[str]:
     return None
 
 
+def _retry_wait(err: urllib.error.HTTPError) -> Optional[int]:
+    """Seconds to wait before retrying a rate-limited request, or None if not rate-limited."""
+    if err.code not in (403, 429):
+        return None
+    headers = err.headers or {}
+    if err.code == 403 and headers.get('X-RateLimit-Remaining') != '0' and not headers.get('Retry-After'):
+        return None  # a plain permission error, not a rate limit
+    try:
+        wait = int(headers.get('Retry-After') or 1)
+    except ValueError:
+        wait = 1
+    return max(0, min(wait, MAX_RETRY_WAIT))
+
+
 def _get_json(url: str, token: Optional[str], label: str) -> Optional[dict]:
     req = urllib.request.Request(url)
     req.add_header('Accept', 'application/vnd.github+json')
     if token:
         req.add_header('Authorization', f'Bearer {token}')
-    try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            return json.load(resp)
-    except urllib.error.HTTPError as e:
-        print(f"warn: {label} -> HTTP {e.code}", file=sys.stderr)
-    except Exception as e:  # network off, timeout, etc.
-        print(f"warn: {label} -> {e}", file=sys.stderr)
+    for attempt in (1, 2):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return json.load(resp)
+        except urllib.error.HTTPError as e:
+            wait = _retry_wait(e)
+            if attempt == 1 and wait is not None:
+                print(f"warn: {label} -> HTTP {e.code}, retrying in {wait}s", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            print(f"warn: {label} -> HTTP {e.code}", file=sys.stderr)
+        except Exception as e:  # network off, timeout, etc.
+            print(f"warn: {label} -> {e}", file=sys.stderr)
+        return None
     return None
 
 
@@ -151,6 +179,8 @@ def merge_project(owner: str, entry: dict, meta: Optional[dict]) -> dict:
     return {
         'repo': repo,
         'owner': owner,
+        # The API follows renames/transfers; `full_name` is where the repo lives now.
+        'full_name': meta.get('full_name') or f"{owner}/{repo}",
         'featured': bool(entry.get('featured')),
         'category': entry.get('category', 'Projects'),
         # Registry `blurb` wins over the GitHub description so the showcase reads well.
@@ -170,11 +200,11 @@ def merge_project(owner: str, entry: dict, meta: Optional[dict]) -> dict:
 # Rendering
 # --------------------------------------------------------------------------- #
 def badges(p: dict) -> str:
-    o, r = p['owner'], p['repo']
+    fn = p['full_name']
     b = [
-        f"[![Stars](https://img.shields.io/github/stars/{o}/{r}?style=flat-square)](https://github.com/{o}/{r}/stargazers)",
-        f"[![Last commit](https://img.shields.io/github/last-commit/{o}/{r}?style=flat-square)](https://github.com/{o}/{r}/commits)",
-        f"![Top language](https://img.shields.io/github/languages/top/{o}/{r}?style=flat-square)",
+        f"[![Stars](https://img.shields.io/github/stars/{fn}?style=flat-square)](https://github.com/{fn}/stargazers)",
+        f"[![Last commit](https://img.shields.io/github/last-commit/{fn}?style=flat-square)](https://github.com/{fn}/commits)",
+        f"![Top language](https://img.shields.io/github/languages/top/{fn}?style=flat-square)",
     ]
     return ' '.join(b)
 
@@ -318,19 +348,34 @@ def render_portfolio_data_yaml(data: dict) -> str:
     return header + yaml.safe_dump(data, sort_keys=False, allow_unicode=True, width=10000)
 
 
-def build(owner: str, token: Optional[str], registry: dict) -> Dict[str, str]:
+def warn_if_moved(owner: str, repo: str, meta: Optional[dict]) -> None:
+    """Flag a registry entry whose repo was renamed or transferred."""
+    expected = f"https://github.com/{owner}/{repo}"
+    actual = (meta or {}).get('html_url')
+    if actual and actual.lower() != expected.lower():
+        print(f"warn: {expected} moved to {actual}; update _data/projects.yml", file=sys.stderr)
+
+
+def build(owner: str, token: Optional[str], registry: dict) -> Dict:
+    """Fetch and render everything. `failed` lists every fetch that returned nothing."""
     exclude = set(registry.get('exclude', []) or [])
     entries = [e for e in registry['projects'] if e.get('repo') not in exclude]
     projects = []
+    failed: List[str] = []
     for entry in entries:
         meta = fetch_repo(owner, entry['repo'], token)
+        if meta is None:
+            failed.append(f"{owner}/{entry['repo']}")
+        warn_if_moved(owner, entry['repo'], meta)
         projects.append(merge_project(owner, entry, meta))
     user = fetch_user(owner, token)
+    if user is None:
+        failed.append(f"user {owner}")
     now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
     page = render_portfolio_page(projects, now)
     readme_block = render_readme_block(projects)
     data_yaml = render_portfolio_data_yaml(build_portfolio_data(owner, projects, user, now))
-    return {'page': page, 'readme_block': readme_block, 'data_yaml': data_yaml}
+    return {'page': page, 'readme_block': readme_block, 'data_yaml': data_yaml, 'failed': failed}
 
 
 def _strip_volatile(text: str) -> str:
@@ -359,6 +404,12 @@ def main() -> int:
     token = resolve_token(args.token)
 
     out = build(owner, token, registry)
+    if out['failed']:
+        # Fail closed: degraded output (no Live links, stale owners) must never
+        # overwrite the committed files, so stop before touching anything.
+        print(f"error: {len(out['failed'])} GitHub fetch(es) failed ({', '.join(out['failed'])}); "
+              "nothing written", file=sys.stderr)
+        return 2
     existing_page = _read(PORTFOLIO_PAGE)
     existing_readme = _read(README_FILE)
     existing_data = _read(PORTFOLIO_DATA)
