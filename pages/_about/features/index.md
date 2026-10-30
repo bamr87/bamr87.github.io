@@ -5,7 +5,7 @@ description: "Automatically generated index of features across the bamr87 reposi
 permalink: /about/features/
 sidebar:
   nav: about
-lastmod: 2026-10-29T02:14:16Z
+lastmod: 2026-10-30T02:13:57Z
 ---
 
 
@@ -77,6 +77,10 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Governance kit: constitution, amendments, PRD and feature link | bamr87 | governance, features, prd, fan-out | /bamr87/tools/governance_lint.py |
 | Backlog fan-out routine | bamr87 | fan-out, backlog, automation, activity-log | /bamr87/.github/workflows/backlog-fanout.yml |
 | Work board: rebalance the loops' work by drag and drop | bamr87 | console, issue-pipeline, roadmap, spec-driven, prioritisation | /work |
+| Daily repo deep dive: one repo a day, every repo once per cycle | bamr87 | deep-dive, routine, console, dashboard, automation | /deep-dive |
+| Real-time bot activity dashboard | bamr87 | console, dashboard, live, sse, observability | /live |
+| Harness Console MCP layer: the console's API for any AI agent | bamr87 | console, mcp, agents, ai-layer, integration | /bamr87/tools/console/mcp_layer/server.py |
+| Claude spend accounting: every CI run priced, estimated or proved free | bamr87 | ai, cost, budget, ledger, transparency, dashboard | /bamr87/.github/scripts/dash-gen/ai_usage_collector.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -116,6 +120,14 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | AI CV parser | cv-pro |  | /cv-pro/app/src/components/cv/AIParser.tsx |
 | Multi-format export | cv-pro |  | /cv-pro/app/src/components/cv/ExportSection.tsx |
 | TODO: the first thing a user does here | djangoerp | todo | / |
+| Python package with an EDGAR User-Agent config and tests | edgar-pipeline | phase-1 | /edgar-pipeline/pyproject.toml |
+| Standard CI gate | edgar-pipeline | ci | /edgar-pipeline/.github/workflows/ci.yml |
+| Terraform root module validates and plans with no cloud credentials (l | fleet-infra | phase-1 | /fleet-infra/main.tf |
+| Standard CI gate | fleet-infra | ci | /fleet-infra/.github/workflows/ci.yml |
+| Shared Kotlin module with a fleet status model and unit tests (JVM tar | fleet-mobile | phase-1 | /fleet-mobile/settings.gradle.kts |
+| Standard CI gate | fleet-mobile | ci | /fleet-mobile/.github/workflows/ci.yml |
+| docker compose stack (otel-collector, prometheus, grafana) validates a | fleet-observe | phase-1 | /fleet-observe/compose.yml |
+| Standard CI gate | fleet-observe | ci | /fleet-observe/.github/workflows/ci.yml |
 | TODO: the first thing a user does here | fredgar-ai | todo | / |
 | Core finance formulas and ratio metrics | fredgar-ai | metrics, ratios, valuation | /fredgar-ai/src/warehouse/services/finance_formulas.py |
 | TODO: the first thing a user does here | githubai | todo | / |
@@ -141,6 +153,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Front matter validation | it-journey |  | /it-journey/.github/workflows/frontmatter-validation.yml |
 | Link health check | it-journey |  | /it-journey/scripts/validation/link-checker.py |
 | PRD synchronization (prd-machine) | it-journey |  | /it-journey/scripts/prd-machine |
+| In-memory get/put/delete API with unit tests | kvlite | phase-1 | /kvlite/Cargo.toml |
+| Standard CI gate | kvlite | ci | /kvlite/.github/workflows/ci.yml |
 | Data ingestion and knowledge graph foundation | law-ai |  | /law-ai/backend/law_ai/ingestionapp |
 | Core agent crews | law-ai |  | /law-ai/backend/law_ai/agents_runtime |
 | LSAT Learning Lab | law-ai |  | /law-ai/backend/law_ai/lsat |
@@ -153,6 +167,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Offline-generated cover art | lifehacker.dev |  | /lifehacker.dev/scripts/preview |
 | CI harness: Pages safe-mode build plus front-matter,… | lifehacker.dev |  | /lifehacker.dev/.github/workflows/ci.yml |
 | Author personas in _data/authors.yml | lifehacker.dev |  | /lifehacker.dev/_data/authors.yml |
+| TCP connect probe for host:port with timeout, exposed as a CLI subcomm | netprobe | phase-1 | /netprobe/go.mod |
+| Standard CI gate | netprobe | ci | /netprobe/.github/workflows/ci.yml |
 | CLI: scan, ingest | ocrmd |  | /ocrmd/ocrmd/cli.py |
 | Local OCR: Apple Vision + RapidOCR voting (Tesseract… | ocrmd |  | /ocrmd/ocrmd/ocr.py |
 | Vision-model providers: Anthropic (default) and xAI | ocrmd |  | /ocrmd/ocrmd/llm.py |
@@ -192,6 +208,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | CLAUDE.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
 | Seed templates and lint-green example fixture repos | SCHEMA |  | /SCHEMA/templates/SCHEMA.template.md |
 | Scenario test suite | SCHEMA |  | /SCHEMA/tests/test_schema_lint.py |
+| Lexer tokenizing identifiers, strings and punctuation, with tests | schema-lang | phase-1 | /schema-lang/Cargo.toml |
+| Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
 | Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
 | ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
 | StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
@@ -200,6 +218,10 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
 | Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
 | install.sh standalone installer | scripts |  | /scripts/install.sh |
+| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
+| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
+| Portable C payload encoder producing JSON readings, with a host test | sensor-mesh | phase-1 | /sensor-mesh/platformio.ini |
+| Standard CI gate | sensor-mesh | ci | /sensor-mesh/.github/workflows/ci.yml |
 | Run code | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Stop all | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Log / output panel | vs-sonic-pi |  | /vs-sonic-pi/src |
@@ -233,6 +255,17 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Dashboard: every site's content in one place | zer0-CMS | extension, dashboard | /zer0-CMS/src/dashboard/dashboardPanel.ts |
 | Governed publishing: draft → guard → approve → publish → ledger | zer0-CMS | extension, governance | /zer0-CMS/src/core/governance/ |
 | Bundled MCP server for the editor's agents | zer0-CMS | extension, mcp | /zer0-CMS/src/mcp/server.ts |
+| HTTP service exposing /healthz and /.well-known/openid-configuration | zer0-id | phase-1 | /zer0-id/go.mod |
+| Standard CI gate | zer0-id | ci | /zer0-id/.github/workflows/ci.yml |
+| Freestanding kernel object and Multiboot2 header build with host gcc/l | zer0-kernel | phase-1 | /zer0-kernel/Makefile |
+| Standard CI gate | zer0-kernel | ci | /zer0-kernel/.github/workflows/ci.yml |
+| Syntax highlighting | zpl-viewer |  | /zpl-viewer/src/providers |
+| Live canvas preview with zoom and paging | zpl-viewer |  | /zpl-viewer/src/previewPanel.ts |
+| Templates, snippets and Barcode Studio | zpl-viewer |  | /zpl-viewer/src/barcode |
+| Formatters, image import, format conversion | zpl-viewer |  | /zpl-viewer/src/formatting.ts |
+| Analysis: metrics, ink coverage, lint rules | zpl-viewer |  | /zpl-viewer/src/analysis |
+| Data merge of {{placeholder}} templates from CSV/TSV/JSON/JSONL | zpl-viewer |  | /zpl-viewer/src/importers |
+| Deploy via raw TCP 9100 | zpl-viewer |  | /zpl-viewer/src/deploy |
 
 
 ## Requested / Backlog Features
@@ -244,14 +277,59 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Harness pipeline map (proposed) | bamr87 | harness, console, diagrams, activity-log | /bamr87/docs/prd/HARNESS-PIPELINE-MAP.md |
 | GitHub workflow nodes on the pipeline map (proposed) | bamr87 | harness, console, github, workflows | /bamr87/docs/prd/HARNESS-PIPELINE-MAP.md |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
+| Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
+| Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
+| dbt project on DuckDB with staging and mart models | edgar-pipeline | phase-2 |  |
+| MLflow-tracked baseline model on filing features | edgar-pipeline | phase-3 |  |
+| Export marts consumed by fredgar-ai and law-ai | edgar-pipeline | phase-3 |  |
+| A base Helm chart lints cleanly and renders a namespace + deployment | fleet-infra | phase-1 |  |
+| k3s cluster provisioning module for a local VM (multipass/libvirt) | fleet-infra | phase-2 |  |
+| GitOps controller bootstrap that reconciles charts/ from main | fleet-infra | phase-2 |  |
+| Per-service Helm charts for fleet apps (ragio-ai, fredgar-ai) | fleet-infra | phase-3 |  |
+| Secrets management via SOPS/age, never plaintext in git | fleet-infra | phase-3 |  |
+| Gradle build of the shared module in CI | fleet-mobile | phase-1 |  |
+| Ktor client fetching hub fleet data | fleet-mobile | phase-2 |  |
+| Android app shell with a repo status list | fleet-mobile | phase-2 |  |
+| iOS target and Compose Multiplatform UI | fleet-mobile | phase-3 |  |
+| Notifications for failing CI and review requests | fleet-mobile | phase-3 |  |
+| Prometheus scrapes the collector's own metrics | fleet-observe | phase-1 |  |
+| Grafana datasource and a fleet overview dashboard provisioned from fil | fleet-observe | phase-2 |  |
+| OTLP instrumentation guide and example for a fleet service | fleet-observe | phase-2 |  |
+| Alerting rules for service availability | fleet-observe | phase-3 |  |
+| Helm deployment onto fleet-infra | fleet-observe | phase-3 |  |
 | Blog posts | it-journey |  | /posts/ |
 | Documentation section | it-journey |  | /docs/ |
 | Jupyter notebooks | it-journey |  | /notebooks/ |
+| Write-ahead log with crash recovery | kvlite | phase-1 |  |
+| SSTable flush and point lookups across levels | kvlite | phase-2 |  |
+| Background compaction and bloom filters | kvlite | phase-2 |  |
+| Raft leader election and log replication | kvlite | phase-3 |  |
+| Network API (gRPC) and a CLI client | kvlite | phase-3 |  |
 | Interactive knowledge graph explorer | law-ai |  | /law-ai/backend/law_ai/graph |
 | Analysis Studio | law-ai |  | /law-ai/backend/law_ai/analysis |
 | Matters workspace | law-ai |  | /law-ai/backend/law_ai/matters |
 | Multi-agent collaboration and GraphRAG (Phase 2) | law-ai |  |  |
 | Expansion (Phase 3) | law-ai |  |  |
+| Concurrent port range scan with rate limiting | netprobe | phase-1 |  |
+| DNS lookup subcommand (A/AAAA/MX/TXT) | netprobe | phase-2 |  |
+| Traceroute view | netprobe | phase-2 |  |
+| Bubble Tea TUI dashboard combining probes | netprobe | phase-3 |  |
+| JSON output for scripting | netprobe | phase-3 |  |
+| CLI that reads a .schema file and prints tokens | schema-lang | phase-1 |  |
+| Recursive-descent parser producing an AST | schema-lang | phase-2 |  |
+| Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
+| Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
+| Language server (LSP) for editors | schema-lang | phase-3 |  |
+| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
+| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
+| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
+| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
+| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
+| PlatformIO project for esp32dev that builds | sensor-mesh | phase-1 |  |
+| Wi-Fi + MQTT publish loop with reconnect | sensor-mesh | phase-2 |  |
+| BME280 temperature/humidity driver | sensor-mesh | phase-2 |  |
+| OTA firmware updates | sensor-mesh | phase-3 |  |
+| MQTT → OTLP bridge into fleet-observe | sensor-mesh | phase-3 |  |
 | Autocomplete | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Hover documentation | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Error reporting | vs-sonic-pi |  | /vs-sonic-pi/src |
@@ -261,6 +339,16 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | MIDI monitor | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Audio scope | vs-sonic-pi |  | /vs-sonic-pi/src |
 | Multi-buffer workspaces | vs-sonic-pi |  | /vs-sonic-pi/src |
+| JWKS endpoint with a generated signing key | zer0-id | phase-1 |  |
+| Authorization code + PKCE flow with a client registry | zer0-id | phase-2 |  |
+| ID token and access token issuance (RS256/EdDSA) | zer0-id | phase-2 |  |
+| WebAuthn passkey registration and login | zer0-id | phase-3 |  |
+| Conformance test run against the OpenID suite | zer0-id | phase-3 |  |
+| Kernel ELF links with a linker script and boots in QEMU (grub-mkrescue | zer0-kernel | phase-1 |  |
+| Serial and VGA text output drivers | zer0-kernel | phase-2 |  |
+| IDT, exceptions and timer interrupts | zer0-kernel | phase-2 |  |
+| Paging and physical frame allocator | zer0-kernel | phase-3 |  |
+| Round-robin scheduler and a minimal shell | zer0-kernel | phase-3 |  |
 
 
 ---
@@ -268,4 +356,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-29T02:14:16Z
+Last updated: 2026-10-30T02:13:57Z
