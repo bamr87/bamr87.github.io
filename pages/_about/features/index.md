@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-10-30T02:13:57Z
+lastmod: 2026-10-31T02:11:38Z
 ---
 
 
@@ -82,6 +82,11 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Real-time bot activity dashboard | bamr87 | console, dashboard, live, sse, observability | /live |
 | Harness Console MCP layer: the console's API for any AI agent | bamr87 | console, mcp, agents, ai-layer, integration | /bamr87/tools/console/mcp_layer/server.py |
 | Claude spend accounting: every CI run priced, estimated or proved free | bamr87 | ai, cost, budget, ledger, transparency, dashboard | /bamr87/.github/scripts/dash-gen/ai_usage_collector.py |
+| The fleet's one release-please workflow, degrading to a warning without a PR credential | bamr87 | release, loop, workflows, kits | /bamr87/.github/workflows/release-please.yml |
+| Workflow atlas: maintain and design the hub's GitHub Actions | bamr87 | console, workflows, ci, standards, lint, mcp | /workflows |
+| JEV: conflict-free numbering + tiered PR conflict triage | bamr87 | jev, governance, numbering, conflicts, ai, cost, automation | /bamr87/tools/jev/README.md |
+| Claude Code OTel telemetry in the console and MCP | bamr87 | console, observability, claude-code, otel, mcp | /bamr87/tools/console/claude_telemetry.py |
+| Claude subscription shown as a discounted rate off API list prices | bamr87 | console, cost, claude, observability | /bamr87/tools/console/subscription.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -129,7 +134,12 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Standard CI gate | fleet-mobile | ci | /fleet-mobile/.github/workflows/ci.yml |
 | docker compose stack (otel-collector, prometheus, grafana) validates a | fleet-observe | phase-1 | /fleet-observe/compose.yml |
 | Standard CI gate | fleet-observe | ci | /fleet-observe/.github/workflows/ci.yml |
-| TODO: the first thing a user does here | fredgar-ai | todo | / |
+| SEC EDGAR sync and ingest | fredgar-ai |  | /fredgar-ai/src/sec_edgar |
+| Financial data warehouse | fredgar-ai |  | /fredgar-ai/src/warehouse |
+| REST API v1 | fredgar-ai |  | /fredgar-ai/src/api |
+| React dashboard | fredgar-ai |  | /fredgar-ai/frontend/src |
+| Versioned reference data | fredgar-ai |  | /fredgar-ai/data/reference |
+| Leadership narrative analyzer (optional AI) | fredgar-ai |  | /fredgar-ai/src/warehouse/services/leadership_ai.py |
 | Core finance formulas and ratio metrics | fredgar-ai | metrics, ratios, valuation | /fredgar-ai/src/warehouse/services/finance_formulas.py |
 | TODO: the first thing a user does here | githubai | todo | / |
 | Drag-and-drop canvas | gitorio |  | /gitorio/app/src/canvas |
@@ -154,6 +164,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Front matter validation | it-journey |  | /it-journey/.github/workflows/frontmatter-validation.yml |
 | Link health check | it-journey |  | /it-journey/scripts/validation/link-checker.py |
 | PRD synchronization (prd-machine) | it-journey |  | /it-journey/scripts/prd-machine |
+| Quest Atom feed | it-journey | feed, atom, quests | /quests/feed.xml |
 | In-memory get/put/delete API with unit tests | kvlite | phase-1 | /kvlite/Cargo.toml |
 | Standard CI gate | kvlite | ci | /kvlite/.github/workflows/ci.yml |
 | Data ingestion and knowledge graph foundation | law-ai |  | /law-ai/backend/law_ai/ingestionapp |
@@ -184,89 +195,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Belt profile: handoff messages through one gapless, crash-repairable relay | outbox |  | /outbox/src/outbox/belt.py |
 | Claim desk: race a draft's claims, resolve later, calibrate | outbox |  | /outbox/src/outbox/claimdesk.py |
 | Local end-to-end proof of the platform plan across the sibling repos | outbox |  | /outbox/e2e/run.py |
-| Crawl | README |  | /README/scripts |
-| Extract | README |  | /README/context |
-| Navigate | README |  | /README/context |
-| Synthesize | README |  | /README/context |
-| Assemble | README |  | /README/context |
-| Index | README |  | /README/context |
-| Serve | README |  | /README/mcp |
-| Evolve | README |  | /README/hooks.d |
-| arcade/: React + canvas + Web Audio games | rewind-arcade |  | /rewind-arcade/arcade |
-| emulate/ / retro-pi/ | rewind-arcade |  | /rewind-arcade/emulate |
-| catalog/: cartridge-index (stdlib Python): dumps,… | rewind-arcade |  | /rewind-arcade/catalog |
-| systems/registry.yaml + docs encyclopedia | rewind-arcade |  | /rewind-arcade/systems/registry.yaml |
-| Tests that enforce the system-id map across pillars | rewind-arcade |  | /rewind-arcade/catalog/tests |
-| Generate challenges by bits or digits | rsa-challenge |  | /rsa-challenge/rsa_challenge/cli.py |
-| Public challenge file with commitments | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
-| Secrets kept out of git | rsa-challenge |  | /rsa-challenge/scripts/check_no_secrets.py |
-| Verify submissions from the CLI | rsa-challenge |  | /rsa-challenge/rsa_challenge/challenge.py |
-| Client-side verification site | rsa-challenge |  | /rsa-challenge/site/index.html |
-| Seeded challenge ladder | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
-| tools/schema_lint.py | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
-| Federation checks across submodule seams | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
-| DISTRIBUTION.yml + tools/schema_dist.py | SCHEMA |  | /SCHEMA/DISTRIBUTION.yml |
-| CLAUDE.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
-| Seed templates and lint-green example fixture repos | SCHEMA |  | /SCHEMA/templates/SCHEMA.template.md |
-| Scenario test suite | SCHEMA |  | /SCHEMA/tests/test_schema_lint.py |
-| Lexer tokenizing identifiers, strings and punctuation, with tests | schema-lang | phase-1 | /schema-lang/Cargo.toml |
-| Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
-| Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
-| ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
-| StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
-| Git + GitHub repository creator | scripts | github, scaffolding | /scripts/git_init.sh |
-| Safe directory rename | scripts | filesystem | /scripts/rename-directory.sh |
-| Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
-| Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
-| install.sh standalone installer | scripts |  | /scripts/install.sh |
-| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
-| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
-| Portable C payload encoder producing JSON readings, with a host test | sensor-mesh | phase-1 | /sensor-mesh/platformio.ini |
-| Standard CI gate | sensor-mesh | ci | /sensor-mesh/.github/workflows/ci.yml |
-| Run code | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Stop all | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Log / output panel | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Syntax highlighting | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Server detection | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Keep-alive heartbeat | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Configuration | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Run / Stop commands | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Examples | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Run selection | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Recording | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Beautify / Align | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Tutorial webview | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Wagtail admin: pages, revisions, media, workflows | zer0-CMS | platform, admin, wagtail | /admin/ |
-| Agent suggestions, reviewed in the editor | zer0-CMS | platform, agents, governance | /admin/suggestions/page/ |
-| Agent review as a moderation task | zer0-CMS | platform, agents, workflow | /admin/workflows/ |
-| Agent runs report | zer0-CMS | platform, agents, reports | /admin/reports/agent-runs/ |
-| GraphQL API | zer0-CMS | platform, api, graphql | /graphql/ |
-| REST API: agent runs, graph, suggestions, tools | zer0-CMS | platform, api, rest, openapi | /api/v2/docs/ |
-| MCP server over the one tool registry | zer0-CMS | platform, api, mcp, agents | /mcp/ |
-| Jekyll sites imported and exported byte for byte | zer0-CMS | platform, jekyll, import, export | /zer0-CMS/content/importers/jekyll.py |
-| Health, readiness and version probes | zer0-CMS | platform, ops, probes | /readyz |
-| Request ids, the error envelope and structured logs | zer0-CMS | platform, ops, logging, errors | /api/v2/docs/ |
-| The studio: write, create and publish | zer0-CMS | studio, web, editor, publishing | /studio/write |
-| The studio's review inbox and revisions | zer0-CMS | studio, web, review, agents, governance | /studio/review |
-| Agent runs with a live step timeline | zer0-CMS | studio, web, agents | /studio/ai |
-| The studio's AI area: assistants, pipelines, output schemas, providers and models | zer0-CMS | studio, web, ai, assistants, pipelines, providers | /studio/ai |
-| Briefs, conversations and the editor's AI panel | zer0-CMS | studio, web, ai, briefs, conversations, editor | /studio/create/briefs |
-| The studio's Outbox desk: the belt, arena trials and the claim desk | zer0-CMS | studio, web, outbox, belt, claim-desk, pipelines | /studio/outbox |
-| Metadata panel: front matter as typed controls | zer0-CMS | extension, editor | /zer0-CMS/src/panel/panelProvider.ts |
-| Dashboard: every site's content in one place | zer0-CMS | extension, dashboard | /zer0-CMS/src/dashboard/dashboardPanel.ts |
-| Governed publishing: draft → guard → approve → publish → ledger | zer0-CMS | extension, governance | /zer0-CMS/src/core/governance/ |
-| Bundled MCP server for the editor's agents | zer0-CMS | extension, mcp | /zer0-CMS/src/mcp/server.ts |
-| HTTP service exposing /healthz and /.well-known/openid-configuration | zer0-id | phase-1 | /zer0-id/go.mod |
-| Standard CI gate | zer0-id | ci | /zer0-id/.github/workflows/ci.yml |
-| Freestanding kernel object and Multiboot2 header build with host gcc/l | zer0-kernel | phase-1 | /zer0-kernel/Makefile |
-| Standard CI gate | zer0-kernel | ci | /zer0-kernel/.github/workflows/ci.yml |
-| Syntax highlighting | zpl-viewer |  | /zpl-viewer/src/providers |
-| Live canvas preview with zoom and paging | zpl-viewer |  | /zpl-viewer/src/previewPanel.ts |
-| Templates, snippets and Barcode Studio | zpl-viewer |  | /zpl-viewer/src/barcode |
-| Formatters, image import, format conversion | zpl-viewer |  | /zpl-viewer/src/formatting.ts |
-| Analysis: metrics, ink coverage, lint rules | zpl-viewer |  | /zpl-viewer/src/analysis |
-| Data merge of {{placeholder}} templates from CSV/TSV/JSON/JSONL | zpl-viewer |  | /zpl-viewer/src/importers |
-| Deploy via raw TCP 9100 | zpl-viewer |  | /zpl-viewer/src/deploy |
 
 
 ## Requested / Backlog Features
@@ -277,6 +205,10 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Fleet activity log (proposed) | bamr87 | fleet, observability, governance, prd |  |
 | Harness pipeline map (proposed) | bamr87 | harness, console, diagrams, activity-log | /bamr87/docs/prd/HARNESS-PIPELINE-MAP.md |
 | GitHub workflow nodes on the pipeline map (proposed) | bamr87 | harness, console, github, workflows | /bamr87/docs/prd/HARNESS-PIPELINE-MAP.md |
+| Fleet work-tracking framework on GitHub Projects (proposed) | bamr87 | governance, projects, labels, fleet | /bamr87/templates/projects/framework.yml |
+| Projects coverage gate: every open issue/PR tracked with required fields (proposed) | bamr87 | governance, lint, projects | /bamr87/tools/projects_lint.py |
+| Features/PRD ↔ project sync and console Projects panel (proposed) | bamr87 | governance, projects, console, mcp |  |
+| GitHub Projects in the console: cross-owner aggregation, linked view and guarded write-back | bamr87 | projects, console, github | /bamr87/tools/console/gh_projects.py |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
 | Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
@@ -298,6 +230,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | OTLP instrumentation guide and example for a fleet service | fleet-observe | phase-2 |  |
 | Alerting rules for service availability | fleet-observe | phase-3 |  |
 | Helm deployment onto fleet-infra | fleet-observe | phase-3 |  |
+| Core product roadmap | fredgar-ai |  |  |
+| Advanced / growth features | fredgar-ai |  |  |
+| PerfectPixel Studio sprite-sheet import | godotgo |  | /godotgo/framework/addons |
 | Blog posts | it-journey |  | /posts/ |
 | Documentation section | it-journey |  | /docs/ |
 | Jupyter notebooks | it-journey |  | /notebooks/ |
@@ -316,40 +251,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Traceroute view | netprobe | phase-2 |  |
 | Bubble Tea TUI dashboard combining probes | netprobe | phase-3 |  |
 | JSON output for scripting | netprobe | phase-3 |  |
-| CLI that reads a .schema file and prints tokens | schema-lang | phase-1 |  |
-| Recursive-descent parser producing an AST | schema-lang | phase-2 |  |
-| Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
-| Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
-| Language server (LSP) for editors | schema-lang | phase-3 |  |
-| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
-| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
-| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
-| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
-| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
-| PlatformIO project for esp32dev that builds | sensor-mesh | phase-1 |  |
-| Wi-Fi + MQTT publish loop with reconnect | sensor-mesh | phase-2 |  |
-| BME280 temperature/humidity driver | sensor-mesh | phase-2 |  |
-| OTA firmware updates | sensor-mesh | phase-3 |  |
-| MQTT → OTLP bridge into fleet-observe | sensor-mesh | phase-3 |  |
-| Autocomplete | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Hover documentation | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Error reporting | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Status bar | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Daemon auto-start | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Cue log | vs-sonic-pi |  | /vs-sonic-pi/src |
-| MIDI monitor | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Audio scope | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Multi-buffer workspaces | vs-sonic-pi |  | /vs-sonic-pi/src |
-| JWKS endpoint with a generated signing key | zer0-id | phase-1 |  |
-| Authorization code + PKCE flow with a client registry | zer0-id | phase-2 |  |
-| ID token and access token issuance (RS256/EdDSA) | zer0-id | phase-2 |  |
-| WebAuthn passkey registration and login | zer0-id | phase-3 |  |
-| Conformance test run against the OpenID suite | zer0-id | phase-3 |  |
-| Kernel ELF links with a linker script and boots in QEMU (grub-mkrescue | zer0-kernel | phase-1 |  |
-| Serial and VGA text output drivers | zer0-kernel | phase-2 |  |
-| IDT, exceptions and timer interrupts | zer0-kernel | phase-2 |  |
-| Paging and physical frame allocator | zer0-kernel | phase-3 |  |
-| Round-robin scheduler and a minimal shell | zer0-kernel | phase-3 |  |
 
 
 ---
@@ -357,4 +258,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-30T02:13:57Z
+Last updated: 2026-10-31T02:11:38Z

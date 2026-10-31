@@ -2,16 +2,16 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-10-28T08:15:49Z'
+generated_at: '2026-10-31T02:11:43Z'
 totals:
-  public_repos: 30
-  followers: 21
+  public_repos: 42
+  followers: 20
   shown: 12
   featured: 3
-  stars: 49
+  stars: 50
   languages:
-    Python: 5
-    JavaScript: 3
+    Python: 6
+    JavaScript: 2
     TypeScript: 2
     HTML: 1
     Shell: 1
@@ -30,7 +30,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-10-28T06:01:43Z'
+  pushed_at: '2026-10-30T22:17:22Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -49,7 +49,7 @@ projects:
   - jekyll
   - jekyll-theme
   - ruby
-  pushed_at: '2026-10-28T08:02:42Z'
+  pushed_at: '2026-10-30T22:17:26Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -68,7 +68,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-10-28T07:42:39Z'
+  pushed_at: '2026-10-30T22:13:35Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -76,7 +76,7 @@ projects:
   featured: false
   category: Learning & Docs
   description: A terminal game for learning the Linux command line by exploring a dungeon, one `cd` at a time.
-  stars: 33
+  stars: 34
   language: JavaScript
   topics:
   - bash
@@ -86,7 +86,7 @@ projects:
   - javascript
   - linux
   - terminal
-  pushed_at: '2026-10-27T06:01:57Z'
+  pushed_at: '2026-10-30T22:17:28Z'
   license: GPL-3.0
   repo_url: https://github.com/bamr87/bashcrawl
   site_url: https://bamr87.github.io/bashcrawl/
@@ -95,7 +95,7 @@ projects:
   category: Apps & AI
   description: 'Claude Code SDLC framework: reusable GitHub Actions that triage issues, implement work, review PRs and cut releases.'
   stars: 1
-  language: JavaScript
+  language: Python
   topics:
   - ai-agents
   - automation
@@ -104,7 +104,7 @@ projects:
   - github-actions
   - github-app
   - python
-  pushed_at: '2026-10-27T05:13:01Z'
+  pushed_at: '2026-10-31T02:10:22Z'
   license: MIT
   repo_url: https://github.com/bamr87/githubai
   site_url: null
@@ -188,7 +188,7 @@ projects:
   - react
   - sec-edgar
   - typescript
-  pushed_at: '2026-10-28T06:02:07Z'
+  pushed_at: '2026-10-30T20:21:17Z'
   license: MIT
   repo_url: https://github.com/bamr87/fredgar-ai
   site_url: https://bamr87.github.io/fredgar-ai/
@@ -206,7 +206,7 @@ projects:
   - mcp
   - mkdocs
   - python
-  pushed_at: '2026-10-27T05:11:48Z'
+  pushed_at: '2026-10-30T20:22:52Z'
   license: MIT
   repo_url: https://github.com/bamr87/README
   site_url: https://bamr87.github.io/README/
@@ -223,7 +223,7 @@ projects:
   - developer-tools
   - github
   - scaffolding
-  pushed_at: '2026-10-28T03:58:48Z'
+  pushed_at: '2026-10-30T01:46:57Z'
   license: MIT
   repo_url: https://github.com/bamr87/scripts
   site_url: null
