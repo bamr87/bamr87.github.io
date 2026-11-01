@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-10-31T02:11:38Z
+lastmod: 2026-11-01T02:12:23Z
 ---
 
 
@@ -121,11 +121,20 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Optional Docker services | bashos |  | /bashos/docker-compose.yml |
 | chui terminal environment (macOS) | bashos |  | /bashos/chui |
 | Window list and layout serialization | bashos |  | /bashos/src/bashos/gui |
+| OS layer: bashos os install / update / uninstall | bashos |  | /bashos/os/install.sh |
+| Bootable bashOS image (mkosi) | bashos |  | /bashos/os/image/build.sh |
+| Console on the physical monitor | bashos |  | /bashos/os/bin/bashos-console |
+| Harness Console service | bashos |  | /bashos/os/bin/bashos-harness |
 | CV data management | cv-pro |  | /cv-pro/app/src/components/cv |
 | LaTeX template system | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | AI CV parser | cv-pro |  | /cv-pro/app/src/components/cv/AIParser.tsx |
 | Multi-format export | cv-pro |  | /cv-pro/app/src/components/cv/ExportSection.tsx |
-| TODO: the first thing a user does here | djangoerp | todo | / |
+| Apps: accounts, coa, company, core, journal, invoices,… | djangoerp |  | /djangoerp/djangoerp/urls.py |
+| Multi-warehouse stock ledger with moving-average costing | djangoerp |  | /djangoerp/inventory/models.py |
+| BOMs, work orders and an MRP planning engine | djangoerp |  | /djangoerp/mrp/engine.py |
+| Async financial reports via Celery | djangoerp |  | /djangoerp/djangoerp/celery.py |
+| Swagger/ReDoc API docs | djangoerp |  | /djangoerp/djangoerp/urls.py |
+| Docker / docker-compose with PostgreSQL | djangoerp |  | /djangoerp/docker-compose.yml |
 | Python package with an EDGAR User-Agent config and tests | edgar-pipeline | phase-1 | /edgar-pipeline/pyproject.toml |
 | Standard CI gate | edgar-pipeline | ci | /edgar-pipeline/.github/workflows/ci.yml |
 | Terraform root module validates and plans with no cloud credentials (l | fleet-infra | phase-1 | /fleet-infra/main.tf |
@@ -141,7 +150,12 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Versioned reference data | fredgar-ai |  | /fredgar-ai/data/reference |
 | Leadership narrative analyzer (optional AI) | fredgar-ai |  | /fredgar-ai/src/warehouse/services/leadership_ai.py |
 | Core finance formulas and ratio metrics | fredgar-ai | metrics, ratios, valuation | /fredgar-ai/src/warehouse/services/finance_formulas.py |
-| TODO: the first thing a user does here | githubai | todo | / |
+| One-command install of the Claude lanes | githubai |  | /githubai/setup |
+| Repo-type profiles | githubai |  | /githubai/profiles |
+| Issue triage | githubai |  | /githubai/.github/workflows/claude-triage.yml |
+| Implement and auto-merge lanes | githubai |  | /githubai/.github/workflows/claude-implement.yml |
+| PR review, maintenance and release lanes | githubai |  | /githubai/.github/workflows/claude-review.yml |
+| GitHub App relay and org policy | githubai |  | /githubai/app |
 | Drag-and-drop canvas | gitorio |  | /gitorio/app/src/canvas |
 | Blueprint → Actions workflow compiler with vitest invariant tests | gitorio |  | /gitorio/app/src/compiler |
 | Demo mode ?demo=1 on a fixture-backed three-repo fleet | gitorio |  | /gitorio/app/src/demo |
@@ -195,6 +209,43 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Belt profile: handoff messages through one gapless, crash-repairable relay | outbox |  | /outbox/src/outbox/belt.py |
 | Claim desk: race a draft's claims, resolve later, calibrate | outbox |  | /outbox/src/outbox/claimdesk.py |
 | Local end-to-end proof of the platform plan across the sibling repos | outbox |  | /outbox/e2e/run.py |
+| Episode catalog | ragio-ai | pipeline | /ragio-ai/ragio/catalog.py |
+| Local Whisper transcription | ragio-ai | pipeline, whisper | /ragio-ai/ragio/transcribe.py |
+| Segment chunking | ragio-ai | pipeline | /ragio-ai/ragio/chunk.py |
+| Vector index and episode summaries | ragio-ai | pipeline, qdrant, llamaindex | /ragio-ai/ragio/index.py |
+| Hybrid RAG with citations | ragio-ai | rag, ollama | /ragio-ai/ragio/rag.py |
+| Audio clips | ragio-ai | audio | /ragio-ai/ragio/clips.py |
+| Deep listen | ragio-ai | audio, optional | /ragio-ai/ragio/clips.py |
+| Retrieval evaluation | ragio-ai | eval | /ragio-ai/ragio/evaluate.py |
+| Web app | ragio-ai | fastapi, ui | /ragio-ai/app.py |
+| Crawl | README |  | /README/scripts |
+| Extract | README |  | /README/context |
+| Navigate | README |  | /README/context |
+| Synthesize | README |  | /README/context |
+| Assemble | README |  | /README/context |
+| Index | README |  | /README/context |
+| Serve | README |  | /README/mcp |
+| Evolve | README |  | /README/hooks.d |
+| Published fleet documentation site | README | site, mkdocs, navigation | / |
+| arcade/: React + canvas + Web Audio games | rewind-arcade |  | /rewind-arcade/arcade |
+| emulate/ / retro-pi/ | rewind-arcade |  | /rewind-arcade/emulate |
+| catalog/: cartridge-index (stdlib Python): dumps,… | rewind-arcade |  | /rewind-arcade/catalog |
+| systems/registry.yaml + docs encyclopedia | rewind-arcade |  | /rewind-arcade/systems/registry.yaml |
+| Tests that enforce the system-id map across pillars | rewind-arcade |  | /rewind-arcade/catalog/tests |
+| Generate challenges by bits or digits | rsa-challenge |  | /rsa-challenge/rsa_challenge/cli.py |
+| Public challenge file with commitments | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
+| Secrets kept out of git | rsa-challenge |  | /rsa-challenge/scripts/check_no_secrets.py |
+| Verify submissions from the CLI | rsa-challenge |  | /rsa-challenge/rsa_challenge/challenge.py |
+| Client-side verification site | rsa-challenge |  | /rsa-challenge/site/index.html |
+| Seeded challenge ladder | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
+| tools/schema_lint.py | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
+| Federation checks across submodule seams | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
+| DISTRIBUTION.yml + tools/schema_dist.py | SCHEMA |  | /SCHEMA/DISTRIBUTION.yml |
+| CLAUDE.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
+| Seed templates and lint-green example fixture repos | SCHEMA |  | /SCHEMA/templates/SCHEMA.template.md |
+| Scenario test suite | SCHEMA |  | /SCHEMA/tests/test_schema_lint.py |
+| Lexer tokenizing identifiers, strings and punctuation, with tests | schema-lang | phase-1 | /schema-lang/Cargo.toml |
+| Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
 
 
 ## Requested / Backlog Features
@@ -209,6 +260,22 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Projects coverage gate: every open issue/PR tracked with required fields (proposed) | bamr87 | governance, lint, projects | /bamr87/tools/projects_lint.py |
 | Features/PRD ↔ project sync and console Projects panel (proposed) | bamr87 | governance, projects, console, mcp |  |
 | GitHub Projects in the console: cross-owner aggregation, linked view and guarded write-back | bamr87 | projects, console, github | /bamr87/tools/console/gh_projects.py |
+| Docs site conformance: site exists, index complete, links resolve | bamr87 | governance, docs, conformance | /bamr87/tools/conformance.py |
+| Public docs site: every fleet repo publishes all its documentation | bamr87 | governance, docs, pages | /bamr87/docs/constitution.md |
+| Architecture research harness: literature-grounded fleet architecture review and research papers | bamr87 | harness, architecture, research |  |
+| Review gate: needs-amr label holds a PR from agent merge | bamr87 | governance, merge | /bamr87/docs/constitution.md |
+| Evidence conformance: checks major/frontend PRs for tests, visuals and review | bamr87 | governance, verification, conformance | /bamr87/tools/conformance.py |
+| Major-change evidence: JEV-judged major PRs, tests, visual before/after, JEV + QA Lead review | bamr87 | governance, verification, review | /bamr87/docs/constitution.md |
+| Eval baseline: per-role eval sets, pinned models, run tracing | bamr87 | governance, ai, evals | /bamr87/docs/constitution.md |
+| Risk tiers: reversible/external/money tags gate agent actions | bamr87 | governance, ai, safety | /bamr87/docs/constitution.md |
+| AI-ready foundation: API layer, MCP, agent docs and metadata in every repo | bamr87 | governance, ai, mcp, api | /bamr87/docs/constitution.md |
+| AIEO AI-readiness check: scores every repo's AI foundation | bamr87 | governance, ai, conformance, aieo | /bamr87/tools/aieo/ |
+| Backstage catalog-info.yaml export of the registry | bamr87 | registry, catalog, interop | /bamr87/.github/scripts/dash-gen |
+| Fan-out campaigns page: per-repo PR, CI and merge state per kit rollout | bamr87 | fanout, console, campaigns | /bamr87/tools/fanout.sh |
+| Tag selectors for --target | bamr87 | fanout, cli, selectors | /bamr87/tools/fanout.sh |
+| Copier-style 3-way kit upgrade for hand-edited files | bamr87 | fanout, kits, upgrade | /bamr87/tools/fanout.sh |
+| Governance records lint: amendment status, constitution order, doc links | bamr87 | governance, lint | /bamr87/tools/governance_lint.py |
+| Centrally managed loop kill switches | bamr87 | loops, kill-switch, console, governance | /bamr87/_data/fleet.yml |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
 | Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
@@ -251,6 +318,17 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Traceroute view | netprobe | phase-2 |  |
 | Bubble Tea TUI dashboard combining probes | netprobe | phase-3 |  |
 | JSON output for scripting | netprobe | phase-3 |  |
+| index the full archive and reach eval hit@5 ≥ 0.85 on eval/questions.j | ragio-ai | roadmap, phase-1 |  |
+| route questions to candidate episodes via the summary collection befor | ragio-ai | roadmap, phase-2 |  |
+| GPU deep-listen mode re-transcribing cited ranges with a larger Whispe | ragio-ai | roadmap, phase-3 |  |
+| creative modes and an episode/people/themes knowledge graph | ragio-ai | roadmap, phase-4 |  |
+| speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
+| Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
+| CLI that reads a .schema file and prints tokens | schema-lang | phase-1 |  |
+| Recursive-descent parser producing an AST | schema-lang | phase-2 |  |
+| Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
+| Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
+| Language server (LSP) for editors | schema-lang | phase-3 |  |
 
 
 ---
@@ -258,4 +336,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-10-31T02:11:38Z
+Last updated: 2026-11-01T02:12:23Z
