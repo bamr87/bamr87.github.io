@@ -23,7 +23,7 @@ Every day, the grown adults cry about budgets, headcount, capacity and data nobo
 
 Then there’s the scariest noise of all, the one that turns Office Space into a horror film: leadership calling an emergency “cash flow imperative” meeting you weren’t invited to.
 
-Flashbacks of interdepartmental warfare and finger-pointing fill every head in the room. Meeting after meeting, everyone rallies to be the savior who fixes cash flow.
+Flashbacks of interdepartmental warfare and finger-pointing fill every head in the room. Meeting after meeting, everyone rallies to be the savior who increases shareholder value.
 
 Meanwhile, you sit quietly and watch the bookkeepers scramble for the latest GAAP loophole, digging through the data only to discover that no one in corporate accounting actually knows what drives the numbers.
 
@@ -31,17 +31,15 @@ Maybe they should consult an expert in financial systems. Maybe there’s a syst
 
 But maybe that isn’t the point.
 
-The cash flow imperative was never about the cash. It was about the meeting: who called it, who sat closest to the head of the table, who got credit for the slide that said “action items.” Fixing the flaw would have ended the meeting, and nobody in that room had anywhere better to be.
+The cash flow imperative was never about the cash. It was about the meeting: who called it, who sat closest to the head of the table, who got credit for the slide that said “action items.” Fixing the flaws would have ended the meeting, and nobody in that room had anywhere better to be.
 
 If corporate America rewarded talent, executives wouldn’t be reacting to a goodwill impairment in a year of record-breaking revenue and profits.
 
-Think about what that sentence says on a balance sheet. Goodwill is the premium a company pays for an acquisition above everything it can actually count: the brand, the relationships, the hope. An impairment is the company admitting, in writing, that the hope was worth less than the price. In a record year, the business is fine. The mistake is the price, paid years earlier by people who have since been promoted.
+Goodwill is the premium a company pays for an acquisition above everything it can actually count: the brand, the relationships, the hope. An impairment is the company admitting, in writing, that the hope was worth less than the price. In a record year, the business is fine. The mistake is the price, paid years earlier by people who have since been promoted.
 
-So the reaction is never to the mistake. It is to the headline. The write-down lands, and the fix is always the same line item: people. The ones who understand the systems become a cost to cut. The ones who bought the asset become the leadership. And the books get balanced by impairing the only goodwill the company ever really had, the kind that showed up to work every day.
+The write-down lands, and the fix is always the same line item: people. The ones who understand the systems become a cost to cut. The ones who bought the asset become the leadership. And the books get balanced by impairing the only goodwill the company ever really had.
 
 Which is why corporate idiocracy wins every time, and why there’s no such thing as goodwill.
-
-Only badwill.
 
 So the verdict came down. The adults stopped crying. Or I stopped having to watch.
 
@@ -49,7 +47,7 @@ And a baby started.
 
 Different crying. The real kind. The miracle-of-life kind, where a brand-new person announces at full volume that they exist, they’re hungry, and you’re the one. No approval chain. No planned meetings. Only deep human connection that’s worth more than any corporate “imperative.”
 
-Best paternity leave in corporate history, approved by nobody.
+Best paternity leave in corporate history.
 
 Then the personal development got out of hand.
 
@@ -59,7 +57,7 @@ It went the way every epic goes, from zer0 to her0: one level at a time, each bo
 
 **Level 0001: the dungeon.** Then the first fight, in the terminal. **[bashcrawl](https://bamr87.github.io/bashcrawl/)** teaches real shell skills as a fantasy dungeon crawl where the filesystem is the game: directories are rooms, scrolls are the lessons and scripts are the encounters. It now has a second door, a browser trainer with courses, mini-games and cheatsheets built from the same content. Credit where it is due: it is built on Seth Kenlon’s original bashcrawl, under the same GPL.
 
-**Level 0010: the spreadsheet.** Then the thing that wastes the most hours in any office. **[csv-vscoode](https://github.com/bash-365/csv-vscoode)** puts the spreadsheet inside the editor, on top of the file itself, so you never leave the scene to fix a column and nothing quietly reformats your dates on the way out. It shipped. It is finished. It is archived. Achievement unlocked: done, a status corporate project reports rarely offer.
+**Level 0010: the spreadsheet.** Then the thing that wastes the most hours in any office. **[csv-vscoode](https://apps.bash-365.com/csv-vscode/)** puts the spreadsheet inside the editor, on top of the file itself, so you never leave the scene to fix a column and nothing quietly reformats your dates on the way out. It shipped. It is finished. It is archived. Achievement unlocked: done, a status corporate project reports rarely offer.
 
 **Level 0011: the newsroom.** Next, a publication that writes itself. **[lifehacker.dev](https://lifehacker.dev/)** is drafted by a robot, reviewed by a human and published with the mistakes left in. The mistakes are the evidence. Three hundred posts in, the robot is on leave. Unlike mine, its leave needed a configuration change.
 
@@ -85,8 +83,3 @@ Add it up and it stops looking like personal development. Eight levels and more 
 
 [github.com/bamr87/bamr87](https://github.com/bamr87/bamr87)
 
-Three weeks ago, the crying came back. Three in the morning, every night. No agenda, no slide deck, no action items. Just a small person who means every word. First meeting I’ve been glad to attend in years.
-
-They had a cash flow imperative. I built one that works, and I left the door unlocked.
-
-Same table. Better seat.
