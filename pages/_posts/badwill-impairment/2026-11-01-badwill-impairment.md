@@ -17,23 +17,25 @@ Three years ago today, the noise stopped, and the crying began.
 
 You know the noise. It radiates and echoes through your PC (as in politically correct) inbox, screaming corporate American idiocracy disguised as “culture.”
 
-We all know that “grinding” sound as we feed the beast with honor and devotion to our ominous shareholders, silently dread the Groundhog Day-jà vu of stand-up after stand-up, week after week, and call it progress.
+We all know that grinding sound. It is us, feeding the beast with honor and devotion to our ominous shareholders, silently dreading the Groundhog Day-jà vu of stand-up after stand-up, week after week, and calling it progress.
 
 Every day, the grown adults cry about budgets, headcount, capacity and data nobody can reach, or insist the system is to blame instead of the incompetence running it.
 
 Then there’s the scariest noise of all, the one that turns Office Space into a horror film: leadership calling an emergency “cash flow imperative” meeting you weren’t invited to.
 
-Flashbacks of inter departmental warfare and finger pointing occupy everyones mind, while meeting upon meeting, everyone rallies to be that savior who fixes cashflow.
+Flashbacks of interdepartmental warfare and finger-pointing fill every head in the room. Meeting after meeting, everyone rallies to be the savior who fixes cash flow.
 
-While silently, you listen and watch the bookkeepers scramble to find the latest GAAP loophole as they dig through the data, only to realize that no one in corporate accounting actually knows what drives the numbers.
+Meanwhile, you sit quietly and watch the bookkeepers scramble for the latest GAAP loophole, digging through the data only to discover that no one in corporate accounting actually knows what drives the numbers.
 
-Maybe they should consult an expert in financial systems. Maybe there's a system design flaw that's erroneously handing out cash discounts. 
+Maybe they should consult an expert in financial systems. Maybe there’s a system design flaw quietly handing out cash discounts nobody meant to give.
 
-But maybe that isn't the point.
+But maybe that isn’t the point.
 
-If corporate America rewarded talent, executives wouldn’t react on goodwill impairments in a year of record-breaking revenue and profits.
+If corporate America rewarded talent, executives wouldn’t be reacting to a goodwill impairment in a year of record-breaking revenue and profits.
 
-Which is why corporate idiocracy wins every time, and there's actually no such thing as goodwill.
+Which is why corporate idiocracy wins every time, and why there’s no such thing as goodwill.
+
+Only badwill.
 
 So the verdict came down. The adults stopped crying. Or I stopped having to watch.
 
