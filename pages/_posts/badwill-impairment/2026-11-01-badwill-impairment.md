@@ -41,17 +41,21 @@ Best paternity leave in corporate history, approved by nobody.
 
 Then the personal development got out of hand.
 
-**[fredgar-ai](https://github.com/bamr87/fredgar-ai)** reads SEC filings and FRED data and writes the summary. A machine that actually reads cash flow statements — which puts it ahead of the imperative.
+It went the way every epic goes, from zer0 to her0: one level at a time, each boss bigger than the last, and no one in the room to tell me which ones were out of scope.
 
-**[law-ai](https://github.com/bamr87/law-ai)** keeps a lawyer on retainer who never sleeps. Every pull request gets cross-examined. The ones carrying license or compliance risk never leave the building.
+**Level 1: the spreadsheet.** Every hero starts with the thing that wastes the most hours. **[csv-vscoode](https://github.com/bash-365/csv-vscoode)** puts the spreadsheet inside the editor, on top of the file itself, so you never leave the scene to fix a column and nothing quietly reformats your dates on the way out. It shipped. It is finished. It is archived. Achievement unlocked: done, a status corporate project reports rarely offer.
 
-**[zer0-CMS](https://github.com/bamr87/zer0-CMS)**, cut loose from a Front Matter fork and rebuilt on Django and Wagtail. SQLite or Postgres. Ships in a container. No Ruby left in the body.
+**Level 2: the newsroom.** Next, a publication that writes itself. **[lifehacker.dev](https://lifehacker.dev/)** is drafted by a robot, reviewed by a human and published with the mistakes left in. The mistakes are the evidence. Three hundred posts in, the robot is on leave. Unlike mine, its leave needed a configuration change.
 
-**[lifehacker.dev](https://lifehacker.dev/)** — drafted by a robot, reviewed by a human, published with the mistakes left in. The mistakes are the evidence.
+**Level 3: the analyst.** Then the numbers. **[fredgar-ai](https://github.com/bamr87/fredgar-ai)** reads SEC filings and FRED data, and every Monday a site of company financials publishes itself. A machine that actually reads cash flow statements, which already puts it ahead of the imperative.
 
-**[csv-vscoode](https://github.com/bash-365/csv-vscoode)** puts the spreadsheet inside the editor, so you never leave the scene to fix a column.
+**Level 4: the lawyer.** Then the risk. **[law-ai](https://github.com/bamr87/law-ai)** keeps a lawyer on retainer who never sleeps: research agents over a graph of cases and citations, a person approving everything that comes in, and one switch that keeps every prompt on a local model, so nothing leaves the building. It is still in training. The cross-examination of every pull request is written and waiting for its first case.
 
-Add it up and it stops looking like personal development. Financial data, legal review, a content platform, a publishing robot, developer tooling, and a control plane that runs forty repositories: agents that triage, build, review and release, with CI checking every change. Three years ago, work like that took a department, a budget cycle and somebody’s permission. Now I have the skills to design and build enterprise software and systems at scale, on my own terms, without the corporate idiocracy.
+**Level 5: the platform.** Then the content itself. **[zer0-CMS](https://github.com/bamr87/zer0-CMS)** was cut loose from a Front Matter fork and rebuilt on Django and Wagtail. SQLite or Postgres. Ships in a container. No Rails left in the body. AI suggests, a person approves, and only then does anything publish, to a site, to LinkedIn or to X, with a ledger that remembers so nothing goes out twice.
+
+**Final level: the control plane.** And then the thing they wouldn’t let me build. **[bamr87/bamr87](https://github.com/bamr87/bamr87)** runs a fleet of forty-four repositories from one registry. The README regenerates itself after every merge, a drift check fails any pull request that disagrees with the registry, and agents triage, build and review, with CI checking every change. The rest of the map (eyes on every service, infrastructure reconciled from git, a phone in my pocket that watches the fleet) is the next level. Unlike a corporate roadmap, each item on it already has a repository.
+
+Add it up and it stops looking like personal development. Six levels, and every one of them is a system a corporation would staff with a department, a budget cycle and somebody’s permission. Now I have the skills to design and build enterprise software and systems at scale, on my own terms, without the corporate idiocracy.
 
 [github.com/bamr87/bamr87](https://github.com/bamr87/bamr87)
 
