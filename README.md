@@ -4,8 +4,10 @@ author: Amr
 class: Wizard
 layout: default
 permalink: /profile/
-lastmod: 2025-11-11T00:00:00.000Z
+lastmod: 2026-11-02T00:00:00.000Z
 ---
+
+**Featured: [the Quest Log](https://bamr87.github.io/quest-log/)**, my repositories written up as levels and side quests, one per deep dive. This site is one of the side quests: [read its entry](https://bamr87.github.io/posts/2026/11/02/quest-log-bamr87-github-io/).
 
 ## About Me
 

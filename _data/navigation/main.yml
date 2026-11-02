@@ -21,6 +21,8 @@
   children:
     - title: Pages
       url: /pages
+    - title: The Quest Log
+      url: /quest-log/
 - title: Library
   url: /docs/
   children:

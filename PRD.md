@@ -41,12 +41,13 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [PROFILE-002](features/features.yml) | Featured projects table and portfolio pages under pages/ | shipped | [`pages`](pages) · [`README.md`](README.md) | FR2 |
 | [PROFILE-003](features/features.yml) | Dockerfile for local preview | shipped | [`Dockerfile`](Dockerfile) · [`README.md`](README.md) | TBD |
 | [PROFILE-004](features/features.yml) | Scripts/tools for site maintenance | shipped | [`scripts`](scripts) · [`README.md`](README.md) | TBD |
+| [PROFILE-005](features/features.yml) | The Quest Log series page | shipped | [`pages/quest-log.md`](pages/quest-log.md) | TBD |
 
 **Requirement → feature trace**
 
 | Requirement | Features |
 | --- | --- |
-| TBD | PROFILE-001, PROFILE-003, PROFILE-004 |
+| TBD | PROFILE-001, PROFILE-003, PROFILE-004, PROFILE-005 |
 | FR2 | PROFILE-002 |
 <!-- features:end -->
 
