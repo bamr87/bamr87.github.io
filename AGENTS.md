@@ -28,6 +28,7 @@ python3 tools/unwrap-prose.py --check                           # markdown one-p
 | `pages/` | All site content (`collections_dir: pages`): one `_<collection>/` per collection — see [docs/reference/collections.md](docs/reference/collections.md) |
 | `_data/` | Project registry, generated portfolio data, navigation menus, UI strings — see [_data/README.md](_data/README.md) |
 | `_config.yml`, `_config_dev.yml` | Production config, and the dev overlay that swaps in the local theme gem |
+| `zer0.json` | The zer0-CMS console config: content folders and types. zer0-CMS registers this checkout and publishes to X and LinkedIn through channels each account connects in its studio. Check it with zer0-CMS's `python -m sites.doctor .` |
 | `index.html` | The homepage dashboard (`permalink: /`), built from `site.data.portfolio` |
 | `README.md` | The GitHub profile/CV, published at `/profile/` |
 | `assets/` | Site images, scripts and SVGs (the theme ships the CSS) |
