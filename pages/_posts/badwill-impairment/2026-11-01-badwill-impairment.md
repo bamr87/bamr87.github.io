@@ -105,7 +105,7 @@ A baby started crying.
 
 Real crying.
 
-The magnificent, unapologetic, miracle-of-life kind. A brand-new human announcing to the universe, at full volume, that he exists, he's hungry, and someone had better do something about it.
+The magnificent, unapologetic, miracle-of-life kind. A brand-new human announcing to the universe, at full volume, that she exists, she's hungry, and someone had better do something about it.
 
 No steering committees. No executive approvals. No PowerPoint presentations explaining the strategic importance of milk delivery.
 
