@@ -17,21 +17,21 @@ Three years ago today, the noise stopped.
 
 You know the noise. The sweet sound of corporate America’s idiocracy, the one they call “culture.”
 
-It is perfectly designed to keep us watching, silently laughing at the Groundhog Day déjà vu of stand-up after stand-up, week after week, and calling it progress.
+It is perfectly designed to keep us watching, silently laughing at the Groundhog "day" jà vu of stand-up after stand-up, week after week, and calling it progress.
 
 The grown adults crying — about budgets, headcount, capacity, data nobody can reach — or insisting the system is to blame instead of the incompetence running it.
 
 Then there’s the scariest noise of all, the one that turns Office Space into a horror film: leadership calling an emergency “cash flow imperative” meeting you weren’t invited to, a phrase that sends a cringe down the spine every time someone says it.
 
-It didn’t matter that you had the system design that would have saved them millions a year, also known as the actual solution to the cash flow imperative.
+It didn’t matter that you were an expert in finance/accounting, and the systems that governed it. And then actually finding the system design that would have saved them millions a year, didn't matter... because the cash flow imperative, and the goodwill impairment are only tools for the weak.
 
-Corporate idiocracy wins every time.
+Which is why corporate idiocracy wins every time.
 
 So the verdict came down. The adults stopped crying. Or I stopped having to watch.
 
 And a baby started.
 
-Different crying. The real kind. The miracle-of-life kind, where a brand-new person announces at full volume that they exist, they’re hungry, and you’re the one. No approval chain. No status calls.
+Different crying. The real kind. The miracle-of-life kind, where a brand-new person announces at full volume that they exist, they’re hungry, and you’re the one. No approval chain. No planned meetings. Only deep human connection that's worth more than any corporate "imperitive".
 
 Best paternity leave in corporate history, approved by nobody.
 
