@@ -13,17 +13,21 @@ categories:
   - badwill-impairment
 ---
 
-Three years ago today, the noise stopped.
+Three years ago today, the noise stopped, and the crying began.
 
-You know the noise. The sweet sound of corporate America’s idiocracy, the one they call “culture.”
+You know the noise. It radiates and echos through your PC (politically correct) inbox that screams corporate American idiocracy desgised as “culture.”
 
-It is perfectly designed to keep us watching, silently laughing at the Groundhog Day-jà vu of stand-up after stand-up, week after week, and calling it progress.
+We all know that "grind" as we feed the beast with honor and devotion to our ominous shareholders, and silently dreading the Groundhog Day-jà vu of stand-up after stand-up, week after week, and calling it progress.
 
-The grown adults crying — about budgets, headcount, capacity, data nobody can reach — or insisting the system is to blame instead of the incompetence running it.
+Everyday, the grown adults cry about budgets, headcount, capacity, data nobody can reach — or insisting the system is to blame instead of the incompetence running it.
 
-Then there’s the scariest noise of all, the one that turns Office Space into a horror film: leadership calling an emergency “cash flow imperative” meeting you weren’t invited to, a phrase that sends a cringe down the spine every time someone says it.
+Then there’s the scariest noise of all, the one that turns Office Space into a horror film: leadership calling an emergency “cash flow imperative” meeting you weren’t invited to.
 
-It didn’t matter that you were an expert in finance and accounting, and in the systems that govern them. It didn’t matter that you found the system design that would have saved them millions a year. The cash flow imperative and the goodwill impairment are only tools for the weak.
+You watch the bookkeepers scramble to find the latest GAAP loophole as they gig through data, only to realize that no one in the company actually knows what drives it. 
+
+If logic is ever applied in these situations, maybe consulting an expert in finance, accounting, and the systems that govern them might prove valuable. Maybe this expert might find a system design flaw that would save them millions a year in cash flow.
+
+But if corporate america was logical, executives wouldn't need to take action to rectify a goodwill impairment during record breaking revenue and profits.
 
 Which is why corporate idiocracy wins every time.
 
