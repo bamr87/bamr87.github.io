@@ -15,19 +15,19 @@ categories:
 
 Three years ago today, the noise stopped, and the crying began.
 
-You know the noise. It radiates and echos through your PC (politically correct) inbox that screams corporate American idiocracy desgised as “culture.”
+You know the noise. It radiates and echoes through your PC (as in politically correct) inbox, screaming corporate American idiocracy disguised as “culture.”
 
-We all know that "grind" as we feed the beast with honor and devotion to our ominous shareholders, and silently dreading the Groundhog Day-jà vu of stand-up after stand-up, week after week, and calling it progress.
+We all know that “grind.” We feed the beast with honor and devotion to our ominous shareholders, silently dread the Groundhog Day-jà vu of stand-up after stand-up, week after week, and call it progress.
 
-Everyday, the grown adults cry about budgets, headcount, capacity, data nobody can reach — or insisting the system is to blame instead of the incompetence running it.
+Every day, the grown adults cry about budgets, headcount, capacity and data nobody can reach, or insist the system is to blame instead of the incompetence running it.
 
 Then there’s the scariest noise of all, the one that turns Office Space into a horror film: leadership calling an emergency “cash flow imperative” meeting you weren’t invited to.
 
-You watch the bookkeepers scramble to find the latest GAAP loophole as they gig through data, only to realize that no one in the company actually knows what drives it. 
+You watch the bookkeepers scramble for the latest GAAP loophole as they dig through the data, only to realize that no one in the company actually knows what drives the numbers.
 
-If logic is ever applied in these situations, maybe consulting an expert in finance, accounting, and the systems that govern them might prove valuable. Maybe this expert might find a system design flaw that would save them millions a year in cash flow.
+If logic were ever applied in these situations, someone might consult an expert in finance, accounting and the systems that govern them. That expert might even find the system design flaw that would save them millions a year in cash flow.
 
-But if corporate america was logical, executives wouldn't need to take action to rectify a goodwill impairment during record breaking revenue and profits.
+But if corporate America were logical, executives wouldn’t be scrambling to explain a goodwill impairment in a year of record-breaking revenue and profits.
 
 Which is why corporate idiocracy wins every time.
 
