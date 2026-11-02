@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/bamr87/zer0-CMS/main/schemas/zer0.schema.json",
+  // bamr87.github.io — the zer0-CMS console config (JSONC). The site is a consumer of the
+  // zer0 stack: theme bamr87/zer0-mistakes (remote_theme) and zer0-CMS (this file), which
+  // registers the site's checkout and manages its content. Check alignment with
+  // `python -m sites.doctor .` from zer0-CMS's content/ directory.
+  //
+  // Folders are the collections Jekyll reads from collections_dir `pages` (see
+  // docs/reference/collections.md) plus the loose pages/ files.
+  //
+  // `required` stays at what a page cannot do without, its title, so the older notes and
+  // posts are not flagged for fields they never had (a post's date comes from its file
+  // name). New posts carry the rest: description, author, tags, categories, date, lastmod.
+  //
+  // Distribution: posts reach X (@bamr87) and LinkedIn (Amr's profile) through zer0-CMS
+  // channels that each account's owner connects with that account's own OAuth consent in
+  // the studio, so there is no GitHub lane and no "distribution" block here. Each channel
+  // writes what it published to a ledger file in this repository (.github/x-log.json,
+  // .github/linkedin-log.json) so a page never goes out twice.
+  "platform": { "id": "jekyll", "overlay": "zer0-mistakes" },
+  "contentFolders": [
+    { "title": "Posts", "path": "[[workspace]]/pages/_posts", "contentTypes": ["post"], "filePrefix": "{{date|yyyy-MM-dd}}" },
+    { "title": "Docs", "path": "[[workspace]]/pages/_docs", "contentTypes": ["doc"], "filePrefix": null },
+    { "title": "Notes", "path": "[[workspace]]/pages/_notes", "contentTypes": ["doc"], "filePrefix": null },
+    { "title": "Notebooks", "path": "[[workspace]]/pages/_notebooks", "contentTypes": ["doc"], "filePrefix": null },
+    { "title": "Hobbies", "path": "[[workspace]]/pages/_hobbies", "contentTypes": ["doc"], "filePrefix": null },
+    { "title": "About", "path": "[[workspace]]/pages/_about", "contentTypes": ["default"], "filePrefix": null },
+    { "title": "Pages", "path": "[[workspace]]/pages", "contentTypes": ["default"], "excludeSubdir": true, "disableCreation": true, "filePrefix": null }
+  ],
+  "contentTypes": [
+    {
+      "name": "post",
+      "fields": [
+        { "name": "title", "type": "string", "single": true, "required": true },
+        { "name": "sub-title", "type": "string", "single": true },
+        { "name": "description", "type": "string", "description": "One or two sentences; search engines show about 155 characters." },
+        { "name": "author", "type": "string", "single": true, "default": "bamr87" },
+        { "name": "date", "type": "datetime", "isPublishDate": true, "default": "{{now}}" },
+        { "name": "lastmod", "type": "datetime", "isModifiedDate": true },
+        { "name": "categories", "type": "categories" },
+        { "name": "tags", "type": "tags", "taxonomyLimit": 10 },
+        { "name": "keywords", "type": "list" },
+        { "name": "excerpt", "type": "string" },
+        { "name": "preview", "type": "image", "isPreviewImage": true },
+        { "name": "layout", "type": "choice", "choices": ["article", "default"] },
+        { "name": "permalink", "type": "string", "single": true },
+        { "name": "draft", "type": "draft" }
+      ]
+    },
+    {
+      "name": "doc",
+      "fields": [
+        { "name": "title", "type": "string", "single": true, "required": true },
+        { "name": "description", "type": "string" },
+        { "name": "author", "type": "string", "single": true, "default": "bamr87" },
+        { "name": "date", "type": "datetime", "isPublishDate": true, "default": "{{now}}" },
+        { "name": "lastmod", "type": "datetime", "isModifiedDate": true },
+        { "name": "categories", "type": "categories" },
+        { "name": "tags", "type": "tags" },
+        { "name": "excerpt", "type": "string" },
+        { "name": "preview", "type": "image", "isPreviewImage": true },
+        { "name": "permalink", "type": "string", "single": true },
+        { "name": "draft", "type": "draft" }
+      ]
+    },
+    {
+      "name": "default",
+      "fields": [
+        { "name": "title", "type": "string", "single": true, "required": true },
+        { "name": "description", "type": "string" },
+        { "name": "layout", "type": "string", "single": true },
+        { "name": "permalink", "type": "string", "single": true },
+        { "name": "lastmod", "type": "datetime", "isModifiedDate": true },
+        { "name": "draft", "type": "draft" }
+      ]
+    }
+  ],
+  "taxonomy": { "categories": [], "tags": [] },
+  "draftField": { "name": "draft", "type": "boolean" },
+  "frontMatter": { "format": "yaml", "indentArrays": true, "quoteStringValues": false, "commaSeparatedFields": [] },
+  "content": { "defaultFileType": "md", "publicFolder": "assets", "filePrefix": "", "autoUpdateModifiedDate": true },
+  "seo": { "enabled": true, "titleLength": 60, "descriptionLength": 160, "slugLength": 75, "contentLength": 1760 },
+  "slug": { "template": "{{title}}", "stopWords": "minimal" },
+  "date": { "format": "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", "timezone": "UTC" },
+  "governance": { "enabled": true, "target": "jekyll", "publishAllow": false },
+  "validation": { "enabled": true }
+}

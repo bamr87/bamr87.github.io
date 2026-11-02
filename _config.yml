@@ -37,7 +37,7 @@ repository               : [*github_user, "/", *github_repository] # GitHub user
 local_repo               : *github_repository
 branch                   : "main"
 repo_map                 : "/about/sitemap/"
-github_base_url          : [*github_user, '.' , *site_domain] # the base hostname & protocol for your site, e.g. http://example.com
+github_base_url          : [*github_user, '.' , 'github.io'] # the base hostname & protocol for your site, e.g. http://example.com
 portfolio                : [*github_user, '.', 'github.io']
 
 ## Site Information ---------------------------------------------------------------
@@ -47,9 +47,9 @@ title_url                : "/"
 title_icon               : "globe"
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "bamr87.github"
-domain_ext               : ".io"
+domain_ext               : &domain_ext ".io"
 sub_domain               : &sub_domain ""
-baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
+baseurl                  : &baseurl "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ] # the base hostname & protocol for your site, e.g. http://example.com
 url                      : &url 'https://bamr87.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 public_folder            : "/assets"
@@ -95,7 +95,7 @@ _posts_file_structure    : "year-month-day-title.md"
 author:
   name                   : *name # *name is a YAML reference pointing to the &anchor earlier
   avatar                 : "/assets/images/gravatar-small.png"
-  email_hash             : '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
+  email_hash             : &email_hash '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
   gravatar               : [ 'https://s.gravatar.com/avatar/', *email_hash, '?s=80' ]
   bio                    : "IT nerd trying to be an IT hero"
   location               : "Denver, CO"
@@ -227,7 +227,7 @@ kramdown: # https://kramdown.gettalong.org/options.html
   # Permalinks: https://jekyllrb.com/docs/permalinks/
 
 collections_dir: &collections_dir pages
-local_repo_path: [ *collections_dir, '/', *local_repo ]
+local_repo_path: [ *collections_dir, '/', *github_repository ]
 
 collections:
   pages:
