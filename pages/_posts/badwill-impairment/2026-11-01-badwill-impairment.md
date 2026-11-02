@@ -137,33 +137,43 @@ Except this time, I got to choose the quests.
 
 And there was nobody left in the room to tell me which adventures were out of scope.
 
-**Three years later, the crying hasn't stopped.**
+# The Quest Log
 
-But neither has the laughter.
+**Level 0000: the map.** Every hero needs one. **[IT-Journey](https://it-journey.dev/)** ([source](https://github.com/bamr87/it-journey)) turns learning IT into quests on a binary level path, from Level 0000, the Apprentice’s first terminal and first Git commit, to Level 1111, the Legend. It was charted years before the noise stopped. Since then it has grown validation tooling that scores every quest, and opt-in AI agents that walk the curriculum, review it and repair it through pull requests a human merges.
 
-And for the first time, the return on investment is immeasurable.
+*Skill unlocked: a curriculum that maintains itself.*
 
-Turns out, there was such a thing as goodwill after all.
+**Level 0001: the dungeon.** The first fight, in the terminal. **[bashcrawl](https://bamr87.github.io/bashcrawl/)** ([source](https://github.com/bamr87/bashcrawl)) teaches real shell skills as a fantasy dungeon crawl where the filesystem is the game: directories are rooms, scrolls are the lessons, scripts are the encounters. A second door opens onto a browser trainer, with courses, mini-games and cheatsheets built from the same content. Credit where it is due: it is built on Seth Kenlon’s original bashcrawl, under the same GPL.
 
-It just never belonged on a balance sheet.
+*Skill unlocked: the shell, where every system takes its orders.*
 
-**Level 0000: the map.** Every hero needs one. **[IT-Journey](https://it-journey.dev/)** ([source](https://github.com/bamr87/it-journey)) turns learning IT into quests on a binary level path, from Level 0000, the Apprentice’s first terminal and first Git commit, to Level 1111, the Legend. It started years before the noise stopped. Since then it has grown validation tooling that scores every quest, and opt-in AI agents that walk the curriculum, review it and repair it through pull requests a human merges.
+**Level 0010: the spreadsheet.** The thing that wastes the most hours in any office. **[csv-vscoode](https://apps.bash-365.com/csv-vscode/)** ([source](https://github.com/bash-365/csv-vscoode)) puts the spreadsheet inside the editor, on top of the file itself, so you never leave the scene to fix a column and nothing quietly reformats your dates on the way out. It shipped. It is finished. It is archived. Achievement unlocked: *done*, a status corporate project reports rarely offer.
 
-**Level 0001: the dungeon.** Then the first fight, in the terminal. **[bashcrawl](https://bamr87.github.io/bashcrawl/)** ([source](https://github.com/bamr87/bashcrawl)) teaches real shell skills as a fantasy dungeon crawl where the filesystem is the game: directories are rooms, scrolls are the lessons and scripts are the encounters. It now has a second door, a browser trainer with courses, mini-games and cheatsheets built from the same content. Credit where it is due: it is built on Seth Kenlon’s original bashcrawl, under the same GPL.
+*Skill unlocked: shipping, and then stopping.*
 
-**Level 0010: the spreadsheet.** Then the thing that wastes the most hours in any office. **[csv-vscoode](https://apps.bash-365.com/csv-vscode/)** ([source](https://github.com/bash-365/csv-vscoode)) puts the spreadsheet inside the editor, on top of the file itself, so you never leave the scene to fix a column and nothing quietly reformats your dates on the way out. It shipped. It is finished. It is archived. Achievement unlocked: done, a status corporate project reports rarely offer.
+**Level 0011: the newsroom.** A publication that writes itself. **[lifehacker.dev](https://lifehacker.dev/)** ([source](https://github.com/bamr87/lifehacker.dev)) is drafted by a robot, reviewed by a human and published with the mistakes left in. The mistakes are the evidence. Three hundred posts in, the robot is on leave. Unlike mine, its leave needed a configuration change.
 
-**Level 0011: the newsroom.** Next, a publication that writes itself. **[lifehacker.dev](https://lifehacker.dev/)** ([source](https://github.com/bamr87/lifehacker.dev)) is drafted by a robot, reviewed by a human and published with the mistakes left in. The mistakes are the evidence. Three hundred posts in, the robot is on leave. Unlike mine, its leave needed a configuration change.
+*Skill unlocked: AI on the staff, a human on the masthead.*
 
 **Level 0100: the analyst.** Then the numbers. **[fredgar-ai](https://bamr87.github.io/fredgar-ai/)** ([source](https://github.com/bamr87/fredgar-ai)) reads SEC filings and FRED data, and every Monday a site of company financials publishes itself. A machine that actually reads cash flow statements, which already puts it ahead of the imperative.
 
+*Skill unlocked: public filings turned into a data product.*
+
 **Level 0101: the lawyer.** Then the risk. **[law-ai](https://bamr87.github.io/law-ai/)** ([source](https://github.com/bamr87/law-ai)) keeps a lawyer on retainer who never sleeps: research agents over a graph of cases and citations, a person approving everything that comes in, and one switch that keeps every prompt on a local model, so nothing leaves the building. It is still in training. The cross-examination of every pull request is written and waiting for its first case.
+
+*Skill unlocked: AI you can audit, and keep in the building.*
 
 **Level 0110: the platform.** Then the content itself. **[zer0-CMS](https://github.com/bamr87/zer0-CMS)** was cut loose from a Front Matter fork and rebuilt on Django and Wagtail. SQLite or Postgres. Ships in a container. No Rails left in the body. AI suggests, a person approves, and only then does anything publish, to a site, to LinkedIn or to X, with a ledger that remembers so nothing goes out twice.
 
+*Skill unlocked: governance, written as software.*
+
 **Level 1111: the control plane.** I skipped a few levels. This is the thing they wouldn’t let me build. **[bamr87/bamr87](https://bamr87.github.io/bamr87/)** ([source](https://github.com/bamr87/bamr87)) runs a fleet of forty-four repositories from one registry. The README regenerates itself after every merge, a drift check fails any pull request that disagrees with the registry, and agents triage, build and review, with CI checking every change. The rest of the map (eyes on every service, infrastructure reconciled from git, a phone in my pocket that watches the fleet) is the next level. Unlike a corporate roadmap, each item on it already has a repository.
 
-Those are the boss fights. In between came the side quests, more than thirty of them:
+*Skill unlocked: running a portfolio the way an enterprise wishes it ran one product.*
+
+Those were the boss fights.
+
+In between came the side quests. More than thirty of them, each a skill a job description would list and an org chart would split across three departments:
 
 - **The tools that build the tools.** [githubai](https://github.com/bamr87/githubai) packages the agents that triage issues, implement the work and review the pull requests as reusable GitHub Actions. [gitorio](https://bamr87.github.io/gitorio/) ([source](https://github.com/bamr87/gitorio)) is a Factorio-style factory builder whose blueprints compile into GitHub Actions workflows. [SCHEMA](https://github.com/bamr87/SCHEMA) is a protocol and a linter that let an AI agent look up a repository’s structure instead of guessing it. [bashos](https://github.com/bamr87/bashos) routes Claude’s slash commands through a LangGraph kernel. [scripts](https://github.com/bamr87/scripts) is where every chore I did twice went to become a command.
 - **The extensions.** [zpl-viewer](https://github.com/bamr87/zpl-viewer) reads, builds and sends thermal-printer labels from inside VS Code, offline. [vs-sonic-pi](https://github.com/bamr87/vs-sonic-pi) lets you write and perform Sonic Pi music live from the editor.
@@ -173,7 +183,24 @@ Those are the boss fights. In between came the side quests, more than thirty of 
 - **The backlog.** A key-value store in Rust, a network toolkit in Go, a passkey identity provider, a hobby operating-system kernel, ESP32 sensor firmware, a security practice lab, a blueprint compiler, an EDGAR data pipeline and a fully local search engine over a radio show’s archive. Each exists today as a repository with a README and a plan: the levels I haven’t played yet.
 - **The plumbing.** [Shared workflows](https://github.com/bamr87/.github) for every repository, [a context engine](https://bamr87.github.io/README/) ([source](https://github.com/bamr87/README)) that builds the docs for every project, a redirect that keeps bash-365.com pointed at its front door, a personal fork of the Omarchy desktop, a self-evolving template I retired, and two agent-skill libraries borrowed from other people’s repositories.
 
-Add it up and it stops looking like personal development. Eight levels and more than thirty side quests, and every boss is a system a corporation would staff with a department, a budget cycle and somebody’s permission. Now I have the skills to design and build enterprise software and systems at scale, on my own terms, without the corporate idiocracy.
+Add it up, and it stops looking like personal development.
 
-[github.com/bamr87/bamr87](https://github.com/bamr87/bamr87)
+Eight levels. More than thirty side quests. Every boss a system a corporation would staff with a department, a budget cycle and somebody’s permission.
 
+Now I have the skills to design and build enterprise software and systems at scale.
+
+On my own terms.
+
+Without the corporate idiocracy.
+
+The whole fleet is public, at [github.com/bamr87/bamr87](https://github.com/bamr87/bamr87).
+
+**Three years later, the crying hasn't stopped.**
+
+But neither has the laughter.
+
+And for the first time, the return on investment is immeasurable.
+
+Turns out, there was such a thing as goodwill after all.
+
+It just never belonged on a balance sheet.
