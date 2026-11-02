@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-01T02:12:23Z
+lastmod: 2026-11-02T02:12:39Z
 ---
 
 
@@ -87,6 +87,12 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | JEV: conflict-free numbering + tiered PR conflict triage | bamr87 | jev, governance, numbering, conflicts, ai, cost, automation | /bamr87/tools/jev/README.md |
 | Claude Code OTel telemetry in the console and MCP | bamr87 | console, observability, claude-code, otel, mcp | /bamr87/tools/console/claude_telemetry.py |
 | Claude subscription shown as a discounted rate off API list prices | bamr87 | console, cost, claude, observability | /bamr87/tools/console/subscription.py |
+| Agentic design patterns map | bamr87 | docs, agents, ai | /bamr87/docs/agentic-patterns/patterns.json |
+| JEV: loop step specs — one spec per agent step, rendered the same in CI and locally | bamr87 | jev, ai, loops, specs | /bamr87/tools/jev/steps/README.md |
+| JEV: run a loop's agent step locally (the loop runner) | bamr87 | jev, ai, loops, local, sandbox | /bamr87/tools/jev/loop.py |
+| JEV: ratification, acceptance and completion recorded after the maintainer merges | bamr87 | governance, jev, amendments, adr | /bamr87/tools/jev/ratify.py |
+| Fleet frontend platform: registry frontend: block, tiers and UPS-FE-70..73 | bamr87 | frontend, design, conformance, registry | /bamr87/tools/frontend_registry.py |
+| JEV: the loop runner's context pack — the fleet's planes, read on the host for a sealed agent | bamr87 | jev, ai, loops, local, context | /bamr87/tools/jev/context.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -276,6 +282,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Copier-style 3-way kit upgrade for hand-edited files | bamr87 | fanout, kits, upgrade | /bamr87/tools/fanout.sh |
 | Governance records lint: amendment status, constitution order, doc links | bamr87 | governance, lint | /bamr87/tools/governance_lint.py |
 | Centrally managed loop kill switches | bamr87 | loops, kill-switch, console, governance | /bamr87/_data/fleet.yml |
+| In-flight job status for agents: state, ages and slowness diagnostics | bamr87 | console, mcp, jobs, observability, agents | /bamr87/tools/console/mcp_layer/server.py |
+| Fleet PR review workflow with one sticky summary | bamr87 | ci, governance, review | /bamr87/docs/amendments/proposed/fleet-pr-review.md |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
 | Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
@@ -336,4 +344,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-01T02:12:23Z
+Last updated: 2026-11-02T02:12:39Z
