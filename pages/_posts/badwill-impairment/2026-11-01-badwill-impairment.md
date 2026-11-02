@@ -31,7 +31,13 @@ Maybe they should consult an expert in financial systems. Maybe there’s a syst
 
 But maybe that isn’t the point.
 
+The cash flow imperative was never about the cash. It was about the meeting: who called it, who sat closest to the head of the table, who got credit for the slide that said “action items.” Fixing the flaw would have ended the meeting, and nobody in that room had anywhere better to be.
+
 If corporate America rewarded talent, executives wouldn’t be reacting to a goodwill impairment in a year of record-breaking revenue and profits.
+
+Think about what that sentence says on a balance sheet. Goodwill is the premium a company pays for an acquisition above everything it can actually count: the brand, the relationships, the hope. An impairment is the company admitting, in writing, that the hope was worth less than the price. In a record year, the business is fine. The mistake is the price, paid years earlier by people who have since been promoted.
+
+So the reaction is never to the mistake. It is to the headline. The write-down lands, and the fix is always the same line item: people. The ones who understand the systems become a cost to cut. The ones who bought the asset become the leadership. And the books get balanced by impairing the only goodwill the company ever really had, the kind that showed up to work every day.
 
 Which is why corporate idiocracy wins every time, and why there’s no such thing as goodwill.
 
