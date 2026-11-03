@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-02T02:12:39Z
+lastmod: 2026-11-03T02:12:16Z
 ---
 
 
@@ -252,6 +252,14 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Scenario test suite | SCHEMA |  | /SCHEMA/tests/test_schema_lint.py |
 | Lexer tokenizing identifiers, strings and punctuation, with tests | schema-lang | phase-1 | /schema-lang/Cargo.toml |
 | Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
+| Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
+| ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
+| StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
+| Git + GitHub repository creator | scripts | github, scaffolding | /scripts/git_init.sh |
+| Safe directory rename | scripts | filesystem | /scripts/rename-directory.sh |
+| Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
+| Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
+| install.sh standalone installer | scripts |  | /scripts/install.sh |
 
 
 ## Requested / Backlog Features
@@ -344,4 +352,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-02T02:12:39Z
+Last updated: 2026-11-03T02:12:16Z

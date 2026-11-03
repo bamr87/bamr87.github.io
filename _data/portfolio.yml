@@ -2,7 +2,7 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-02T02:12:44Z'
+generated_at: '2026-11-03T02:12:20Z'
 totals:
   public_repos: 42
   followers: 20
@@ -30,7 +30,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-01T22:16:25Z'
+  pushed_at: '2026-11-02T22:18:03Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -49,7 +49,7 @@ projects:
   - jekyll
   - jekyll-theme
   - ruby
-  pushed_at: '2026-11-01T14:52:33Z'
+  pushed_at: '2026-11-02T09:17:12Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -68,7 +68,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-02T01:35:18Z'
+  pushed_at: '2026-11-03T02:11:57Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -169,7 +169,7 @@ projects:
   stars: 0
   language: TypeScript
   topics: []
-  pushed_at: '2026-10-14T20:18:10Z'
+  pushed_at: '2026-11-02T04:59:26Z'
   license: MIT
   repo_url: https://github.com/bash-365/csv-vscoode
   site_url: https://apps.bash-365.com/
@@ -188,7 +188,7 @@ projects:
   - react
   - sec-edgar
   - typescript
-  pushed_at: '2026-11-01T06:00:52Z'
+  pushed_at: '2026-11-02T13:18:04Z'
   license: MIT
   repo_url: https://github.com/bamr87/fredgar-ai
   site_url: https://bamr87.github.io/fredgar-ai/
@@ -206,7 +206,7 @@ projects:
   - mcp
   - mkdocs
   - python
-  pushed_at: '2026-10-31T06:01:39Z'
+  pushed_at: '2026-11-02T10:43:30Z'
   license: MIT
   repo_url: https://github.com/bamr87/README
   site_url: https://bamr87.github.io/README/
@@ -223,7 +223,7 @@ projects:
   - developer-tools
   - github
   - scaffolding
-  pushed_at: '2026-10-30T01:46:57Z'
+  pushed_at: '2026-11-02T10:43:06Z'
   license: MIT
   repo_url: https://github.com/bamr87/scripts
   site_url: null
