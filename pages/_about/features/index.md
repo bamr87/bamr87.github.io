@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-03T02:12:16Z
+lastmod: 2026-11-04T02:11:11Z
 ---
 
 
@@ -93,6 +93,11 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | JEV: ratification, acceptance and completion recorded after the maintainer merges | bamr87 | governance, jev, amendments, adr | /bamr87/tools/jev/ratify.py |
 | Fleet frontend platform: registry frontend: block, tiers and UPS-FE-70..73 | bamr87 | frontend, design, conformance, registry | /bamr87/tools/frontend_registry.py |
 | JEV: the loop runner's context pack — the fleet's planes, read on the host for a sealed agent | bamr87 | jev, ai, loops, local, context | /bamr87/tools/jev/context.py |
+| Quest Log showcase: every deep-dived repo gets an article, two LinkedIn drafts and a better first screen | bamr87 | deep-dive, showcase, linkedin, content, routine | /bamr87/.claude/skills/deep-dive-showcase/SKILL.md |
+| The editor is a front door: every harness surface from VS Code through tools/dash | bamr87 | vscode, editor, dash, debug, developer-experience | /bamr87/.vscode/launch.json |
+| Workloads placed across fleet nodes, with OpenTofu for node infrastructure | bamr87 | platform, nodes, forge, opentofu, iac, docker, placement, offload | /bamr87/tools/fleetcore/nodes.py |
+| Run a loop's agent step locally from the console, the TUI and the MCP (loop-run) | bamr87 | console, tui, mcp, jev, loops, local | /loops/repo_scout |
+| JEV: the fleet doctor's step spec and local dry run (P3, step 1) | bamr87 | jev, ai, loops, local, fleet-pulse | /bamr87/tools/jev/steps/fleet-pulse/doctor.yml |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -131,6 +136,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Bootable bashOS image (mkosi) | bashos |  | /bashos/os/image/build.sh |
 | Console on the physical monitor | bashos |  | /bashos/os/bin/bashos-console |
 | Harness Console service | bashos |  | /bashos/os/bin/bashos-harness |
+| Managed OpenCode engine, always latest and verified | bashos |  | /bashos/os/install/engine.sh |
 | CV data management | cv-pro |  | /cv-pro/app/src/components/cv |
 | LaTeX template system | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | AI CV parser | cv-pro |  | /cv-pro/app/src/components/cv/AIParser.tsx |
@@ -260,6 +266,23 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
 | Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
 | install.sh standalone installer | scripts |  | /scripts/install.sh |
+| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
+| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
+| Portable C payload encoder producing JSON readings, with a host test | sensor-mesh | phase-1 | /sensor-mesh/platformio.ini |
+| Standard CI gate | sensor-mesh | ci | /sensor-mesh/.github/workflows/ci.yml |
+| Run code | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Stop all | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Log / output panel | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Syntax highlighting | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Server detection | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Keep-alive heartbeat | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Configuration | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Run / Stop commands | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Examples | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Run selection | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Recording | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Beautify / Align | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Tutorial webview | vs-sonic-pi |  | /vs-sonic-pi/src |
 
 
 ## Requested / Backlog Features
@@ -345,6 +368,25 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
 | Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
 | Language server (LSP) for editors | schema-lang | phase-3 |  |
+| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
+| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
+| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
+| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
+| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
+| PlatformIO project for esp32dev that builds | sensor-mesh | phase-1 |  |
+| Wi-Fi + MQTT publish loop with reconnect | sensor-mesh | phase-2 |  |
+| BME280 temperature/humidity driver | sensor-mesh | phase-2 |  |
+| OTA firmware updates | sensor-mesh | phase-3 |  |
+| MQTT → OTLP bridge into fleet-observe | sensor-mesh | phase-3 |  |
+| Autocomplete | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Hover documentation | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Error reporting | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Status bar | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Daemon auto-start | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Cue log | vs-sonic-pi |  | /vs-sonic-pi/src |
+| MIDI monitor | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Audio scope | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Multi-buffer workspaces | vs-sonic-pi |  | /vs-sonic-pi/src |
 
 
 ---
@@ -352,4 +394,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-03T02:12:16Z
+Last updated: 2026-11-04T02:11:11Z
