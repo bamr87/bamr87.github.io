@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.3.0](https://github.com/bamr87/bamr87.github.io/compare/v0.2.1...v0.3.0) (2026-11-05)
+
+
+### Added
+
+* **config:** load zer0-CMS, with a zer0.json and a _config.yml it can read ([339b936](https://github.com/bamr87/bamr87.github.io/commit/339b9366da169dc6d4397bec8260d84eac5779c0))
+* **config:** load zer0-CMS, with a zer0.json and a _config.yml it can read ([3e8aa4e](https://github.com/bamr87/bamr87.github.io/commit/3e8aa4eccf10af4d2a4615c4bd23cb3f5994dc58))
+* **pages:** add the Quest Log series page, a homepage link card, and a README pointer ([#54](https://github.com/bamr87/bamr87.github.io/issues/54)) ([2b68e92](https://github.com/bamr87/bamr87.github.io/commit/2b68e928c96c252d66924850ba8d8aca49e4f651))
+* **posts:** Badwill Impairment, three years since the noise stopped ([#52](https://github.com/bamr87/bamr87.github.io/issues/52)) ([22bcab6](https://github.com/bamr87/bamr87.github.io/commit/22bcab6df45be49906dac56aaa09dd704718286d))
+* **posts:** my thriller starts over as Badwill Impairment ([c6ba68d](https://github.com/bamr87/bamr87.github.io/commit/c6ba68d36bc933b78a12c8eceb4c25a12e56d702))
+* **posts:** my thriller starts over as Badwill Impairment ([9bd5612](https://github.com/bamr87/bamr87.github.io/commit/9bd5612bd29e230a69a1a01435571dc111a1baba))
+* **posts:** Quest Log level 0000, the IT-Journey showcase ([#55](https://github.com/bamr87/bamr87.github.io/issues/55)) ([34e4a34](https://github.com/bamr87/bamr87.github.io/commit/34e4a344d12c8a0021f074947eba4a931630699e))
+* **posts:** Quest Log level 1111, the bamr87/bamr87 showcase ([#56](https://github.com/bamr87/bamr87.github.io/issues/56)) ([405769a](https://github.com/bamr87/bamr87.github.io/commit/405769af7e3c6bc19e54d191786b2c80264cc5cb))
+* **posts:** Quest Log side quest, the bamr87.github.io showcase ([#57](https://github.com/bamr87/bamr87.github.io/issues/57)) ([bc41b23](https://github.com/bamr87/bamr87.github.io/commit/bc41b23b75a60abc7be428cc595702c4eb598ad1))
+
+
+### Fixed
+
+* **content:** repair dead links, mixed-content images and the cheat sheet Liquid example ([d3541e3](https://github.com/bamr87/bamr87.github.io/commit/d3541e310b7f0cbf3886c5c9f5101d00bbe3292c))
+* **nav:** serve music at /hobbies/music/ and gate internal links in CI ([8d37e58](https://github.com/bamr87/bamr87.github.io/commit/8d37e583c94799265a55b4a2cf596642135a36a1))
+
 ## [0.2.1](https://github.com/bamr87/bamr87.github.io/compare/v0.2.0...v0.2.1) (2026-10-30)
 
 
