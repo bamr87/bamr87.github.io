@@ -53,3 +53,12 @@ features:
     surface: cli
     link: "scripts"
     docs: "README.md"
+  - id: PROFILE-005
+    title: "The Quest Log series page"
+    description: "Series page at `/quest-log/`: lists every post in the `quest-log` category, newest first, links the Badwill Impairment kickoff post and says how to follow along on LinkedIn"
+    implemented: true
+    status: shipped
+    prd: [TBD]
+    surface: ui
+    link: "pages/quest-log.md"
+    docs: "pages/quest-log.md"
