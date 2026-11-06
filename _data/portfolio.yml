@@ -2,13 +2,13 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-05T02:12:30Z'
+generated_at: '2026-11-06T02:12:31Z'
 totals:
   public_repos: 42
-  followers: 19
+  followers: 18
   shown: 12
   featured: 3
-  stars: 52
+  stars: 51
   languages:
     Python: 6
     JavaScript: 2
@@ -30,7 +30,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-04T22:16:54Z'
+  pushed_at: '2026-11-05T22:16:49Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -49,7 +49,7 @@ projects:
   - jekyll
   - jekyll-theme
   - ruby
-  pushed_at: '2026-11-03T07:02:01Z'
+  pushed_at: '2026-11-05T05:20:17Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -68,7 +68,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-05T01:39:26Z'
+  pushed_at: '2026-11-05T23:49:09Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -104,7 +104,7 @@ projects:
   - github-actions
   - github-app
   - python
-  pushed_at: '2026-10-31T17:57:19Z'
+  pushed_at: '2026-11-05T09:13:55Z'
   license: MIT
   repo_url: https://github.com/bamr87/githubai
   site_url: null
@@ -131,7 +131,7 @@ projects:
   featured: false
   category: Apps & AI
   description: WTD (What To Do) — a recursive TODO engine that turns vague goals into actionable steps.
-  stars: 1
+  stars: 0
   language: Python
   topics:
   - ai-agents
@@ -188,7 +188,7 @@ projects:
   - react
   - sec-edgar
   - typescript
-  pushed_at: '2026-11-03T08:09:53Z'
+  pushed_at: '2026-11-05T08:03:57Z'
   license: MIT
   repo_url: https://github.com/bamr87/fredgar-ai
   site_url: https://bamr87.github.io/fredgar-ai/
@@ -223,7 +223,7 @@ projects:
   - developer-tools
   - github
   - scaffolding
-  pushed_at: '2026-11-02T10:43:06Z'
+  pushed_at: '2026-11-05T13:05:31Z'
   license: MIT
   repo_url: https://github.com/bamr87/scripts
   site_url: null

@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-05T02:12:26Z
+lastmod: 2026-11-06T02:12:27Z
 ---
 
 
@@ -100,11 +100,18 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | JEV: the fleet doctor's step spec and local dry run (P3, step 1) | bamr87 | jev, ai, loops, local, fleet-pulse | /bamr87/tools/jev/steps/fleet-pulse/doctor.yml |
 | JEV: the evolution agent's step spec and local dry run (P3, step 2) | bamr87 | jev, ai, loops, local, repo-evolution | /bamr87/tools/jev/steps/repo-evolution/evolve.yml |
 | JEV: the fan-out agent fill's step specs and local dry run (P3, step 3) | bamr87 | jev, ai, loops, local, fanout | /bamr87/tools/jev/steps/fanout/agent-fill-standardize.yml |
-| Recursive harness refinement (Harness²): the surface check, the Propose–Probe–Compose plan and evidence tree, the experience library | bamr87 | jev, harness, refinement, loops, sensor | /bamr87/tools/jev/refine.py |
+| Recursive harness refinement (Harness²): the surface check, the Propose–Probe–Compose plan and evidence tree, the experience library, the console's Refine page and review queue, the assistant | bamr87 | jev, harness, refinement, loops, sensor | /refine |
+| The topic loop read back: directive → issue → pull request → merged, on the Content page | bamr87 | content, editorial, loop | /bamr87/.github/scripts/dash-gen/content_atlas.py |
+| The routine PM review: project, roadmap and release alignment | bamr87 | pm, projects, roadmap, releases, loops | /bamr87/tools/pm_review.py |
+| The app portal: every fleet frontend opened inside the Harness Console, at its live address or its local stack | bamr87 | console, frontend, portal, registry, launcher, cli | /apps |
+| The bashOS desktop: an icon for every fleet app, each opened in a window that shares one App Shell | bamr87 | console, frontend, bashos, desktop, portal, registry | /desktop |
+| The generated repo app: every repo in the fleet opens as an app, with or without a frontend of its own | bamr87 | console, frontend, portal, registry, desktop | /apps/kvlite |
+| Fleet security posture from a weekly OpenSSF Scorecard sweep | bamr87 | security, conformance, loop | /bamr87/tools/scorecard_snapshot.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
 | Scripts/tools for site maintenance | bamr87.github.io |  | /bamr87.github.io/scripts |
+| The Quest Log series page | bamr87.github.io |  | /bamr87.github.io/pages/quest-log.md |
 | Web app (bamr87.github.io/bashcrawl) | bashcrawl |  | /bashcrawl/web/index.html |
 | Classic terminal dungeon | bashcrawl |  | /bashcrawl/entrance |
 | XP/score persistence across modes | bashcrawl |  |  |
@@ -269,6 +276,21 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
 | Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
 | install.sh standalone installer | scripts |  | /scripts/install.sh |
+| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
+| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
+| Portable C payload encoder producing JSON readings, with a host test | sensor-mesh | phase-1 | /sensor-mesh/platformio.ini |
+| Standard CI gate | sensor-mesh | ci | /sensor-mesh/.github/workflows/ci.yml |
+| HTTP service exposing /healthz and /.well-known/openid-configuration | zer0-id | phase-1 | /zer0-id/go.mod |
+| Standard CI gate | zer0-id | ci | /zer0-id/.github/workflows/ci.yml |
+| Freestanding kernel object and Multiboot2 header build with host gcc/l | zer0-kernel | phase-1 | /zer0-kernel/Makefile |
+| Standard CI gate | zer0-kernel | ci | /zer0-kernel/.github/workflows/ci.yml |
+| Syntax highlighting | zpl-viewer |  | /zpl-viewer/src/providers |
+| Live canvas preview with zoom and paging | zpl-viewer |  | /zpl-viewer/src/previewPanel.ts |
+| Templates, snippets and Barcode Studio | zpl-viewer |  | /zpl-viewer/src/barcode |
+| Formatters, image import, format conversion | zpl-viewer |  | /zpl-viewer/src/formatting.ts |
+| Analysis: metrics, ink coverage, lint rules | zpl-viewer |  | /zpl-viewer/src/analysis |
+| Data merge of {{placeholder}} templates from CSV/TSV/JSON/JSONL | zpl-viewer |  | /zpl-viewer/src/importers |
+| Deploy via raw TCP 9100 | zpl-viewer |  | /zpl-viewer/src/deploy |
 
 
 ## Requested / Backlog Features
@@ -303,6 +325,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Fleet PR review workflow with one sticky summary | bamr87 | ci, governance, review | /bamr87/docs/amendments/proposed/fleet-pr-review.md |
 | Fleet activity replay: live and historical animated view of agents, harnesses and containers (proposed) | bamr87 | console, otel, phoenix, epic, observability, activity-log, replay, timeline, docker, storage, visualization | /bamr87/docs/prd/FLEET-ACTIVITY-REPLAY.md |
 | Common harness protocol and platform: one agent-loop contract for console, CI, local and JEV harnesses (proposed) | bamr87 | harness, protocol, agent-loop, mcp, otel, phoenix, a2a, uhp, jev, epic | /bamr87/docs/prd/HARNESS-PROTOCOL.md |
+| Visual evidence standard: screenshots and front-end evidence for tutorials, guides and setup docs | bamr87 | docs, guides, evidence, console, lint, standards | /bamr87/tools/guides_visual_lint.py |
+| Fleet activity replay: live and historical animated view of agents, harnesses and containers (proposed) | bamr87 | console, observability, activity-log, replay, timeline, docker, storage, visualization | /bamr87/docs/prd/FLEET-ACTIVITY-REPLAY.md |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
 | Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
@@ -356,6 +380,26 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
 | Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
 | Language server (LSP) for editors | schema-lang | phase-3 |  |
+| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
+| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
+| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
+| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
+| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
+| PlatformIO project for esp32dev that builds | sensor-mesh | phase-1 |  |
+| Wi-Fi + MQTT publish loop with reconnect | sensor-mesh | phase-2 |  |
+| BME280 temperature/humidity driver | sensor-mesh | phase-2 |  |
+| OTA firmware updates | sensor-mesh | phase-3 |  |
+| MQTT → OTLP bridge into fleet-observe | sensor-mesh | phase-3 |  |
+| JWKS endpoint with a generated signing key | zer0-id | phase-1 |  |
+| Authorization code + PKCE flow with a client registry | zer0-id | phase-2 |  |
+| ID token and access token issuance (RS256/EdDSA) | zer0-id | phase-2 |  |
+| WebAuthn passkey registration and login | zer0-id | phase-3 |  |
+| Conformance test run against the OpenID suite | zer0-id | phase-3 |  |
+| Kernel ELF links with a linker script and boots in QEMU (grub-mkrescue | zer0-kernel | phase-1 |  |
+| Serial and VGA text output drivers | zer0-kernel | phase-2 |  |
+| IDT, exceptions and timer interrupts | zer0-kernel | phase-2 |  |
+| Paging and physical frame allocator | zer0-kernel | phase-3 |  |
+| Round-robin scheduler and a minimal shell | zer0-kernel | phase-3 |  |
 
 
 ---
@@ -363,4 +407,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-05T02:12:26Z
+Last updated: 2026-11-06T02:12:27Z
