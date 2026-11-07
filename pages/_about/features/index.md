@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-06T02:12:27Z
+lastmod: 2026-11-07T02:11:25Z
 ---
 
 
@@ -107,6 +107,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | The bashOS desktop: an icon for every fleet app, each opened in a window that shares one App Shell | bamr87 | console, frontend, bashos, desktop, portal, registry | /desktop |
 | The generated repo app: every repo in the fleet opens as an app, with or without a frontend of its own | bamr87 | console, frontend, portal, registry, desktop | /apps/kvlite |
 | Fleet security posture from a weekly OpenSSF Scorecard sweep | bamr87 | security, conformance, loop | /bamr87/tools/scorecard_snapshot.py |
+| JEV: roadmap FF ids assigned at merge | bamr87 | jev, governance, numbering, roadmap | /bamr87/tools/jev/number.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -280,6 +281,40 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
 | Portable C payload encoder producing JSON readings, with a host test | sensor-mesh | phase-1 | /sensor-mesh/platformio.ini |
 | Standard CI gate | sensor-mesh | ci | /sensor-mesh/.github/workflows/ci.yml |
+| Run code | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Stop all | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Log / output panel | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Syntax highlighting | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Server detection | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Keep-alive heartbeat | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Configuration | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Run / Stop commands | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Examples | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Run selection | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Recording | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Beautify / Align | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Tutorial webview | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Wagtail admin: pages, revisions, media, workflows | zer0-CMS | platform, admin, wagtail | /admin/ |
+| Agent suggestions, reviewed in the editor | zer0-CMS | platform, agents, governance | /admin/suggestions/page/ |
+| Agent review as a moderation task | zer0-CMS | platform, agents, workflow | /admin/workflows/ |
+| Agent runs report | zer0-CMS | platform, agents, reports | /admin/reports/agent-runs/ |
+| GraphQL API | zer0-CMS | platform, api, graphql | /graphql/ |
+| REST API: agent runs, graph, suggestions, tools | zer0-CMS | platform, api, rest, openapi | /api/v2/docs/ |
+| MCP server over the one tool registry | zer0-CMS | platform, api, mcp, agents | /mcp/ |
+| Jekyll sites imported and exported byte for byte | zer0-CMS | platform, jekyll, import, export | /zer0-CMS/content/importers/jekyll.py |
+| Health, readiness and version probes | zer0-CMS | platform, ops, probes | /readyz |
+| Request ids, the error envelope and structured logs | zer0-CMS | platform, ops, logging, errors | /api/v2/docs/ |
+| The studio: write, create and publish | zer0-CMS | studio, web, editor, publishing | /studio/write |
+| The studio's review inbox and revisions | zer0-CMS | studio, web, review, agents, governance | /studio/review |
+| Agent runs with a live step timeline | zer0-CMS | studio, web, agents | /studio/ai |
+| The studio's AI area: assistants, pipelines, output schemas, providers and models | zer0-CMS | studio, web, ai, assistants, pipelines, providers | /studio/ai |
+| Briefs, conversations and the editor's AI panel | zer0-CMS | studio, web, ai, briefs, conversations, editor | /studio/create/briefs |
+| The studio's Outbox desk: the belt, arena trials and the claim desk | zer0-CMS | studio, web, outbox, belt, claim-desk, pipelines | /studio/outbox |
+| A site's Voice tab: every layer of its voice, who reads it, and the guard on a text | zer0-CMS | studio, web, sites, voice, brand | /studio/sites |
+| Metadata panel: front matter as typed controls | zer0-CMS | extension, editor | /zer0-CMS/src/panel/panelProvider.ts |
+| Dashboard: every site's content in one place | zer0-CMS | extension, dashboard | /zer0-CMS/src/dashboard/dashboardPanel.ts |
+| Governed publishing: draft → guard → approve → publish → ledger | zer0-CMS | extension, governance | /zer0-CMS/src/core/governance/ |
+| Bundled MCP server for the editor's agents | zer0-CMS | extension, mcp | /zer0-CMS/src/mcp/server.ts |
 | HTTP service exposing /healthz and /.well-known/openid-configuration | zer0-id | phase-1 | /zer0-id/go.mod |
 | Standard CI gate | zer0-id | ci | /zer0-id/.github/workflows/ci.yml |
 | Freestanding kernel object and Multiboot2 header build with host gcc/l | zer0-kernel | phase-1 | /zer0-kernel/Makefile |
@@ -327,6 +362,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Common harness protocol and platform: one agent-loop contract for console, CI, local and JEV harnesses (proposed) | bamr87 | harness, protocol, agent-loop, mcp, otel, phoenix, a2a, uhp, jev, epic | /bamr87/docs/prd/HARNESS-PROTOCOL.md |
 | Visual evidence standard: screenshots and front-end evidence for tutorials, guides and setup docs | bamr87 | docs, guides, evidence, console, lint, standards | /bamr87/tools/guides_visual_lint.py |
 | Fleet activity replay: live and historical animated view of agents, harnesses and containers (proposed) | bamr87 | console, observability, activity-log, replay, timeline, docker, storage, visualization | /bamr87/docs/prd/FLEET-ACTIVITY-REPLAY.md |
+| Expedite sprints: one accelerated, monitored pilot at a time run by the fleet's agentic loops | bamr87 | harness, loops, governance, devops, dora, standards | /bamr87/docs/EXPEDITE-SPRINTS.md |
+| Expedite sprints: one accelerated, monitored pilot at a time run by the fleet's agentic loops | bamr87 | harness, loops, governance, devops, dora, standards | /bamr87/docs/EXPEDITE-SPRINTS.md |
+| Typed decisions gate the pipeline: a decision lockfile, traces and replay, the trim and verify loops | bamr87 | ci, jev, decisions, optimization, governance | /bamr87/docs/prd/AGENTIC-SDLC.md |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
 | Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
@@ -350,6 +388,10 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Helm deployment onto fleet-infra | fleet-observe | phase-3 |  |
 | Core product roadmap | fredgar-ai |  |  |
 | Advanced / growth features | fredgar-ai |  |  |
+| Institutional holdings (13F) | fredgar-ai |  |  |
+| Watchlist and new-filing alerts | fredgar-ai |  |  |
+| FRED transforms and vintages | fredgar-ai |  |  |
+| Company metric vs macro overlay | fredgar-ai |  |  |
 | PerfectPixel Studio sprite-sheet import | godotgo |  | /godotgo/framework/addons |
 | Blog posts | it-journey |  | /posts/ |
 | Documentation section | it-journey |  | /docs/ |
@@ -364,6 +406,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Matters workspace | law-ai |  | /law-ai/backend/law_ai/matters |
 | Multi-agent collaboration and GraphRAG (Phase 2) | law-ai |  |  |
 | Expansion (Phase 3) | law-ai |  |  |
+| Hub-originated publishing in character voice | lifehacker.dev |  | /lifehacker.dev/_data/hub_intake.yml |
 | Concurrent port range scan with rate limiting | netprobe | phase-1 |  |
 | DNS lookup subcommand (A/AAAA/MX/TXT) | netprobe | phase-2 |  |
 | Traceroute view | netprobe | phase-2 |  |
@@ -390,6 +433,15 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | BME280 temperature/humidity driver | sensor-mesh | phase-2 |  |
 | OTA firmware updates | sensor-mesh | phase-3 |  |
 | MQTT → OTLP bridge into fleet-observe | sensor-mesh | phase-3 |  |
+| Autocomplete | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Hover documentation | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Error reporting | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Status bar | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Daemon auto-start | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Cue log | vs-sonic-pi |  | /vs-sonic-pi/src |
+| MIDI monitor | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Audio scope | vs-sonic-pi |  | /vs-sonic-pi/src |
+| Multi-buffer workspaces | vs-sonic-pi |  | /vs-sonic-pi/src |
 | JWKS endpoint with a generated signing key | zer0-id | phase-1 |  |
 | Authorization code + PKCE flow with a client registry | zer0-id | phase-2 |  |
 | ID token and access token issuance (RS256/EdDSA) | zer0-id | phase-2 |  |
@@ -407,4 +459,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-06T02:12:27Z
+Last updated: 2026-11-07T02:11:25Z
