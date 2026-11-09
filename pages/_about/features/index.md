@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-08T02:11:58Z
+lastmod: 2026-11-09T02:13:09Z
 ---
 
 
@@ -233,24 +233,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Belt profile: handoff messages through one gapless, crash-repairable relay | outbox |  | /outbox/src/outbox/belt.py |
 | Claim desk: race a draft's claims, resolve later, calibrate | outbox |  | /outbox/src/outbox/claimdesk.py |
 | Local end-to-end proof of the platform plan across the sibling repos | outbox |  | /outbox/e2e/run.py |
-| Episode catalog | ragio-ai | pipeline | /ragio-ai/ragio/catalog.py |
-| Local Whisper transcription | ragio-ai | pipeline, whisper | /ragio-ai/ragio/transcribe.py |
-| Segment chunking | ragio-ai | pipeline | /ragio-ai/ragio/chunk.py |
-| Vector index and episode summaries | ragio-ai | pipeline, qdrant, llamaindex | /ragio-ai/ragio/index.py |
-| Hybrid RAG with citations | ragio-ai | rag, ollama | /ragio-ai/ragio/rag.py |
-| Audio clips | ragio-ai | audio | /ragio-ai/ragio/clips.py |
-| Deep listen | ragio-ai | audio, optional | /ragio-ai/ragio/clips.py |
-| Retrieval evaluation | ragio-ai | eval | /ragio-ai/ragio/evaluate.py |
-| Web app | ragio-ai | fastapi, ui | /ragio-ai/app.py |
-| Crawl | README |  | /README/scripts |
-| Extract | README |  | /README/context |
-| Navigate | README |  | /README/context |
-| Synthesize | README |  | /README/context |
-| Assemble | README |  | /README/context |
-| Index | README |  | /README/context |
-| Serve | README |  | /README/mcp |
-| Evolve | README |  | /README/hooks.d |
-| Published fleet documentation site | README | site, mkdocs, navigation | / |
 
 
 ## Requested / Backlog Features
@@ -337,12 +319,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Traceroute view | netprobe | phase-2 |  |
 | Bubble Tea TUI dashboard combining probes | netprobe | phase-3 |  |
 | JSON output for scripting | netprobe | phase-3 |  |
-| index the full archive and reach eval hit@5 ≥ 0.85 on eval/questions.j | ragio-ai | roadmap, phase-1 |  |
-| route questions to candidate episodes via the summary collection befor | ragio-ai | roadmap, phase-2 |  |
-| GPU deep-listen mode re-transcribing cited ranges with a larger Whispe | ragio-ai | roadmap, phase-3 |  |
-| creative modes and an episode/people/themes knowledge graph | ragio-ai | roadmap, phase-4 |  |
-| speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
-| Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
 
 
 ---
@@ -350,4 +326,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-08T02:11:58Z
+Last updated: 2026-11-09T02:13:09Z
