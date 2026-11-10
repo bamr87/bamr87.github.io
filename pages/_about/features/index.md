@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-09T02:13:09Z
+lastmod: 2026-11-10T02:11:56Z
 ---
 
 
@@ -109,6 +109,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Fleet security posture from a weekly OpenSSF Scorecard sweep | bamr87 | security, conformance, loop | /bamr87/tools/scorecard_snapshot.py |
 | JEV: roadmap FF ids assigned at merge | bamr87 | jev, governance, numbering, roadmap | /bamr87/tools/jev/number.py |
 | The console's frame: a sidebar that folds, live counts, and pages that fail one at a time | bamr87 | console, navigation, accessibility, resilience | /bamr87/tools/console/web/src/components/Shell.tsx |
+| Scoped MCP write access: approved report jobs and Work-board prioritisation for remote agents | bamr87 | console, mcp, agents, work-board, guardrails, audit | /bamr87/tools/console/mcp_layer/server.py |
+| The agent inventory: every AI agent registered, graded against the efficacy contract, and held complete by the drift gate | bamr87 | harness, governance, agents, efficacy, drift | /bamr87/.github/scripts/dash-gen/agent_inventory.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -233,6 +235,24 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Belt profile: handoff messages through one gapless, crash-repairable relay | outbox |  | /outbox/src/outbox/belt.py |
 | Claim desk: race a draft's claims, resolve later, calibrate | outbox |  | /outbox/src/outbox/claimdesk.py |
 | Local end-to-end proof of the platform plan across the sibling repos | outbox |  | /outbox/e2e/run.py |
+| Episode catalog | ragio-ai | pipeline | /ragio-ai/ragio/catalog.py |
+| Local Whisper transcription | ragio-ai | pipeline, whisper | /ragio-ai/ragio/transcribe.py |
+| Segment chunking | ragio-ai | pipeline | /ragio-ai/ragio/chunk.py |
+| Vector index and episode summaries | ragio-ai | pipeline, qdrant, llamaindex | /ragio-ai/ragio/index.py |
+| Hybrid RAG with citations | ragio-ai | rag, ollama | /ragio-ai/ragio/rag.py |
+| Audio clips | ragio-ai | audio | /ragio-ai/ragio/clips.py |
+| Deep listen | ragio-ai | audio, optional | /ragio-ai/ragio/clips.py |
+| Retrieval evaluation | ragio-ai | eval | /ragio-ai/ragio/evaluate.py |
+| Web app | ragio-ai | fastapi, ui | /ragio-ai/app.py |
+| Crawl | README |  | /README/scripts |
+| Extract | README |  | /README/context |
+| Navigate | README |  | /README/context |
+| Synthesize | README |  | /README/context |
+| Assemble | README |  | /README/context |
+| Index | README |  | /README/context |
+| Serve | README |  | /README/mcp |
+| Evolve | README |  | /README/hooks.d |
+| Published fleet documentation site | README | site, mkdocs, navigation | / |
 
 
 ## Requested / Backlog Features
@@ -272,7 +292,10 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Expedite sprints: one accelerated, monitored pilot at a time run by the fleet's agentic loops | bamr87 | harness, loops, governance, devops, dora, standards | /bamr87/docs/EXPEDITE-SPRINTS.md |
 | Expedite sprints: one accelerated, monitored pilot at a time run by the fleet's agentic loops | bamr87 | harness, loops, governance, devops, dora, standards | /bamr87/docs/EXPEDITE-SPRINTS.md |
 | Typed decisions gate the pipeline: a decision lockfile, traces and replay, the trim and verify loops | bamr87 | ci, jev, decisions, optimization, governance | /bamr87/docs/prd/AGENTIC-SDLC.md |
+| MCP server lifecycle: centralized registry, config schema, lint and fan-out | bamr87 | mcp, agents, ai-layer, standards, lint, console | /bamr87/tools/mcp_servers_lint.py |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
+| Reversing entries for posted journal entries | djangoerp |  | /djangoerp/journal/services.py |
+| Fiscal periods, lock dates and period-close entry | djangoerp |  | /djangoerp/journal/models.py |
 | Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
 | Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
 | dbt project on DuckDB with staging and mart models | edgar-pipeline | phase-2 |  |
@@ -319,6 +342,12 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Traceroute view | netprobe | phase-2 |  |
 | Bubble Tea TUI dashboard combining probes | netprobe | phase-3 |  |
 | JSON output for scripting | netprobe | phase-3 |  |
+| index the full archive and reach eval hit@5 ≥ 0.85 on eval/questions.j | ragio-ai | roadmap, phase-1 |  |
+| route questions to candidate episodes via the summary collection befor | ragio-ai | roadmap, phase-2 |  |
+| GPU deep-listen mode re-transcribing cited ranges with a larger Whispe | ragio-ai | roadmap, phase-3 |  |
+| creative modes and an episode/people/themes knowledge graph | ragio-ai | roadmap, phase-4 |  |
+| speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
+| Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
 
 
 ---
@@ -326,4 +355,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-09T02:13:09Z
+Last updated: 2026-11-10T02:11:56Z

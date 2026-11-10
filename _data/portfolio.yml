@@ -2,10 +2,10 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-09T02:13:13Z'
+generated_at: '2026-11-10T02:12:00Z'
 totals:
   public_repos: 43
-  followers: 20
+  followers: 18
   shown: 12
   featured: 3
   stars: 53
@@ -30,7 +30,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-08T23:23:18Z'
+  pushed_at: '2026-11-09T22:16:48Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -49,7 +49,7 @@ projects:
   - jekyll
   - jekyll-theme
   - ruby
-  pushed_at: '2026-11-08T08:29:22Z'
+  pushed_at: '2026-11-09T23:57:48Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -68,7 +68,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-08T21:11:41Z'
+  pushed_at: '2026-11-10T00:42:16Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -104,7 +104,7 @@ projects:
   - github-actions
   - github-app
   - python
-  pushed_at: '2026-11-05T09:13:55Z'
+  pushed_at: '2026-11-09T07:01:47Z'
   license: MIT
   repo_url: https://github.com/bamr87/githubai
   site_url: null
@@ -188,7 +188,7 @@ projects:
   - react
   - sec-edgar
   - typescript
-  pushed_at: '2026-11-07T14:53:31Z'
+  pushed_at: '2026-11-09T07:00:58Z'
   license: MIT
   repo_url: https://github.com/bamr87/fredgar-ai
   site_url: https://bamr87.github.io/fredgar-ai/
@@ -206,7 +206,7 @@ projects:
   - mcp
   - mkdocs
   - python
-  pushed_at: '2026-11-03T03:15:31Z'
+  pushed_at: '2026-11-09T13:15:20Z'
   license: MIT
   repo_url: https://github.com/bamr87/README
   site_url: https://bamr87.github.io/README/
