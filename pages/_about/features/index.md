@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-10T02:11:56Z
+lastmod: 2026-11-11T02:10:53Z
 ---
 
 
@@ -111,6 +111,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | The console's frame: a sidebar that folds, live counts, and pages that fail one at a time | bamr87 | console, navigation, accessibility, resilience | /bamr87/tools/console/web/src/components/Shell.tsx |
 | Scoped MCP write access: approved report jobs and Work-board prioritisation for remote agents | bamr87 | console, mcp, agents, work-board, guardrails, audit | /bamr87/tools/console/mcp_layer/server.py |
 | The agent inventory: every AI agent registered, graded against the efficacy contract, and held complete by the drift gate | bamr87 | harness, governance, agents, efficacy, drift | /bamr87/.github/scripts/dash-gen/agent_inventory.py |
+| The incident reflector: a week of agent incidents into candidate lessons for the experience library, on a local schedule | bamr87 | jev, harness, refinement, loops, schedule | /bamr87/tools/jev/reflect.py |
+| The fleet graph: what the control plane manages and how it relates, as one model | bamr87 | graph, fleetcore, harness, mcp, console, parity | /bamr87/tools/fleetcore/graph.py |
+| Outcome learning (shadow): what happened to each loop's output and where its next slots would pay | bamr87 | learning, bandit, outcomes, loops, lake, fleetcore, shadow | /bamr87/tools/fleetcore/learn.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -284,7 +287,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Governance records lint: amendment status, constitution order, doc links | bamr87 | governance, lint | /bamr87/tools/governance_lint.py |
 | Centrally managed loop kill switches | bamr87 | loops, kill-switch, console, governance | /bamr87/_data/fleet.yml |
 | In-flight job status for agents: state, ages and slowness diagnostics | bamr87 | console, mcp, jobs, observability, agents | /bamr87/tools/console/mcp_layer/server.py |
-| Fleet PR review workflow with one sticky summary | bamr87 | ci, governance, review | /bamr87/docs/amendments/proposed/fleet-pr-review.md |
+| Fleet PR review workflow with one sticky summary | bamr87 | ci, governance, review | /bamr87/docs/amendments/0017-fleet-pr-review.md |
 | Fleet activity replay: live and historical animated view of agents, harnesses and containers (proposed) | bamr87 | console, otel, phoenix, epic, observability, activity-log, replay, timeline, docker, storage, visualization | /bamr87/docs/prd/FLEET-ACTIVITY-REPLAY.md |
 | Common harness protocol and platform: one agent-loop contract for console, CI, local and JEV harnesses (proposed) | bamr87 | harness, protocol, agent-loop, mcp, otel, phoenix, a2a, uhp, jev, epic | /bamr87/docs/prd/HARNESS-PROTOCOL.md |
 | Visual evidence standard: screenshots and front-end evidence for tutorials, guides and setup docs | bamr87 | docs, guides, evidence, console, lint, standards | /bamr87/tools/guides_visual_lint.py |
@@ -293,6 +296,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Expedite sprints: one accelerated, monitored pilot at a time run by the fleet's agentic loops | bamr87 | harness, loops, governance, devops, dora, standards | /bamr87/docs/EXPEDITE-SPRINTS.md |
 | Typed decisions gate the pipeline: a decision lockfile, traces and replay, the trim and verify loops | bamr87 | ci, jev, decisions, optimization, governance | /bamr87/docs/prd/AGENTIC-SDLC.md |
 | MCP server lifecycle: centralized registry, config schema, lint and fan-out | bamr87 | mcp, agents, ai-layer, standards, lint, console | /bamr87/tools/mcp_servers_lint.py |
+| Grok ↔ Claude Code governance: handoff, audit trail, roles, escalation | bamr87 | governance, agents, claude-code, grok, traceability, lint | /bamr87/tools/governance_trace_lint.py |
+| Claude Code executes; Grok bots set direction only | bamr87 | governance, agents, claude-code, grok, standards, lint | /bamr87/tools/claude_code_executes_lint.py |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Reversing entries for posted journal entries | djangoerp |  | /djangoerp/journal/services.py |
 | Fiscal periods, lock dates and period-close entry | djangoerp |  | /djangoerp/journal/models.py |
@@ -326,6 +331,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Blog posts | it-journey |  | /posts/ |
 | Documentation section | it-journey |  | /docs/ |
 | Jupyter notebooks | it-journey |  | /notebooks/ |
+| Quest editorial charter | it-journey | governance, editorial, quests |  |
+| Editorial charter CI checks | it-journey | governance, ci, quests |  |
 | Write-ahead log with crash recovery | kvlite | phase-1 |  |
 | SSTable flush and point lookups across levels | kvlite | phase-2 |  |
 | Background compaction and bloom filters | kvlite | phase-2 |  |
@@ -336,6 +343,13 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Matters workspace | law-ai |  | /law-ai/backend/law_ai/matters |
 | Multi-agent collaboration and GraphRAG (Phase 2) | law-ai |  |  |
 | Expansion (Phase 3) | law-ai |  |  |
+| Global norm taxonomy and ontology | law-ai |  |  |
+| Open legal corpus adoption plan | law-ai |  |  |
+| AI governance register | law-ai |  |  |
+| Obligation and control crosswalk | law-ai |  |  |
+| Bounded rules-as-code pilots | law-ai |  |  |
+| Temporal validity and horizon scanning | law-ai |  |  |
+| Governance-as-code fleet worked example | law-ai |  |  |
 | Hub-originated publishing in character voice | lifehacker.dev |  | /lifehacker.dev/_data/hub_intake.yml |
 | Concurrent port range scan with rate limiting | netprobe | phase-1 |  |
 | DNS lookup subcommand (A/AAAA/MX/TXT) | netprobe | phase-2 |  |
@@ -355,4 +369,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-10T02:11:56Z
+Last updated: 2026-11-11T02:10:53Z
