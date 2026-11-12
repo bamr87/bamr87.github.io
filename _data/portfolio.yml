@@ -2,7 +2,7 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-11T02:10:56Z'
+generated_at: '2026-11-12T02:11:47Z'
 totals:
   public_repos: 43
   followers: 18
@@ -30,7 +30,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-10T22:18:02Z'
+  pushed_at: '2026-11-12T01:46:43Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -49,7 +49,7 @@ projects:
   - jekyll
   - jekyll-theme
   - ruby
-  pushed_at: '2026-11-10T23:13:49Z'
+  pushed_at: '2026-11-11T05:10:06Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -68,7 +68,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-10T21:20:21Z'
+  pushed_at: '2026-11-12T00:41:48Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -104,7 +104,7 @@ projects:
   - github-actions
   - github-app
   - python
-  pushed_at: '2026-11-09T07:01:47Z'
+  pushed_at: '2026-11-12T00:43:15Z'
   license: MIT
   repo_url: https://github.com/bamr87/githubai
   site_url: null
@@ -169,7 +169,7 @@ projects:
   stars: 0
   language: TypeScript
   topics: []
-  pushed_at: '2026-11-02T04:59:26Z'
+  pushed_at: '2026-11-12T00:53:04Z'
   license: MIT
   repo_url: https://github.com/bash-365/csv-vscoode
   site_url: https://apps.bash-365.com/
@@ -188,7 +188,7 @@ projects:
   - react
   - sec-edgar
   - typescript
-  pushed_at: '2026-11-10T20:37:09Z'
+  pushed_at: '2026-11-12T00:50:34Z'
   license: MIT
   repo_url: https://github.com/bamr87/fredgar-ai
   site_url: https://bamr87.github.io/fredgar-ai/
@@ -206,7 +206,7 @@ projects:
   - mcp
   - mkdocs
   - python
-  pushed_at: '2026-11-09T13:15:20Z'
+  pushed_at: '2026-11-12T00:49:39Z'
   license: MIT
   repo_url: https://github.com/bamr87/README
   site_url: https://bamr87.github.io/README/
@@ -223,7 +223,7 @@ projects:
   - developer-tools
   - github
   - scaffolding
-  pushed_at: '2026-11-10T07:07:44Z'
+  pushed_at: '2026-11-12T00:51:07Z'
   license: MIT
   repo_url: https://github.com/bamr87/scripts
   site_url: null

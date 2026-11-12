@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-11T02:10:53Z
+lastmod: 2026-11-12T02:11:43Z
 ---
 
 
@@ -114,6 +114,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | The incident reflector: a week of agent incidents into candidate lessons for the experience library, on a local schedule | bamr87 | jev, harness, refinement, loops, schedule | /bamr87/tools/jev/reflect.py |
 | The fleet graph: what the control plane manages and how it relates, as one model | bamr87 | graph, fleetcore, harness, mcp, console, parity | /bamr87/tools/fleetcore/graph.py |
 | Outcome learning (shadow): what happened to each loop's output and where its next slots would pay | bamr87 | learning, bandit, outcomes, loops, lake, fleetcore, shadow | /bamr87/tools/fleetcore/learn.py |
+| The harness standard: every AI workflow found by any route, graded, with the lever that rebuilds it | bamr87 | dash, harness, standard, console | /harnesses |
+| Decision index: what waits on the maintainer across the fleet, in one call | bamr87 | decisions, console, mcp, github, review-gate, ratification, dependabot, cache | /bamr87/tools/console/decision_index.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -166,7 +168,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Docker / docker-compose with PostgreSQL | djangoerp |  | /djangoerp/docker-compose.yml |
 | Python package with an EDGAR User-Agent config and tests | edgar-pipeline | phase-1 | /edgar-pipeline/pyproject.toml |
 | Standard CI gate | edgar-pipeline | ci | /edgar-pipeline/.github/workflows/ci.yml |
-| Terraform root module validates and plans with no cloud credentials (l | fleet-infra | phase-1 | /fleet-infra/main.tf |
+| Terraform root module validates and plans with no cloud credentials | fleet-infra | phase-1 | /fleet-infra/main.tf |
 | Standard CI gate | fleet-infra | ci | /fleet-infra/.github/workflows/ci.yml |
 | Shared Kotlin module with a fleet status model and unit tests (JVM tar | fleet-mobile | phase-1 | /fleet-mobile/settings.gradle.kts |
 | Standard CI gate | fleet-mobile | ci | /fleet-mobile/.github/workflows/ci.yml |
@@ -298,6 +300,19 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | MCP server lifecycle: centralized registry, config schema, lint and fan-out | bamr87 | mcp, agents, ai-layer, standards, lint, console | /bamr87/tools/mcp_servers_lint.py |
 | Grok ↔ Claude Code governance: handoff, audit trail, roles, escalation | bamr87 | governance, agents, claude-code, grok, traceability, lint | /bamr87/tools/governance_trace_lint.py |
 | Claude Code executes; Grok bots set direction only | bamr87 | governance, agents, claude-code, grok, standards, lint | /bamr87/tools/claude_code_executes_lint.py |
+| Shared functional specification library | bamr87 | specs, library, governance, prd | /bamr87/docs/prd/FUNCTIONAL-SPEC-LIBRARY.md |
+| Per-repo functional spec manifest | bamr87 | specs, manifest, governance | /bamr87/docs/prd/FUNCTIONAL-SPEC-LIBRARY.md |
+| Functional spec override ratification | bamr87 | specs, governance, amendments | /bamr87/docs/prd/FUNCTIONAL-SPEC-LIBRARY.md |
+| Functional spec resolver, CI gate and docs parity | bamr87 | specs, ci, docs, resolver | /bamr87/docs/prd/FUNCTIONAL-SPEC-LIBRARY.md |
+| Agentic loops history and statistics | bamr87 | dashboard, agents, loops, statistics, history | /bamr87/docs/prd/AGENTIC-LOOPS-DASHBOARD.md |
+| Agentic loops dashboard | bamr87 | dashboard, agents, loops, harness, observability | /bamr87/docs/prd/AGENTIC-LOOPS-DASHBOARD.md |
+| Agentic loops dashboard as the Bash 365 foundation | bamr87 | dashboard, bash-365, showcase, agents, wizard | /bamr87/docs/prd/AGENTIC-LOOPS-DASHBOARD.md |
+| Automatic credential rotation: started by a secret-scanning alert, a schedule or a failing credential, for the credentials the weekly loop does not reach | bamr87 | security, tokens, rotation, secrets, secret-scanning, backlog | /bamr87/docs/prd/CREDENTIAL-ROTATION.md |
+| Red-main resolver: every red default branch found, resolved where fleet rules allow, and handed over where they do not (proposed) | bamr87 | loops, harness, ci, merge, review-gate | /bamr87/docs/prd/RED-MAIN-RESOLVER.md |
+| CI review loop: each failed run on a red default branch traced through its workflow, judged for selectivity, and answered with a minimal diff (proposed) | bamr87 | loops, harness, ci, workflows, review | /bamr87/docs/prd/RED-MAIN-RESOLVER.md |
+| Agent news feed reactions | bamr87 | feed, agents, github, discussions | /bamr87/docs/prd/AGENT-NEWS-FEED.md |
+| Agent news feed threads | bamr87 | feed, agents, github, discussions | /bamr87/docs/prd/AGENT-NEWS-FEED.md |
+| Agent news feed | bamr87 | feed, agents, github, discussions | /bamr87/docs/prd/AGENT-NEWS-FEED.md |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Reversing entries for posted journal entries | djangoerp |  | /djangoerp/journal/services.py |
 | Fiscal periods, lock dates and period-close entry | djangoerp |  | /djangoerp/journal/models.py |
@@ -362,6 +377,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | creative modes and an episode/people/themes knowledge graph | ragio-ai | roadmap, phase-4 |  |
 | speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
 | Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
+| MCP get_doc tool | README | mcp, retrieval | /README/mcp/server.py |
+| MCP provenance and trust markers | README | mcp, security, provenance | /README/mcp/server.py |
 
 
 ---
@@ -369,4 +386,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-11T02:10:53Z
+Last updated: 2026-11-12T02:11:43Z
