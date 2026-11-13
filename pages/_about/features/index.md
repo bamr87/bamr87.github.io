@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-12T02:11:43Z
+lastmod: 2026-11-13T02:11:00Z
 ---
 
 
@@ -125,6 +125,27 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Classic terminal dungeon | bashcrawl |  | /bashcrawl/entrance |
 | XP/score persistence across modes | bashcrawl |  |  |
 | Content data | bashcrawl |  | /bashcrawl/src/help/data/rooms.yaml |
+| Learn courses | bashcrawl |  | /bashcrawl/courses |
+| Course labs | bashcrawl |  | /bashcrawl/bin/bashcrawl |
+| Skills map | bashcrawl |  | /bashcrawl/termforge/core/mastery.js |
+| Spaced-repetition review | bashcrawl |  | /bashcrawl/termforge/core/mastery.js |
+| Offline command explainer | bashcrawl |  | /bashcrawl/termforge/core/explain.js |
+| Story mode quests and hidden rooms | bashcrawl |  | /bashcrawl/entrance |
+| Hints and fog-of-war map | bashcrawl |  | /bashcrawl/web/assets/js/runtime.js |
+| Practice Arcade mini-games | bashcrawl |  | /bashcrawl/web/assets/js/arcade.js |
+| Vim Catacombs | bashcrawl |  | /bashcrawl/web/src/arcade/VimStage.tsx |
+| Reference cheatsheets | bashcrawl |  | /bashcrawl/web/src/screens/ReferenceScreen.tsx |
+| 16-bit RPG web UI | bashcrawl |  | /bashcrawl/web/src/app/App.tsx |
+| Training Arena and speed run | bashcrawl |  | /bashcrawl/web/assets/js/plugins/arena.js |
+| Progression: ranks, achievements, daily challenge, bestiary | bashcrawl |  | /bashcrawl/web/assets/js/plugins |
+| Save and load | bashcrawl |  | /bashcrawl/web/assets/js/storage.js |
+| Launcher bin/bashcrawl | bashcrawl |  | /bashcrawl/bin/bashcrawl |
+| TermForge terminal framework and TTY HUD | bashcrawl |  | /bashcrawl/termforge |
+| Telnet server and shared hub | bashcrawl |  | /bashcrawl/termforge/node/host-telnet.js |
+| Context help | bashcrawl |  | /bashcrawl/help.sh |
+| Dungeon reset | bashcrawl |  | /bashcrawl/lib/reset.sh |
+| AI playtest harness | bashcrawl |  | /bashcrawl/src/playtest |
+| Effects layer and chiptune SFX | bashcrawl |  | /bashcrawl/web/src/fx |
 | /sh command | bashos |  | /bashos/.claude/commands/sh.md |
 | /explain command | bashos |  | /bashos/.claude/commands/explain.md |
 | /script command | bashos |  | /bashos/.claude/commands/script.md |
@@ -365,6 +386,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Bounded rules-as-code pilots | law-ai |  |  |
 | Temporal validity and horizon scanning | law-ai |  |  |
 | Governance-as-code fleet worked example | law-ai |  |  |
+| lawmode legal-risk review for code (folded in) | law-ai |  | /law-ai/backend/law_ai/lawmode |
 | Hub-originated publishing in character voice | lifehacker.dev |  | /lifehacker.dev/_data/hub_intake.yml |
 | Concurrent port range scan with rate limiting | netprobe | phase-1 |  |
 | DNS lookup subcommand (A/AAAA/MX/TXT) | netprobe | phase-2 |  |
@@ -386,4 +408,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-12T02:11:43Z
+Last updated: 2026-11-13T02:11:00Z
