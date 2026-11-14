@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-13T02:11:00Z
+lastmod: 2026-11-14T02:12:01Z
 ---
 
 
@@ -408,4 +408,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-13T02:11:00Z
+Last updated: 2026-11-14T02:12:01Z
