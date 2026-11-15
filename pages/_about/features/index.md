@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-14T02:12:01Z
+lastmod: 2026-11-15T02:12:02Z
 ---
 
 
@@ -116,6 +116,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Outcome learning (shadow): what happened to each loop's output and where its next slots would pay | bamr87 | learning, bandit, outcomes, loops, lake, fleetcore, shadow | /bamr87/tools/fleetcore/learn.py |
 | The harness standard: every AI workflow found by any route, graded, with the lever that rebuilds it | bamr87 | dash, harness, standard, console | /harnesses |
 | Decision index: what waits on the maintainer across the fleet, in one call | bamr87 | decisions, console, mcp, github, review-gate, ratification, dependabot, cache | /bamr87/tools/console/decision_index.py |
+| Run the harness and its loops one stage at a time from Claude Code: /harness, /loops and /console slash commands over the console's operation allowlist | bamr87 | harness, loops, console, claude-code, slash-commands | /bamr87/tools/console/ops_cli.py |
+| The weekly routine: Friday closes the week, Saturday checks next week's schedule can run, Sunday plans it | bamr87 | routine, backup, planning, chronicle, close-out, schedule, grok | /bamr87/tools/weekly/cli.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -408,4 +410,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-14T02:12:01Z
+Last updated: 2026-11-15T02:12:02Z
