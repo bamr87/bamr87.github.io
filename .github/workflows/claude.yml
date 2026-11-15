@@ -4,10 +4,11 @@ name: Claude
 # @claude mention handler, seeded from bamr87/bamr87 templates/agent-context/.
 # Mention @claude in an issue or PR comment and Claude Code picks up the task.
 #
-# Auth: tried in the order this repo's CLAUDE_AUTH_ORDER variable names —
-# `oauth` = CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`), `api_key` =
-# ANTHROPIC_API_KEY. Set per repo or group in bamr87/bamr87 _data/fleet.yml
-# `ai_auth:`; unset means the fleet default, oauth then api_key.
+# Auth: OAuth only for now — CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`).
+# ANTHROPIC_API_KEY disabled for now (2026-11-15): the claude-auth step is
+# pinned to `order: oauth` and the key is no longer passed. To restore, re-add
+# the secrets.ANTHROPIC_API_KEY references (claude-auth `api-key:` and the
+# action's `anthropic_api_key:`) and `order: ${{ vars.CLAUDE_AUTH_ORDER }}`.
 # See bamr87/bamr87 docs/AI-INTEGRATION.md.
 
 on:
@@ -54,17 +55,17 @@ jobs:
         with:
           fetch-depth: 1
 
-      # The credential comes from this repo's CLAUDE_AUTH_ORDER (ai_auth: in
-      # bamr87/bamr87 _data/fleet.yml) — a method NAME, never a secret, in the output.
-      - name: Choose the Claude credential (ai_auth order)
+      # Claude auth: OAuth only (CLAUDE_CODE_OAUTH_TOKEN). ANTHROPIC_API_KEY disabled
+      # for now (2026-11-15); to restore, re-add the secrets.ANTHROPIC_API_KEY
+      # references and `order: ${{ vars.CLAUDE_AUTH_ORDER }}`. The output is a
+      # method NAME, never a secret.
+      - name: Choose the Claude credential (OAuth only)
         id: claude-auth
         uses: bamr87/bamr87/.github/actions/claude-auth@main
         with:
-          order: ${{ vars.CLAUDE_AUTH_ORDER }}
+          order: oauth
           has-oauth: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
-          api-key: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ steps.claude-auth.outputs.method == 'oauth' && secrets.CLAUDE_CODE_OAUTH_TOKEN || '' }}
-          anthropic_api_key: ${{ steps.claude-auth.outputs.method == 'api_key' && secrets.ANTHROPIC_API_KEY || '' }}
