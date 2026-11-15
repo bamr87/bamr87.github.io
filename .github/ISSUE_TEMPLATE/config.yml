@@ -1,0 +1,9 @@
+# kit: community v0.1.0
+# No per-repo URLs here, so the same file works when inherited from the owner's
+# .github repo. GitHub adds "Report a security vulnerability" to the issue
+# chooser by itself when private vulnerability reporting is on (SECURITY.md).
+blank_issues_enabled: false
+contact_links:
+  - name: 🧭 Fleet standards (UPS)
+    url: https://github.com/bamr87/bamr87/tree/main/specs
+    about: How bamr87 fleet repos are built, documented and released.
