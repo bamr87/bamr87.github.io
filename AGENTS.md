@@ -2,7 +2,7 @@
 
 # bamr87.github.io
 
-> Amr Abdel-Motaleb's GitHub Pages site — profile, résumé and project portfolio plus blog, docs and notes collections — and the rules for changing it.
+> This site's direction is to become the ultimate open home for this practitioner's public profile, résumé and work: data, tools, resources and transparency, with an inspectable Jekyll portfolio and a current résumé, for collaborators and the general public ([constitution](docs/constitution.md) §1).
 
 ## What this repo is
 

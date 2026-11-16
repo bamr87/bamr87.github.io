@@ -12,7 +12,7 @@
 
 | Document | What it covers |
 | --- | --- |
-| [`AGENTS.md`](../AGENTS.md) | Amr Abdel-Motaleb's GitHub Pages site — profile, résumé and project portfolio plus blog, docs and notes collections — and the rules for changing it. |
+| [`AGENTS.md`](../AGENTS.md) | This site's direction is to become the ultimate open home for this practitioner's public profile, résumé and work: data, tools, resources and transparency, with an inspectable Jekyll portfolio and a current résumé, for collaborators and… |
 | [`CHANGELOG.md`](../CHANGELOG.md) | Release history: the notable changes in each version, newest first. |
 | [`PRD.md`](../PRD.md) | Product requirements for the bamr87.github.io profile and portfolio site — problem, users, goals, features and proposed success metrics — derived from the repo's README, agent docs, config and code, with anything they do not state marked… |
 | [`_data/`](../_data/README.md) | The site's data files: the curated project registry, the generated portfolio data the homepage renders, the navigation menus and the theme's UI strings. |

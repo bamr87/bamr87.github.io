@@ -6,6 +6,17 @@
 
 Amr Abdel-Motaleb's personal profile, résumé and project portfolio site, built with Jekyll on GitHub Pages (https://bamr87.github.io/). The README itself is the profile/résumé page.
 
+
+## 1.1 Missions
+
+This site's direction is to become the ultimate open home for this practitioner's public profile, résumé and work — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, collaborators and the general public.** Visitors, collaborators, future employers, and the general public are first-class audiences. The aim is a shared, open record: the same profile, the same portfolio, and the same trail of how the site is built for everyone.
+2. **Keep a clear, current public profile, résumé and project portfolio that anyone can read.** The path is a Jekyll site on GitHub Pages, so the work and how it is presented stay inspectable. The README itself remains a profile and résumé page.
+3. **Put that record in every visitor's and collaborator's hands.** Serve the profile, the portfolio dashboard, and the posts, docs and notes collections — an open home for this practitioner's public work.
+
+These missions set the course; they do not claim the work is finished. They serve the existing constitution and PRD: Amr Abdel-Motaleb's personal profile, résumé and project portfolio site. The earlier mission paragraph is absorbed into these three. Every feature must trace to them.
+
 ## 2. Target users
 
 - Recruiters, clients and collaborators evaluating Amr's experience
@@ -42,6 +53,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [PROFILE-003](features/features.yml) | Dockerfile for local preview | shipped | [`Dockerfile`](Dockerfile) · [`README.md`](README.md) | TBD |
 | [PROFILE-004](features/features.yml) | Scripts/tools for site maintenance | shipped | [`scripts`](scripts) · [`README.md`](README.md) | TBD |
 | [PROFILE-005](features/features.yml) | The Quest Log series page | shipped | [`pages/quest-log.md`](pages/quest-log.md) | TBD |
+| [PROFILE-006](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
 
 **Requirement → feature trace**
 
@@ -49,6 +61,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | --- | --- |
 | TBD | PROFILE-001, PROFILE-003, PROFILE-004, PROFILE-005 |
 | FR2 | PROFILE-002 |
+| §1.1 | PROFILE-006 |
 <!-- features:end -->
 
 ## 5. Requirements

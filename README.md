@@ -7,6 +7,8 @@ permalink: /profile/
 lastmod: 2026-11-02T00:00:00.000Z
 ---
 
+> This site's direction is to become the ultimate open home for this practitioner's public profile, résumé and work: data, tools, resources and transparency, with an inspectable Jekyll portfolio and a current résumé, for collaborators and the general public ([constitution](docs/constitution.md) §1).
+
 **Featured: [the Quest Log](https://bamr87.github.io/quest-log/)**, my repositories written up as levels and side quests, one per deep dive. This site is one of the side quests: [read its entry](https://bamr87.github.io/posts/2026/11/02/quest-log-bamr87-github-io/).
 
 ## About Me
