@@ -35,7 +35,7 @@ python3 tools/unwrap-prose.py --check                           # markdown one-p
 | `scripts/` | Generators and their tests — see [scripts/README.md](scripts/README.md) |
 | `tools/` | Vendored fleet tools: `unwrap-prose.py`, `docs_index.py` (never edit) |
 | `docs/` | Repo documentation: [the docs index](docs/README.md), ADRs, generated reference |
-| `features/`, `verify/` | Feature index (`features/v1`) and the user-scenario verify kit |
+| `features/`, `verify/`, `test/evidence/` | Feature index (`features/v1`), the user-scenario verify kit, and the evidence bundles (screenshots, `report.json`) its runner writes; `test/` is excluded from the build |
 | `.claude/` | The `profile-portfolio` and `verify-feature` skills and the `verifier` agent |
 
 ## Conventions
