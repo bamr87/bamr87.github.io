@@ -203,8 +203,11 @@ gisgus:
 # The zer0-mistakes "Improve this page" widget (UPS-FB-01, UPS-FE-13): a floating
 # button on every page plus the inline trigger in the page action bar. Both open
 # one dialog that files a pre-filled issue in this repo, labelled page-feedback.
-# Without JavaScript they link to the issue form instead. Keys mirror the theme's
-# reference config (bamr87/zer0-mistakes _config.yml `page_feedback:`).
+# Without JavaScript they link to github.com's new-issue page instead. The theme
+# hard-codes template=page_improvement.yml there, so that link opens a blank
+# issue, not page_feedback.yml, until bamr87/zer0-mistakes#636 adds a template
+# key (then set issue_template: 'page_feedback.yml' below). Keys mirror the
+# theme's reference config (bamr87/zer0-mistakes _config.yml `page_feedback:`).
 
 page_feedback:
   enabled            : true               # Master switch for the widget
