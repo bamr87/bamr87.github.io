@@ -414,6 +414,8 @@ exclude:
   - docs/constitution.md
   - docs/amendments/
   - features/
+  # Verify-kit evidence bundles (screenshots, report.json), not site content.
+  - test/
 
 # Sass/SCSS
 sass:

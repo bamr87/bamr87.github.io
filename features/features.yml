@@ -71,3 +71,10 @@ features:
     surface: ui
     link: "_config.yml"
     docs: "AGENTS.md"
+    scenarios:
+      - verify/scenarios/page-feedback.yml
+    evidence:
+      - test/evidence/page-feedback
+    verified:
+      date: 2026-11-16
+      by: agent
