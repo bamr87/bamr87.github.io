@@ -2,7 +2,7 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-17T02:12:29Z'
+generated_at: '2026-11-18T02:12:24Z'
 totals:
   public_repos: 43
   followers: 18
@@ -10,10 +10,9 @@ totals:
   featured: 3
   stars: 58
   languages:
-    Python: 6
+    Python: 7
     JavaScript: 2
     TypeScript: 2
-    HTML: 1
     Shell: 1
 projects:
 - repo: it-journey
@@ -30,7 +29,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-16T22:51:31Z'
+  pushed_at: '2026-11-17T22:17:44Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -49,7 +48,7 @@ projects:
   - jekyll
   - jekyll-theme
   - ruby
-  pushed_at: '2026-11-16T22:56:14Z'
+  pushed_at: '2026-11-17T08:09:20Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -58,7 +57,7 @@ projects:
   category: Infrastructure
   description: 'The monorepo: a self-managing dashboard tying together my projects, docs, and automation via Git submodules.'
   stars: 1
-  language: HTML
+  language: Python
   topics:
   - ai-agents
   - claude-code
@@ -68,7 +67,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-17T02:12:16Z'
+  pushed_at: '2026-11-17T22:35:27Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -169,7 +168,7 @@ projects:
   stars: 0
   language: TypeScript
   topics: []
-  pushed_at: '2026-11-15T18:58:31Z'
+  pushed_at: '2026-11-17T15:28:05Z'
   license: MIT
   repo_url: https://github.com/bash-365/csv-vscoode
   site_url: https://apps.bash-365.com/
@@ -188,7 +187,7 @@ projects:
   - react
   - sec-edgar
   - typescript
-  pushed_at: '2026-11-16T18:03:01Z'
+  pushed_at: '2026-11-17T06:26:25Z'
   license: MIT
   repo_url: https://github.com/bamr87/fredgar-ai
   site_url: https://bamr87.github.io/fredgar-ai/
@@ -206,7 +205,7 @@ projects:
   - mcp
   - mkdocs
   - python
-  pushed_at: '2026-11-16T22:56:12Z'
+  pushed_at: '2026-11-17T22:29:19Z'
   license: MIT
   repo_url: https://github.com/bamr87/README
   site_url: https://bamr87.github.io/README/

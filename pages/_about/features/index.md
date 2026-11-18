@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-17T02:12:25Z
+lastmod: 2026-11-18T02:12:19Z
 ---
 
 
@@ -283,37 +283,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Serve | README |  | /README/mcp |
 | Evolve | README |  | /README/hooks.d |
 | Published fleet documentation site | README | site, mkdocs, navigation | / |
-| arcade/: React + canvas + Web Audio games | rewind-arcade |  | /rewind-arcade/arcade |
-| emulate/ / retro-pi/ | rewind-arcade |  | /rewind-arcade/emulate |
-| catalog/: cartridge-index (stdlib Python): dumps,… | rewind-arcade |  | /rewind-arcade/catalog |
-| systems/registry.yaml + docs encyclopedia | rewind-arcade |  | /rewind-arcade/systems/registry.yaml |
-| Tests that enforce the system-id map across pillars | rewind-arcade |  | /rewind-arcade/catalog/tests |
-| Generate challenges by bits or digits | rsa-challenge |  | /rsa-challenge/rsa_challenge/cli.py |
-| Public challenge file with commitments | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
-| Secrets kept out of git | rsa-challenge |  | /rsa-challenge/scripts/check_no_secrets.py |
-| Verify submissions from the CLI | rsa-challenge |  | /rsa-challenge/rsa_challenge/challenge.py |
-| Client-side verification site | rsa-challenge |  | /rsa-challenge/site/index.html |
-| Seeded challenge ladder | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
-| tools/schema_lint.py | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
-| Federation checks across submodule seams | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
-| DISTRIBUTION.yml + tools/schema_dist.py | SCHEMA |  | /SCHEMA/DISTRIBUTION.yml |
-| CLAUDE.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
-| Seed templates and lint-green example fixture repos | SCHEMA |  | /SCHEMA/templates/SCHEMA.template.md |
-| Scenario test suite | SCHEMA |  | /SCHEMA/tests/test_schema_lint.py |
-| Lexer tokenizing identifiers, strings and punctuation, with tests | schema-lang | phase-1 | /schema-lang/Cargo.toml |
-| Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
-| Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
-| ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
-| StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
-| Git + GitHub repository creator | scripts | github, scaffolding | /scripts/git_init.sh |
-| Safe directory rename | scripts | filesystem | /scripts/rename-directory.sh |
-| Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
-| Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
-| install.sh standalone installer | scripts |  | /scripts/install.sh |
-| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
-| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
-| Portable C payload encoder producing JSON readings, with a host test | sensor-mesh | phase-1 | /sensor-mesh/platformio.ini |
-| Standard CI gate | sensor-mesh | ci | /sensor-mesh/.github/workflows/ci.yml |
 
 
 ## Requested / Backlog Features
@@ -446,23 +415,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
 | MCP get_doc tool | README | mcp, retrieval | /README/mcp/server.py |
 | MCP provenance and trust markers | README | mcp, security, provenance | /README/mcp/server.py |
-| CLI that reads a .schema file and prints tokens | schema-lang | phase-1 |  |
-| Recursive-descent parser producing an AST | schema-lang | phase-2 |  |
-| Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
-| Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
-| Language server (LSP) for editors | schema-lang | phase-3 |  |
-| install.sh --uninstall | scripts | install | /scripts/install.sh |
-| Shell completions for the toolbelt | scripts | dx, completions | /scripts/completions/ |
-| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
-| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
-| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
-| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
-| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
-| PlatformIO project for esp32dev that builds | sensor-mesh | phase-1 |  |
-| Wi-Fi + MQTT publish loop with reconnect | sensor-mesh | phase-2 |  |
-| BME280 temperature/humidity driver | sensor-mesh | phase-2 |  |
-| OTA firmware updates | sensor-mesh | phase-3 |  |
-| MQTT → OTLP bridge into fleet-observe | sensor-mesh | phase-3 |  |
 
 
 ---
@@ -470,4 +422,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-17T02:12:25Z
+Last updated: 2026-11-18T02:12:19Z
