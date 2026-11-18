@@ -95,7 +95,7 @@ Member of the bamr87 fleet, mounted in the hub as the submodule `projects/bamr87
 ## Standard deviations
 
 - UPS-DOC-08: `README.md` is over the 2,000-word budget because it is the published résumé at `/profile/`; its length is the CV itself, not repo documentation.
-- UPS-DOC-10: `README.md` keeps the résumé's own order (front-matter title, About Me, dashboard, CV) instead of the portfolio skeleton's H1, tagline, Overview and Features, because it is a published CV page. It ends with **Working with this repo** and **License**, and links the docs index.
+- UPS-DOC-10: `README.md` keeps the résumé's own order (front-matter title, About Me, dashboard, CV) instead of the portfolio skeleton's H1, tagline, Overview and Features, because it is a published CV page. It ends with **Quick start** and **License**, and links the docs index.
 
 ## Governance
 
