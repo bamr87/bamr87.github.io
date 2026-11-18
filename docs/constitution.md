@@ -6,11 +6,17 @@
 > Agents read this before [AGENTS.md](../AGENTS.md) conventions, the [PRD](../PRD.md), or the
 > [feature catalog](../features/features.yml). Ratified by merged PR; amended only per § 8.
 
-## 1. Mission
+## 1. Missions
 
-Amr Abdel-Motaleb's personal profile, résumé and project portfolio site, built with Jekyll on GitHub Pages (https://bamr87.github.io/). The README itself is the profile/résumé page.
+This site's direction is to become the ultimate open home for this practitioner's public profile, résumé and work — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
 
-_Source: [PRD.md](../PRD.md)._
+1. **Provide data, tools, resources and transparency for all stakeholders, collaborators and the general public.** Visitors, collaborators, future employers, and the general public are first-class audiences. The aim is a shared, open record: the same profile, the same portfolio, and the same trail of how the site is built for everyone.
+2. **Keep a clear, current public profile, résumé and project portfolio that anyone can read.** The path is a Jekyll site on GitHub Pages, so the work and how it is presented stay inspectable. The README itself remains a profile and résumé page.
+3. **Put that record in every visitor's and collaborator's hands.** Serve the profile, the portfolio dashboard, and the posts, docs and notes collections — an open home for this practitioner's public work.
+
+These missions set the course; they do not claim the work is finished. They serve the existing constitution and PRD: Amr Abdel-Motaleb's personal profile, résumé and project portfolio site. The earlier mission paragraph is absorbed into these three. Every feature must trace to them.
+
+_Source: [../PRD.md](../PRD.md) §1.1._
 
 ## 2. Invariants (non-negotiable)
 
