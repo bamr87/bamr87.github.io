@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.2](https://github.com/bamr87/bamr87.github.io/compare/v0.3.1...v0.3.2) (2026-11-18)
+
+
+### Fixed
+
+* **site:** remove visible placeholders, TODOs and the placeholder post ([e5efe9b](https://github.com/bamr87/bamr87.github.io/commit/e5efe9b18e6d3ae32f5a23abfa41ecca17fd937e))
+* **site:** remove visible placeholders, TODOs and the placeholder post ([28bdda7](https://github.com/bamr87/bamr87.github.io/commit/28bdda7e3899fc18e3f9731aef211cb922830c64))
+
+
+### Documentation
+
+* rename Working with this repo to Quick start ([0f80d46](https://github.com/bamr87/bamr87.github.io/commit/0f80d460b46d30a4fa9697e0672742ec1bbb5fa8))
+* rename Working with this repo to Quick start ([7495601](https://github.com/bamr87/bamr87.github.io/commit/749560190758025d2511b30e54b9a77fbfb05993))
+
 ## [0.3.1](https://github.com/bamr87/bamr87.github.io/compare/v0.3.0...v0.3.1) (2026-11-18)
 
 
