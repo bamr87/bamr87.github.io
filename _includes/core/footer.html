@@ -1,0 +1,286 @@
+{% comment %} Local override of zer0-mistakes _includes/core/footer.html: identical except the newsletter placeholder form is removed (bamr87.github.io#27). Re-sync with the theme when it gains a newsletter switch. {% endcomment %}
+{% comment %} Feature: ZER0-046 {% endcomment %}
+{% comment %}
+  ===================================================================
+  FOOTER - Comprehensive Site Footer with Branding & Navigation
+  ===================================================================
+  
+  File: footer.html
+  Path: _includes/footer.html
+  Purpose: Rich footer inspired by bashconsultants with Powered-by row,
+           branding/contact, quick links, social/RSS, subscribe form, and
+           policy links. Fully responsive with Bootstrap 5 utilities.
+  
+  Template Logic:
+  - Top row: "Powered by" credits from site.powered_by
+  - Branding block: Site title, optional address/phone/email
+  - Quick links: Common pages (adjust as needed)
+  - Social links: site.links with icons + RSS feed
+  - Subscribe form: Non-functional placeholder endpoint (/subscribe)
+  - Bottom bar: Dynamic copyright year
+  
+  Dependencies:
+  - site.powered_by: Framework and service credits
+  - site.links: Social media and affiliate links
+  - site.default_icon: Icon framework (Bootstrap Icons)
+  - core/i18n.html: UI strings (per-page language via the `lang` param)
+  - Bootstrap 5 classes provided by the theme
+
+  Params:
+  - lang (optional): page language. Root layout renders this include via
+    include_cached, so it MUST pass lang=page.lang for per-language caching.
+
+  Notes:
+  - Guard optional fields (address/phone/email) to avoid empty output
+  - Use relative_url for internal links to respect baseurl
+  ===================================================================
+{% endcomment %}
+
+{%- include core/i18n.html lang=include.lang -%}
+<footer class="bd-footer border-top" role="contentinfo">
+  {% assign footer_page_urls = site.html_pages | map: "url" | join: "|" | prepend: "|" | append: "|" %}
+  {% comment %} Powered by Row {% endcomment %}
+  <div class="container-xl footer-powered-by">
+    {%- comment -%} The copyright line lives once, in the bottom bar below.
+       A second "© year name" line here printed the notice twice (backlog T-054). {%- endcomment -%}
+    <div class="footer-powered-by-row">
+      <span class="footer-powered-by-label" id="footer-powered-by-label">
+        {{ ui.powered_by | default: "Powered by" }}:
+      </span>
+      <ul class="footer-powered-by-links list-unstyled mb-0"
+          aria-labelledby="footer-powered-by-label">
+        {% assign powered_by_count = site.powered_by | size %}
+        {% for power in site.powered_by %}
+          {% assign power_url = power.url | default: power.link %}
+          {% capture icon_classes %}{{ site.default_icon }} {{ power.icon | default: "bi-question-circle" }}{% endcapture %}
+          {% if forloop.last and powered_by_count > 0 %}
+            <li class="footer-powered-by-trailing">
+              <span class="footer-powered-by-trailing-inner">
+          {% else %}
+            <li>
+          {% endif %}
+          {% if power_url %}
+            <a href="{{ power_url }}"
+               class="powered-by-link"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="{{ power.name }} (opens in new tab)"
+               title="{{ power.name }}">
+              <i class="{{ icon_classes }}" aria-hidden="true"></i>
+              <span class="powered-by-link-text">{{ power.name }}</span>
+            </a>
+          {% else %}
+            <span class="powered-by-link text-muted" aria-label="{{ power.name }}">
+              <i class="{{ icon_classes }}" aria-hidden="true"></i>
+              <span class="powered-by-link-text">{{ power.name }}</span>
+            </span>
+          {% endif %}
+          {% if forloop.last and powered_by_count > 0 %}
+                <button type="button"
+                        class="powered-by-link"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#info-section"
+                        aria-haspopup="dialog"
+                        aria-label="View theme information and system details"
+                        title="Theme Info">
+                  <i class="{{ site.default_icon }} bi-info-circle" aria-hidden="true"></i>
+                  <span class="powered-by-link-text">Info</span>
+                </button>
+              </span>
+            </li>
+          {% else %}
+            </li>
+          {% endif %}
+        {% endfor %}
+        {% if powered_by_count == 0 %}
+          <li>
+            <button type="button"
+                    class="powered-by-link"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#info-section"
+                    aria-haspopup="dialog"
+                    aria-label="View theme information and system details"
+                    title="Theme Info">
+              <i class="{{ site.default_icon }} bi-info-circle" aria-hidden="true"></i>
+              <span class="powered-by-link-text">Info</span>
+            </button>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+
+  {% comment %} Branding and Navigation Block — full-width dark background {% endcomment %}
+  <div class="bg-dark text-light footer-dark-block">
+    <div class="container-xl">
+        {% comment %} Top: Site info + Quick Links + Social {% endcomment %}
+        <div class="row mb-3 mb-lg-4 g-2 g-lg-3 footer-nav-columns justify-content-center">
+          {% comment %} Site Info {% endcomment %}
+          <div class="col-12 col-md-3 col-lg-3 mb-2 mb-lg-3 order-0 order-md-1 order-lg-1">
+            <h2 class="footer-section-title text-uppercase h6 mb-0">{{ site.title }}</h2>
+            {% if site.address %}<p class="mb-1">{{ site.address }}</p>{% endif %}
+            {% if site.phone %}<p class="mb-1"><a href="tel:{{ site.phone }}" class="text-light text-decoration-none">{{ site.phone }}</a></p>{% endif %}
+            {% if site.email %}<p class="mb-0"><a href="mailto:{{ site.email }}" class="text-light text-decoration-none">{{ site.email }}</a></p>{% endif %}
+          </div>
+
+          {% comment %} Quick Links
+               Resolution order:
+                 1. site.footer_quick_links  (array of {label, url}) — explicit override
+                 2. Auto-detection: only render links whose target pages
+                    actually exist in the build. Prevents 404s on bare-minimum
+                    sites that haven't created /about/, /services/, etc. {% endcomment %}
+          <div class="col-6 col-md-3 col-lg-3 mb-2 mb-lg-3 order-2 order-md-2 order-lg-2">
+            <h2 class="footer-section-title text-uppercase h6 mb-0">Quick Links</h2>
+            <ul class="list-unstyled" aria-label="Footer quick links">
+              {% if site.footer_quick_links %}
+                {% for link in site.footer_quick_links %}
+                  <li><a href="{{ link.url | relative_url }}" class="text-light text-decoration-none">{{ link.label }}</a></li>
+                {% endfor %}
+              {% else %}
+                <li><a href="{{ '/' | relative_url }}" class="text-light text-decoration-none">Home</a></li>
+                {% assign _candidate_links = "About,/about/|Authors,/authors/|Statistics,/about/stats/|Services,/services/|News,/news/|Contact,/contact/" | split: "|" %}
+                {% for entry in _candidate_links %}
+                  {% assign _parts = entry | split: "," %}
+                  {% assign _label = _parts[0] %}
+                  {% assign _url   = _parts[1] %}
+                  {% assign _page  = site.html_pages | where: "url", _url | first %}
+                  {% unless _page %}
+                    {% for col in site.collections %}
+                      {% assign _page = col.docs | where: "url", _url | first %}
+                      {% if _page %}{% break %}{% endif %}
+                    {% endfor %}
+                  {% endunless %}
+                  {% if _page %}
+                    <li><a href="{{ _url | relative_url }}" class="text-light text-decoration-none">{{ _label }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                {% assign _sitemap_url = site.repo_map | default: "/sitemap/" %}
+                {% assign _sitemap_page = site.html_pages | where: "url", _sitemap_url | first %}
+                {% unless _sitemap_page %}
+                  {% for col in site.collections %}
+                    {% assign _sitemap_page = col.docs | where: "url", _sitemap_url | first %}
+                    {% if _sitemap_page %}{% break %}{% endif %}
+                  {% endfor %}
+                {% endunless %}
+                {% if _sitemap_page %}
+                  <li><a href="{{ _sitemap_url | relative_url }}" class="text-light text-decoration-none">Sitemap</a></li>
+                {% else %}
+                  <li><a href="{{ '/sitemap.xml' | relative_url }}" class="text-light text-decoration-none">Sitemap (XML)</a></li>
+                {% endif %}
+              {% endif %}
+            </ul>
+          </div>
+
+          {% comment %} Latest Posts (dynamic) {% endcomment %}
+          {% assign posts_count = site.posts | size %}
+          {% if posts_count and posts_count > 0 %}
+          <div class="col-12 col-md-3 col-lg-3 mb-2 mb-lg-3 order-4 order-md-3 order-lg-3">
+            <h2 class="footer-section-title text-uppercase h6 mb-0">Latest Posts</h2>
+            <ul class="list-unstyled mb-0 footer-latest-posts" aria-label="Latest posts">
+              {% for post in site.posts limit:3 %}
+                <li>
+                  <a href="{{ post.url | relative_url }}" class="text-light text-decoration-none footer-post-link text-truncate d-block" title="{{ post.title | escape }}">{{ post.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          {% comment %} Social & RSS {% endcomment %}
+          <div class="col-6 col-md-3 col-lg-3 mb-2 mb-lg-3 order-3 order-md-4 order-lg-4">
+            <h2 class="footer-section-title text-uppercase h6 mb-0">Follow Us</h2>
+            <ul class="list-inline mb-0" aria-label="Social links">
+              {% for link in site.links %}
+                {% if link.url %}
+                  <li class="list-inline-item">
+                    {% capture link_icon_classes %}{{ site.default_icon }} {{ link.icon | default: "bi-link-45deg" }}{% endcapture %}
+                    {%- comment -%}
+                      aria-label is load-bearing below the md breakpoint (issue
+                      #435): the icon is aria-hidden and the label span is
+                      d-none there, so without it the link had NO accessible
+                      name at all on mobile — a screen reader announced bare
+                      "link". It matches the visible text exactly, so the
+                      accessible name still contains the visible label at md+
+                      (WCAG 2.5.3 Label in Name).
+                    {%- endcomment -%}
+                    <a href="{{ link.url }}" rel="nofollow" class="text-light text-decoration-none"
+                       aria-label="{{ link.label }}">
+                      <i class="{{ link_icon_classes }}" aria-hidden="true"></i>
+                      <span class="d-none d-md-inline">{{ link.label }}</span>
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              <li class="list-inline-item">
+                {%- comment -%} Same as the social links above (#435). {%- endcomment -%}
+                {%- assign _feed_label = ui.feed_label | default: "Feed" -%}
+                <a class="text-light text-decoration-none" href="{{ '/feed.xml' | relative_url }}"
+                   aria-label="{{ _feed_label }}">
+                  <i class="{{ site.default_icon }} bi-rss" aria-hidden="true"></i>
+                  <span class="d-none d-md-inline">{{ _feed_label }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {% comment %} Middle: Policies. The theme's newsletter placeholder row is removed here (bamr87.github.io#27); restore it from the theme once a newsletter provider is chosen. {% endcomment %}
+        <div class="row mb-3 mb-lg-4 align-items-center justify-content-center g-2 footer-policy-row">
+          <div class="col-12 text-md-center footer-policy-links">
+            <ul class="list-inline mb-0">
+              {% comment %} Only render policy links whose pages exist (or that are explicitly configured). {% endcomment %}
+              {% assign _privacy_needle = "|/privacy-policy/|" %}
+              {% assign _privacy_alt_needle = "|/privacy-policy|" %}
+              {% if site.privacy_policy_url or footer_page_urls contains _privacy_needle or footer_page_urls contains _privacy_alt_needle %}
+                <li class="list-inline-item"><a href="{{ site.privacy_policy_url | default: '/privacy-policy' | relative_url }}" class="text-light text-decoration-none">Privacy Policy</a></li>
+              {% endif %}
+              {% assign _terms_needle = "|/terms-of-service/|" %}
+              {% assign _terms_alt_needle = "|/terms-of-service|" %}
+              {% if site.terms_of_service_url or footer_page_urls contains _terms_needle or footer_page_urls contains _terms_alt_needle %}
+                <li class="list-inline-item"><a href="{{ site.terms_of_service_url | default: '/terms-of-service' | relative_url }}" class="text-light text-decoration-none">Terms of Service</a></li>
+              {% endif %}
+              {% comment %} Same gate as the banner in root.html: no modal, no button (#566). {% endcomment %}
+              {% capture _needs_consent %}{% include components/cookie-consent-needed.html %}{% endcapture %}
+              {% if _needs_consent == "true" %}
+              <li class="list-inline-item">
+                <button type="button" class="footer-inline-button text-light text-decoration-none" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">
+                  Cookie Preferences
+                </button>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+
+      {% comment %} Bottom: Copyright {% endcomment %}
+      <div class="text-center">
+        <p class="mb-0">&copy; {{ site.time | date: "%Y" }} {{ site.title | default: site.name }}. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%}
+    Page-dependent floating action buttons (TOC / local-graph FABs) and the
+    local-graph offcanvas were moved to core/footer-fabs.html so THIS file is
+    fully page-invariant and can be rendered via include_cached (see
+    _layouts/root.html). The FABs are position:fixed with explicit z-index
+    tokens (_sass/components/_back-to-top.scss), so rendering them as a sibling
+    immediately after </footer> is visually identical to nesting them inside.
+  {%- endcomment -%}
+
+  {% comment %} Back to Top Button (controlled by assets/js/back-to-top.js) {% endcomment %}
+  {% comment %} Positioning/stacking handled by _sass/components/_back-to-top.scss
+       via the FAB tokens (bottom-up: back-to-top → chat toggle → TOC FAB) {% endcomment %}
+  <a
+    id="backToTopBtn"
+    href="#"
+    class="btn btn-primary"
+    aria-label="Back to top"
+    title="Back to top"
+    role="button"
+    style="display: none;"
+  >
+    <i class="{{ site.default_icon }} bi-arrow-up" aria-hidden="true"></i>
+    <span class="visually-hidden">Back to top</span>
+  </a>
+</footer>

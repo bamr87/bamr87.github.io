@@ -19,8 +19,6 @@ permalink: /about/contributing
 
 https://opensource.guide/
 
-TODO: Right contribution instructions.
-
 Here's a list of contributors:
 
 - [Amr](/contributors/bamr87/)
