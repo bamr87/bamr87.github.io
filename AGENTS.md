@@ -52,7 +52,7 @@ python3 tools/unwrap-prose.py --check                           # markdown one-p
 
 ## The theme is remote
 
-- `_config.yml` sets `remote_theme: bamr87/zer0-mistakes`, so there is no `_layouts/`, `_includes/` or `_sass/` here. Every layout (`root`, `default`, `article`, `home`, …) and include lives in [bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes): fix markup, styling, navigation rendering and Liquid/layout errors there. This repo supplies content, `_config.yml`, `_data/` and `assets/`.
+- `_config.yml` sets `remote_theme: bamr87/zer0-mistakes`, so there is no `_layouts/` or `_sass/` here, and `_includes/` holds one local override, `_includes/core/footer.html` (the theme's footer without its newsletter placeholder; see issue #27). Every layout (`root`, `default`, `article`, `home`, …) and include lives in [bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes): fix markup, styling, navigation rendering and Liquid/layout errors there. This repo supplies content, `_config.yml`, `_data/` and `assets/`.
 - A theme tag needs its plugin in `_config.yml` `plugins:` (`include_cached` needs `jekyll-include-cache`); a missing one fails the build with `Liquid syntax error … Unknown tag`.
 - The two build modes resolve the theme differently, so a change that works locally can still break the published site:
 

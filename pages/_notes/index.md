@@ -255,8 +255,6 @@ https://icons.getbootstrap.com/#install
 
 ## OS Based instructions
 
-TODO: find a way to include OS based instructions using liquid tags
-
 These instructions are pertinent to Mac users.
 
  These instructions are pertinent to Linux users.

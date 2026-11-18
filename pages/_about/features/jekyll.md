@@ -635,19 +635,19 @@ Drafts are unpublished posts without a date.
 
 ## `_layouts` Folder
 
-TBD
+Templates that wrap page content. Each page names one with `layout:` in its front matter, and a layout can nest inside another.
 
 ## `_includes` Folder
 
-TBD
+Reusable snippets that layouts and pages pull in with the `include` tag.
 
 ## `_data` Folder
 
-TBD
+YAML, JSON or CSV files that Jekyll exposes to templates as `site.data`.
 
 ## `_COLLECTION` Folder (e.g `_books`, `_albums`, etc.)
 
-TBD
+Each collection declared under `collections:` in `_config.yml` gets its own folder with a leading underscore, and its documents are rendered like pages.
 
 ## Global Variables
 

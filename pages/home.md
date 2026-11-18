@@ -9,8 +9,6 @@ permalink: /home/
 sidebar:
    nav: home
 lastmod: 2024-05-15T03:54:48.681Z
-TODO:
-   - Add a story line
 draft: draft
 ---
 
@@ -19,10 +17,6 @@ draft: draft
 ```text
 I want to build an integration from Github to an LLM (such as Gemini) to review markdown files for grammar, spelling, completeness, etc., and then commit the changes for review.
 ```
-
-## TODO 
-
-{{ page.TODO }} {:.dev-settings .alert .alert-warning}
 
 ## Introduction
 
@@ -33,8 +27,6 @@ This is where we begin our journey. The place where we return after getting lost
 From zero to hero collection of docs, tools, scripts, walk-through, and information to help with your IT journey.
 
 ### Zer0 to Her0 Quest
-
-<!-- TODO: Need story line  -->
 
 1. Prologue - Init Hello World
    1. Who are you and what do you want?
