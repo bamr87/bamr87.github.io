@@ -33,6 +33,10 @@ site:
 # Paths scanned, relative to the site root (baseurl is handled for you).
 pages:
   - /
+  # The two heaviest pages in the 2026-10-17 audit (#32): /notes/ carries the
+  # screencast and photos, /pages/ a card image per post.
+  - /notes/
+  - /pages/
 
 # axe viewports (these are the defaults):
 # viewports:
@@ -55,8 +59,12 @@ lighthouse:
   # audits:
   #   errors-in-console: warn
   #   unsized-images: warn
-  # sizes:
-  #   total: { max_kib: 1500, level: warn }
+  # Page-weight budgets, report-only (#32). Measured after the image pass with
+  # the cache disabled at 1366 px: images at most 457 KiB (/pages/), and at most
+  # 1995 KiB in all (/notes/, uncompressed). A new multi-MB image warns here.
+  sizes:
+    image: { max_kib: 600, level: warn }
+    total: { max_kib: 2500, level: warn }
   # overrides:
   #   - page: /blog/
   #     metrics: { largest-contentful-paint: { max: 6000, level: warn } }

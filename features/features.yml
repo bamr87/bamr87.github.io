@@ -62,3 +62,19 @@ features:
     surface: ui
     link: "pages/quest-log.md"
     docs: "pages/quest-log.md"
+  - id: PROFILE-007
+    title: "Paginated post index"
+    description: "Every post as a card at `/pages/`, `/pages/2/` …, ten to a page: the post's `preview` image, or the decorative site teaser when it has none, its title, excerpt and last update, and numbered and previous/next page links"
+    implemented: true
+    status: shipped
+    prd: [TBD]
+    surface: ui
+    link: "pages/index.html"
+    docs: "pages/index.html"
+    scenarios:
+      - verify/scenarios/pages-index-cards.yml
+    evidence:
+      - test/evidence/pages-index-cards
+    verified:
+      date: 2026-11-16
+      by: agent

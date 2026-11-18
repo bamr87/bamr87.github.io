@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-15T02:12:02Z
+lastmod: 2026-11-18T02:12:19Z
 ---
 
 
@@ -118,6 +118,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Decision index: what waits on the maintainer across the fleet, in one call | bamr87 | decisions, console, mcp, github, review-gate, ratification, dependabot, cache | /bamr87/tools/console/decision_index.py |
 | Run the harness and its loops one stage at a time from Claude Code: /harness, /loops and /console slash commands over the console's operation allowlist | bamr87 | harness, loops, console, claude-code, slash-commands | /bamr87/tools/console/ops_cli.py |
 | The weekly routine: Friday closes the week, Saturday checks next week's schedule can run, Sunday plans it | bamr87 | routine, backup, planning, chronicle, close-out, schedule, grok | /bamr87/tools/weekly/cli.py |
+| Weekly close-out and weekend-prep loops, scheduled and maintained from the Harness Console | bamr87 | console, loops, schedule, ai-lane | /bamr87/.github/workflows/weekly-closeout.yml |
+| PR queue: every open pull request, who moves it next, and bulk actions an agent carries out once Amr confirms | bamr87 | console, pull-requests, decisions, bulk-actions, fleetcore, mcp, governance | /bamr87/tools/console/web/src/pages/PrQueue.tsx |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -336,6 +338,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Agent news feed reactions | bamr87 | feed, agents, github, discussions | /bamr87/docs/prd/AGENT-NEWS-FEED.md |
 | Agent news feed threads | bamr87 | feed, agents, github, discussions | /bamr87/docs/prd/AGENT-NEWS-FEED.md |
 | Agent news feed | bamr87 | feed, agents, github, discussions | /bamr87/docs/prd/AGENT-NEWS-FEED.md |
+| On-premise compute node: local LLMs and Claude Code sessions on Amr's own machine (planned) | bamr87 | platform, nodes, local-llm, claude-code, weekly, housekeeping, cost | /bamr87/docs/ONPREM-COMPUTE.md |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
 | Reversing entries for posted journal entries | djangoerp |  | /djangoerp/journal/services.py |
 | Fiscal periods, lock dates and period-close entry | djangoerp |  | /djangoerp/journal/models.py |
@@ -365,10 +368,19 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Watchlist and new-filing alerts | fredgar-ai |  |  |
 | FRED transforms and vintages | fredgar-ai |  |  |
 | Company metric vs macro overlay | fredgar-ai |  |  |
+| Harness Studio live map (Observe over fleetgraph/v1) | gitorio |  | /gitorio/app/src/map |
+| Design fragments from the blueprint editor | gitorio |  | /gitorio/app/src/canvas |
+| Manage via confirm-gated hub console ops | gitorio |  | /gitorio/app/src/fleet |
+| Console embed of the live map | gitorio |  | /gitorio/app/src/state |
+| JEV numbering and main-only generated files | gitorio |  | /gitorio/features |
+| Engine/API layer over fleetgraph/v1 | gitorio |  | /gitorio/app/src |
+| Plugin SDK: node types, engine adapters, config-driven behavior | gitorio |  | /gitorio/app/src/machines |
+| Community release 1.0 | gitorio |  | /gitorio/release-please-config.json |
 | PerfectPixel Studio sprite-sheet import | godotgo |  | /godotgo/framework/addons |
 | Blog posts | it-journey |  | /posts/ |
 | Documentation section | it-journey |  | /docs/ |
 | Jupyter notebooks | it-journey |  | /notebooks/ |
+| Quest page feedback | it-journey |  | /quests/ |
 | Quest editorial charter | it-journey | governance, editorial, quests |  |
 | Editorial charter CI checks | it-journey | governance, ci, quests |  |
 | Write-ahead log with crash recovery | kvlite | phase-1 |  |
@@ -410,4 +422,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-15T02:12:02Z
+Last updated: 2026-11-18T02:12:19Z

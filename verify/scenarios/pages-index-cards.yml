@@ -1,0 +1,82 @@
+# =============================================================================
+# verify/scenarios/pages-index-cards.yml — a USER SCENARIO (scenario/v1)
+# =============================================================================
+# A visitor browsing every post at /pages/, /pages/2/ … sees a picture on each
+# card: the post's `preview`, or the site teaser when it has none (issue #23).
+#
+# The screenshots scroll to the two cards #23 found broken: the wizard post on
+# /pages/2/ (it rendered /assets//assets/images/wizard-on-journey.png) and the
+# doc-scraper post on /pages/3/ (`preview: ""` rendered src="/assets/"). When new
+# posts push those cards to a later page, the scroll is a no-op and the shot is
+# the top of the page.
+#
+# The check follows the pagination links from /pages/ and fetches every card
+# image on every page. Each one must answer 2xx with an image content type, must
+# have no "//" in its path and must lazy-load. `card_images` records every card
+# (page, src, alt, status, type) in report.json; `broken_card_images` fails the
+# scenario when any of them is broken.
+# =============================================================================
+id: pages-index-cards
+feature: PROFILE-007
+title: "Every card on the paginated post index shows its image"
+description: "A visitor paging through all posts at /pages/ sees each card's preview image, or the site teaser when the post has none, and no broken image."
+viewports:
+  - mobile
+  - { name: desktop-1366, width: 1366, height: 768 }
+steps:
+  - goto: /pages/2/
+  - expect: { status: 200 }
+  - eval:
+      name: scroll_to_wizard_card
+      script: |-
+        (() => { const c = document.querySelector("img.card-img-top[src*='wizard-on-journey']");
+        if (c) c.closest('.card').scrollIntoView({ block: 'center' }); return !!c; })()
+  - wait: { ms: 1000 }
+  - screenshot: pages-2
+  - goto: /pages/3/
+  - expect: { status: 200 }
+  - eval:
+      name: scroll_to_doc_scraper_card
+      script: |-
+        (() => { const a = document.querySelector("a.card-link[href*='doc-scraper']");
+        if (a) a.closest('.card').scrollIntoView({ block: 'center' }); return !!a; })()
+  - wait: { ms: 1000 }
+  - screenshot: pages-3
+  - goto: /pages/
+  - expect: { status: 200 }
+  - expect: { count: { selector: "img.card-img-top", min: 1 } }
+  - eval:
+      name: card_images
+      script: |-
+        (async () => {
+          const dir = (u) => new URL(u, location.href).pathname.replace(/\/?$/, '/');
+          const pages = [...new Set([dir(location.href), ...[...document.querySelectorAll('.pagination a.page-link')]
+            .map((a) => dir(a.getAttribute('href')))])];
+          const cards = [];
+          for (const p of pages) {
+            const doc = new DOMParser().parseFromString(await (await fetch(p)).text(), 'text/html');
+            for (const img of doc.querySelectorAll('img.card-img-top')) {
+              const src = img.getAttribute('src') || '';
+              const r = await fetch(new URL(src, location.origin + p), { method: 'HEAD' });
+              const type = r.headers.get('content-type') || '';
+              const why = [];
+              if (src.replace(/^[a-z]+:\/\//i, '').includes('//')) why.push('double slash');
+              if (!r.ok) why.push('HTTP ' + r.status);
+              if (!type.startsWith('image/')) why.push('not an image (' + (type || 'no type') + ')');
+              if (img.getAttribute('loading') !== 'lazy') why.push('not lazy');
+              cards.push({ page: p, src, alt: img.getAttribute('alt'), status: r.status, type, broken: why.join(', ') || null });
+            }
+          }
+          window.__cardImages = cards;
+          return { pages, cards: cards.length, broken: cards.filter((c) => c.broken), all: cards };
+        })()
+  - eval:
+      name: broken_card_images
+      script: |-
+        (() => {
+          const loads = (c) => !/HTTP|image/.test(c.broken);
+          const bad = (window.__cardImages || []).filter((c) => c.broken).sort((a, b) => loads(a) - loads(b));
+          if (bad.length) throw new Error(bad.length + ' broken card image(s), ' + bad.filter((c) => !loads(c)).length
+            + ' not loading: ' + bad.map((c) => c.page + ' ' + JSON.stringify(c.src) + ' ' + c.broken).join(' | '));
+          return 0;
+        })()

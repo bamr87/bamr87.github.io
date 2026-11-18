@@ -1,0 +1,297 @@
+{
+  "issue": "https://github.com/bamr87/bamr87.github.io/issues/32",
+  "date": "2026-11-16",
+  "by": "agent",
+  "build": "JEKYLL_ENV=production bundle exec jekyll build in ruby:3.4 (github-pages gem, Jekyll 3.10), remote theme bamr87/zer0-mistakes at build time; before = main @ 6538202",
+  "files": [
+    {
+      "before": {
+        "path": "assets/images/favicon_gpt_computer_retro.png",
+        "bytes": 1848372,
+        "image": "1024x1024 png"
+      },
+      "after": {
+        "path": "assets/images/favicon_gpt_computer_retro.png",
+        "bytes": 142790,
+        "image": "600x600 png"
+      },
+      "used_by": "site.teaser: every /pages/ and collection card without a preview"
+    },
+    {
+      "before": {
+        "path": "assets/images/info-banner-mountain-wizard.png",
+        "bytes": 623172,
+        "image": "1792x1024 webp"
+      },
+      "after": {
+        "path": "assets/images/info-banner-mountain-wizard.png",
+        "bytes": 189424,
+        "image": "1600x915 webp"
+      },
+      "used_by": "site.info_banner: header of every page without a preview"
+    },
+    {
+      "before": {
+        "path": "assets/images/wizard-on-journey.png",
+        "bytes": 485640,
+        "image": "1024x1024 webp"
+      },
+      "after": {
+        "path": "assets/images/wizard-on-journey.png",
+        "bytes": 158586,
+        "image": "1024x1024 webp"
+      },
+      "used_by": "site.og_image, and one post preview"
+    },
+    {
+      "before": {
+        "path": "assets/images/nubi-son.png",
+        "bytes": 1601437,
+        "image": "1011x963 png"
+      },
+      "after": {
+        "path": "assets/images/nubi-son.jpg",
+        "bytes": 178745,
+        "image": "1000x953 jpeg"
+      },
+      "used_by": "/notes/ gallery"
+    },
+    {
+      "before": {
+        "path": "assets/images/nubi-yawn.png",
+        "bytes": 1452094,
+        "image": "1011x1008 png"
+      },
+      "after": {
+        "path": "assets/images/nubi-yawn.jpg",
+        "bytes": 164309,
+        "image": "1000x997 jpeg"
+      },
+      "used_by": "/notes/ gallery"
+    },
+    {
+      "before": {
+        "path": "assets/images/nubi-sink.png",
+        "bytes": 994273,
+        "image": "1006x851 png"
+      },
+      "after": {
+        "path": "assets/images/nubi-sink.jpg",
+        "bytes": 100097,
+        "image": "1000x846 jpeg"
+      },
+      "used_by": "/notes/ gallery"
+    },
+    {
+      "before": {
+        "path": "assets/images/markdown_paste.gif",
+        "bytes": 1548702,
+        "image": "1278x934 gif, 338 frames"
+      },
+      "after": {
+        "path": "assets/images/markdown_paste.mp4",
+        "bytes": 497503,
+        "image": "900x658 H.264 MP4, 338 frames, 57.3 s"
+      },
+      "used_by": "/notes/ screencast"
+    },
+    {
+      "before": {
+        "path": "assets/images/penrose-hard.png",
+        "bytes": 308881,
+        "image": "1000x867 png"
+      },
+      "after": {
+        "path": "assets/images/penrose-hard.png",
+        "bytes": 75097,
+        "image": "1000x867 png"
+      },
+      "used_by": "/notes/"
+    },
+    {
+      "before": {
+        "path": "assets/images/hover-note.png",
+        "bytes": 162666,
+        "image": "1330x656 png"
+      },
+      "after": {
+        "path": "assets/images/hover-note.png",
+        "bytes": 53858,
+        "image": "1330x656 png"
+      },
+      "used_by": "/notes/"
+    },
+    {
+      "before": {
+        "path": "assets/images/jekyll-seo-preview.png",
+        "bytes": 2024085,
+        "image": "1024x1024 png"
+      },
+      "after": {
+        "path": "assets/images/jekyll-seo-preview.png",
+        "bytes": 372519,
+        "image": "800x800 png"
+      },
+      "used_by": "/notes/cheetsheets/markdown/"
+    },
+    {
+      "before": {
+        "path": "assets/images/jekyll-seo-snippet.png",
+        "bytes": 1572726,
+        "image": "1024x1024 png"
+      },
+      "after": {
+        "path": "assets/images/jekyll-seo-snippet.png",
+        "bytes": 371565,
+        "image": "1024x1024 png"
+      },
+      "used_by": "not referenced"
+    },
+    {
+      "before": {
+        "path": "assets/images/sharex-imgur.png",
+        "bytes": 626594,
+        "image": "2736x1580 png"
+      },
+      "after": {
+        "path": "assets/images/sharex-imgur.png",
+        "bytes": 143311,
+        "image": "1600x924 png"
+      },
+      "used_by": "ShareX post body and preview"
+    },
+    {
+      "before": {
+        "path": "assets/images/quest-log/quest-log-it-journey/preview.png",
+        "bytes": 845131,
+        "image": "1200x627 png"
+      },
+      "after": {
+        "path": "assets/images/quest-log/quest-log-it-journey/preview.png",
+        "bytes": 191011,
+        "image": "1200x627 png"
+      },
+      "used_by": "Quest Log post preview (/pages/ card, header)"
+    },
+    {
+      "before": {
+        "path": "assets/images/quest-log/quest-log-bamr87-github-io/preview.png",
+        "bytes": 186990,
+        "image": "1200x627 png"
+      },
+      "after": {
+        "path": "assets/images/quest-log/quest-log-bamr87-github-io/preview.png",
+        "bytes": 86061,
+        "image": "1200x627 png"
+      },
+      "used_by": "Quest Log post preview (/pages/ card, header)"
+    },
+    {
+      "before": {
+        "path": "assets/images/quest-log/quest-log-bamr87/preview.png",
+        "bytes": 140006,
+        "image": "1200x627 png"
+      },
+      "after": {
+        "path": "assets/images/quest-log/quest-log-bamr87/preview.png",
+        "bytes": 34074,
+        "image": "1200x627 png"
+      },
+      "used_by": "Quest Log post preview (/pages/ card, header)"
+    }
+  ],
+  "files_total": {
+    "before": 14420769,
+    "after": 2758950
+  },
+  "static_page_weight_note": "Sum of the distinct local image and video files each built page references (img src, video src, inline url()), whether or not they are lazy-loaded.",
+  "static_page_weight": {
+    "/": {
+      "before": 12401,
+      "after": 12401
+    },
+    "/notes/": {
+      "before": 8551998,
+      "after": 1414224
+    },
+    "/pages/": {
+      "before": 3032900,
+      "after": 466337
+    },
+    "/pages/2/": {
+      "before": 1860773,
+      "after": 155191
+    },
+    "/pages/3/": {
+      "before": 1907783,
+      "after": 202201
+    },
+    "/pages/4/": {
+      "before": 1860773,
+      "after": 155191
+    },
+    "/pages/5/": {
+      "before": 2487367,
+      "after": 298502
+    },
+    "/docs/jekyll/": {
+      "before": 635573,
+      "after": 201825
+    },
+    "/posts/2022/12/05/sharex/": {
+      "before": 2601073,
+      "after": 412208
+    }
+  },
+  "browser_transfer_note": "Bytes the page actually transferred on load (lazy images below the fold are not fetched). Headless Chrome 157 via Playwright, 1366x900, cache disabled, local python3 -m http.server without gzip.",
+  "browser_transfer": {
+    "/": {
+      "before": {
+        "total": 1212686,
+        "image": 13176,
+        "media": 0
+      },
+      "after": {
+        "total": 1212685,
+        "image": 13176,
+        "media": 0
+      }
+    },
+    "/notes/": {
+      "before": {
+        "total": 8047801,
+        "image": 6705727,
+        "media": 0
+      },
+      "after": {
+        "total": 2042891,
+        "image": 202789,
+        "media": 497692
+      }
+    },
+    "/pages/": {
+      "before": {
+        "total": 4195857,
+        "image": 3034432,
+        "media": 0
+      },
+      "after": {
+        "total": 1629291,
+        "image": 467866,
+        "media": 0
+      }
+    },
+    "/docs/jekyll/": {
+      "before": {
+        "total": 1806029,
+        "image": 636537,
+        "media": 0
+      },
+      "after": {
+        "total": 1491072,
+        "image": 202789,
+        "media": 0
+      }
+    }
+  }
+}
