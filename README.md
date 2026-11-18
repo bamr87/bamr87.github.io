@@ -393,7 +393,7 @@ Denver, CO 80206
 | 5     | tbsp | Cooking oil, for deep-frying  |                                     |
 | 1     | tbsp | Salt                          |                                     |
 
-## Working with this repo
+## Quick start
 
 This page is the README of [bamr87/bamr87.github.io](https://github.com/bamr87/bamr87.github.io), a Jekyll site on the [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) theme. To edit it, clone it with `gh repo clone bamr87/bamr87.github.io`, then preview and test it locally:
 
