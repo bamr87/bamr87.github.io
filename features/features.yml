@@ -62,6 +62,19 @@ features:
     surface: ui
     link: "pages/quest-log.md"
     docs: "pages/quest-log.md"
+  - id: PROFILE-006
+    title: "Improve-this-page feedback widget"
+    description: "The theme's feedback widget on every page: a floating \"Improve this page\" button and the inline trigger in the page action bar open one dialog that files a pre-filled issue in this repo, labelled `page-feedback`; without JavaScript both link to github.com's new-issue page, which opens a blank issue rather than the `page_feedback.yml` form until bamr87/zer0-mistakes#636 lets the site name its template (`page_feedback:` in `_config.yml`)"
+    implemented: true
+    status: shipped
+    prd: [TBD]
+    surface: ui
+    link: "_config.yml"
+    docs: "AGENTS.md"
+    scenarios:
+      - verify/scenarios/page-feedback.yml
+    evidence:
+      - test/evidence/page-feedback
   - id: PROFILE-007
     title: "Paginated post index"
     description: "Every post as a card at `/pages/`, `/pages/2/` …, ten to a page: the post's `preview` image, or the decorative site teaser when it has none, its title, excerpt and last update, and numbered and previous/next page links"
