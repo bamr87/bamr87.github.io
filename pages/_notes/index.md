@@ -132,12 +132,14 @@ vscode://file/C:/Users/AmrAbdel-Motaleb/OneDrive/Documents/GitHub/{{ page.path}}
 
 ### Hover Notes
 
-![](../assets/images/hover-note.png){: .img-fluid }
+![](../assets/images/hover-note.png){: .img-fluid loading="lazy" }
 
 ### Paste images in Markdown
 
 
-![](../assets/images/markdown_paste.gif){: .img-fluid }
+<video class="img-fluid" src="{{ '/assets/images/markdown_paste.mp4' | relative_url }}" width="900" height="658" autoplay muted loop playsinline controls aria-label="Screen recording: pasting an image into a Markdown file in VS Code">
+  <a href="{{ '/assets/images/markdown_paste.mp4' | relative_url }}">Screen recording of pasting an image into Markdown (MP4)</a>
+</video>
 
 
 ### Autoscale images
@@ -203,7 +205,7 @@ kramdown: # https://kramdown.gettalong.org/options.html
 ## Gallery
 
 ```html
-![this is a caption](../assets/images/nubi-son.png){: .img-fluid }
+![this is a caption](../assets/images/nubi-son.jpg){: .img-fluid }
 ```
 
 adding `{: .img-fluid }` to a list of images will add it to the `<p>` tag.
@@ -221,7 +223,7 @@ p, img
 
 ### Examples
 
-![this is a caption](../assets/images/nubi-son.png) ![Nubi in a sink](../assets/images/nubi-sink.png) ![Nubi yawning](../assets/images/nubi-yawn.png){: .img-thumbnail }
+![this is a caption](../assets/images/nubi-son.jpg){: loading="lazy" } ![Nubi in a sink](../assets/images/nubi-sink.jpg){: loading="lazy" } ![Nubi yawning](../assets/images/nubi-yawn.jpg){: .img-thumbnail loading="lazy" }
 
 
 > this is a block quote
@@ -249,7 +251,7 @@ https://icons.getbootstrap.com/#install
 
 <i class="bi bi-gem"></i>
 
-![](../../assets/images/penrose-hard.png)
+![](../../assets/images/penrose-hard.png){: loading="lazy" }
 
 ## OS Based instructions
 

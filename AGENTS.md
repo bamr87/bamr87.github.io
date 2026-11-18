@@ -31,11 +31,11 @@ python3 tools/unwrap-prose.py --check                           # markdown one-p
 | `zer0.json` | The zer0-CMS console config: content folders and types. zer0-CMS registers this checkout and publishes to X and LinkedIn through channels each account connects in its studio. Check it with zer0-CMS's `python -m sites.doctor .` |
 | `index.html` | The homepage dashboard (`permalink: /`), built from `site.data.portfolio` |
 | `README.md` | The GitHub profile/CV, published at `/profile/` |
-| `assets/` | Site images, scripts and SVGs (the theme ships the CSS) |
+| `assets/` | Site images, scripts and SVGs (the theme ships the CSS). Keep each image under about 200 KB: photos as JPEG, screenshots and art as palette PNG (`pngquant`), animations as MP4 rather than GIF. `.github/site-quality.yml` warns when a scanned page loads more than 600 KiB of images |
 | `scripts/` | Generators and their tests — see [scripts/README.md](scripts/README.md) |
 | `tools/` | Vendored fleet tools: `unwrap-prose.py`, `docs_index.py` (never edit) |
 | `docs/` | Repo documentation: [the docs index](docs/README.md), ADRs, generated reference |
-| `features/`, `verify/` | Feature index (`features/v1`) and the user-scenario verify kit |
+| `features/`, `verify/`, `test/evidence/` | Feature index (`features/v1`), the user-scenario verify kit, and the evidence bundles (screenshots, `report.json`) its runner writes; `test/` is excluded from the build |
 | `.claude/` | The `profile-portfolio` and `verify-feature` skills and the `verifier` agent |
 
 ## Conventions
@@ -67,6 +67,7 @@ python3 tools/unwrap-prose.py --check                           # markdown one-p
 - `index.html` is the homepage: a full-bleed dashboard over `site.data.portfolio`, with inline CSS/JS scoped under `.dash` and its JS wrapped in a Liquid `raw`/`endraw` block so Liquid leaves it alone.
 - `README.md` is a Jekyll page (`permalink: /profile/`), so its links are rendered on the site. Relative links to excluded files 404 there; link those by GitHub URL.
 - Navigation is `_data/navigation/*.yml`: the navbar reads `main.yml`, and a page picks its sidebar with `sidebar.nav`. The theme's navbar and `nav-tree` read `children:`, not `sublinks:`; with `sublinks:` the dropdowns silently do not render.
+- Reader feedback is the theme's widget, switched on by `page_feedback:` in `_config.yml`: a floating "Improve this page" button and the inline trigger in the page action bar open one dialog that files a pre-filled issue in this repo, labelled `page-feedback`. Without JavaScript both link to the issue form; the theme hard-codes `template=page_improvement.yml` in that link while this repo ships `.github/ISSUE_TEMPLATE/page_feedback.yml`, so the fix belongs in bamr87/zer0-mistakes ([#636](https://github.com/bamr87/zer0-mistakes/issues/636)), not here. Once it ships, add `issue_template: 'page_feedback.yml'` to the block.
 
 ## Generated content
 

@@ -199,6 +199,28 @@ gisgus:
   data-repo-id: ""
   data-category-id: ""
 
+## Page feedback (theme widget) #################################################
+# The zer0-mistakes "Improve this page" widget (UPS-FB-01, UPS-FE-13): a floating
+# button on every page plus the inline trigger in the page action bar. Both open
+# one dialog that files a pre-filled issue in this repo, labelled page-feedback.
+# Without JavaScript they link to github.com's new-issue page instead. The theme
+# hard-codes template=page_improvement.yml there, so that link opens a blank
+# issue, not page_feedback.yml, until bamr87/zer0-mistakes#636 adds a template
+# key (then set issue_template: 'page_feedback.yml' below). Keys mirror the
+# theme's reference config (bamr87/zer0-mistakes _config.yml `page_feedback:`).
+
+page_feedback:
+  enabled            : true               # Master switch for the widget
+  fab                : true               # Show the global floating feedback button
+  fab_icon           : 'bi-megaphone'     # Bootstrap icon for the FAB
+  fab_label          : 'Improve this page'
+  capture_logs       : true               # Offer captured console/error lines (previewed before submit)
+  mode               : 'url'              # Pre-filled github.com issue form; no token, works on Pages
+  default_labels     : ['page-feedback']  # Added to every issue; the label exists in this repo
+  assignee           : ''                 # No agent assignee here
+  ai:
+    enabled          : false              # No chat proxy on this site (ai_chat.proxy_ready is unset)
+
 # https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
 
 ## Conversion
@@ -395,6 +417,8 @@ exclude:
   - docs/constitution.md
   - docs/amendments/
   - features/
+  # Verify-kit evidence bundles (screenshots, report.json), not site content.
+  - test/
 
 # Sass/SCSS
 sass:

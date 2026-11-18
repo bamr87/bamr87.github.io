@@ -1,0 +1,476 @@
+{
+  "id": "page-feedback",
+  "title": "The Improve-this-page button opens the feedback dialog",
+  "features": [
+    "PROFILE-006"
+  ],
+  "path": "verify/scenarios/page-feedback.yml",
+  "started": "2026-11-16T05:17:42.104Z",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/profile/",
+          "ok": true,
+          "ms": 740
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "click",
+          "arg": "role=button[name='Reject All']",
+          "ok": true,
+          "ms": 1012
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 800
+          },
+          "ok": true,
+          "ms": 803
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#pageFeedbackFab"
+          },
+          "ok": true,
+          "ms": 4
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": ".bd-intro-action-link[data-pf-open]"
+          },
+          "ok": true,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "a[data-pf-open][href^='https://github.com/bamr87/bamr87.github.io/issues/new?'][href*='labels=page-feedback']",
+              "min": 2
+            }
+          },
+          "ok": true,
+          "value": 2,
+          "ms": 1
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "profile_widget",
+            "script": "(() => { const c = JSON.parse(document.getElementById('pageFeedbackConfig').textContent); return { repository: c.repository, labels: c.defaultLabels, mode: c.mode, ai: c.ai.available, triggers: [...document.querySelectorAll('[data-pf-open]')].map((a) => a.getAttribute('href')) }; })()"
+          },
+          "ok": true,
+          "value": {
+            "repository": "bamr87/bamr87.github.io",
+            "labels": [
+              "page-feedback"
+            ],
+            "mode": "url",
+            "ai": false,
+            "triggers": [
+              "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback",
+              "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback"
+            ]
+          },
+          "ms": 2
+        },
+        {
+          "step": "screenshot",
+          "arg": "profile",
+          "ok": true,
+          "file": "test/evidence/page-feedback/mobile-profile.png",
+          "ms": 46
+        },
+        {
+          "step": "click",
+          "arg": "#pageFeedbackFab",
+          "ok": true,
+          "ms": 39
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#pageFeedbackModal"
+          },
+          "ok": true,
+          "ms": 2
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 800
+          },
+          "ok": true,
+          "ms": 802
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "text": "Share feedback"
+          },
+          "ok": true,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "#pageFeedbackModal .pf-type",
+              "min": 4
+            }
+          },
+          "ok": true,
+          "value": 4,
+          "ms": 4
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "hidden": "#pfAnalyze"
+          },
+          "ok": true,
+          "ms": 2
+        },
+        {
+          "step": "screenshot",
+          "arg": "dialog",
+          "ok": true,
+          "file": "test/evidence/page-feedback/mobile-dialog.png",
+          "ms": 40
+        },
+        {
+          "step": "goto",
+          "arg": "/posts/2026/11/02/quest-log-bamr87/",
+          "ok": true,
+          "ms": 874
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#pageFeedbackFab"
+          },
+          "ok": true,
+          "ms": 20
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "a#pageFeedbackFab[href^='https://github.com/bamr87/bamr87.github.io/issues/new?'][href*='labels=page-feedback']",
+              "min": 1
+            }
+          },
+          "ok": true,
+          "value": 1,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_console_errors": true
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 390,
+            "cw": 390
+          },
+          "ms": 7
+        },
+        {
+          "step": "screenshot",
+          "arg": "post",
+          "ok": true,
+          "file": "test/evidence/page-feedback/mobile-post.png",
+          "ms": 34
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/page-feedback/mobile-profile.png",
+        "test/evidence/page-feedback/mobile-dialog.png",
+        "test/evidence/page-feedback/mobile-post.png"
+      ],
+      "evals": {
+        "profile_widget": {
+          "repository": "bamr87/bamr87.github.io",
+          "labels": [
+            "page-feedback"
+          ],
+          "mode": "url",
+          "ai": false,
+          "triggers": [
+            "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback",
+            "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback"
+          ]
+        }
+      },
+      "final_url": "http://127.0.0.1:4258/posts/2026/11/02/quest-log-bamr87/"
+    },
+    {
+      "name": "desktop-1366",
+      "width": 1366,
+      "height": 768,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/profile/",
+          "ok": true,
+          "ms": 1660
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "click",
+          "arg": "role=button[name='Reject All']",
+          "ok": true,
+          "ms": 72
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 800
+          },
+          "ok": true,
+          "ms": 805
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#pageFeedbackFab"
+          },
+          "ok": true,
+          "ms": 5
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": ".bd-intro-action-link[data-pf-open]"
+          },
+          "ok": true,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "a[data-pf-open][href^='https://github.com/bamr87/bamr87.github.io/issues/new?'][href*='labels=page-feedback']",
+              "min": 2
+            }
+          },
+          "ok": true,
+          "value": 2,
+          "ms": 2
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "profile_widget",
+            "script": "(() => { const c = JSON.parse(document.getElementById('pageFeedbackConfig').textContent); return { repository: c.repository, labels: c.defaultLabels, mode: c.mode, ai: c.ai.available, triggers: [...document.querySelectorAll('[data-pf-open]')].map((a) => a.getAttribute('href')) }; })()"
+          },
+          "ok": true,
+          "value": {
+            "repository": "bamr87/bamr87.github.io",
+            "labels": [
+              "page-feedback"
+            ],
+            "mode": "url",
+            "ai": false,
+            "triggers": [
+              "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback",
+              "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback"
+            ]
+          },
+          "ms": 2
+        },
+        {
+          "step": "screenshot",
+          "arg": "profile",
+          "ok": true,
+          "file": "test/evidence/page-feedback/desktop-1366-profile.png",
+          "ms": 86
+        },
+        {
+          "step": "click",
+          "arg": "#pageFeedbackFab",
+          "ok": true,
+          "ms": 40
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#pageFeedbackModal"
+          },
+          "ok": true,
+          "ms": 4
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 800
+          },
+          "ok": true,
+          "ms": 802
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "text": "Share feedback"
+          },
+          "ok": true,
+          "ms": 4
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "#pageFeedbackModal .pf-type",
+              "min": 4
+            }
+          },
+          "ok": true,
+          "value": 4,
+          "ms": 5
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "hidden": "#pfAnalyze"
+          },
+          "ok": true,
+          "ms": 2
+        },
+        {
+          "step": "screenshot",
+          "arg": "dialog",
+          "ok": true,
+          "file": "test/evidence/page-feedback/desktop-1366-dialog.png",
+          "ms": 75
+        },
+        {
+          "step": "goto",
+          "arg": "/posts/2026/11/02/quest-log-bamr87/",
+          "ok": true,
+          "ms": 1302
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#pageFeedbackFab"
+          },
+          "ok": true,
+          "ms": 14
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "a#pageFeedbackFab[href^='https://github.com/bamr87/bamr87.github.io/issues/new?'][href*='labels=page-feedback']",
+              "min": 1
+            }
+          },
+          "ok": true,
+          "value": 1,
+          "ms": 1
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_console_errors": true
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 1366,
+            "cw": 1366
+          },
+          "ms": 2
+        },
+        {
+          "step": "screenshot",
+          "arg": "post",
+          "ok": true,
+          "file": "test/evidence/page-feedback/desktop-1366-post.png",
+          "ms": 44
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/page-feedback/desktop-1366-profile.png",
+        "test/evidence/page-feedback/desktop-1366-dialog.png",
+        "test/evidence/page-feedback/desktop-1366-post.png"
+      ],
+      "evals": {
+        "profile_widget": {
+          "repository": "bamr87/bamr87.github.io",
+          "labels": [
+            "page-feedback"
+          ],
+          "mode": "url",
+          "ai": false,
+          "triggers": [
+            "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback",
+            "https://github.com/bamr87/bamr87.github.io/issues/new?template=page_improvement.yml&labels=page-feedback"
+          ]
+        }
+      },
+      "final_url": "http://127.0.0.1:4258/posts/2026/11/02/quest-log-bamr87/"
+    }
+  ],
+  "ok": true,
+  "finished": "2026-11-16T05:17:51.694Z",
+  "base": "http://127.0.0.1:4258"
+}

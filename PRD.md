@@ -53,15 +53,17 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [PROFILE-003](features/features.yml) | Dockerfile for local preview | shipped | [`Dockerfile`](Dockerfile) · [`README.md`](README.md) | TBD |
 | [PROFILE-004](features/features.yml) | Scripts/tools for site maintenance | shipped | [`scripts`](scripts) · [`README.md`](README.md) | TBD |
 | [PROFILE-005](features/features.yml) | The Quest Log series page | shipped | [`pages/quest-log.md`](pages/quest-log.md) | TBD |
-| [PROFILE-006](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
+| [PROFILE-006](features/features.yml) | Improve-this-page feedback widget | shipped | [`_config.yml`](_config.yml) · [`AGENTS.md`](AGENTS.md) | TBD |
+| [PROFILE-007](features/features.yml) | Paginated post index | shipped | [`pages/index.html`](pages/index.html) | TBD |
+| [PROFILE-008](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
 
 **Requirement → feature trace**
 
 | Requirement | Features |
 | --- | --- |
-| TBD | PROFILE-001, PROFILE-003, PROFILE-004, PROFILE-005 |
+| TBD | PROFILE-001, PROFILE-003, PROFILE-004, PROFILE-005, PROFILE-006, PROFILE-007 |
 | FR2 | PROFILE-002 |
-| §1.1 | PROFILE-006 |
+| §1.1 | PROFILE-008 |
 <!-- features:end -->
 
 ## 5. Requirements

@@ -1,0 +1,46 @@
+# =============================================================================
+# verify/scenarios/page-feedback.yml — a USER SCENARIO (scenario/v1)
+# =============================================================================
+# A reader who spots a problem finds the "Improve this page" button on the
+# profile page and on a post, opens the feedback dialog, and sees the request
+# types it offers. The no-JS links and the widget config must point at this
+# repo, with the page-feedback label (#58, UPS-FB-01, UPS-FE-13).
+#
+# The trigger's template name (page_improvement.yml) is hard-coded by the
+# zer0-mistakes theme, so this scenario checks the repo and label, not the
+# template.
+# =============================================================================
+id: page-feedback
+feature: PROFILE-006
+title: "The Improve-this-page button opens the feedback dialog"
+description: "A reader opens the feedback dialog from the floating button on /profile/ and on a post; both pages carry the button, the profile's action bar carries the inline trigger, and every no-JS link files an issue in bamr87/bamr87.github.io labelled page-feedback."
+viewports:
+  - mobile
+  - { name: desktop-1366, width: 1366, height: 768 }
+steps:
+  - goto: /profile/
+  - expect: { status: 200 }
+  # A fresh visit shows the cookie banner over the bottom of the page; decline it.
+  - click: "role=button[name='Reject All']"
+  - wait: { ms: 800 }        # let the banner finish fading out before the screenshot
+  - expect: { visible: "#pageFeedbackFab" }
+  - expect: { visible: ".bd-intro-action-link[data-pf-open]" }
+  - expect: { count: { selector: "a[data-pf-open][href^='https://github.com/bamr87/bamr87.github.io/issues/new?'][href*='labels=page-feedback']", min: 2 } }
+  - eval:
+      name: profile_widget
+      script: "(() => { const c = JSON.parse(document.getElementById('pageFeedbackConfig').textContent); return { repository: c.repository, labels: c.defaultLabels, mode: c.mode, ai: c.ai.available, triggers: [...document.querySelectorAll('[data-pf-open]')].map((a) => a.getAttribute('href')) }; })()"
+  - screenshot: profile
+  - click: "#pageFeedbackFab"
+  - expect: { visible: "#pageFeedbackModal" }
+  - wait: { ms: 800 }        # the dialog fades in
+  - expect: { text: "Share feedback" }
+  - expect: { count: { selector: "#pageFeedbackModal .pf-type", min: 4 } }
+  - expect: { hidden: "#pfAnalyze" }
+  - screenshot: dialog
+  - goto: /posts/2026/11/02/quest-log-bamr87/
+  - expect: { status: 200 }
+  - expect: { visible: "#pageFeedbackFab" }
+  - expect: { count: { selector: "a#pageFeedbackFab[href^='https://github.com/bamr87/bamr87.github.io/issues/new?'][href*='labels=page-feedback']", min: 1 } }
+  - expect: { no_console_errors: true }
+  - expect: { no_horizontal_scroll: true }
+  - screenshot: post
