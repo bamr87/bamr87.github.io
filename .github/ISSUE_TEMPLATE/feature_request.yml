@@ -1,0 +1,27 @@
+# kit: community v0.1.0 (UPS-REPO-18). Applies the fleet type `feature`
+# (bamr87/.github used GitHub's default `enhancement`, which the label sync renames).
+name: ✨ Feature request
+description: Suggest a new capability.
+labels: ["feature", "agent:queued"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What are you trying to do, and why is it hard today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will we know it is done?
+      placeholder: "- [ ] …"
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

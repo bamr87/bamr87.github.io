@@ -10,10 +10,18 @@ title: All posts
     {% for post in paginator.posts %}
     <div class="col">
       <div class="card h-100">
-        {%- if post.preview -%}
-        <img src="{{ site.public_folder }}/{{ post.preview}}" class="card-img-top" alt="page preview image">
-        {% else %}
-        <img src="{{ site.teaser }}" class="card-img-top" alt="page preview image">
+        {%- comment -%}
+          preview: null, "" or a missing key falls back to the teaser, which is
+          decorative (alt=""). A real preview goes through the theme's
+          components/preview-image.html, which adds /assets only when the path
+          lacks it (/images/x.png and images/x.png both become
+          /assets/images/x.png), applies relative_url, escapes the alt and lazy-loads.
+        {%- endcomment -%}
+        {%- assign card_preview = post.preview | default: '' | strip -%}
+        {%- if card_preview != '' -%}
+        {%- include components/preview-image.html src=card_preview alt=post.title class="card-img-top" -%}
+        {%- else -%}
+        <img src="{{ site.teaser | relative_url }}" class="card-img-top" alt="" loading="lazy">
         {%- endif -%}
         <div class="card-body">
           <h5 class="card-title " itemprop="headline">
@@ -36,7 +44,7 @@ title: All posts
     <ul class="pagination">
         {% if paginator.previous_page %}
             <li class="page-item">
-                <a class="page-link" href="{{ paginator.previous_page_path }}" aria-label="Previous">
+                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -48,13 +56,14 @@ title: All posts
 
         {% for page in (1..paginator.total_pages) %}
             <li class="page-item {% if page == paginator.page %}active{% endif %}">
-                <a class="page-link" href="{{ site.baseurl }}{% if page != 1 %}/pages/{{ page }}{% endif %}">{{ page }}</a>
+                {%- comment -%} Page 1 is this file, /pages/; the rest follow paginate_path (/pages/:num/), as previous/next do. {%- endcomment %}
+                <a class="page-link" href="{% if page == 1 %}{{ '/pages/' | relative_url }}{% else %}{{ site.paginate_path | replace: ':num', page | relative_url }}{% endif %}">{{ page }}</a>
             </li>
         {% endfor %}
 
         {% if paginator.next_page %}
             <li class="page-item">
-                <a class="page-link" href="{{ paginator.next_page_path }}" aria-label="Next">
+                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

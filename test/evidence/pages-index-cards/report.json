@@ -1,0 +1,2050 @@
+{
+  "id": "pages-index-cards",
+  "title": "Every card on the paginated post index shows its image",
+  "features": [
+    "PROFILE-007"
+  ],
+  "path": "verify/scenarios/pages-index-cards.yml",
+  "started": "2026-11-16T03:07:30.343Z",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/pages/2/",
+          "ok": true,
+          "ms": 575
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "scroll_to_wizard_card",
+            "script": "(() => { const c = document.querySelector(\"img.card-img-top[src*='wizard-on-journey']\");\nif (c) c.closest('.card').scrollIntoView({ block: 'center' }); return !!c; })()"
+          },
+          "ok": true,
+          "value": true,
+          "ms": 3
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 1000
+          },
+          "ok": true,
+          "ms": 1002
+        },
+        {
+          "step": "screenshot",
+          "arg": "pages-2",
+          "ok": true,
+          "file": "test/evidence/pages-index-cards/mobile-pages-2.png",
+          "ms": 40
+        },
+        {
+          "step": "goto",
+          "arg": "/pages/3/",
+          "ok": true,
+          "ms": 527
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "scroll_to_doc_scraper_card",
+            "script": "(() => { const a = document.querySelector(\"a.card-link[href*='doc-scraper']\");\nif (a) a.closest('.card').scrollIntoView({ block: 'center' }); return !!a; })()"
+          },
+          "ok": true,
+          "value": true,
+          "ms": 2
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 1000
+          },
+          "ok": true,
+          "ms": 1001
+        },
+        {
+          "step": "screenshot",
+          "arg": "pages-3",
+          "ok": true,
+          "file": "test/evidence/pages-index-cards/mobile-pages-3.png",
+          "ms": 40
+        },
+        {
+          "step": "goto",
+          "arg": "/pages/",
+          "ok": true,
+          "ms": 525
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "img.card-img-top",
+              "min": 1
+            }
+          },
+          "ok": true,
+          "value": 10,
+          "ms": 11
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "card_images",
+            "script": "(async () => {\n  const dir = (u) => new URL(u, location.href).pathname.replace(/\\/?$/, '/');\n  const pages = [...new Set([dir(location.href), ...[...document.querySelectorAll('.pagination a.page-link')]\n    .map((a) => dir(a.getAttribute('href')))])];\n  const cards = [];\n  for (const p of pages) {\n    const doc = new DOMParser().parseFromString(await (await fetch(p)).text(), 'text/html');\n    for (const img of doc.querySelectorAll('img.card-img-top')) {\n      const src = img.getAttribute('src') || '';\n      const r = await fetch(new URL(src, location.origin + p), { method: 'HEAD' });\n      const type = r.headers.get('content-type') || '';\n      const why = [];\n      if (src.replace(/^[a-z]+:\\/\\//i, '').includes('//')) why.push('double slash');\n      if (!r.ok) why.push('HTTP ' + r.status);\n      if (!type.startsWith('image/')) why.push('not an image (' + (type || 'no type') + ')');\n      if (img.getAttribute('loading') !== 'lazy') why.push('not lazy');\n      cards.push({ page: p, src, alt: img.getAttribute('alt'), status: r.status, type, broken: why.join(', ') || null });\n    }\n  }\n  window.__cardImages = cards;\n  return { pages, cards: cards.length, broken: cards.filter((c) => c.broken), all: cards };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "pages": [
+              "/pages/",
+              "/pages/2/",
+              "/pages/3/",
+              "/pages/4/",
+              "/pages/5/",
+              "/pages/6/"
+            ],
+            "cards": 53,
+            "broken": [],
+            "all": [
+              {
+                "page": "/pages/",
+                "src": "/assets/images/quest-log/quest-log-bamr87-github-io/preview.png",
+                "alt": "bamr87.github.io: a portfolio that runs on data, not memory",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/quest-log/quest-log-bamr87/preview.png",
+                "alt": "bamr87/bamr87: 44 projects run from one registry",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/quest-log/quest-log-it-journey/preview.png",
+                "alt": "IT-Journey: learn IT as quests you run in your own terminal",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/wizard-on-journey.png",
+                "alt": "Wizard Topples Capitalist Dominance Ingeniously",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/svg/penrose-gpt-vs-human.png",
+                "alt": "Chat GPT vs The Impossible Triangle",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/sharex-imgur.png",
+                "alt": "sharex",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/6/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/6/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/6/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              }
+            ]
+          },
+          "ms": 32
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "broken_card_images",
+            "script": "(() => {\n  const loads = (c) => !/HTTP|image/.test(c.broken);\n  const bad = (window.__cardImages || []).filter((c) => c.broken).sort((a, b) => loads(a) - loads(b));\n  if (bad.length) throw new Error(bad.length + ' broken card image(s), ' + bad.filter((c) => !loads(c)).length\n    + ' not loading: ' + bad.map((c) => c.page + ' ' + JSON.stringify(c.src) + ' ' + c.broken).join(' | '));\n  return 0;\n})()"
+          },
+          "ok": true,
+          "value": 0,
+          "ms": 0
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/pages-index-cards/mobile-pages-2.png",
+        "test/evidence/pages-index-cards/mobile-pages-3.png"
+      ],
+      "evals": {
+        "scroll_to_wizard_card": true,
+        "scroll_to_doc_scraper_card": true,
+        "card_images": {
+          "pages": [
+            "/pages/",
+            "/pages/2/",
+            "/pages/3/",
+            "/pages/4/",
+            "/pages/5/",
+            "/pages/6/"
+          ],
+          "cards": 53,
+          "broken": [],
+          "all": [
+            {
+              "page": "/pages/",
+              "src": "/assets/images/quest-log/quest-log-bamr87-github-io/preview.png",
+              "alt": "bamr87.github.io: a portfolio that runs on data, not memory",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/quest-log/quest-log-bamr87/preview.png",
+              "alt": "bamr87/bamr87: 44 projects run from one registry",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/quest-log/quest-log-it-journey/preview.png",
+              "alt": "IT-Journey: learn IT as quests you run in your own terminal",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/wizard-on-journey.png",
+              "alt": "Wizard Topples Capitalist Dominance Ingeniously",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/svg/penrose-gpt-vs-human.png",
+              "alt": "Chat GPT vs The Impossible Triangle",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/sharex-imgur.png",
+              "alt": "sharex",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/6/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/6/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/6/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            }
+          ]
+        },
+        "broken_card_images": 0
+      },
+      "final_url": "http://127.0.0.1:4232/pages/"
+    },
+    {
+      "name": "desktop-1366",
+      "width": 1366,
+      "height": 768,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/pages/2/",
+          "ok": true,
+          "ms": 571
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "scroll_to_wizard_card",
+            "script": "(() => { const c = document.querySelector(\"img.card-img-top[src*='wizard-on-journey']\");\nif (c) c.closest('.card').scrollIntoView({ block: 'center' }); return !!c; })()"
+          },
+          "ok": true,
+          "value": true,
+          "ms": 2
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 1000
+          },
+          "ok": true,
+          "ms": 1001
+        },
+        {
+          "step": "screenshot",
+          "arg": "pages-2",
+          "ok": true,
+          "file": "test/evidence/pages-index-cards/desktop-1366-pages-2.png",
+          "ms": 112
+        },
+        {
+          "step": "goto",
+          "arg": "/pages/3/",
+          "ok": true,
+          "ms": 527
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "scroll_to_doc_scraper_card",
+            "script": "(() => { const a = document.querySelector(\"a.card-link[href*='doc-scraper']\");\nif (a) a.closest('.card').scrollIntoView({ block: 'center' }); return !!a; })()"
+          },
+          "ok": true,
+          "value": true,
+          "ms": 2
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 1000
+          },
+          "ok": true,
+          "ms": 1002
+        },
+        {
+          "step": "screenshot",
+          "arg": "pages-3",
+          "ok": true,
+          "file": "test/evidence/pages-index-cards/desktop-1366-pages-3.png",
+          "ms": 84
+        },
+        {
+          "step": "goto",
+          "arg": "/pages/",
+          "ok": true,
+          "ms": 527
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "img.card-img-top",
+              "min": 1
+            }
+          },
+          "ok": true,
+          "value": 10,
+          "ms": 10
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "card_images",
+            "script": "(async () => {\n  const dir = (u) => new URL(u, location.href).pathname.replace(/\\/?$/, '/');\n  const pages = [...new Set([dir(location.href), ...[...document.querySelectorAll('.pagination a.page-link')]\n    .map((a) => dir(a.getAttribute('href')))])];\n  const cards = [];\n  for (const p of pages) {\n    const doc = new DOMParser().parseFromString(await (await fetch(p)).text(), 'text/html');\n    for (const img of doc.querySelectorAll('img.card-img-top')) {\n      const src = img.getAttribute('src') || '';\n      const r = await fetch(new URL(src, location.origin + p), { method: 'HEAD' });\n      const type = r.headers.get('content-type') || '';\n      const why = [];\n      if (src.replace(/^[a-z]+:\\/\\//i, '').includes('//')) why.push('double slash');\n      if (!r.ok) why.push('HTTP ' + r.status);\n      if (!type.startsWith('image/')) why.push('not an image (' + (type || 'no type') + ')');\n      if (img.getAttribute('loading') !== 'lazy') why.push('not lazy');\n      cards.push({ page: p, src, alt: img.getAttribute('alt'), status: r.status, type, broken: why.join(', ') || null });\n    }\n  }\n  window.__cardImages = cards;\n  return { pages, cards: cards.length, broken: cards.filter((c) => c.broken), all: cards };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "pages": [
+              "/pages/",
+              "/pages/2/",
+              "/pages/3/",
+              "/pages/4/",
+              "/pages/5/",
+              "/pages/6/"
+            ],
+            "cards": 53,
+            "broken": [],
+            "all": [
+              {
+                "page": "/pages/",
+                "src": "/assets/images/quest-log/quest-log-bamr87-github-io/preview.png",
+                "alt": "bamr87.github.io: a portfolio that runs on data, not memory",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/quest-log/quest-log-bamr87/preview.png",
+                "alt": "bamr87/bamr87: 44 projects run from one registry",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/quest-log/quest-log-it-journey/preview.png",
+                "alt": "IT-Journey: learn IT as quests you run in your own terminal",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/wizard-on-journey.png",
+                "alt": "Wizard Topples Capitalist Dominance Ingeniously",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/2/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/svg/penrose-gpt-vs-human.png",
+                "alt": "Chat GPT vs The Impossible Triangle",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/3/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/4/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/sharex-imgur.png",
+                "alt": "sharex",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/5/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/6/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/6/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              },
+              {
+                "page": "/pages/6/",
+                "src": "/assets/images/favicon_gpt_computer_retro.png",
+                "alt": "",
+                "status": 200,
+                "type": "image/png",
+                "broken": null
+              }
+            ]
+          },
+          "ms": 26
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "broken_card_images",
+            "script": "(() => {\n  const loads = (c) => !/HTTP|image/.test(c.broken);\n  const bad = (window.__cardImages || []).filter((c) => c.broken).sort((a, b) => loads(a) - loads(b));\n  if (bad.length) throw new Error(bad.length + ' broken card image(s), ' + bad.filter((c) => !loads(c)).length\n    + ' not loading: ' + bad.map((c) => c.page + ' ' + JSON.stringify(c.src) + ' ' + c.broken).join(' | '));\n  return 0;\n})()"
+          },
+          "ok": true,
+          "value": 0,
+          "ms": 1
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/pages-index-cards/desktop-1366-pages-2.png",
+        "test/evidence/pages-index-cards/desktop-1366-pages-3.png"
+      ],
+      "evals": {
+        "scroll_to_wizard_card": true,
+        "scroll_to_doc_scraper_card": true,
+        "card_images": {
+          "pages": [
+            "/pages/",
+            "/pages/2/",
+            "/pages/3/",
+            "/pages/4/",
+            "/pages/5/",
+            "/pages/6/"
+          ],
+          "cards": 53,
+          "broken": [],
+          "all": [
+            {
+              "page": "/pages/",
+              "src": "/assets/images/quest-log/quest-log-bamr87-github-io/preview.png",
+              "alt": "bamr87.github.io: a portfolio that runs on data, not memory",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/quest-log/quest-log-bamr87/preview.png",
+              "alt": "bamr87/bamr87: 44 projects run from one registry",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/quest-log/quest-log-it-journey/preview.png",
+              "alt": "IT-Journey: learn IT as quests you run in your own terminal",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/wizard-on-journey.png",
+              "alt": "Wizard Topples Capitalist Dominance Ingeniously",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/2/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/svg/penrose-gpt-vs-human.png",
+              "alt": "Chat GPT vs The Impossible Triangle",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/3/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/4/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/sharex-imgur.png",
+              "alt": "sharex",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/5/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/6/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/6/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            },
+            {
+              "page": "/pages/6/",
+              "src": "/assets/images/favicon_gpt_computer_retro.png",
+              "alt": "",
+              "status": 200,
+              "type": "image/png",
+              "broken": null
+            }
+          ]
+        },
+        "broken_card_images": 0
+      },
+      "final_url": "http://127.0.0.1:4232/pages/"
+    }
+  ],
+  "ok": true,
+  "finished": "2026-11-16T03:07:38.068Z",
+  "base": "http://127.0.0.1:4232"
+}

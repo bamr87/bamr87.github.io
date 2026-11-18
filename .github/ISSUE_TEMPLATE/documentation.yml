@@ -1,0 +1,22 @@
+# kit: community v0.1.0 (UPS-REPO-18). Applies the fleet type `docs`.
+name: 📚 Documentation
+description: Missing, wrong or unclear documentation.
+labels: ["docs", "agent:queued"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Page or file
+      placeholder: "docs/… or https://…"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix
