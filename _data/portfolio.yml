@@ -2,7 +2,7 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-20T02:12:08Z'
+generated_at: '2026-11-21T02:11:33Z'
 totals:
   public_repos: 43
   followers: 18
@@ -29,7 +29,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-19T07:02:39Z'
+  pushed_at: '2026-11-20T20:29:48Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -67,7 +67,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-20T01:54:19Z'
+  pushed_at: '2026-11-21T02:05:04Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -222,7 +222,7 @@ projects:
   - developer-tools
   - github
   - scaffolding
-  pushed_at: '2026-11-19T07:02:39Z'
+  pushed_at: '2026-11-20T08:00:38Z'
   license: MIT
   repo_url: https://github.com/bamr87/scripts
   site_url: null

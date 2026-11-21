@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-20T02:12:02Z
+lastmod: 2026-11-21T02:11:29Z
 ---
 
 
@@ -130,6 +130,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Telemetry query tools: prom_query, logs_search and traces_query, read-only and capped | bamr87 | console, mcp, observability, claude-code, otel, telemetry | /bamr87/tools/console/telemetry_query.py |
 | The Voices editor: the fleet voice model edited in the console and filed back as a draft PR | bamr87 | console, content, voices, write-back | /bamr87/tools/console/web/src/pages/Voices.tsx |
 | The docked assistant: Claude Code beside every console page, able to see the page a person has open and, in the mode they choose, use it | bamr87 | console, assistant, mcp, page-bridge, claude-code | /assist |
+| The Overview tells the fleet's story: health, budget direction, what waits on the maintainer, the harness standard, flow, and one freshness timeline | bamr87 | console, overview, dataviz, trends | /overview |
+| The fleet assistant baseline: any fleet page can be shared with a Claude Code session, through one page bridge with an adapter per platform | bamr87 | assistant, kit, page-bridge, mcp, claude-code, fleet | /bamr87/templates/assistant/README.md |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -368,51 +370,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
 | Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
 | Constitution missions | sec-lab |  | /sec-lab/docs/constitution.md |
-| Portable C payload encoder producing JSON readings, with a host test | sensor-mesh | phase-1 | /sensor-mesh/platformio.ini |
-| Standard CI gate | sensor-mesh | ci | /sensor-mesh/.github/workflows/ci.yml |
-| Constitution missions | sensor-mesh |  | /sensor-mesh/docs/constitution.md |
-| Run code | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Stop all | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Log / output panel | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Syntax highlighting | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Server detection | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Keep-alive heartbeat | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Configuration | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Run / Stop commands | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Examples | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Run selection | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Recording | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Beautify / Align | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Tutorial webview | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Constitution missions | vs-sonic-pi |  | /vs-sonic-pi/docs/constitution.md |
-| Wagtail admin: pages, revisions, media, workflows | zer0-CMS | platform, admin, wagtail | /admin/ |
-| Agent suggestions, reviewed in the editor | zer0-CMS | platform, agents, governance | /admin/suggestions/page/ |
-| Agent review as a moderation task | zer0-CMS | platform, agents, workflow | /admin/workflows/ |
-| Agent runs report | zer0-CMS | platform, agents, reports | /admin/reports/agent-runs/ |
-| GraphQL API | zer0-CMS | platform, api, graphql | /graphql/ |
-| REST API: agent runs, graph, suggestions, tools | zer0-CMS | platform, api, rest, openapi | /api/v2/docs/ |
-| MCP server over the one tool registry | zer0-CMS | platform, api, mcp, agents | /mcp/ |
-| Jekyll sites imported and exported byte for byte | zer0-CMS | platform, jekyll, import, export | /zer0-CMS/content/importers/jekyll.py |
-| Health, readiness and version probes | zer0-CMS | platform, ops, probes | /readyz |
-| Request ids, the error envelope and structured logs | zer0-CMS | platform, ops, logging, errors | /api/v2/docs/ |
-| The studio: write, create and publish | zer0-CMS | studio, web, editor, publishing | /studio/write |
-| The studio's review inbox and revisions | zer0-CMS | studio, web, review, agents, governance | /studio/review |
-| Agent runs with a live step timeline | zer0-CMS | studio, web, agents | /studio/ai |
-| The studio's AI area: assistants, pipelines, output schemas, providers and models | zer0-CMS | studio, web, ai, assistants, pipelines, providers | /studio/ai |
-| Briefs, conversations and the editor's AI panel | zer0-CMS | studio, web, ai, briefs, conversations, editor | /studio/create/briefs |
-| The studio's Outbox desk: the belt, arena trials and the claim desk | zer0-CMS | studio, web, outbox, belt, claim-desk, pipelines | /studio/outbox |
-| A site's Voice tab: every layer of its voice, who reads it, and the guard on a text | zer0-CMS | studio, web, sites, voice, brand | /studio/sites |
-| Editorial directives become briefs, and the page that answers one closes it | zer0-CMS | studio, web, sites, briefs, automations, distribution, editorial | /studio/sites |
-| Metadata panel: front matter as typed controls | zer0-CMS | extension, editor | /zer0-CMS/src/panel/panelProvider.ts |
-| Dashboard: every site's content in one place | zer0-CMS | extension, dashboard | /zer0-CMS/src/dashboard/dashboardPanel.ts |
-| Governed publishing: draft → guard → approve → publish → ledger | zer0-CMS | extension, governance | /zer0-CMS/src/core/governance/ |
-| Bundled MCP server for the editor's agents | zer0-CMS | extension, mcp | /zer0-CMS/src/mcp/server.ts |
-| HTTP service exposing /healthz and /.well-known/openid-configuration | zer0-id | phase-1 | /zer0-id/go.mod |
-| Standard CI gate | zer0-id | ci | /zer0-id/.github/workflows/ci.yml |
-| Constitution missions | zer0-id |  | /zer0-id/docs/constitution.md |
-| Freestanding kernel object and Multiboot2 header build with host gcc/l | zer0-kernel | phase-1 | /zer0-kernel/Makefile |
-| Standard CI gate | zer0-kernel | ci | /zer0-kernel/.github/workflows/ci.yml |
-| Constitution missions | zer0-kernel |  | /zer0-kernel/docs/constitution.md |
 
 
 ## Requested / Backlog Features
@@ -581,31 +538,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
 | DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
 | Fix write-ups linked per challenge | sec-lab | phase-3 |  |
-| PlatformIO project for esp32dev that builds | sensor-mesh | phase-1 |  |
-| Wi-Fi + MQTT publish loop with reconnect | sensor-mesh | phase-2 |  |
-| BME280 temperature/humidity driver | sensor-mesh | phase-2 |  |
-| OTA firmware updates | sensor-mesh | phase-3 |  |
-| MQTT → OTLP bridge into fleet-observe | sensor-mesh | phase-3 |  |
-| Autocomplete | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Hover documentation | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Error reporting | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Status bar | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Daemon auto-start | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Cue log | vs-sonic-pi |  | /vs-sonic-pi/src |
-| MIDI monitor | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Audio scope | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Multi-buffer workspaces | vs-sonic-pi |  | /vs-sonic-pi/src |
-| Missions in constitution §1 | zer0-CMS |  |  |
-| JWKS endpoint with a generated signing key | zer0-id | phase-1 |  |
-| Authorization code + PKCE flow with a client registry | zer0-id | phase-2 |  |
-| ID token and access token issuance (RS256/EdDSA) | zer0-id | phase-2 |  |
-| WebAuthn passkey registration and login | zer0-id | phase-3 |  |
-| Conformance test run against the OpenID suite | zer0-id | phase-3 |  |
-| Kernel ELF links with a linker script and boots in QEMU (grub-mkrescue | zer0-kernel | phase-1 |  |
-| Serial and VGA text output drivers | zer0-kernel | phase-2 |  |
-| IDT, exceptions and timer interrupts | zer0-kernel | phase-2 |  |
-| Paging and physical frame allocator | zer0-kernel | phase-3 |  |
-| Round-robin scheduler and a minimal shell | zer0-kernel | phase-3 |  |
 
 
 ---
@@ -613,4 +545,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-20T02:12:02Z
+Last updated: 2026-11-21T02:11:29Z
