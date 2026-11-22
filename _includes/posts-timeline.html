@@ -1,0 +1,279 @@
+{%- comment -%}
+  posts-timeline.html — every post on the site as a timeline, with three views.
+
+  Used by the /posts/ page (pages/_posts/2000-01-01-index.md). Without
+  JavaScript it is a complete timeline: years, months and posts, newest first.
+  The script adds the controls: Timeline / Cards / List views, a category
+  filter, a title or tag search, newest/oldest order, and a posts-per-month
+  strip that jumps to a month. One list of posts is restyled by the view; it is
+  never rebuilt, so links, images and headings stay where the build put them.
+
+  Lists every post the theme's news layout lists (all but index pages), so the
+  count matches what a visitor can reach. Colors come from Bootstrap's CSS
+  variables, so the theme's light and dark skins both apply. Thumbnails use the
+  theme's components/preview-image.html, which resolves `preview` paths the
+  same way the posts themselves do.
+{%- endcomment -%}
+{%- comment -%} One entry per URL: two source files that build to the same URL are one page to a visitor. {%- endcomment -%}
+{%- assign tl_posts = "" | split: "" -%}{%- assign tl_seen = "|" -%}
+{%- for post in site.posts -%}
+  {%- if post.url == page.url or post.index == true -%}{%- continue -%}{%- endif -%}
+  {%- capture tl_key -%}|{{ post.url }}|{%- endcapture -%}
+  {%- if tl_seen contains tl_key -%}{%- continue -%}{%- endif -%}
+  {%- assign tl_seen = tl_seen | append: post.url | append: "|" -%}
+  {%- assign tl_posts = tl_posts | push: post -%}
+{%- endfor -%}
+{%- assign tl_years = tl_posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+<section class="ptl" id="posts-timeline" data-view="timeline" aria-label="All posts">
+  <style>
+    .ptl { --ptl-rail: var(--bs-border-color); --ptl-dot: var(--bs-primary); --ptl-muted: var(--bs-secondary-color); margin: 1rem 0 2rem; }
+    .ptl-bar { display: flex; flex-wrap: wrap; gap: .5rem .75rem; align-items: center; margin-bottom: 1rem; }
+    .ptl-bar .form-control, .ptl-bar .form-select { width: auto; min-width: 0; flex: 1 1 11rem; max-width: 18rem; }
+    .ptl-count { color: var(--ptl-muted); font-size: .875rem; margin-left: auto; }
+    .ptl-cadence { margin: 0 0 1.5rem; }
+    .ptl-cadence svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .ptl-cadence rect.ptl-col { fill: var(--ptl-dot); cursor: pointer; }
+    .ptl-cadence rect.ptl-col:hover, .ptl-cadence rect.ptl-col:focus { fill: var(--bs-emphasis-color); outline: none; }
+    .ptl-cadence text { fill: var(--ptl-muted); font-size: 11px; font-family: var(--bs-font-monospace); }
+    .ptl-cadence line { stroke: var(--ptl-rail); }
+    .ptl-cadence figcaption { color: var(--ptl-muted); font-size: .8125rem; margin-top: .25rem; }
+    .ptl-summary { color: var(--ptl-muted); }
+    .ptl-year { margin-top: 1.75rem; }
+    .ptl-year, .ptl-month { scroll-margin-top: 5.5rem; } /* land below the theme's sticky navbar */
+    .ptl-year-h { display: flex; align-items: baseline; gap: .6rem; margin-bottom: .5rem; }
+    .ptl-n { color: var(--ptl-muted); font-size: .875rem; font-weight: 400; }
+    .ptl-month-h { font-size: .8125rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ptl-muted); margin: 1rem 0 .5rem; }
+    .ptl-items { list-style: none; margin: 0; padding: 0; }
+    .ptl-item { position: relative; }
+    .ptl-item article { display: flex; gap: 1rem; align-items: flex-start; }
+    .ptl-body { min-width: 0; flex: 1; }
+    .ptl-item time { display: block; color: var(--ptl-muted); font-size: .8125rem; font-family: var(--bs-font-monospace); }
+    .ptl-title { font-size: 1.05rem; margin: .1rem 0 .25rem; line-height: 1.35; }
+    .ptl-title a { text-decoration: none; }
+    .ptl-title a:hover, .ptl-title a:focus { text-decoration: underline; }
+    .ptl-desc { margin: 0 0 .35rem; color: var(--bs-body-color); font-size: .9375rem; }
+    .ptl-tags { list-style: none; display: flex; flex-wrap: wrap; gap: .3rem; margin: 0; padding: 0; }
+    .ptl-tags li { font-size: .75rem; border: 1px solid var(--ptl-rail); border-radius: 999px; padding: 0 .5rem; color: var(--ptl-muted); }
+    .ptl-thumb { flex: 0 0 auto; display: block; }
+    .ptl-thumb img { display: block; width: 7.5rem; aspect-ratio: 16 / 9; object-fit: cover; border-radius: .375rem; border: 1px solid var(--ptl-rail); }
+    /* timeline: a rail with a dot per post */
+    .ptl[data-view="timeline"] .ptl-items { border-left: 2px solid var(--ptl-rail); margin-left: .45rem; }
+    .ptl[data-view="timeline"] .ptl-item { padding: 0 0 1.1rem 1.4rem; }
+    .ptl[data-view="timeline"] .ptl-item::before { content: ""; position: absolute; left: -.42rem; top: .3rem; width: .75rem; height: .75rem; border-radius: 50%; background: var(--ptl-dot); box-shadow: 0 0 0 3px var(--bs-body-bg); }
+    /* cards: a grid per month, picture first */
+    .ptl[data-view="cards"] .ptl-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; }
+    .ptl[data-view="cards"] .ptl-item article { flex-direction: column; gap: 0; height: 100%; border: 1px solid var(--ptl-rail); border-radius: .5rem; overflow: hidden; background: var(--bs-tertiary-bg); }
+    .ptl[data-view="cards"] .ptl-thumb { order: -1; width: 100%; }
+    .ptl[data-view="cards"] .ptl-thumb img { width: 100%; border: 0; border-radius: 0; }
+    .ptl[data-view="cards"] .ptl-body { padding: .75rem .9rem .9rem; }
+    /* list: one line per post */
+    .ptl[data-view="list"] .ptl-month-h, .ptl[data-view="list"] .ptl-desc, .ptl[data-view="list"] .ptl-thumb { display: none; }
+    .ptl[data-view="list"] .ptl-item { border-bottom: 1px solid var(--ptl-rail); padding: .4rem 0; }
+    .ptl[data-view="list"] .ptl-body { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: .1rem 1rem; align-items: baseline; }
+    .ptl[data-view="list"] .ptl-title { font-size: 1rem; margin: 0; }
+    .ptl[data-view="list"] .ptl-tags { grid-column: 2; }
+    @media (max-width: 575.98px) {
+      .ptl[data-view="timeline"] .ptl-thumb { display: none; }
+      .ptl[data-view="list"] .ptl-body { grid-template-columns: minmax(0, 1fr); }
+      .ptl[data-view="list"] .ptl-tags { grid-column: 1; }
+      .ptl-count { margin-left: 0; width: 100%; }
+    }
+    @media (prefers-reduced-motion: no-preference) { .ptl-item.ptl-flash article { animation: ptl-flash 1.2s ease-out; } }
+    @keyframes ptl-flash { from { box-shadow: 0 0 0 3px var(--ptl-dot); } to { box-shadow: 0 0 0 3px transparent; } }
+  </style>
+
+  <div class="ptl-bar" hidden>
+    <div class="btn-group" role="group" aria-label="Choose a view">
+      <button type="button" class="btn btn-sm btn-outline-secondary" data-view-btn="timeline" aria-pressed="true"><i class="bi bi-clock-history" aria-hidden="true"></i> Timeline</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary" data-view-btn="cards" aria-pressed="false"><i class="bi bi-grid-3x2-gap" aria-hidden="true"></i> Cards</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary" data-view-btn="list" aria-pressed="false"><i class="bi bi-list-ul" aria-hidden="true"></i> List</button>
+    </div>
+    <label class="visually-hidden" for="ptl-search">Filter posts by title or tag</label>
+    <input type="search" class="form-control form-control-sm" id="ptl-search" placeholder="Filter by title or tag">
+    <label class="visually-hidden" for="ptl-category">Category</label>
+    <select class="form-select form-select-sm" id="ptl-category"><option value="">All categories</option></select>
+    <button type="button" class="btn btn-sm btn-outline-secondary" id="ptl-order" aria-label="Show oldest first"><i class="bi bi-sort-down" aria-hidden="true"></i> <span>Newest first</span></button>
+    <span class="ptl-count" id="ptl-count" aria-live="polite"></span>
+  </div>
+
+  <figure class="ptl-cadence" id="ptl-cadence" hidden>
+    <div id="ptl-cadence-chart"></div>
+    <figcaption>Posts per month. Select a bar to jump to that month.</figcaption>
+  </figure>
+
+  {%- if tl_posts.size > 0 -%}
+  {%- assign tl_first = tl_posts | last -%}{%- assign tl_last = tl_posts | first -%}
+  <p class="ptl-summary">{{ tl_posts.size }} posts, from {{ tl_first.date | date: "%B %Y" }} to {{ tl_last.date | date: "%B %Y" }}.</p>
+  {%- endif -%}
+
+  {%- for tl_year in tl_years %}
+  <div class="ptl-year" data-year="{{ tl_year.name }}">
+    <h3 class="ptl-year-h" id="posts-{{ tl_year.name }}">{{ tl_year.name }} <span class="ptl-n">{{ tl_year.items.size }} {% if tl_year.items.size == 1 %}post{% else %}posts{% endif %}</span></h3>
+    {%- assign tl_months = tl_year.items | group_by_exp: "post", "post.date | date: '%m'" -%}
+    {%- for tl_month in tl_months %}
+    <div class="ptl-month" data-month="{{ tl_year.name }}-{{ tl_month.name }}" id="posts-{{ tl_year.name }}-{{ tl_month.name }}">
+      <h4 class="ptl-month-h">{{ tl_month.items.first.date | date: "%B %Y" }}</h4>
+      <ol class="ptl-items">
+        {%- for post in tl_month.items -%}
+        {%- capture tl_desc -%}{{ post.description | default: post.excerpt | strip_html | strip_newlines | normalize_whitespace | truncate: 170 }}{%- endcapture -%}
+        {%- assign tl_cats = "" | split: "" -%}
+        {%- for c in post.categories -%}{%- assign c_low = c | downcase -%}{%- unless c_low == "posts" or tl_cats contains c_low -%}{%- assign tl_cats = tl_cats | push: c_low -%}{%- endunless -%}{%- endfor -%}
+        {%- assign tl_tags = post.tags | join: " " | downcase -%}
+        <li class="ptl-item" data-date="{{ post.date | date: '%Y-%m-%d' }}" data-cats="{{ tl_cats | join: '|' | escape }}" data-search="{{ post.title | downcase | escape }} {{ tl_tags | escape }} {{ tl_cats | join: ' ' | escape }}">
+          <article>
+            <div class="ptl-body">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+              <h5 class="ptl-title"><a href="{{ post.url | relative_url }}">{{ post.title | default: post.slug | escape }}</a></h5>
+              {%- if tl_desc != "" %}<p class="ptl-desc">{{ tl_desc }}</p>{% endif %}
+              {%- if tl_cats.size > 0 %}<ul class="ptl-tags" aria-label="Categories">{% for c in tl_cats %}<li>{{ c | escape }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+            {%- if post.preview and post.preview != "" %}
+            <a class="ptl-thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include components/preview-image.html src=post.preview alt="" class="ptl-img" %}</a>
+            {%- endif %}
+          </article>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+  <p class="ptl-empty" id="ptl-empty" hidden>No posts match that filter.</p>
+</section>
+<script>
+{% raw %}
+(function () {
+  var root = document.getElementById('posts-timeline');
+  if (!root) return;
+  var items = Array.prototype.slice.call(root.querySelectorAll('.ptl-item'));
+  var years = Array.prototype.slice.call(root.querySelectorAll('.ptl-year'));
+  var search = document.getElementById('ptl-search');
+  var category = document.getElementById('ptl-category');
+  var orderBtn = document.getElementById('ptl-order');
+  var count = document.getElementById('ptl-count');
+  var empty = document.getElementById('ptl-empty');
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage blocked: the view still works */ } } };
+
+  // Views: one list, restyled by data-view on the section.
+  var viewBtns = Array.prototype.slice.call(root.querySelectorAll('[data-view-btn]'));
+  function setView(view) {
+    root.setAttribute('data-view', view);
+    viewBtns.forEach(function (b) {
+      var on = b.getAttribute('data-view-btn') === view;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.classList.toggle('active', on);
+    });
+    store.set('posts-view', view);
+  }
+  viewBtns.forEach(function (b) { b.addEventListener('click', function () { setView(b.getAttribute('data-view-btn')); }); });
+
+  // Categories, most used first.
+  var tally = {};
+  items.forEach(function (li) {
+    (li.getAttribute('data-cats') || '').split('|').forEach(function (c) { if (c) tally[c] = (tally[c] || 0) + 1; });
+  });
+  Object.keys(tally).sort(function (a, b) { return tally[b] - tally[a] || a.localeCompare(b); }).forEach(function (c) {
+    var o = document.createElement('option');
+    o.value = c; o.textContent = c + ' (' + tally[c] + ')';
+    category.appendChild(o);
+  });
+
+  // Filter: hide what does not match, then any month or year left empty.
+  function filter() {
+    var q = search.value.trim().toLowerCase(), cat = category.value, shown = 0;
+    items.forEach(function (li) {
+      var ok = (!q || li.getAttribute('data-search').indexOf(q) !== -1) &&
+               (!cat || ('|' + li.getAttribute('data-cats') + '|').indexOf('|' + cat + '|') !== -1);
+      li.hidden = !ok;
+      if (ok) shown++;
+    });
+    root.querySelectorAll('.ptl-month').forEach(function (m) { m.hidden = !m.querySelector('.ptl-item:not([hidden])'); });
+    years.forEach(function (y) {
+      var n = y.querySelectorAll('.ptl-item:not([hidden])').length;
+      y.hidden = n === 0;
+      var label = y.querySelector('.ptl-n');
+      if (label) label.textContent = n + (n === 1 ? ' post' : ' posts');
+    });
+    count.textContent = shown === items.length ? items.length + ' posts' : shown + ' of ' + items.length + ' posts';
+    empty.hidden = shown !== 0;
+  }
+  search.addEventListener('input', filter);
+  category.addEventListener('change', filter);
+
+  // Order: reverse years, months and posts in place.
+  var newest = true;
+  function reverseChildren(parent, selector) {
+    var kids = Array.prototype.slice.call(parent.children).filter(function (el) { return el.matches(selector); });
+    var anchor = kids.length ? kids[kids.length - 1].nextSibling : null;
+    kids.reverse().forEach(function (el) { parent.insertBefore(el, anchor); });
+  }
+  orderBtn.addEventListener('click', function () {
+    newest = !newest;
+    reverseChildren(root, '.ptl-year');
+    years.forEach(function (y) { reverseChildren(y, '.ptl-month'); });
+    root.querySelectorAll('.ptl-items').forEach(function (ol) { reverseChildren(ol, '.ptl-item'); });
+    orderBtn.querySelector('span').textContent = newest ? 'Newest first' : 'Oldest first';
+    orderBtn.setAttribute('aria-label', newest ? 'Show oldest first' : 'Show newest first');
+    orderBtn.querySelector('i').className = newest ? 'bi bi-sort-down' : 'bi bi-sort-up';
+  });
+
+  // Posts per month, from the first post to the last; a bar jumps to its month.
+  function cadence() {
+    var byMonth = {}, keys = items.map(function (li) { return li.getAttribute('data-date').slice(0, 7); });
+    keys.forEach(function (k) { byMonth[k] = (byMonth[k] || 0) + 1; });
+    var sorted = keys.slice().sort();
+    if (!sorted.length) return;
+    var months = [], y = +sorted[0].slice(0, 4), m = +sorted[0].slice(5, 7);
+    var endY = +sorted[sorted.length - 1].slice(0, 4), endM = +sorted[sorted.length - 1].slice(5, 7);
+    while (y < endY || (y === endY && m <= endM)) {
+      months.push(y + '-' + (m < 10 ? '0' : '') + m);
+      m++; if (m > 12) { m = 1; y++; }
+    }
+    var W = 640, H = 92, L = 22, B = 18, max = Math.max.apply(null, months.map(function (k) { return byMonth[k] || 0; }));
+    var bw = (W - L) / months.length, ns = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'Posts per month from ' + months[0] + ' to ' + months[months.length - 1] + '; the busiest month had ' + max + ' posts');
+    function el(tag, attrs) { var n = document.createElementNS(ns, tag); for (var a in attrs) n.setAttribute(a, attrs[a]); return n; }
+    svg.appendChild(el('line', { x1: L, x2: W, y1: H - B, y2: H - B }));
+    var top = el('text', { x: L - 4, y: 10, 'text-anchor': 'end' }); top.textContent = max; svg.appendChild(top);
+    var lastYear = '', lastLabel = -99;
+    months.forEach(function (k, i) {
+      var x = L + i * bw, n = byMonth[k] || 0;
+      if (k.slice(0, 4) !== lastYear) {
+        lastYear = k.slice(0, 4);
+        svg.appendChild(el('line', { x1: x, x2: x, y1: H - B, y2: H - B + 4 }));
+        if (x - lastLabel > 34) {  // a year that starts late leaves no room for the next label
+          lastLabel = x;
+          var t = el('text', { x: x + 2, y: H - 4 }); t.textContent = lastYear; svg.appendChild(t);
+        }
+      }
+      if (!n) return;
+      var h = Math.max(2, (H - B - 6) * n / max);
+      var r = el('rect', { 'class': 'ptl-col', x: x + 0.5, y: H - B - h, width: Math.max(1, bw - 1), height: h, rx: Math.min(2, bw / 3), tabindex: '0' });
+      var title = el('title', {}); title.textContent = k + ': ' + n + (n === 1 ? ' post' : ' posts'); r.appendChild(title);
+      function jump() {
+        search.value = ''; category.value = ''; filter();
+        var target = document.getElementById('posts-' + k);
+        if (!target) return;
+        target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+        target.querySelectorAll('.ptl-item').forEach(function (li) { li.classList.remove('ptl-flash'); void li.offsetWidth; li.classList.add('ptl-flash'); });
+      }
+      r.addEventListener('click', jump);
+      r.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(); } });
+      svg.appendChild(r);
+    });
+    document.getElementById('ptl-cadence-chart').appendChild(svg);
+    document.getElementById('ptl-cadence').hidden = false;
+  }
+
+  root.querySelector('.ptl-bar').hidden = false;
+  cadence();
+  var saved = store.get('posts-view');
+  setView(saved === 'cards' || saved === 'list' ? saved : 'timeline');
+  filter();
+})();
+{% endraw %}
+</script>
