@@ -1,0 +1,91 @@
+# =============================================================================
+# verify/scenarios/posts-timeline.yml — a USER SCENARIO (scenario/v1)
+# =============================================================================
+# A visitor at /posts/ sees every post on a timeline grouped by year and month,
+# newest first, with a posts-per-month strip above it. They switch to Cards and
+# to List, narrow the posts by category and by a word in a title, and select a
+# month in the strip to jump to it.
+#
+# `timeline_matches_feed` checks that every post in the site's Atom feed is on
+# the timeline (the feed caps at its posts_limit, so it compares the feed's
+# entries against the timeline, not the other way round) and that no post is
+# listed twice. `filters`
+# records what each control left on screen, and fails when a filter shows a
+# post it should have hidden.
+# =============================================================================
+id: posts-timeline
+feature: PROFILE-009
+title: "Every post on one timeline, as cards or a list"
+description: "A visitor at /posts/ browses every post by year and month, switches between Timeline, Cards and List, filters by category and title, and jumps to a month from the posts-per-month strip."
+viewports:
+  - mobile
+  - { name: desktop-1366, width: 1366, height: 768 }
+steps:
+  - goto: /posts/
+  - expect: { status: 200 }
+  - expect: { visible: "#posts-timeline .ptl-bar" }
+  - expect: { count: { selector: "#posts-timeline .ptl-item", min: 40 } }
+  - expect: { count: { selector: "#ptl-cadence rect.ptl-col", min: 5 } }
+  - eval:
+      name: scroll_to_timeline
+      script: |-
+        (() => { document.getElementById('posts-timeline').scrollIntoView({ block: 'start' }); return true; })()
+  - wait: { ms: 600 }
+  - screenshot: timeline
+  - eval:
+      name: timeline_matches_feed
+      script: |-
+        (async () => {
+          const feed = new DOMParser().parseFromString(await (await fetch('/feed.xml')).text(), 'application/xml');
+          const path = (u) => new URL(u, location.origin).pathname;
+          const links = [...document.querySelectorAll('.ptl-title a')].map((a) => path(a.href));
+          const listed = new Set(links);
+          if (listed.size !== links.length) throw new Error((links.length - listed.size) + ' post(s) listed twice');
+          const inFeed = [...feed.querySelectorAll('entry > link[rel="alternate"]')].map((l) => path(l.getAttribute('href')));
+          const missing = inFeed.filter((u) => !listed.has(u));
+          if (missing.length) throw new Error(missing.length + ' feed post(s) missing from the timeline: ' + missing.join(', '));
+          return { timeline: listed.size, feed: inFeed.length };
+        })()
+  - click: "[data-view-btn='cards']"
+  - wait: { ms: 400 }
+  - expect: { visible: "#posts-timeline[data-view='cards']" }
+  - screenshot: cards
+  - click: "[data-view-btn='list']"
+  - wait: { ms: 400 }
+  - expect: { visible: "#posts-timeline[data-view='list']" }
+  - screenshot: list
+  - eval:
+      name: filters
+      script: |-
+        (() => {
+          const shown = () => [...document.querySelectorAll('.ptl-item:not([hidden])')];
+          const set = (id, v, ev) => { const el = document.getElementById(id); el.value = v; el.dispatchEvent(new Event(ev)); };
+          const cat = document.querySelector('#ptl-category option:nth-child(2)').value;
+          set('ptl-category', cat, 'change');
+          const byCat = shown();
+          const wrongCat = byCat.filter((li) => !('|' + li.dataset.cats + '|').includes('|' + cat + '|'));
+          set('ptl-category', '', 'change');
+          set('ptl-search', 'jekyll', 'input');
+          const byWord = shown();
+          const wrongWord = byWord.filter((li) => !li.dataset.search.includes('jekyll'));
+          set('ptl-search', '', 'input');
+          if (wrongCat.length || wrongWord.length) throw new Error('filter showed ' + (wrongCat.length + wrongWord.length) + ' post(s) it should have hidden');
+          return { category: cat, byCategory: byCat.length, byWord: byWord.length, total: shown().length, count: document.getElementById('ptl-count').textContent };
+        })()
+  - click: "[data-view-btn='timeline']"
+  - eval:
+      name: jump_to_month
+      script: |-
+        (async () => {
+          const bar = document.querySelectorAll('#ptl-cadence rect.ptl-col')[2];
+          const month = bar.querySelector('title').textContent.slice(0, 7);
+          bar.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+          await new Promise((r) => setTimeout(r, 900));
+          // the month must be on screen; near the end of the page it cannot scroll to the top
+          const r = document.getElementById('posts-' + month).getBoundingClientRect();
+          if (r.top < 0 || r.top > innerHeight - 40) throw new Error('month ' + month + ' is at ' + Math.round(r.top) + 'px, off screen after the jump');
+          return { month, top: Math.round(r.top), viewport: innerHeight };
+        })()
+  - screenshot: month-jump
+  - expect: { no_horizontal_scroll: true }
+  - expect: { no_console_errors: true }

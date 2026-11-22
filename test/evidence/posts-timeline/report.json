@@ -1,0 +1,494 @@
+{
+  "id": "posts-timeline",
+  "title": "Every post on one timeline, as cards or a list",
+  "features": [
+    "PROFILE-009"
+  ],
+  "path": "verify/scenarios/posts-timeline.yml",
+  "started": "2026-11-22T15:11:01.658Z",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/posts/",
+          "ok": true,
+          "ms": 672
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#posts-timeline .ptl-bar"
+          },
+          "ok": true,
+          "ms": 30
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "#posts-timeline .ptl-item",
+              "min": 40
+            }
+          },
+          "ok": true,
+          "value": 50,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "#ptl-cadence rect.ptl-col",
+              "min": 5
+            }
+          },
+          "ok": true,
+          "value": 20,
+          "ms": 2
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "scroll_to_timeline",
+            "script": "(() => { document.getElementById('posts-timeline').scrollIntoView({ block: 'start' }); return true; })()"
+          },
+          "ok": true,
+          "value": true,
+          "ms": 3
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 600
+          },
+          "ok": true,
+          "ms": 601
+        },
+        {
+          "step": "screenshot",
+          "arg": "timeline",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/mobile-timeline.png",
+          "ms": 53
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "timeline_matches_feed",
+            "script": "(async () => {\n  const feed = new DOMParser().parseFromString(await (await fetch('/feed.xml')).text(), 'application/xml');\n  const path = (u) => new URL(u, location.origin).pathname;\n  const links = [...document.querySelectorAll('.ptl-title a')].map((a) => path(a.href));\n  const listed = new Set(links);\n  if (listed.size !== links.length) throw new Error((links.length - listed.size) + ' post(s) listed twice');\n  const inFeed = [...feed.querySelectorAll('entry > link[rel=\"alternate\"]')].map((l) => path(l.getAttribute('href')));\n  const missing = inFeed.filter((u) => !listed.has(u));\n  if (missing.length) throw new Error(missing.length + ' feed post(s) missing from the timeline: ' + missing.join(', '));\n  return { timeline: listed.size, feed: inFeed.length };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "timeline": 50,
+            "feed": 10
+          },
+          "ms": 10
+        },
+        {
+          "step": "click",
+          "arg": "[data-view-btn='cards']",
+          "ok": true,
+          "ms": 86
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 400
+          },
+          "ok": true,
+          "ms": 402
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#posts-timeline[data-view='cards']"
+          },
+          "ok": true,
+          "ms": 6
+        },
+        {
+          "step": "screenshot",
+          "arg": "cards",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/mobile-cards.png",
+          "ms": 70
+        },
+        {
+          "step": "click",
+          "arg": "[data-view-btn='list']",
+          "ok": true,
+          "ms": 44
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 400
+          },
+          "ok": true,
+          "ms": 400
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#posts-timeline[data-view='list']"
+          },
+          "ok": true,
+          "ms": 5
+        },
+        {
+          "step": "screenshot",
+          "arg": "list",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/mobile-list.png",
+          "ms": 55
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "filters",
+            "script": "(() => {\n  const shown = () => [...document.querySelectorAll('.ptl-item:not([hidden])')];\n  const set = (id, v, ev) => { const el = document.getElementById(id); el.value = v; el.dispatchEvent(new Event(ev)); };\n  const cat = document.querySelector('#ptl-category option:nth-child(2)').value;\n  set('ptl-category', cat, 'change');\n  const byCat = shown();\n  const wrongCat = byCat.filter((li) => !('|' + li.dataset.cats + '|').includes('|' + cat + '|'));\n  set('ptl-category', '', 'change');\n  set('ptl-search', 'jekyll', 'input');\n  const byWord = shown();\n  const wrongWord = byWord.filter((li) => !li.dataset.search.includes('jekyll'));\n  set('ptl-search', '', 'input');\n  if (wrongCat.length || wrongWord.length) throw new Error('filter showed ' + (wrongCat.length + wrongWord.length) + ' post(s) it should have hidden');\n  return { category: cat, byCategory: byCat.length, byWord: byWord.length, total: shown().length, count: document.getElementById('ptl-count').textContent };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "category": "gpt",
+            "byCategory": 6,
+            "byWord": 3,
+            "total": 50,
+            "count": "50 posts"
+          },
+          "ms": 2
+        },
+        {
+          "step": "click",
+          "arg": "[data-view-btn='timeline']",
+          "ok": true,
+          "ms": 53
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "jump_to_month",
+            "script": "(async () => {\n  const bar = document.querySelectorAll('#ptl-cadence rect.ptl-col')[2];\n  const month = bar.querySelector('title').textContent.slice(0, 7);\n  bar.dispatchEvent(new MouseEvent('click', { bubbles: true }));\n  await new Promise((r) => setTimeout(r, 900));\n  // the month must be on screen; near the end of the page it cannot scroll to the top\n  const r = document.getElementById('posts-' + month).getBoundingClientRect();\n  if (r.top < 0 || r.top > innerHeight - 40) throw new Error('month ' + month + ' is at ' + Math.round(r.top) + 'px, off screen after the jump');\n  return { month, top: Math.round(r.top), viewport: innerHeight };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "month": "2022-01",
+            "top": 721,
+            "viewport": 844
+          },
+          "ms": 905
+        },
+        {
+          "step": "screenshot",
+          "arg": "month-jump",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/mobile-month-jump.png",
+          "ms": 53
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 390,
+            "cw": 390
+          },
+          "ms": 2
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_console_errors": true
+          },
+          "ok": true,
+          "ms": 0
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/posts-timeline/mobile-timeline.png",
+        "test/evidence/posts-timeline/mobile-cards.png",
+        "test/evidence/posts-timeline/mobile-list.png",
+        "test/evidence/posts-timeline/mobile-month-jump.png"
+      ],
+      "evals": {
+        "scroll_to_timeline": true,
+        "timeline_matches_feed": {
+          "timeline": 50,
+          "feed": 10
+        },
+        "filters": {
+          "category": "gpt",
+          "byCategory": 6,
+          "byWord": 3,
+          "total": 50,
+          "count": "50 posts"
+        },
+        "jump_to_month": {
+          "month": "2022-01",
+          "top": 721,
+          "viewport": 844
+        }
+      },
+      "final_url": "http://127.0.0.1:4002/posts/"
+    },
+    {
+      "name": "desktop-1366",
+      "width": 1366,
+      "height": 768,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/posts/",
+          "ok": true,
+          "ms": 701
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#posts-timeline .ptl-bar"
+          },
+          "ok": true,
+          "ms": 25
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "#posts-timeline .ptl-item",
+              "min": 40
+            }
+          },
+          "ok": true,
+          "value": 50,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": "#ptl-cadence rect.ptl-col",
+              "min": 5
+            }
+          },
+          "ok": true,
+          "value": 20,
+          "ms": 4
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "scroll_to_timeline",
+            "script": "(() => { document.getElementById('posts-timeline').scrollIntoView({ block: 'start' }); return true; })()"
+          },
+          "ok": true,
+          "value": true,
+          "ms": 1
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 600
+          },
+          "ok": true,
+          "ms": 601
+        },
+        {
+          "step": "screenshot",
+          "arg": "timeline",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/desktop-1366-timeline.png",
+          "ms": 75
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "timeline_matches_feed",
+            "script": "(async () => {\n  const feed = new DOMParser().parseFromString(await (await fetch('/feed.xml')).text(), 'application/xml');\n  const path = (u) => new URL(u, location.origin).pathname;\n  const links = [...document.querySelectorAll('.ptl-title a')].map((a) => path(a.href));\n  const listed = new Set(links);\n  if (listed.size !== links.length) throw new Error((links.length - listed.size) + ' post(s) listed twice');\n  const inFeed = [...feed.querySelectorAll('entry > link[rel=\"alternate\"]')].map((l) => path(l.getAttribute('href')));\n  const missing = inFeed.filter((u) => !listed.has(u));\n  if (missing.length) throw new Error(missing.length + ' feed post(s) missing from the timeline: ' + missing.join(', '));\n  return { timeline: listed.size, feed: inFeed.length };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "timeline": 50,
+            "feed": 10
+          },
+          "ms": 7
+        },
+        {
+          "step": "click",
+          "arg": "[data-view-btn='cards']",
+          "ok": true,
+          "ms": 55
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 400
+          },
+          "ok": true,
+          "ms": 400
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#posts-timeline[data-view='cards']"
+          },
+          "ok": true,
+          "ms": 5
+        },
+        {
+          "step": "screenshot",
+          "arg": "cards",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/desktop-1366-cards.png",
+          "ms": 95
+        },
+        {
+          "step": "click",
+          "arg": "[data-view-btn='list']",
+          "ok": true,
+          "ms": 46
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 400
+          },
+          "ok": true,
+          "ms": 400
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "#posts-timeline[data-view='list']"
+          },
+          "ok": true,
+          "ms": 4
+        },
+        {
+          "step": "screenshot",
+          "arg": "list",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/desktop-1366-list.png",
+          "ms": 92
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "filters",
+            "script": "(() => {\n  const shown = () => [...document.querySelectorAll('.ptl-item:not([hidden])')];\n  const set = (id, v, ev) => { const el = document.getElementById(id); el.value = v; el.dispatchEvent(new Event(ev)); };\n  const cat = document.querySelector('#ptl-category option:nth-child(2)').value;\n  set('ptl-category', cat, 'change');\n  const byCat = shown();\n  const wrongCat = byCat.filter((li) => !('|' + li.dataset.cats + '|').includes('|' + cat + '|'));\n  set('ptl-category', '', 'change');\n  set('ptl-search', 'jekyll', 'input');\n  const byWord = shown();\n  const wrongWord = byWord.filter((li) => !li.dataset.search.includes('jekyll'));\n  set('ptl-search', '', 'input');\n  if (wrongCat.length || wrongWord.length) throw new Error('filter showed ' + (wrongCat.length + wrongWord.length) + ' post(s) it should have hidden');\n  return { category: cat, byCategory: byCat.length, byWord: byWord.length, total: shown().length, count: document.getElementById('ptl-count').textContent };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "category": "gpt",
+            "byCategory": 6,
+            "byWord": 3,
+            "total": 50,
+            "count": "50 posts"
+          },
+          "ms": 3
+        },
+        {
+          "step": "click",
+          "arg": "[data-view-btn='timeline']",
+          "ok": true,
+          "ms": 50
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "jump_to_month",
+            "script": "(async () => {\n  const bar = document.querySelectorAll('#ptl-cadence rect.ptl-col')[2];\n  const month = bar.querySelector('title').textContent.slice(0, 7);\n  bar.dispatchEvent(new MouseEvent('click', { bubbles: true }));\n  await new Promise((r) => setTimeout(r, 900));\n  // the month must be on screen; near the end of the page it cannot scroll to the top\n  const r = document.getElementById('posts-' + month).getBoundingClientRect();\n  if (r.top < 0 || r.top > innerHeight - 40) throw new Error('month ' + month + ' is at ' + Math.round(r.top) + 'px, off screen after the jump');\n  return { month, top: Math.round(r.top), viewport: innerHeight };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "month": "2022-01",
+            "top": 491,
+            "viewport": 768
+          },
+          "ms": 906
+        },
+        {
+          "step": "screenshot",
+          "arg": "month-jump",
+          "ok": true,
+          "file": "test/evidence/posts-timeline/desktop-1366-month-jump.png",
+          "ms": 70
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 1366,
+            "cw": 1366
+          },
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_console_errors": true
+          },
+          "ok": true,
+          "ms": 0
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/posts-timeline/desktop-1366-timeline.png",
+        "test/evidence/posts-timeline/desktop-1366-cards.png",
+        "test/evidence/posts-timeline/desktop-1366-list.png",
+        "test/evidence/posts-timeline/desktop-1366-month-jump.png"
+      ],
+      "evals": {
+        "scroll_to_timeline": true,
+        "timeline_matches_feed": {
+          "timeline": 50,
+          "feed": 10
+        },
+        "filters": {
+          "category": "gpt",
+          "byCategory": 6,
+          "byWord": 3,
+          "total": 50,
+          "count": "50 posts"
+        },
+        "jump_to_month": {
+          "month": "2022-01",
+          "top": 491,
+          "viewport": 768
+        }
+      },
+      "final_url": "http://127.0.0.1:4002/posts/"
+    }
+  ],
+  "ok": true,
+  "finished": "2026-11-22T15:11:08.734Z",
+  "base": "http://127.0.0.1:4002"
+}
