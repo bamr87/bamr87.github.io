@@ -99,3 +99,19 @@ features:
     prd: ["§1.1"]
     surface: docs
     docs: "docs/constitution.md"
+  - id: PROFILE-009
+    title: "Posts timeline and views"
+    description: "Every post at `/posts/` as a timeline by year and month, newest first, with a posts-per-month strip that jumps to a month, Timeline / Cards / List views, a category filter, a title or tag search and newest/oldest order; without JavaScript the timeline still renders in full"
+    implemented: true
+    status: shipped
+    prd: [TBD]
+    surface: ui
+    link: "pages/_posts/2000-01-01-index.md"
+    docs: "_includes/posts-timeline.html"
+    scenarios:
+      - verify/scenarios/posts-timeline.yml
+    evidence:
+      - test/evidence/posts-timeline
+    verified:
+      date: 2026-11-22
+      by: agent
