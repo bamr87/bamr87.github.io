@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-21T02:11:29Z
+lastmod: 2026-11-22T02:12:04Z
 ---
 
 
@@ -132,6 +132,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | The docked assistant: Claude Code beside every console page, able to see the page a person has open and, in the mode they choose, use it | bamr87 | console, assistant, mcp, page-bridge, claude-code | /assist |
 | The Overview tells the fleet's story: health, budget direction, what waits on the maintainer, the harness standard, flow, and one freshness timeline | bamr87 | console, overview, dataviz, trends | /overview |
 | The fleet assistant baseline: any fleet page can be shared with a Claude Code session, through one page bridge with an adapter per platform | bamr87 | assistant, kit, page-bridge, mcp, claude-code, fleet | /bamr87/templates/assistant/README.md |
+| The assistant, observed: its messages, what its sessions did to pages, the pages sharing themselves and its inventory entry, from one document on every surface | bamr87 | console, assistant, observability, agent-inventory, page-bridge, lake, mcp | /assist |
+| Fleet link check: every live link, checked once | bamr87 | links, quality, loop | /bamr87/tools/link_check.py |
+| Site builds: the console published at another address, with the bashOS desktop as its front door | bamr87 | console, frontend, bashos, desktop, portal, instances | /bamr87/tools/console/build-pages.sh |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -221,6 +224,14 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Reversing entries for posted journal entries | djangoerp |  | /djangoerp/journal/services.py |
 | Constitution missions | djangoerp |  | /djangoerp/docs/constitution.md |
 | Landing page with setup steps, API map and feedback widget | djangoerp |  | / |
+| Agent simulation sandbox | djangoerp |  | /djangoerp/simulation/engine.py |
+| Claude-driven agents with bounded decisions | djangoerp |  | /djangoerp/simulation/brains.py |
+| Simulation console | djangoerp |  | /console/ |
+| What-if experiments | djangoerp |  | /djangoerp/simulation/experiments.py |
+| Labor and overhead absorption in work-order completion | djangoerp |  | /djangoerp/manufacturing/services.py |
+| Workspace app shell | djangoerp |  | /app/ |
+| Document flow, accounting and stock impact | djangoerp |  | /djangoerp/workspace/services.py |
+| Global search, work queues and statements in the shell | djangoerp |  | /app/finance/statements/ |
 | Python package with an EDGAR User-Agent config and tests | edgar-pipeline | phase-1 | /edgar-pipeline/pyproject.toml |
 | Standard CI gate | edgar-pipeline | ci | /edgar-pipeline/.github/workflows/ci.yml |
 | Constitution missions | edgar-pipeline |  | /edgar-pipeline/docs/constitution.md |
@@ -328,6 +339,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Evolve | README |  | /README/hooks.d |
 | Published fleet documentation site | README | site, mkdocs, navigation | / |
 | MCP get_doc tool | README | mcp, retrieval | /README/mcp/server.py |
+| MCP provenance and trust markers | README | mcp, security, provenance | /README/mcp/server.py |
 | Fleet survey and docs review | README | survey, docs-review | /README/scripts/context_engine/survey.py |
 | Collect | README |  | /README/scripts/context_engine/collect.py |
 | Obsidian vault | README |  | /README/scripts/context_engine/vault.py |
@@ -357,19 +369,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | CLI that reads a .schema file and prints tokens | schema-lang | phase-1 | /schema-lang/src/main.rs |
 | Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
 | Constitution missions | schema-lang |  | /schema-lang/docs/constitution.md |
-| Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
-| ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
-| StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
-| Git + GitHub repository creator | scripts | github, scaffolding | /scripts/git_init.sh |
-| Safe directory rename | scripts | filesystem | /scripts/rename-directory.sh |
-| Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
-| Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
-| install.sh standalone installer | scripts |  | /scripts/install.sh |
-| install.sh --uninstall | scripts | install | /scripts/install.sh |
-| Shell completions for the toolbelt | scripts | dx, completions | /scripts/completions/ |
-| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
-| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
-| Constitution missions | sec-lab |  | /sec-lab/docs/constitution.md |
 
 
 ## Requested / Backlog Features
@@ -515,7 +514,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
 | Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
 | Missions in constitution §1 | ragio-ai |  |  |
-| MCP provenance and trust markers | README | mcp, security, provenance | /README/mcp/server.py |
 | Missions in constitution §1 | README |  |  |
 | Neutral schemas and the single monthly number | recon-engine | build-step-1, core |  |
 | Six-bucket decomposition, gross not net, with transfer logging | recon-engine | build-step-2, core |  |
@@ -532,12 +530,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
 | Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
 | Language server (LSP) for editors | schema-lang | phase-3 |  |
-| Missions in constitution §1 | scripts |  |  |
-| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
-| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
-| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
-| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
-| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
 
 
 ---
@@ -545,4 +537,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-21T02:11:29Z
+Last updated: 2026-11-22T02:12:04Z

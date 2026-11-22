@@ -2,7 +2,7 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-21T02:11:33Z'
+generated_at: '2026-11-22T02:12:08Z'
 totals:
   public_repos: 43
   followers: 18
@@ -29,7 +29,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-20T20:29:48Z'
+  pushed_at: '2026-11-21T22:48:44Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -67,7 +67,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-21T02:05:04Z'
+  pushed_at: '2026-11-21T23:01:38Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -187,7 +187,7 @@ projects:
   - react
   - sec-edgar
   - typescript
-  pushed_at: '2026-11-18T19:39:49Z'
+  pushed_at: '2026-11-21T14:53:20Z'
   license: MIT
   repo_url: https://github.com/bamr87/fredgar-ai
   site_url: https://bamr87.github.io/fredgar-ai/
@@ -205,7 +205,7 @@ projects:
   - mcp
   - mkdocs
   - python
-  pushed_at: '2026-11-19T08:03:36Z'
+  pushed_at: '2026-11-21T23:07:10Z'
   license: MIT
   repo_url: https://github.com/bamr87/README
   site_url: https://bamr87.github.io/README/
