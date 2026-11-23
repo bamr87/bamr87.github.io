@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-22T02:12:04Z
+lastmod: 2026-11-23T02:13:40Z
 ---
 
 
@@ -142,6 +142,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | The Quest Log series page | bamr87.github.io |  | /bamr87.github.io/pages/quest-log.md |
 | Improve-this-page feedback widget | bamr87.github.io |  | /bamr87.github.io/_config.yml |
 | Paginated post index | bamr87.github.io |  | /bamr87.github.io/pages/index.html |
+| Posts timeline and views | bamr87.github.io |  | /bamr87.github.io/pages/_posts/2000-01-01-index.md |
 | Web app (bamr87.github.io/bashcrawl) | bashcrawl |  | /bashcrawl/web/index.html |
 | Classic terminal dungeon | bashcrawl |  | /bashcrawl/entrance |
 | XP/score persistence across modes | bashcrawl |  |  |
@@ -369,6 +370,19 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | CLI that reads a .schema file and prints tokens | schema-lang | phase-1 | /schema-lang/src/main.rs |
 | Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
 | Constitution missions | schema-lang |  | /schema-lang/docs/constitution.md |
+| Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
+| ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
+| StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
+| Git + GitHub repository creator | scripts | github, scaffolding | /scripts/git_init.sh |
+| Safe directory rename | scripts | filesystem | /scripts/rename-directory.sh |
+| Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
+| Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
+| install.sh standalone installer | scripts |  | /scripts/install.sh |
+| install.sh --uninstall | scripts | install | /scripts/install.sh |
+| Shell completions for the toolbelt | scripts | dx, completions | /scripts/completions/ |
+| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
+| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
+| Constitution missions | sec-lab |  | /sec-lab/docs/constitution.md |
 
 
 ## Requested / Backlog Features
@@ -530,6 +544,12 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
 | Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
 | Language server (LSP) for editors | schema-lang | phase-3 |  |
+| Missions in constitution §1 | scripts |  |  |
+| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
+| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
+| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
+| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
+| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
 
 
 ---
@@ -537,4 +557,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-22T02:12:04Z
+Last updated: 2026-11-23T02:13:40Z
