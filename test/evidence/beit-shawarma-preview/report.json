@@ -5,7 +5,7 @@
     "PROFILE-010"
   ],
   "path": "verify/scenarios/beit-shawarma-preview.yml",
-  "started": "2026-11-24T20:46:58.529Z",
+  "started": "2026-11-24T21:19:32.174Z",
   "viewports": [
     {
       "name": "mobile",
@@ -17,7 +17,7 @@
           "step": "goto",
           "arg": "/beit-shawarma/",
           "ok": true,
-          "ms": 938
+          "ms": 1180
         },
         {
           "step": "expect",
@@ -30,10 +30,10 @@
         {
           "step": "expect",
           "arg": {
-            "visible": ".preview-bar"
+            "visible": ".announce--preview"
           },
           "ok": true,
-          "ms": 30
+          "ms": 29
         },
         {
           "step": "expect",
@@ -53,7 +53,7 @@
             "sw": 390,
             "cw": 390
           },
-          "ms": 2
+          "ms": 1
         },
         {
           "step": "eval",
@@ -76,13 +76,13 @@
           "arg": "home",
           "ok": true,
           "file": "test/evidence/beit-shawarma-preview/mobile-home.png",
-          "ms": 23
+          "ms": 24
         },
         {
           "step": "click",
           "arg": "main a[href='menu/']",
           "ok": true,
-          "ms": 44
+          "ms": 40
         },
         {
           "step": "wait",
@@ -90,19 +90,84 @@
             "url": "/beit-shawarma/menu/"
           },
           "ok": true,
-          "ms": 27
+          "ms": 28
         },
         {
           "step": "expect",
           "arg": {
             "count": {
-              "selector": ".dish",
-              "min": 33
+              "selector": ".menu-card",
+              "min": 6
             }
           },
           "ok": true,
-          "value": 33,
-          "ms": 26
+          "value": 6,
+          "ms": 25
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 390,
+            "cw": 390
+          },
+          "ms": 3
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "menu_prices",
+            "script": "(() => {\n  const prices = [...document.querySelectorAll('.menu-item .price')].map((p) => p.textContent.trim());\n  const bad = prices.filter((p) => !/^\\$\\d+\\.\\d{2}$/.test(p));\n  if (prices.length !== 37) throw new Error('expected 37 priced menu items, found ' + prices.length);\n  if (bad.length) throw new Error('malformed prices: ' + bad.join(', '));\n  return { items: prices.length };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "items": 37
+          },
+          "ms": 1
+        },
+        {
+          "step": "screenshot",
+          "arg": "menu",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/mobile-menu.png",
+          "ms": 47
+        },
+        {
+          "step": "click",
+          "arg": ".tabs a[href='../catering/']",
+          "ok": true,
+          "ms": 43
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "url": "/beit-shawarma/catering/"
+          },
+          "ok": true,
+          "ms": 16
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": ".tray-card",
+              "min": 2
+            }
+          },
+          "ok": true,
+          "value": 2,
+          "ms": 18
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "form#catering-form"
+          },
+          "ok": true,
+          "ms": 3
         },
         {
           "step": "expect",
@@ -119,27 +184,30 @@
         {
           "step": "eval",
           "arg": {
-            "name": "prices",
-            "script": "(() => {\n  const prices = [...document.querySelectorAll('.dish .price, .price-list .price')].map((p) => p.textContent.trim());\n  const bad = prices.filter((p) => !/^\\$\\d+\\.\\d{2}$/.test(p));\n  if (prices.length !== 39) throw new Error('expected 39 priced items, found ' + prices.length);\n  if (bad.length) throw new Error('malformed prices: ' + bad.join(', '));\n  return { items: prices.length };\n})()"
+            "name": "tray_prices",
+            "script": "(() => {\n  const prices = [...document.querySelectorAll('.tray-card .price')].map((p) => p.textContent.trim());\n  if (prices.length !== 2 || prices.some((p) => !/^\\$\\d+\\.\\d{2}$/.test(p))) throw new Error('tray prices: ' + prices.join(', '));\n  return { trays: prices };\n})()"
           },
           "ok": true,
           "value": {
-            "items": 39
+            "trays": [
+              "$175.99",
+              "$90.99"
+            ]
           },
           "ms": 1
         },
         {
           "step": "screenshot",
-          "arg": "menu",
+          "arg": "catering",
           "ok": true,
-          "file": "test/evidence/beit-shawarma-preview/mobile-menu.png",
-          "ms": 32
+          "file": "test/evidence/beit-shawarma-preview/mobile-catering.png",
+          "ms": 34
         },
         {
           "step": "goto",
           "arg": "/beit-shawarma/contact/",
           "ok": true,
-          "ms": 534
+          "ms": 527
         },
         {
           "step": "expect",
@@ -152,23 +220,23 @@
         {
           "step": "expect",
           "arg": {
-            "visible": "form[data-composer]"
+            "visible": "form#contact-form"
           },
           "ok": true,
-          "ms": 25
+          "ms": 24
         },
         {
           "step": "screenshot",
           "arg": "contact",
           "ok": true,
           "file": "test/evidence/beit-shawarma-preview/mobile-contact.png",
-          "ms": 24
+          "ms": 13
         },
         {
           "step": "goto",
           "arg": "/beit-shawarma/home/",
           "ok": true,
-          "ms": 535
+          "ms": 534
         },
         {
           "step": "wait",
@@ -186,7 +254,7 @@
           },
           "ok": true,
           "value": "/beit-shawarma/",
-          "ms": 4
+          "ms": 3
         },
         {
           "step": "expect",
@@ -209,6 +277,7 @@
       "screenshots": [
         "test/evidence/beit-shawarma-preview/mobile-home.png",
         "test/evidence/beit-shawarma-preview/mobile-menu.png",
+        "test/evidence/beit-shawarma-preview/mobile-catering.png",
         "test/evidence/beit-shawarma-preview/mobile-contact.png"
       ],
       "evals": {
@@ -219,8 +288,14 @@
             "Restaurant"
           ]
         },
-        "prices": {
-          "items": 39
+        "menu_prices": {
+          "items": 37
+        },
+        "tray_prices": {
+          "trays": [
+            "$175.99",
+            "$90.99"
+          ]
         },
         "legacy_home_redirect": "/beit-shawarma/"
       },
@@ -236,7 +311,7 @@
           "step": "goto",
           "arg": "/beit-shawarma/",
           "ok": true,
-          "ms": 892
+          "ms": 682
         },
         {
           "step": "expect",
@@ -249,10 +324,10 @@
         {
           "step": "expect",
           "arg": {
-            "visible": ".preview-bar"
+            "visible": ".announce--preview"
           },
           "ok": true,
-          "ms": 24
+          "ms": 32
         },
         {
           "step": "expect",
@@ -295,13 +370,13 @@
           "arg": "home",
           "ok": true,
           "file": "test/evidence/beit-shawarma-preview/desktop-1366-home.png",
-          "ms": 49
+          "ms": 68
         },
         {
           "step": "click",
           "arg": "main a[href='menu/']",
           "ok": true,
-          "ms": 30
+          "ms": 45
         },
         {
           "step": "wait",
@@ -309,19 +384,19 @@
             "url": "/beit-shawarma/menu/"
           },
           "ok": true,
-          "ms": 22
+          "ms": 27
         },
         {
           "step": "expect",
           "arg": {
             "count": {
-              "selector": ".dish",
-              "min": 33
+              "selector": ".menu-card",
+              "min": 6
             }
           },
           "ok": true,
-          "value": 33,
-          "ms": 36
+          "value": 6,
+          "ms": 26
         },
         {
           "step": "expect",
@@ -338,12 +413,12 @@
         {
           "step": "eval",
           "arg": {
-            "name": "prices",
-            "script": "(() => {\n  const prices = [...document.querySelectorAll('.dish .price, .price-list .price')].map((p) => p.textContent.trim());\n  const bad = prices.filter((p) => !/^\\$\\d+\\.\\d{2}$/.test(p));\n  if (prices.length !== 39) throw new Error('expected 39 priced items, found ' + prices.length);\n  if (bad.length) throw new Error('malformed prices: ' + bad.join(', '));\n  return { items: prices.length };\n})()"
+            "name": "menu_prices",
+            "script": "(() => {\n  const prices = [...document.querySelectorAll('.menu-item .price')].map((p) => p.textContent.trim());\n  const bad = prices.filter((p) => !/^\\$\\d+\\.\\d{2}$/.test(p));\n  if (prices.length !== 37) throw new Error('expected 37 priced menu items, found ' + prices.length);\n  if (bad.length) throw new Error('malformed prices: ' + bad.join(', '));\n  return { items: prices.length };\n})()"
           },
           "ok": true,
           "value": {
-            "items": 39
+            "items": 37
           },
           "ms": 1
         },
@@ -352,13 +427,81 @@
           "arg": "menu",
           "ok": true,
           "file": "test/evidence/beit-shawarma-preview/desktop-1366-menu.png",
-          "ms": 47
+          "ms": 51
+        },
+        {
+          "step": "click",
+          "arg": ".tabs a[href='../catering/']",
+          "ok": true,
+          "ms": 56
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "url": "/beit-shawarma/catering/"
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": ".tray-card",
+              "min": 2
+            }
+          },
+          "ok": true,
+          "value": 2,
+          "ms": 19
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "form#catering-form"
+          },
+          "ok": true,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 1366,
+            "cw": 1366
+          },
+          "ms": 1
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "tray_prices",
+            "script": "(() => {\n  const prices = [...document.querySelectorAll('.tray-card .price')].map((p) => p.textContent.trim());\n  if (prices.length !== 2 || prices.some((p) => !/^\\$\\d+\\.\\d{2}$/.test(p))) throw new Error('tray prices: ' + prices.join(', '));\n  return { trays: prices };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "trays": [
+              "$175.99",
+              "$90.99"
+            ]
+          },
+          "ms": 1
+        },
+        {
+          "step": "screenshot",
+          "arg": "catering",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/desktop-1366-catering.png",
+          "ms": 37
         },
         {
           "step": "goto",
           "arg": "/beit-shawarma/contact/",
           "ok": true,
-          "ms": 531
+          "ms": 533
         },
         {
           "step": "expect",
@@ -371,23 +514,23 @@
         {
           "step": "expect",
           "arg": {
-            "visible": "form[data-composer]"
+            "visible": "form#contact-form"
           },
           "ok": true,
-          "ms": 21
+          "ms": 23
         },
         {
           "step": "screenshot",
           "arg": "contact",
           "ok": true,
           "file": "test/evidence/beit-shawarma-preview/desktop-1366-contact.png",
-          "ms": 45
+          "ms": 44
         },
         {
           "step": "goto",
           "arg": "/beit-shawarma/home/",
           "ok": true,
-          "ms": 530
+          "ms": 536
         },
         {
           "step": "wait",
@@ -395,7 +538,7 @@
             "ms": 1500
           },
           "ok": true,
-          "ms": 1501
+          "ms": 1502
         },
         {
           "step": "eval",
@@ -405,7 +548,7 @@
           },
           "ok": true,
           "value": "/beit-shawarma/",
-          "ms": 3
+          "ms": 4
         },
         {
           "step": "expect",
@@ -413,7 +556,7 @@
             "text": "Tastes like home."
           },
           "ok": true,
-          "ms": 2
+          "ms": 1
         },
         {
           "step": "expect",
@@ -428,6 +571,7 @@
       "screenshots": [
         "test/evidence/beit-shawarma-preview/desktop-1366-home.png",
         "test/evidence/beit-shawarma-preview/desktop-1366-menu.png",
+        "test/evidence/beit-shawarma-preview/desktop-1366-catering.png",
         "test/evidence/beit-shawarma-preview/desktop-1366-contact.png"
       ],
       "evals": {
@@ -438,8 +582,14 @@
             "Restaurant"
           ]
         },
-        "prices": {
-          "items": 39
+        "menu_prices": {
+          "items": 37
+        },
+        "tray_prices": {
+          "trays": [
+            "$175.99",
+            "$90.99"
+          ]
         },
         "legacy_home_redirect": "/beit-shawarma/"
       },
@@ -447,6 +597,6 @@
     }
   ],
   "ok": true,
-  "finished": "2026-11-24T20:47:06.098Z",
+  "finished": "2026-11-24T21:19:40.061Z",
   "base": "http://127.0.0.1:4000"
 }

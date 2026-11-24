@@ -38,5 +38,8 @@
     { "icon": "halal", "title": "100% halal", "text": "Every plate on our menu is halal." },
     { "icon": "tray", "title": "Party trays", "text": "Feeding a crowd? Trays for 4–5 or 8–10 people." }
   ],
-  "signature": ["chicken-shawarma-over-rice", "beef-shawarma-over-rice", "mix-grill-over-rice"]
+  "_featured": "Menu item ids shown in the home page's 'Off the grill' carousel, in order.",
+  "featured": ["mix-grill-over-rice", "chicken-shawarma-over-rice", "beef-shawarma-over-rice", "shish-tawook-over-rice", "kabab-over-rice", "falafel-over-rice"],
+  "_announcement": "The slim bar above the header on every page. A preview build replaces the text with a preview notice.",
+  "announcement": { "text": "Party trays for 4–10 people. Call at least 45 minutes ahead.", "label": "Party trays", "href": "catering/" }
 }

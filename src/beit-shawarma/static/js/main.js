@@ -19,7 +19,7 @@
     doc.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setNav(false); toggle.focus(); }
     });
-    window.matchMedia('(min-width: 861px)').addEventListener('change', function (m) { if (m.matches) setNav(false); });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', function (m) { if (m.matches) setNav(false); });
   }
 
   /* ---------- open / closed status, in the restaurant's time zone ---------- */
@@ -101,36 +101,66 @@
         current = a;
         chipBar.scrollTo({ left: a.offsetLeft - chipBar.offsetLeft - 16, behavior: 'smooth' });
       });
-    }, { rootMargin: '-140px 0px -60% 0px' });
-    doc.querySelectorAll('.menu-section').forEach(function (s) { io.observe(s); });
+    }, { rootMargin: '-160px 0px -60% 0px' });
+    doc.querySelectorAll('.menu-card').forEach(function (s) { io.observe(s); });
   }
 
-  /* ---------- contact: compose a WhatsApp message or an email ----------
-     The destinations come from window.BEIT_CONTACT, a constant the build writes into the contact
-     page, never from HTML attributes; the visitor's words are always URI-encoded. */
-  var form = doc.querySelector('[data-composer]');
+  /* ---------- featured carousel: previous / next ---------- */
+  doc.querySelectorAll('[data-carousel]').forEach(function (car) {
+    var track = car.querySelector('.carousel-track');
+    var prev = car.querySelector('.carousel-prev');
+    var next = car.querySelector('.carousel-next');
+    if (!track || !prev || !next) return;
+    function step(dir) {
+      var slide = track.querySelector('.slide');
+      var by = slide ? slide.getBoundingClientRect().width + 20 : track.clientWidth * 0.8;
+      track.scrollBy({ left: dir * by, behavior: 'smooth' });
+    }
+    function edges() {
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    }
+    prev.hidden = false; next.hidden = false; // the buttons exist only for visitors with JavaScript
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
+    track.addEventListener('scroll', edges, { passive: true });
+    edges();
+  });
+
+  /* ---------- message forms: compose a WhatsApp message or an email ----------
+     The destinations come from window.BEIT_CONTACT, a constant the build writes into the page,
+     never from HTML attributes. Each filled-in field becomes a "Label: value" line, and everything
+     the visitor typed is URI-encoded before it goes into a link. */
   var contact = window.BEIT_CONTACT;
   var MAIL_OK = /^[^\s@<>"'()]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
   var WA_OK = /^https:\/\/wa\.me\/\d{6,15}$/;
-  if (form && contact && MAIL_OK.test(contact.mail) && WA_OK.test(contact.wa)) {
-    var out = form.querySelector('.form-status');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault(); // without this script the form falls back to its mailto: action
-      if (!form.reportValidity()) return;
-      var via = (e.submitter && e.submitter.value) || 'whatsapp';
-      var name = form.elements.name.value.trim();
-      var topic = form.elements.topic.value;
-      var msg = form.elements.message.value.trim();
-      var text = 'Hi Beit Shawarma, this is ' + name + '.\n\n[' + topic + ']\n' + msg;
-      if (via === 'email') {
-        var subject = topic + ' from ' + name;
-        window.location.href = 'mailto:' + contact.mail +
-          '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
-        if (out) out.textContent = 'Opening your email app with your message filled in.';
-      } else {
-        window.open(contact.wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-        if (out) out.textContent = 'Opening WhatsApp with your message filled in.';
-      }
+  var SUBJECTS = { 'catering-form': 'Party tray request', 'contact-form': 'Message' };
+  if (contact && MAIL_OK.test(contact.mail) && WA_OK.test(contact.wa)) {
+    doc.querySelectorAll('[data-composer]').forEach(function (form) {
+      var out = form.querySelector('.form-status');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // without this script the form falls back to its mailto: action
+        if (!form.reportValidity()) return;
+        var via = (e.submitter && e.submitter.value) || 'whatsapp';
+        var lines = [], name = '';
+        Array.prototype.forEach.call(form.elements, function (el) {
+          if (!el.name || el.type === 'submit' || !String(el.value).trim()) return;
+          var value = String(el.value).trim();
+          if (el.name === 'name') { name = value; return; }
+          var text = el.labels && el.labels[0] ? el.labels[0].textContent.replace(/\s*\(optional\)\s*$/i, '').trim() : el.name;
+          lines.push(text + ': ' + value);
+        });
+        var message = 'Hi Beit Shawarma, this is ' + name + '.\n\n' + lines.join('\n');
+        if (via === 'email') {
+          var subject = (SUBJECTS[form.id] || 'Message') + ' from ' + name;
+          window.location.href = 'mailto:' + contact.mail +
+            '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message);
+          if (out) out.textContent = 'Opening your email app with your message filled in.';
+        } else {
+          window.open(contact.wa + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
+          if (out) out.textContent = 'Opening WhatsApp with your message filled in.';
+        }
+      });
     });
   }
 
