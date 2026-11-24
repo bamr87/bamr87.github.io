@@ -57,12 +57,13 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [PROFILE-007](features/features.yml) | Paginated post index | shipped | [`pages/index.html`](pages/index.html) | TBD |
 | [PROFILE-008](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
 | [PROFILE-009](features/features.yml) | Posts timeline and views | shipped | [`pages/_posts/2000-01-01-index.md`](pages/_posts/2000-01-01-index.md) · [`_includes/posts-timeline.html`](_includes/posts-timeline.html) | TBD |
+| [PROFILE-010](features/features.yml) | Beit Shawarma site preview | partial | [`beit-shawarma/index.html`](beit-shawarma/index.html) · [`src/beit-shawarma/README.md`](src/beit-shawarma/README.md) | TBD |
 
 **Requirement → feature trace**
 
 | Requirement | Features |
 | --- | --- |
-| TBD | PROFILE-001, PROFILE-003, PROFILE-004, PROFILE-005, PROFILE-006, PROFILE-007, PROFILE-009 |
+| TBD | PROFILE-001, PROFILE-003, PROFILE-004, PROFILE-005, PROFILE-006, PROFILE-007, PROFILE-009, PROFILE-010 |
 | FR2 | PROFILE-002 |
 | §1.1 | PROFILE-008 |
 <!-- features:end -->
