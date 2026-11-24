@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-23T02:13:40Z
+lastmod: 2026-11-24T02:12:06Z
 ---
 
 
@@ -135,6 +135,12 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | The assistant, observed: its messages, what its sessions did to pages, the pages sharing themselves and its inventory entry, from one document on every surface | bamr87 | console, assistant, observability, agent-inventory, page-bridge, lake, mcp | /assist |
 | Fleet link check: every live link, checked once | bamr87 | links, quality, loop | /bamr87/tools/link_check.py |
 | Site builds: the console published at another address, with the bashOS desktop as its front door | bamr87 | console, frontend, bashos, desktop, portal, instances | /bamr87/tools/console/build-pages.sh |
+| AI analysis of every failed CI run on a pull request | bamr87 | ci, review, ai | /bamr87/.github/scripts/dash-gen/pr_ai_analysis.py |
+| AI review: a pull request that is marked ready gets a review and who does what next | bamr87 | pull-requests, review, ci, ai | /bamr87/.github/workflows/pr-ai-review.yml |
+| Fleet uplift: what one repo improved that the others still lack, captured for the hub and deployed by the loops it already has | bamr87 | uplift, fleet, kits, fan-out, monitoring, cli | /bamr87/tools/uplift.py |
+| Structure contract: the hub's own code held to declared layers and limits | bamr87 | architecture, gate, quality | /bamr87/tools/architecture.py |
+| Focus: the checks a change owes, in one pass | bamr87 | gate, developer-experience | /bamr87/tools/focus.py |
+| The branch model, declared once, and one ruleset per repo that allows only merge commits | bamr87 | branches, protection, governance, standards | /bamr87/tools/branch_policy.py |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -157,7 +163,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Practice Arcade mini-games | bashcrawl |  | /bashcrawl/web/assets/js/arcade.js |
 | Vim Catacombs | bashcrawl |  | /bashcrawl/web/src/arcade/VimStage.tsx |
 | Reference cheatsheets | bashcrawl |  | /bashcrawl/web/src/screens/ReferenceScreen.tsx |
-| 16-bit RPG web UI | bashcrawl |  | /bashcrawl/web/src/app/App.tsx |
+| Web trainer UI: hero, HUD and one shared prompt | bashcrawl |  | /bashcrawl/web/src/app/App.tsx |
 | Training Arena and speed run | bashcrawl |  | /bashcrawl/web/assets/js/plugins/arena.js |
 | Progression: ranks, achievements, daily challenge, bestiary | bashcrawl |  | /bashcrawl/web/assets/js/plugins |
 | Save and load | bashcrawl |  | /bashcrawl/web/assets/js/storage.js |
@@ -169,6 +175,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | AI playtest harness | bashcrawl |  | /bashcrawl/src/playtest |
 | Effects layer and chiptune SFX | bashcrawl |  | /bashcrawl/web/src/fx |
 | Feedback widget | bashcrawl |  | /bashcrawl/web/src/chrome/Feedback.tsx |
+| Home page with a sandbox terminal | bashcrawl |  | /bashcrawl/web/src/screens/LandingScreen.tsx |
+| Usage analytics behind explicit consent | bashcrawl |  | /bashcrawl/web/src/analytics |
+| Production hosting on Azure Static Web Apps | bashcrawl |  | /bashcrawl/.github/workflows/azure-swa.yml |
 | /sh command | bashos |  | /bashos/.claude/commands/sh.md |
 | /explain command | bashos |  | /bashos/.claude/commands/explain.md |
 | /script command | bashos |  | /bashos/.claude/commands/script.md |
@@ -260,6 +269,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | PR review, maintenance and release lanes | githubai |  | /githubai/.github/workflows/claude-review.yml |
 | GitHub App relay and org policy | githubai |  | /githubai/app |
 | Constitution missions | githubai |  | /githubai/docs/constitution.md |
+| The agent identity App | githubai |  | /githubai/app/identity |
 | Drag-and-drop canvas | gitorio |  | /gitorio/app/src/canvas |
 | Blueprint → Actions workflow compiler with vitest invariant tests | gitorio |  | /gitorio/app/src/compiler |
 | Demo mode ?demo=1 on a fixture-backed three-repo fleet | gitorio |  | /gitorio/app/src/demo |
@@ -311,6 +321,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Structured-data ETL pipelines and destinations | ocrmd |  | /ocrmd/ocrmd/etl.py |
 | Component identification in figures | ocrmd |  | /ocrmd/ocrmd/pipelines/components.yaml |
 | Constitution missions | ocrmd |  | /ocrmd/docs/constitution.md |
+| Phone app for iOS and Android | ocrmd |  | /ocrmd/mobile/ |
+| Paired-device access and the /api/v1 contract | ocrmd |  | /ocrmd/ocrmd/web/v1.py |
 | Agents: scout (env/clock), claimant-a (fast), claimant-b… | outbox |  | /outbox/agents |
 | CLI: init, run, watch, score, suite, relay | outbox |  | /outbox/src/outbox/cli.py |
 | Task families: stale_fact, ambiguous, deadline | outbox |  | /outbox/tasks |
@@ -347,6 +359,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Second brain notes | README |  | /README/scripts/context_engine/brain.py |
 | Obsidian views on the site | README | site, mkdocs, obsidian, graph | /brain/ |
 | Vault reads for agents | README |  | /README/mcp/server.py |
+| Vault workspace | README | site, mkdocs, obsidian, workspace | /brain/workspace/ |
+| Atlas and project emblems | README | site, mkdocs, navigation, illustration | /brain/atlas/ |
 | arcade/: React + canvas + Web Audio games | rewind-arcade |  | /rewind-arcade/arcade |
 | emulate/ / retro-pi/ | rewind-arcade |  | /rewind-arcade/emulate |
 | catalog/: cartridge-index (stdlib Python): dumps,… | rewind-arcade |  | /rewind-arcade/catalog |
@@ -557,4 +571,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-23T02:13:40Z
+Last updated: 2026-11-24T02:12:06Z
