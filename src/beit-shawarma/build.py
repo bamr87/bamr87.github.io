@@ -317,7 +317,8 @@ def visit_section(rel: str, heading_level: str = "h2") -> str:
         <li>{icon('phone')}<div><strong><a href="{TEL}">{e(SITE['phone']['display'])}</a></strong><span>Call ahead and we'll have it ready.</span></div></li>
       </ul>
     </div>
-    <div class="map-frame" data-map-src="{e(MAP_EMBED)}" data-map-title="Map showing {e(SITE['name'])} at {e(address_line())}">
+    <div class="map-frame">
+      <template data-map-template><iframe src="{e(MAP_EMBED)}" title="Map showing {e(SITE['name'])} at {e(address_line())}" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></template>
       <div class="map-facade">
         {icon('pin', 'icon map-pin')}
         <p class="map-address">{e(address_line())}</p>
@@ -488,6 +489,10 @@ def about_page() -> str:
 
 def contact_page() -> str:
     rel = "../"
+    # Where the message form sends, as a JavaScript constant written at build time. main.js reads
+    # this rather than URLs kept in HTML attributes (CodeQL js/xss-through-dom).
+    contact = json.dumps({"mail": SITE["email"], "wa": WA}).replace("</", "<\\/")
+    contact_script = f"<script>window.BEIT_CONTACT = Object.freeze({contact});</script>"
     cards = [
         ("phone", "Call", SITE["phone"]["display"], TEL, "Fastest way to order"),
         ("chat", "WhatsApp", SITE["phone"]["display"], WA, "Message us any time"),
@@ -518,7 +523,7 @@ def contact_page() -> str:
       <p class="section-lead">Write your message here and send it with WhatsApp or your email app. Nothing is stored on this website.</p>
       <p class="section-lead">Ordering a party tray? Tell us which tray, how many people and the pickup time. Trays need at least 45 minutes.</p>
     </div>
-    <form class="composer" action="{MAIL}" method="post" enctype="text/plain" data-composer data-wa="{WA}" data-mail="{SITE['email']}">
+    <form class="composer" action="{MAIL}" method="post" enctype="text/plain" data-composer>
       <label for="f-name">Your name</label>
       <input id="f-name" name="name" autocomplete="name" required>
       <label for="f-topic">Topic</label>
@@ -535,6 +540,7 @@ def contact_page() -> str:
       </div>
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>
+    {contact_script}
   </div>
 </section>
 {visit_section(rel)}

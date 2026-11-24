@@ -105,12 +105,17 @@
     doc.querySelectorAll('.menu-section').forEach(function (s) { io.observe(s); });
   }
 
-  /* ---------- contact: compose a WhatsApp message or an email ---------- */
+  /* ---------- contact: compose a WhatsApp message or an email ----------
+     The destinations come from window.BEIT_CONTACT, a constant the build writes into the contact
+     page, never from HTML attributes; the visitor's words are always URI-encoded. */
   var form = doc.querySelector('[data-composer]');
-  if (form) {
+  var contact = window.BEIT_CONTACT;
+  var MAIL_OK = /^[^\s@<>"'()]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+  var WA_OK = /^https:\/\/wa\.me\/\d{6,15}$/;
+  if (form && contact && MAIL_OK.test(contact.mail) && WA_OK.test(contact.wa)) {
     var out = form.querySelector('.form-status');
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
+      e.preventDefault(); // without this script the form falls back to its mailto: action
       if (!form.reportValidity()) return;
       var via = (e.submitter && e.submitter.value) || 'whatsapp';
       var name = form.elements.name.value.trim();
@@ -119,29 +124,28 @@
       var text = 'Hi Beit Shawarma, this is ' + name + '.\n\n[' + topic + ']\n' + msg;
       if (via === 'email') {
         var subject = topic + ' from ' + name;
-        window.location.href = 'mailto:' + form.getAttribute('data-mail') +
+        window.location.href = 'mailto:' + contact.mail +
           '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
         if (out) out.textContent = 'Opening your email app with your message filled in.';
       } else {
-        window.open(form.getAttribute('data-wa') + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+        window.open(contact.wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
         if (out) out.textContent = 'Opening WhatsApp with your message filled in.';
       }
     });
   }
 
-  /* ---------- map: load Google Maps only when asked ---------- */
-  doc.querySelectorAll('.map-frame[data-map-src]').forEach(function (frame) {
+  /* ---------- map: load Google Maps only when asked ----------
+     The iframe sits inert in a <template> until the visitor asks; it is cloned, never rebuilt
+     from attribute text. */
+  doc.querySelectorAll('.map-frame').forEach(function (frame) {
     var btn = frame.querySelector('[data-load-map]');
-    if (!btn) return;
+    var tpl = frame.querySelector('template[data-map-template]');
+    if (!btn || !tpl) return;
     btn.hidden = false; // the button only exists for visitors with JavaScript
     btn.addEventListener('click', function () {
-      var iframe = doc.createElement('iframe');
-      iframe.src = frame.getAttribute('data-map-src');
-      iframe.title = frame.getAttribute('data-map-title') || 'Map';
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.referrerPolicy = 'no-referrer-when-downgrade';
-      frame.replaceChildren(iframe);
-      iframe.focus();
+      frame.replaceChildren(tpl.content.cloneNode(true));
+      var iframe = frame.querySelector('iframe');
+      if (iframe) iframe.focus();
     });
   });
 
