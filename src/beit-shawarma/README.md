@@ -19,12 +19,24 @@ Commit the source and the regenerated `beit-shawarma/` together. Merging to `mai
 | To change | Edit |
 | --- | --- |
 | A price, dish, description or menu section | `content/menu.json` |
+| The party trays on the catering page | the `trays` category in `content/menu.json` |
 | Hours, phone, address, email, social links, About text | `content/site.json` |
-| The three dishes on the home page | `signature` in `content/site.json` (menu item ids) |
+| The dishes in the home page's "Off the grill" carousel | `featured` in `content/site.json` (menu item ids, each with a photo) |
+| The announcement bar above the header | `announcement` in `content/site.json` (text, button label, link) |
 | Colors, spacing, layout | `static/css/styles.css` |
 | A dish photo | see below |
 
-Then rebuild (Quick start). Never edit the generated `beit-shawarma/` or `site/` folders by hand: the next build overwrites them, and `--check` reports the difference. The build stops with a clear message if a price is not a number or a dish names a photo that doesn't exist.
+Then rebuild (Quick start). Never edit the generated `beit-shawarma/` or `site/` folders by hand: the next build overwrites them, and `--check` reports the difference. The build stops with a clear message if a price is not a number, a dish names a photo that doesn't exist, or the announcement or carousel names something missing.
+
+**The page format.** Every page shares the same frame:
+
+- a slim announcement bar over a dark maroon header with uppercase navigation and a saffron "Call to order" button
+- full-width bands for the page's sections
+- square uppercase buttons
+- a four-column dark footer (location, hours, order, contact)
+- on phones, a quick-actions bar (Call, Menu, Trays, Directions) fixed to the bottom of the screen
+
+The menu is two columns of cream cards: each has a centred heading, a rule down the left and one row per dish (name, price, description). The catering page has the trays and a request form. Type is Jost for headings and buttons and PT Sans for reading. The colours are the logo's red, darkened to maroon for surfaces, with saffron for actions.
 
 **Adding a dish photo.** Save a cut-out photo (a PNG with the background removed works best), then run, in this folder:
 
@@ -54,7 +66,7 @@ So it can't claim www.beitshawarma.com or compete with it in search. The user si
 2. At the domain registrar, point `www` at the new host. For GitHub Pages, use a `CNAME` record to `<owner>.github.io`, and `A` records for the bare domain to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153` ([GitHub's guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)). Turn on HTTPS once the certificate is issued.
 3. Remove the preview: delete `beit-shawarma/` and `src/beit-shawarma/` from bamr87.github.io.
 
-The old addresses keep working after launch: `/menu`, `/about` and `/contact` exist at the same paths, and `/home` (the old home page address) redirects to `/`.
+The old addresses keep working after launch: `/menu`, `/about` and `/contact` exist at the same paths, and `/home` (the old home page address) redirects to `/`. The catering page, `/catering`, is new.
 
 ## What's different from the old site
 

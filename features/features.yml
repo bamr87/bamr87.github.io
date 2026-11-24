@@ -117,7 +117,7 @@ features:
       by: agent
   - id: PROFILE-010
     title: "Beit Shawarma site preview"
-    description: "A static rebuild of a restaurant client's site (beitshawarma.com), published as a noindex preview at `/beit-shawarma/` from source in `src/beit-shawarma/`; launch on the restaurant's own domain is pending"
+    description: "A static rebuild of a restaurant client's site (beitshawarma.com): home, menu, catering (party trays and a request form), about and contact pages, published as a noindex preview at `/beit-shawarma/` from source in `src/beit-shawarma/`; launch on the restaurant's own domain is pending"
     implemented: true
     status: partial
     prd: [TBD]
