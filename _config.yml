@@ -303,8 +303,16 @@ defaults:
         nav: main
     permalink: /:collection/:name/
 
+  # Beit Shawarma preview: plain HTML in beit-shawarma/, copied as-is (no front matter).
+  # Its pages are noindex, so keep them out of jekyll-sitemap's sitemap.xml.
+  -
+    scope:
+      path: "beit-shawarma"
+    values:
+      sitemap: false
+
   # pages
-  - 
+  -
     scope:
       path: pages
     values:
@@ -419,6 +427,8 @@ exclude:
   - features/
   # Verify-kit evidence bundles (screenshots, report.json), not site content.
   - test/
+  # Source of sites built by script (e.g. src/beit-shawarma/build.py writes /beit-shawarma/).
+  - src/
 
 # Sass/SCSS
 sass:

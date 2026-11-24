@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+# The production build (python3 build.py) is made at launch time; the preview published
+# from this repository lives in /beit-shawarma/ at the repository root.
+site/

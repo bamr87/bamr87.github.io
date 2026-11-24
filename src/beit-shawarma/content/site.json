@@ -1,0 +1,42 @@
+{
+  "_comment": "Business details used on every page and in the search-engine data. Edit here, then run: python3 build.py",
+  "name": "Beit Shawarma",
+  "tagline": "Tastes like home",
+  "summary": "Authentic Middle Eastern food made fresh daily with premium ingredients.",
+  "url": "https://www.beitshawarma.com",
+  "cuisine": ["Middle Eastern", "Mediterranean"],
+  "halal": true,
+  "address": {
+    "street": "1601 Simpson St",
+    "city": "Evanston",
+    "region": "IL",
+    "postalCode": "60201",
+    "country": "US"
+  },
+  "mapsUrl": "https://maps.app.goo.gl/j6RxrXtuYpiSJgXY7",
+  "mapEmbedQuery": "Beit Shawarma, 1601 Simpson St, Evanston, IL",
+  "phone": { "display": "331-333-2441", "e164": "+13313332441" },
+  "whatsapp": "13313332441",
+  "email": "info@beitshawarma.com",
+  "timezone": "America/Chicago",
+  "hours": [
+    { "days": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"], "opens": "11:00", "closes": "22:00" }
+  ],
+  "hoursLabel": "Daily, 11 AM – 10 PM",
+  "social": {
+    "_comment": "Leave empty to hide the icon. The old site linked to facebook.com and instagram.com home pages, not the restaurant's accounts.",
+    "facebook": "",
+    "instagram": ""
+  },
+  "about": [
+    "Welcome to Beit Shawarma! We specialize in authentic Middle Eastern cuisine, serving freshly prepared shawarma, falafel, salads, and more. Our mission is to bring delicious flavors with high-quality ingredients in a cozy and friendly atmosphere.",
+    "Whether you are craving a quick snack, a hearty meal, or catering for your event, we make sure every bite is a delight."
+  ],
+  "values": [
+    { "icon": "leaf", "title": "Fresh ingredients", "text": "We use only fresh, high-quality ingredients, prepared daily." },
+    { "icon": "flame", "title": "Authentic taste", "text": "Original Middle Eastern flavors, grilled to order." },
+    { "icon": "halal", "title": "100% halal", "text": "Every plate on our menu is halal." },
+    { "icon": "tray", "title": "Party trays", "text": "Feeding a crowd? Trays for 4–5 or 8–10 people." }
+  ],
+  "signature": ["chicken-shawarma-over-rice", "beef-shawarma-over-rice", "mix-grill-over-rice"]
+}

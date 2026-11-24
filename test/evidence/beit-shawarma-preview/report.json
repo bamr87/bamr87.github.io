@@ -1,0 +1,452 @@
+{
+  "id": "beit-shawarma-preview",
+  "title": "A diner browses the Beit Shawarma preview",
+  "features": [
+    "PROFILE-010"
+  ],
+  "path": "verify/scenarios/beit-shawarma-preview.yml",
+  "started": "2026-11-24T20:46:58.529Z",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/beit-shawarma/",
+          "ok": true,
+          "ms": 938
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": ".preview-bar"
+          },
+          "ok": true,
+          "ms": 30
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "text": "Tastes like home."
+          },
+          "ok": true,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 390,
+            "cw": 390
+          },
+          "ms": 2
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "unindexed",
+            "script": "(() => {\n  const robots = document.querySelector('meta[name=\"robots\"]')?.content || '';\n  if (!robots.includes('noindex')) throw new Error('home page is indexable: robots=' + robots);\n  const canonical = document.querySelector('link[rel=\"canonical\"]')?.href || '';\n  if (canonical.includes('beitshawarma.com')) throw new Error('preview claims the live domain as canonical: ' + canonical);\n  const ld = [...document.querySelectorAll('script[type=\"application/ld+json\"]')].map((s) => JSON.parse(s.textContent)['@type']);\n  return { robots, canonical, ld };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "robots": "noindex,nofollow",
+            "canonical": "https://bamr87.github.io/beit-shawarma/",
+            "ld": [
+              "Restaurant"
+            ]
+          },
+          "ms": 2
+        },
+        {
+          "step": "screenshot",
+          "arg": "home",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/mobile-home.png",
+          "ms": 23
+        },
+        {
+          "step": "click",
+          "arg": "main a[href='menu/']",
+          "ok": true,
+          "ms": 44
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "url": "/beit-shawarma/menu/"
+          },
+          "ok": true,
+          "ms": 27
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": ".dish",
+              "min": 33
+            }
+          },
+          "ok": true,
+          "value": 33,
+          "ms": 26
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 390,
+            "cw": 390
+          },
+          "ms": 2
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "prices",
+            "script": "(() => {\n  const prices = [...document.querySelectorAll('.dish .price, .price-list .price')].map((p) => p.textContent.trim());\n  const bad = prices.filter((p) => !/^\\$\\d+\\.\\d{2}$/.test(p));\n  if (prices.length !== 39) throw new Error('expected 39 priced items, found ' + prices.length);\n  if (bad.length) throw new Error('malformed prices: ' + bad.join(', '));\n  return { items: prices.length };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "items": 39
+          },
+          "ms": 1
+        },
+        {
+          "step": "screenshot",
+          "arg": "menu",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/mobile-menu.png",
+          "ms": 32
+        },
+        {
+          "step": "goto",
+          "arg": "/beit-shawarma/contact/",
+          "ok": true,
+          "ms": 534
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "form[data-composer]"
+          },
+          "ok": true,
+          "ms": 25
+        },
+        {
+          "step": "screenshot",
+          "arg": "contact",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/mobile-contact.png",
+          "ms": 24
+        },
+        {
+          "step": "goto",
+          "arg": "/beit-shawarma/home/",
+          "ok": true,
+          "ms": 535
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 1500
+          },
+          "ok": true,
+          "ms": 1501
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "legacy_home_redirect",
+            "script": "(() => {\n  if (location.pathname !== '/beit-shawarma/') throw new Error('/home did not redirect: at ' + location.pathname);\n  return location.pathname;\n})()"
+          },
+          "ok": true,
+          "value": "/beit-shawarma/",
+          "ms": 4
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "text": "Tastes like home."
+          },
+          "ok": true,
+          "ms": 2
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_console_errors": true
+          },
+          "ok": true,
+          "ms": 0
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/beit-shawarma-preview/mobile-home.png",
+        "test/evidence/beit-shawarma-preview/mobile-menu.png",
+        "test/evidence/beit-shawarma-preview/mobile-contact.png"
+      ],
+      "evals": {
+        "unindexed": {
+          "robots": "noindex,nofollow",
+          "canonical": "https://bamr87.github.io/beit-shawarma/",
+          "ld": [
+            "Restaurant"
+          ]
+        },
+        "prices": {
+          "items": 39
+        },
+        "legacy_home_redirect": "/beit-shawarma/"
+      },
+      "final_url": "http://127.0.0.1:4000/beit-shawarma/"
+    },
+    {
+      "name": "desktop-1366",
+      "width": 1366,
+      "height": 768,
+      "ok": true,
+      "steps": [
+        {
+          "step": "goto",
+          "arg": "/beit-shawarma/",
+          "ok": true,
+          "ms": 892
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": ".preview-bar"
+          },
+          "ok": true,
+          "ms": 24
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "text": "Tastes like home."
+          },
+          "ok": true,
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 1366,
+            "cw": 1366
+          },
+          "ms": 1
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "unindexed",
+            "script": "(() => {\n  const robots = document.querySelector('meta[name=\"robots\"]')?.content || '';\n  if (!robots.includes('noindex')) throw new Error('home page is indexable: robots=' + robots);\n  const canonical = document.querySelector('link[rel=\"canonical\"]')?.href || '';\n  if (canonical.includes('beitshawarma.com')) throw new Error('preview claims the live domain as canonical: ' + canonical);\n  const ld = [...document.querySelectorAll('script[type=\"application/ld+json\"]')].map((s) => JSON.parse(s.textContent)['@type']);\n  return { robots, canonical, ld };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "robots": "noindex,nofollow",
+            "canonical": "https://bamr87.github.io/beit-shawarma/",
+            "ld": [
+              "Restaurant"
+            ]
+          },
+          "ms": 2
+        },
+        {
+          "step": "screenshot",
+          "arg": "home",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/desktop-1366-home.png",
+          "ms": 49
+        },
+        {
+          "step": "click",
+          "arg": "main a[href='menu/']",
+          "ok": true,
+          "ms": 30
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "url": "/beit-shawarma/menu/"
+          },
+          "ok": true,
+          "ms": 22
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "count": {
+              "selector": ".dish",
+              "min": 33
+            }
+          },
+          "ok": true,
+          "value": 33,
+          "ms": 36
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_horizontal_scroll": true
+          },
+          "ok": true,
+          "value": {
+            "sw": 1366,
+            "cw": 1366
+          },
+          "ms": 2
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "prices",
+            "script": "(() => {\n  const prices = [...document.querySelectorAll('.dish .price, .price-list .price')].map((p) => p.textContent.trim());\n  const bad = prices.filter((p) => !/^\\$\\d+\\.\\d{2}$/.test(p));\n  if (prices.length !== 39) throw new Error('expected 39 priced items, found ' + prices.length);\n  if (bad.length) throw new Error('malformed prices: ' + bad.join(', '));\n  return { items: prices.length };\n})()"
+          },
+          "ok": true,
+          "value": {
+            "items": 39
+          },
+          "ms": 1
+        },
+        {
+          "step": "screenshot",
+          "arg": "menu",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/desktop-1366-menu.png",
+          "ms": 47
+        },
+        {
+          "step": "goto",
+          "arg": "/beit-shawarma/contact/",
+          "ok": true,
+          "ms": 531
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "status": 200
+          },
+          "ok": true,
+          "ms": 0
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "visible": "form[data-composer]"
+          },
+          "ok": true,
+          "ms": 21
+        },
+        {
+          "step": "screenshot",
+          "arg": "contact",
+          "ok": true,
+          "file": "test/evidence/beit-shawarma-preview/desktop-1366-contact.png",
+          "ms": 45
+        },
+        {
+          "step": "goto",
+          "arg": "/beit-shawarma/home/",
+          "ok": true,
+          "ms": 530
+        },
+        {
+          "step": "wait",
+          "arg": {
+            "ms": 1500
+          },
+          "ok": true,
+          "ms": 1501
+        },
+        {
+          "step": "eval",
+          "arg": {
+            "name": "legacy_home_redirect",
+            "script": "(() => {\n  if (location.pathname !== '/beit-shawarma/') throw new Error('/home did not redirect: at ' + location.pathname);\n  return location.pathname;\n})()"
+          },
+          "ok": true,
+          "value": "/beit-shawarma/",
+          "ms": 3
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "text": "Tastes like home."
+          },
+          "ok": true,
+          "ms": 2
+        },
+        {
+          "step": "expect",
+          "arg": {
+            "no_console_errors": true
+          },
+          "ok": true,
+          "ms": 0
+        }
+      ],
+      "console_errors": [],
+      "screenshots": [
+        "test/evidence/beit-shawarma-preview/desktop-1366-home.png",
+        "test/evidence/beit-shawarma-preview/desktop-1366-menu.png",
+        "test/evidence/beit-shawarma-preview/desktop-1366-contact.png"
+      ],
+      "evals": {
+        "unindexed": {
+          "robots": "noindex,nofollow",
+          "canonical": "https://bamr87.github.io/beit-shawarma/",
+          "ld": [
+            "Restaurant"
+          ]
+        },
+        "prices": {
+          "items": 39
+        },
+        "legacy_home_redirect": "/beit-shawarma/"
+      },
+      "final_url": "http://127.0.0.1:4000/beit-shawarma/"
+    }
+  ],
+  "ok": true,
+  "finished": "2026-11-24T20:47:06.098Z",
+  "base": "http://127.0.0.1:4000"
+}

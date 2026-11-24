@@ -1,0 +1,95 @@
+{
+  "_comment": "The menu, transcribed from beitshawarma.com/menu on 2026-11-24. Prices are USD strings. 'image' is a file in static/img/menu/ without .webp. Edit here, then run: python3 build.py",
+  "note": "All meat is 100% halal. Prices and availability may change; call to confirm.",
+  "categories": [
+    {
+      "id": "platters",
+      "name": "Platters",
+      "blurb": "Served over seasoned Mediterranean rice.",
+      "items": [
+        { "id": "mix-grill-over-rice", "name": "Mix Grill over Rice", "price": "24.99", "image": "mix-grill-over-rice", "description": "Includes 1 beef kabab, 1 beef kofta, 1 chicken kabab, and 1 chicken kofta.", "tags": ["Most filling"] },
+        { "id": "beef-kofta-over-rice", "name": "Beef Kofta over Rice", "price": "17.99", "image": "beef-kofta-over-rice", "description": "Grilled spiced ground beef kababs." },
+        { "id": "beef-shawarma-over-rice", "name": "Beef Shawarma over Rice", "price": "18.99", "image": "beef-shawarma-over-rice", "description": "Thinly sliced marinated beef over fragrant seasoned rice." },
+        { "id": "kabab-over-rice", "name": "Kabab over Rice", "price": "20.99", "image": "kabab-over-rice", "description": "Chargrilled marinated beef cubes." },
+        { "id": "shish-tawook-over-rice", "name": "Shish Tawook over Rice", "price": "16.99", "image": "shish-tawook-over-rice", "description": "Chargrilled marinated chicken cubes." },
+        { "id": "chicken-shawarma-over-rice", "name": "Chicken Shawarma over Rice", "price": "16.99", "image": "chicken-shawarma-over-rice", "description": "Tender chicken served with signature Mediterranean rice." },
+        { "id": "chicken-kofta-over-rice", "name": "Chicken Kofta over Rice", "price": "15.99", "image": "chicken-kofta-over-rice", "description": "Grilled spiced ground chicken kababs." },
+        { "id": "falafel-over-rice", "name": "Falafel over Rice", "price": "14.99", "image": "falafel-over-rice", "description": "Crispy falafel patties served with rice and tahini.", "tags": ["Vegetarian"] }
+      ]
+    },
+    {
+      "id": "trays",
+      "name": "Party Trays",
+      "blurb": "Catering for groups. Tray items need at least 45 minutes, so call ahead.",
+      "items": [
+        { "id": "party-tray-1", "name": "Party Tray 1", "serves": "8–10 people", "price": "175.99", "image": "party-tray-1", "description": "6 chicken kofta, 5 chicken kabab, 5 beef kofta, 4 beef kabab, beef shawarma, chicken shawarma over rice, salad, hummus, baba ghanoush, grilled tomatoes, grilled onions, grilled peppers." },
+        { "id": "party-tray-2", "name": "Party Tray 2", "serves": "4–5 people", "price": "90.99", "image": "party-tray-2", "description": "4 chicken kofta, 2 chicken kabab, 3 beef kofta, 2 beef kabab, beef shawarma, chicken shawarma over rice, salad, hummus, baba ghanoush, grilled tomatoes, grilled onions, grilled peppers." }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "name": "Sandwiches",
+      "blurb": "Wrapped to order.",
+      "items": [
+        { "id": "beef-shawarma-sandwich", "name": "Beef Shawarma", "price": "16.99", "image": "beef-shawarma-sandwich", "description": "Classic beef with veggies and tahini.", "options": [ { "name": "Double", "price": "14.99" }, { "name": "Arabian", "price": "16.99" }, { "name": "Add cheese", "price": "3.99", "addon": true } ] },
+        { "id": "kofta-kabab-sandwich", "name": "Kofta Kabab", "price": "10.99", "image": "kofta-kabab-sandwich", "description": "Grilled beef with parsley, hummus, and onions.", "options": [ { "name": "Double", "price": "16.99" } ] },
+        { "id": "chicken-shawarma-sandwich", "name": "Chicken Shawarma", "price": "9.99", "image": "chicken-shawarma-sandwich", "description": "Juicy chicken with garlic sauce and pickles.", "options": [ { "name": "Double", "price": "15.99" }, { "name": "Arabian", "price": "15.99" }, { "name": "Add cheese", "price": "3.99", "addon": true } ] },
+        { "id": "shish-tawook-sandwich", "name": "Shish Tawook", "price": "11.99", "image": "shish-tawook-sandwich", "description": "Marinated grilled chicken with garlic sauce and pickles." },
+        { "id": "chicken-kofta-sandwich", "name": "Chicken Kofta", "price": "10.99", "image": "chicken-kofta-sandwich", "description": "With lettuce, tomato, and pickles.", "options": [ { "name": "Double", "price": "15.99" } ] },
+        { "id": "falafel-sandwich", "name": "Falafel Sandwich", "price": "8.99", "image": "falafel-sandwich", "description": "Crispy falafel with tomatoes, pickles, and tahini.", "tags": ["Vegetarian"] },
+        { "id": "kids-meal", "name": "Kids Meal", "price": "7.99", "description": "Chicken tenders and fries (3 pieces)." }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides",
+      "blurb": "",
+      "items": [
+        { "id": "beef-shawarma-over-hummus", "name": "Beef Shawarma over Hummus", "price": "10.99", "image": "beef-shawarma-over-hummus", "description": "Creamy hummus topped with beef shawarma." },
+        { "id": "chicken-shawarma-over-hummus", "name": "Chicken Shawarma over Hummus", "price": "9.99", "image": "chicken-shawarma-over-hummus", "description": "Creamy hummus topped with chicken shawarma." },
+        { "id": "hummus", "name": "Hummus", "price": "6.99", "image": "hummus", "description": "Smooth blend of chickpeas and tahini.", "tags": ["Vegetarian"] },
+        { "id": "baba-ghanoush", "name": "Baba Ghanoush", "price": "6.99", "image": "baba-ghanoush", "description": "Roasted eggplant dip.", "tags": ["Vegetarian"] },
+        { "id": "dozen-falafel", "name": "Dozen Falafel", "price": "6.99", "image": "dozen-falafel", "description": "Perfect for sharing.", "tags": ["Vegetarian"] },
+        { "id": "half-dozen-falafel", "name": "Half Dozen Falafel", "price": "3.99", "image": "half-dozen-falafel", "description": "Freshly fried falafel.", "tags": ["Vegetarian"] },
+        { "id": "pickles", "name": "Pickles", "price": "5.99", "image": "pickles", "description": "House-made pickles." },
+        { "id": "lentil-soup", "name": "Lentil Soup", "price": "4.99", "image": "lentil-soup", "description": "Comforting Middle Eastern style." },
+        { "id": "rice", "name": "Rice", "price": "4.99", "image": "rice", "description": "Seasoned Mediterranean rice." },
+        { "id": "fries", "name": "Fries", "price": "3.99", "image": "fries", "description": "Golden and crispy." }
+      ]
+    },
+    {
+      "id": "salads",
+      "name": "Salads",
+      "blurb": "",
+      "items": [
+        { "id": "fattoush", "name": "Fattoush", "price": "6.99", "image": "fattoush", "description": "Lettuce, tomato, cucumber, pita croutons, and lemon juice.", "tags": ["Vegetarian"] },
+        { "id": "tabbouleh", "name": "Tabbouleh", "price": "6.99", "image": "tabbouleh", "description": "Parsley, bulgur, onions, tomatoes, lemon, and olive oil.", "tags": ["Vegetarian"] },
+        { "id": "house-salad", "name": "House Salad", "price": "6.99", "image": "house-salad", "description": "Crisp greens with house dressing.", "tags": ["Vegetarian"] },
+        { "id": "tahini-salad", "name": "Tahini Salad", "price": "6.99", "image": "tahini-salad", "description": "Cucumber, tomato, olive oil, and tahini dressing.", "tags": ["Vegetarian"] }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "blurb": "",
+      "compact": true,
+      "items": [
+        { "id": "watermelon-juice", "name": "Fresh Watermelon Juice", "price": "4.99", "description": "Refreshing watermelon juice." },
+        { "id": "lemonade", "name": "Fresh Lemonade", "price": "3.99", "description": "Fresh citrus lemonade." },
+        { "id": "soda", "name": "Soda", "price": "2.00", "description": "Assorted canned sodas." },
+        { "id": "tea", "name": "Tea", "price": "1.99", "description": "Black tea." },
+        { "id": "coffee", "name": "Coffee", "price": "1.99", "description": "Hot brewed coffee." },
+        { "id": "water", "name": "Water", "price": "2.00", "description": "Bottled water." }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "blurb": "",
+      "items": [
+        { "id": "baklava", "name": "Baklava", "price": "3.99", "image": "baklava", "description": "Layered filo pastry with nuts and syrup." },
+        { "id": "harissa", "name": "Harissa", "price": "3.99", "image": "harissa", "description": "Sweet semolina cake." }
+      ]
+    }
+  ]
+}
