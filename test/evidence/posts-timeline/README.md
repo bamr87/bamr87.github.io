@@ -9,7 +9,7 @@ A visitor at `/posts/` sees every post on a timeline grouped by year and month, 
 The site was built with the production config (`LANG=C.UTF-8 bundle exec jekyll build`: `github-pages` with Jekyll 3.10 and the remote theme bamr87/zer0-mistakes at its default branch) and served with `python3 -m http.server`. The scenario ran at 390×844 and 1366×768 and passed at both.
 
 - The timeline lists 50 posts across 2021–2026; the strip draws 20 months with posts.
-- Every post in the Atom feed is on the timeline, and no post is listed twice. `2026-11-01-Badwill-impairment.md` and `badwill-impairment/2026-11-01-badwill-impairment.md` both build to `/posts/2026/11/01/badwill-impairment/`; the timeline shows that page once.
+- Every post in the Atom feed is on the timeline, and no post is listed twice. In this run `2026-11-01-Badwill-impairment.md` and `badwill-impairment/2026-11-01-badwill-impairment.md` both built to `/posts/2026/11/01/badwill-impairment/`, and the timeline showed that page once. The stale root copy has since been deleted, so each post URL now has one source file; the timeline still keeps one entry per URL.
 - Filtering by the first category (`gpt`) leaves 6 posts, all in that category; searching for "jekyll" leaves 3, all matching. Clearing both brings back all 50.
 - Selecting a month in the strip scrolls that month into view (January 2022 lands at 458 px on desktop and 760 px on mobile: it is near the end of the page, so it cannot reach the top).
 - No horizontal scroll and no console errors at either size. Without JavaScript the controls stay hidden and the timeline still lists all 50 posts (checked separately with JavaScript disabled).
