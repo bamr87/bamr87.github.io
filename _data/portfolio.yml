@@ -2,13 +2,13 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-24T02:12:09Z'
+generated_at: '2026-11-25T02:12:59Z'
 totals:
   public_repos: 43
   followers: 18
   shown: 12
   featured: 3
-  stars: 58
+  stars: 61
   languages:
     Python: 7
     JavaScript: 2
@@ -29,7 +29,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-23T22:21:20Z'
+  pushed_at: '2026-11-24T22:21:18Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -67,7 +67,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-23T22:35:49Z'
+  pushed_at: '2026-11-24T23:23:58Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -75,7 +75,7 @@ projects:
   featured: false
   category: Learning & Docs
   description: A terminal game for learning the Linux command line by exploring a dungeon, one `cd` at a time.
-  stars: 43
+  stars: 46
   language: JavaScript
   topics:
   - bash
@@ -85,7 +85,7 @@ projects:
   - javascript
   - linux
   - terminal
-  pushed_at: '2026-11-23T20:59:41Z'
+  pushed_at: '2026-11-24T07:03:12Z'
   license: GPL-3.0
   repo_url: https://github.com/bamr87/bashcrawl
   site_url: https://bamr87.github.io/bashcrawl/
@@ -205,7 +205,7 @@ projects:
   - mcp
   - mkdocs
   - python
-  pushed_at: '2026-11-23T21:07:50Z'
+  pushed_at: '2026-11-24T07:03:18Z'
   license: MIT
   repo_url: https://github.com/bamr87/README
   site_url: https://bamr87.github.io/README/

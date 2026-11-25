@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-24T02:12:06Z
+lastmod: 2026-11-25T02:12:52Z
 ---
 
 
@@ -141,6 +141,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Structure contract: the hub's own code held to declared layers and limits | bamr87 | architecture, gate, quality | /bamr87/tools/architecture.py |
 | Focus: the checks a change owes, in one pass | bamr87 | gate, developer-experience | /bamr87/tools/focus.py |
 | The branch model, declared once, and one ruleset per repo that allows only merge commits | bamr87 | branches, protection, governance, standards | /bamr87/tools/branch_policy.py |
+| Stargazer: the open-source radar (stars, trending, like the fleet) | bamr87 | stars, discovery, console, loop, sessions | /bamr87/tools/console/web/src/pages/Stars.tsx |
 | Profile & résumé page | bamr87.github.io |  | /bamr87.github.io/README.md |
 | Featured projects table and portfolio pages under pages/ | bamr87.github.io |  | /bamr87.github.io/pages |
 | Dockerfile for local preview | bamr87.github.io |  | /bamr87.github.io/Dockerfile |
@@ -149,6 +150,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Improve-this-page feedback widget | bamr87.github.io |  | /bamr87.github.io/_config.yml |
 | Paginated post index | bamr87.github.io |  | /bamr87.github.io/pages/index.html |
 | Posts timeline and views | bamr87.github.io |  | /bamr87.github.io/pages/_posts/2000-01-01-index.md |
+| Beit Shawarma site preview | bamr87.github.io |  | /bamr87.github.io/beit-shawarma/index.html |
 | Web app (bamr87.github.io/bashcrawl) | bashcrawl |  | /bashcrawl/web/index.html |
 | Classic terminal dungeon | bashcrawl |  | /bashcrawl/entrance |
 | XP/score persistence across modes | bashcrawl |  |  |
@@ -311,6 +313,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Author personas in _data/authors.yml | lifehacker.dev |  | /lifehacker.dev/_data/authors.yml |
 | Page feedback: Improve this page | lifehacker.dev |  | /lifehacker.dev/_config.yml |
 | Constitution missions | lifehacker.dev |  | /lifehacker.dev/docs/constitution.md |
+| Sub-agencies: self-contained site trees under agencies/ | lifehacker.dev |  | /lifehacker.dev/agencies |
+| Wargames agency at /wargames/ | lifehacker.dev |  | /lifehacker.dev/pages/_wargames |
 | TCP connect probe for host:port with timeout, exposed as a CLI subcommand | netprobe | phase-1 | /netprobe/main.go |
 | Standard CI gate | netprobe | ci | /netprobe/.github/workflows/ci.yml |
 | CLI: scan, ingest | ocrmd |  | /ocrmd/ocrmd/cli.py |
@@ -342,61 +346,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Retrieval evaluation | ragio-ai | eval | /ragio-ai/ragio/evaluate.py |
 | Web app | ragio-ai | fastapi, ui | /ragio-ai/app.py |
 | Health, readiness and version probes | ragio-ai | fastapi, ops | /ragio-ai/app.py |
-| Crawl | README |  | /README/scripts |
-| Extract | README |  | /README/context |
-| Navigate | README |  | /README/context |
-| Synthesize | README |  | /README/context |
-| Assemble | README |  | /README/context |
-| Index | README |  | /README/context |
-| Serve | README |  | /README/mcp |
-| Evolve | README |  | /README/hooks.d |
-| Published fleet documentation site | README | site, mkdocs, navigation | / |
-| MCP get_doc tool | README | mcp, retrieval | /README/mcp/server.py |
-| MCP provenance and trust markers | README | mcp, security, provenance | /README/mcp/server.py |
-| Fleet survey and docs review | README | survey, docs-review | /README/scripts/context_engine/survey.py |
-| Collect | README |  | /README/scripts/context_engine/collect.py |
-| Obsidian vault | README |  | /README/scripts/context_engine/vault.py |
-| Second brain notes | README |  | /README/scripts/context_engine/brain.py |
-| Obsidian views on the site | README | site, mkdocs, obsidian, graph | /brain/ |
-| Vault reads for agents | README |  | /README/mcp/server.py |
-| Vault workspace | README | site, mkdocs, obsidian, workspace | /brain/workspace/ |
-| Atlas and project emblems | README | site, mkdocs, navigation, illustration | /brain/atlas/ |
-| arcade/: React + canvas + Web Audio games | rewind-arcade |  | /rewind-arcade/arcade |
-| emulate/ / retro-pi/ | rewind-arcade |  | /rewind-arcade/emulate |
-| catalog/: cartridge-index (stdlib Python): dumps,… | rewind-arcade |  | /rewind-arcade/catalog |
-| systems/registry.yaml + docs encyclopedia | rewind-arcade |  | /rewind-arcade/systems/registry.yaml |
-| Tests that enforce the system-id map across pillars | rewind-arcade |  | /rewind-arcade/catalog/tests |
-| Arcade front-end baseline: skip link, not-found pages, meta, tokens, feedback | rewind-arcade |  | /rewind-arcade/arcade/src/App.tsx |
-| Generate challenges by bits or digits | rsa-challenge |  | /rsa-challenge/rsa_challenge/cli.py |
-| Public challenge file with commitments | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
-| Secrets kept out of git | rsa-challenge |  | /rsa-challenge/scripts/check_no_secrets.py |
-| Verify submissions from the CLI | rsa-challenge |  | /rsa-challenge/rsa_challenge/challenge.py |
-| Client-side verification site | rsa-challenge |  | /rsa-challenge/site/index.html |
-| Seeded challenge ladder | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
-| Constitution missions | rsa-challenge |  | /rsa-challenge/docs/constitution.md |
-| tools/schema_lint.py | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
-| Federation checks across submodule seams | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
-| DISTRIBUTION.yml + tools/schema_dist.py | SCHEMA |  | /SCHEMA/DISTRIBUTION.yml |
-| CLAUDE.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
-| Seed templates and lint-green example fixture repos | SCHEMA |  | /SCHEMA/templates/SCHEMA.template.md |
-| Scenario test suite | SCHEMA |  | /SCHEMA/tests/test_schema_lint.py |
-| Lexer tokenizing identifiers, strings and punctuation, with spans and errors | schema-lang | phase-1 | /schema-lang/Cargo.toml |
-| CLI that reads a .schema file and prints tokens | schema-lang | phase-1 | /schema-lang/src/main.rs |
-| Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
-| Constitution missions | schema-lang |  | /schema-lang/docs/constitution.md |
-| Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
-| ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
-| StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
-| Git + GitHub repository creator | scripts | github, scaffolding | /scripts/git_init.sh |
-| Safe directory rename | scripts | filesystem | /scripts/rename-directory.sh |
-| Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
-| Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
-| install.sh standalone installer | scripts |  | /scripts/install.sh |
-| install.sh --uninstall | scripts | install | /scripts/install.sh |
-| Shell completions for the toolbelt | scripts | dx, completions | /scripts/completions/ |
-| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
-| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
-| Constitution missions | sec-lab |  | /sec-lab/docs/constitution.md |
 
 
 ## Requested / Backlog Features
@@ -542,28 +491,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
 | Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
 | Missions in constitution §1 | ragio-ai |  |  |
-| Missions in constitution §1 | README |  |  |
-| Neutral schemas and the single monthly number | recon-engine | build-step-1, core |  |
-| Six-bucket decomposition, gross not net, with transfer logging | recon-engine | build-step-2, core |  |
-| Django ERP adapter and a minimal period view | recon-engine | build-step-3, adapter |  |
-| Learned expectation: one regression per GL account | recon-engine | build-step-4, statistical-layer |  |
-| Anomaly detection on standardized residuals | recon-engine | build-step-5, statistical-layer |  |
-| File and API adapters for standalone use | recon-engine | build-step-6, adapter |  |
-| Missions in constitution §1 | recon-engine |  |  |
-| Missions in constitution §1 | rewind-arcade |  |  |
-| Missions in constitution §1 | SCHEMA |  |  |
-| schema_lint check --json | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
-| AGENTS.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
-| Recursive-descent parser producing an AST | schema-lang | phase-2 |  |
-| Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
-| Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
-| Language server (LSP) for editors | schema-lang | phase-3 |  |
-| Missions in constitution §1 | scripts |  |  |
-| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
-| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
-| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
-| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
-| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
 
 
 ---
@@ -571,4 +498,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-24T02:12:06Z
+Last updated: 2026-11-25T02:12:52Z
