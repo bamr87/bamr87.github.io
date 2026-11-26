@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-25T02:12:52Z
+lastmod: 2026-11-26T02:11:51Z
 ---
 
 
@@ -297,55 +297,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | PRD synchronization (prd-machine) | it-journey |  | /it-journey/scripts/prd-machine |
 | Quest Atom feed | it-journey | feed, atom, quests | /quests/feed.xml |
 | Quest page feedback | it-journey | feedback, quests, issues | /quests/ |
-| In-memory get/put/delete API with unit tests | kvlite | phase-1 | /kvlite/src/main.rs |
-| Standard CI gate | kvlite | ci | /kvlite/.github/workflows/ci.yml |
-| Data ingestion and knowledge graph foundation | law-ai |  | /law-ai/backend/law_ai/ingestionapp |
-| Core agent crews | law-ai |  | /law-ai/backend/law_ai/agents_runtime |
-| LSAT Learning Lab | law-ai |  | /law-ai/backend/law_ai/lsat |
-| Provenance and audit log | law-ai |  | /law-ai/backend/law_ai/audit |
-| LegalBench evaluation harness | law-ai |  | /law-ai/backend/law_ai/eval |
-| News sections Hacks / Tools / Field notes / Wire under pages/_posts/ | lifehacker.dev |  | /lifehacker.dev/pages/_posts |
-| Machine-readable brand in _data/brand/ | lifehacker.dev |  | /lifehacker.dev/_data/brand |
-| Content backlog _data/backlog.yml with a custom merge driver | lifehacker.dev |  | /lifehacker.dev/_data/backlog.yml |
-| Wire assignment editor _data/wire/sources.yml | lifehacker.dev |  | /lifehacker.dev/_data/wire/sources.yml |
-| Offline-generated cover art | lifehacker.dev |  | /lifehacker.dev/scripts/preview |
-| CI harness: Pages safe-mode build plus front-matter,… | lifehacker.dev |  | /lifehacker.dev/.github/workflows/ci.yml |
-| Author personas in _data/authors.yml | lifehacker.dev |  | /lifehacker.dev/_data/authors.yml |
-| Page feedback: Improve this page | lifehacker.dev |  | /lifehacker.dev/_config.yml |
-| Constitution missions | lifehacker.dev |  | /lifehacker.dev/docs/constitution.md |
-| Sub-agencies: self-contained site trees under agencies/ | lifehacker.dev |  | /lifehacker.dev/agencies |
-| Wargames agency at /wargames/ | lifehacker.dev |  | /lifehacker.dev/pages/_wargames |
-| TCP connect probe for host:port with timeout, exposed as a CLI subcommand | netprobe | phase-1 | /netprobe/main.go |
-| Standard CI gate | netprobe | ci | /netprobe/.github/workflows/ci.yml |
-| CLI: scan, ingest | ocrmd |  | /ocrmd/ocrmd/cli.py |
-| Local OCR: Apple Vision + RapidOCR voting (Tesseract… | ocrmd |  | /ocrmd/ocrmd/ocr.py |
-| Vision-model providers: Anthropic (default) and xAI | ocrmd |  | /ocrmd/ocrmd/llm.py |
-| Corpus per document | ocrmd |  | /ocrmd/ocrmd/store.py |
-| Exports: md, txt, json, jsonl | ocrmd |  | /ocrmd/ocrmd/export |
-| Structured-data ETL pipelines and destinations | ocrmd |  | /ocrmd/ocrmd/etl.py |
-| Component identification in figures | ocrmd |  | /ocrmd/ocrmd/pipelines/components.yaml |
-| Constitution missions | ocrmd |  | /ocrmd/docs/constitution.md |
-| Phone app for iOS and Android | ocrmd |  | /ocrmd/mobile/ |
-| Paired-device access and the /api/v1 contract | ocrmd |  | /ocrmd/ocrmd/web/v1.py |
-| Agents: scout (env/clock), claimant-a (fast), claimant-b… | outbox |  | /outbox/agents |
-| CLI: init, run, watch, score, suite, relay | outbox |  | /outbox/src/outbox/cli.py |
-| Task families: stale_fact, ambiguous, deadline | outbox |  | /outbox/tasks |
-| Relay to inboxes + ledger.jsonl | outbox |  | /outbox/src/outbox/mailbox.py |
-| Scoring: winner, correctness, confidence inversion, retracts | outbox |  | /outbox/src/outbox/score.py |
-| Belt profile: handoff messages through one gapless, crash-repairable relay | outbox |  | /outbox/src/outbox/belt.py |
-| Claim desk: race a draft's claims, resolve later, calibrate | outbox |  | /outbox/src/outbox/claimdesk.py |
-| Local end-to-end proof of the platform plan across the sibling repos | outbox |  | /outbox/e2e/run.py |
-| Constitution missions | outbox |  | /outbox/docs/constitution.md |
-| Episode catalog | ragio-ai | pipeline | /ragio-ai/ragio/catalog.py |
-| Local Whisper transcription | ragio-ai | pipeline, whisper | /ragio-ai/ragio/transcribe.py |
-| Segment chunking | ragio-ai | pipeline | /ragio-ai/ragio/chunk.py |
-| Vector index and episode summaries | ragio-ai | pipeline, qdrant, llamaindex | /ragio-ai/ragio/index.py |
-| Hybrid RAG with citations | ragio-ai | rag, ollama | /ragio-ai/ragio/rag.py |
-| Audio clips | ragio-ai | audio | /ragio-ai/ragio/clips.py |
-| Deep listen | ragio-ai | audio, optional | /ragio-ai/ragio/clips.py |
-| Retrieval evaluation | ragio-ai | eval | /ragio-ai/ragio/evaluate.py |
-| Web app | ragio-ai | fastapi, ui | /ragio-ai/app.py |
-| Health, readiness and version probes | ragio-ai | fastapi, ops | /ragio-ai/app.py |
 
 
 ## Requested / Backlog Features
@@ -451,46 +402,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Quest editorial charter | it-journey | governance, editorial, quests |  |
 | Editorial charter CI checks | it-journey | governance, ci, quests |  |
 | Missions in constitution §1 | it-journey |  |  |
-| Write-ahead log with crash recovery | kvlite | phase-1 |  |
-| SSTable flush and point lookups across levels | kvlite | phase-2 |  |
-| Background compaction and bloom filters | kvlite | phase-2 |  |
-| Raft leader election and log replication | kvlite | phase-3 |  |
-| Network API (gRPC) and a CLI client | kvlite | phase-3 |  |
-| Missions in constitution §1 | kvlite |  |  |
-| Interactive knowledge graph explorer | law-ai |  | /law-ai/backend/law_ai/graph |
-| Analysis Studio | law-ai |  | /law-ai/backend/law_ai/analysis |
-| Matters workspace | law-ai |  | /law-ai/backend/law_ai/matters |
-| Multi-agent collaboration and GraphRAG (Phase 2) | law-ai |  |  |
-| Expansion (Phase 3) | law-ai |  |  |
-| Global norm taxonomy and ontology | law-ai |  |  |
-| Open legal corpus adoption plan | law-ai |  |  |
-| AI governance register | law-ai |  |  |
-| Obligation and control crosswalk | law-ai |  |  |
-| Bounded rules-as-code pilots | law-ai |  |  |
-| Temporal validity and horizon scanning | law-ai |  |  |
-| Governance-as-code fleet worked example | law-ai |  |  |
-| LSAT Section (exam) mode | law-ai |  |  |
-| LSAT performance by question type | law-ai |  |  |
-| External citation verification | law-ai |  |  |
-| GraphRAG retrieval benchmark | law-ai |  |  |
-| lawmode legal-risk review for code (folded in) | law-ai |  | /law-ai/backend/law_ai/lawmode |
-| Hub-originated publishing in character voice | lifehacker.dev |  | /lifehacker.dev/_data/hub_intake.yml |
-| Concurrent port range scan with rate limiting | netprobe | phase-1 |  |
-| DNS lookup subcommand (A/AAAA/MX/TXT) | netprobe | phase-2 |  |
-| Traceroute view | netprobe | phase-2 |  |
-| Bubble Tea TUI dashboard combining probes | netprobe | phase-3 |  |
-| JSON output for scripting | netprobe | phase-3 |  |
-| Missions in constitution §1 | netprobe |  |  |
-| On-machine vision pass (local VLM cross-check) | ocrmd |  | /ocrmd/ocrmd/llm.py |
-| Structure-aware digital-PDF path | ocrmd |  | /ocrmd/ocrmd/pdfsrc.py |
-| Table-structure reconstruction for camera scans | ocrmd |  | /ocrmd/ocrmd/ocr.py |
-| index the full archive and reach eval hit@5 ≥ 0.85 on eval/questions.j | ragio-ai | roadmap, phase-1 |  |
-| route questions to candidate episodes via the summary collection befor | ragio-ai | roadmap, phase-2 |  |
-| GPU deep-listen mode re-transcribing cited ranges with a larger Whispe | ragio-ai | roadmap, phase-3 |  |
-| creative modes and an episode/people/themes knowledge graph | ragio-ai | roadmap, phase-4 |  |
-| speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
-| Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
-| Missions in constitution §1 | ragio-ai |  |  |
 
 
 ---
@@ -498,4 +409,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-25T02:12:52Z
+Last updated: 2026-11-26T02:11:51Z
