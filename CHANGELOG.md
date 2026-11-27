@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.0](https://github.com/bamr87/bamr87.github.io/compare/v0.3.2...v0.4.0) (2026-11-27)
+
+
+### Added
+
+* **beit-shawarma:** restyle the preview in the Habibi In format and add a catering page ([53227fc](https://github.com/bamr87/bamr87.github.io/commit/53227fcdeb48cf46825500a1ca364a924434eba0))
+* **posts:** add a timeline and Timeline / Cards / List views to /posts/ ([5385439](https://github.com/bamr87/bamr87.github.io/commit/5385439f89fd56d3ceff80cad51cb1a96e4dc600))
+* publish the Beit Shawarma site preview at /beit-shawarma/ ([e0c53d4](https://github.com/bamr87/bamr87.github.io/commit/e0c53d4a85a48577e23fcd13657ea5c3569ae9db))
+
+
+### Fixed
+
+* **beit-shawarma:** stop reading URLs back from HTML attributes ([85a0bdd](https://github.com/bamr87/bamr87.github.io/commit/85a0bddff9cec1f0c573ff0e6b3cdd06dae88268))
+* **posts:** remove the duplicate Badwill Impairment post ([ce70af0](https://github.com/bamr87/bamr87.github.io/commit/ce70af08d9f1f5eedb557ea1510f0f7d1956430e))
+
 ## [0.3.2](https://github.com/bamr87/bamr87.github.io/compare/v0.3.1...v0.3.2) (2026-11-18)
 
 
