@@ -2,13 +2,13 @@
 # Enriched project data + totals the homepage dashboard reads via site.data.portfolio.
 # Curate projects in _data/projects.yml and rerun the generator.
 owner: bamr87
-generated_at: '2026-11-26T02:11:55Z'
+generated_at: '2026-11-27T02:12:20Z'
 totals:
   public_repos: 43
   followers: 19
   shown: 12
   featured: 3
-  stars: 62
+  stars: 63
   languages:
     Python: 7
     JavaScript: 2
@@ -29,7 +29,7 @@ projects:
   - jekyll
   - learning-path
   - zer0-mistakes
-  pushed_at: '2026-11-25T22:21:03Z'
+  pushed_at: '2026-11-26T22:22:26Z'
   license: MIT
   repo_url: https://github.com/bamr87/it-journey
   site_url: https://it-journey.dev/
@@ -48,7 +48,7 @@ projects:
   - jekyll
   - jekyll-theme
   - ruby
-  pushed_at: '2026-11-25T05:10:48Z'
+  pushed_at: '2026-11-26T08:08:21Z'
   license: MIT
   repo_url: https://github.com/bamr87/zer0-mistakes
   site_url: https://zer0-mistakes.com/
@@ -67,7 +67,7 @@ projects:
   - github-pages
   - jekyll
   - monorepo
-  pushed_at: '2026-11-25T21:44:24Z'
+  pushed_at: '2026-11-26T16:36:17Z'
   license: MIT
   repo_url: https://github.com/bamr87/bamr87
   site_url: https://bamr87.github.io/bamr87/
@@ -75,7 +75,7 @@ projects:
   featured: false
   category: Learning & Docs
   description: A terminal game for learning the Linux command line by exploring a dungeon, one `cd` at a time.
-  stars: 46
+  stars: 47
   language: JavaScript
   topics:
   - bash
@@ -103,7 +103,7 @@ projects:
   - github-actions
   - github-app
   - python
-  pushed_at: '2026-11-23T07:02:03Z'
+  pushed_at: '2026-11-26T09:13:33Z'
   license: MIT
   repo_url: https://github.com/bamr87/githubai
   site_url: null

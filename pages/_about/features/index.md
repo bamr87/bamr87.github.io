@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-26T02:11:51Z
+lastmod: 2026-11-27T02:12:15Z
 ---
 
 
@@ -297,6 +297,110 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | PRD synchronization (prd-machine) | it-journey |  | /it-journey/scripts/prd-machine |
 | Quest Atom feed | it-journey | feed, atom, quests | /quests/feed.xml |
 | Quest page feedback | it-journey | feedback, quests, issues | /quests/ |
+| In-memory get/put/delete API with unit tests | kvlite | phase-1 | /kvlite/src/main.rs |
+| Standard CI gate | kvlite | ci | /kvlite/.github/workflows/ci.yml |
+| Data ingestion and knowledge graph foundation | law-ai |  | /law-ai/backend/law_ai/ingestionapp |
+| Core agent crews | law-ai |  | /law-ai/backend/law_ai/agents_runtime |
+| LSAT Learning Lab | law-ai |  | /law-ai/backend/law_ai/lsat |
+| Provenance and audit log | law-ai |  | /law-ai/backend/law_ai/audit |
+| LegalBench evaluation harness | law-ai |  | /law-ai/backend/law_ai/eval |
+| News sections Hacks / Tools / Field notes / Wire under pages/_posts/ | lifehacker.dev |  | /lifehacker.dev/pages/_posts |
+| Machine-readable brand in _data/brand/ | lifehacker.dev |  | /lifehacker.dev/_data/brand |
+| Content backlog _data/backlog.yml with a custom merge driver | lifehacker.dev |  | /lifehacker.dev/_data/backlog.yml |
+| Wire assignment editor _data/wire/sources.yml | lifehacker.dev |  | /lifehacker.dev/_data/wire/sources.yml |
+| Offline-generated cover art | lifehacker.dev |  | /lifehacker.dev/scripts/preview |
+| CI harness: Pages safe-mode build plus front-matter,… | lifehacker.dev |  | /lifehacker.dev/.github/workflows/ci.yml |
+| Author personas in _data/authors.yml | lifehacker.dev |  | /lifehacker.dev/_data/authors.yml |
+| Page feedback: Improve this page | lifehacker.dev |  | /lifehacker.dev/_config.yml |
+| Constitution missions | lifehacker.dev |  | /lifehacker.dev/docs/constitution.md |
+| Sub-agencies: self-contained site trees under agencies/ | lifehacker.dev |  | /lifehacker.dev/agencies |
+| Wargames agency at /wargames/ | lifehacker.dev |  | /lifehacker.dev/pages/_wargames |
+| TCP connect probe for host:port with timeout, exposed as a CLI subcommand | netprobe | phase-1 | /netprobe/main.go |
+| Standard CI gate | netprobe | ci | /netprobe/.github/workflows/ci.yml |
+| CLI: scan, ingest | ocrmd |  | /ocrmd/ocrmd/cli.py |
+| Local OCR: Apple Vision + RapidOCR voting (Tesseract… | ocrmd |  | /ocrmd/ocrmd/ocr.py |
+| Vision-model providers: Anthropic (default) and xAI | ocrmd |  | /ocrmd/ocrmd/llm.py |
+| Corpus per document | ocrmd |  | /ocrmd/ocrmd/store.py |
+| Exports: md, txt, json, jsonl | ocrmd |  | /ocrmd/ocrmd/export |
+| Structured-data ETL pipelines and destinations | ocrmd |  | /ocrmd/ocrmd/etl.py |
+| Component identification in figures | ocrmd |  | /ocrmd/ocrmd/pipelines/components.yaml |
+| Constitution missions | ocrmd |  | /ocrmd/docs/constitution.md |
+| Phone app for iOS and Android | ocrmd |  | /ocrmd/mobile/ |
+| Paired-device access and the /api/v1 contract | ocrmd |  | /ocrmd/ocrmd/web/v1.py |
+| Agents: scout (env/clock), claimant-a (fast), claimant-b… | outbox |  | /outbox/agents |
+| CLI: init, run, watch, score, suite, relay | outbox |  | /outbox/src/outbox/cli.py |
+| Task families: stale_fact, ambiguous, deadline | outbox |  | /outbox/tasks |
+| Relay to inboxes + ledger.jsonl | outbox |  | /outbox/src/outbox/mailbox.py |
+| Scoring: winner, correctness, confidence inversion, retracts | outbox |  | /outbox/src/outbox/score.py |
+| Belt profile: handoff messages through one gapless, crash-repairable relay | outbox |  | /outbox/src/outbox/belt.py |
+| Claim desk: race a draft's claims, resolve later, calibrate | outbox |  | /outbox/src/outbox/claimdesk.py |
+| Local end-to-end proof of the platform plan across the sibling repos | outbox |  | /outbox/e2e/run.py |
+| Constitution missions | outbox |  | /outbox/docs/constitution.md |
+| Episode catalog | ragio-ai | pipeline | /ragio-ai/ragio/catalog.py |
+| Local Whisper transcription | ragio-ai | pipeline, whisper | /ragio-ai/ragio/transcribe.py |
+| Segment chunking | ragio-ai | pipeline | /ragio-ai/ragio/chunk.py |
+| Vector index and episode summaries | ragio-ai | pipeline, qdrant, llamaindex | /ragio-ai/ragio/index.py |
+| Hybrid RAG with citations | ragio-ai | rag, ollama | /ragio-ai/ragio/rag.py |
+| Audio clips | ragio-ai | audio | /ragio-ai/ragio/clips.py |
+| Deep listen | ragio-ai | audio, optional | /ragio-ai/ragio/clips.py |
+| Retrieval evaluation | ragio-ai | eval | /ragio-ai/ragio/evaluate.py |
+| Web app | ragio-ai | fastapi, ui | /ragio-ai/app.py |
+| Health, readiness and version probes | ragio-ai | fastapi, ops | /ragio-ai/app.py |
+| Crawl | README |  | /README/scripts |
+| Extract | README |  | /README/context |
+| Navigate | README |  | /README/context |
+| Synthesize | README |  | /README/context |
+| Assemble | README |  | /README/context |
+| Index | README |  | /README/context |
+| Serve | README |  | /README/mcp |
+| Evolve | README |  | /README/hooks.d |
+| Published fleet documentation site | README | site, mkdocs, navigation | / |
+| MCP get_doc tool | README | mcp, retrieval | /README/mcp/server.py |
+| MCP provenance and trust markers | README | mcp, security, provenance | /README/mcp/server.py |
+| Fleet survey and docs review | README | survey, docs-review | /README/scripts/context_engine/survey.py |
+| Collect | README |  | /README/scripts/context_engine/collect.py |
+| Obsidian vault | README |  | /README/scripts/context_engine/vault.py |
+| Second brain notes | README |  | /README/scripts/context_engine/brain.py |
+| Obsidian views on the site | README | site, mkdocs, obsidian, graph | /brain/ |
+| Vault reads for agents | README |  | /README/mcp/server.py |
+| Vault workspace | README | site, mkdocs, obsidian, workspace | /brain/workspace/ |
+| Atlas and project emblems | README | site, mkdocs, navigation, illustration | /brain/atlas/ |
+| arcade/: React + canvas + Web Audio games | rewind-arcade |  | /rewind-arcade/arcade |
+| emulate/ / retro-pi/ | rewind-arcade |  | /rewind-arcade/emulate |
+| catalog/: cartridge-index (stdlib Python): dumps,… | rewind-arcade |  | /rewind-arcade/catalog |
+| systems/registry.yaml + docs encyclopedia | rewind-arcade |  | /rewind-arcade/systems/registry.yaml |
+| Tests that enforce the system-id map across pillars | rewind-arcade |  | /rewind-arcade/catalog/tests |
+| Arcade front-end baseline: skip link, not-found pages, meta, tokens, feedback | rewind-arcade |  | /rewind-arcade/arcade/src/App.tsx |
+| Generate challenges by bits or digits | rsa-challenge |  | /rsa-challenge/rsa_challenge/cli.py |
+| Public challenge file with commitments | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
+| Secrets kept out of git | rsa-challenge |  | /rsa-challenge/scripts/check_no_secrets.py |
+| Verify submissions from the CLI | rsa-challenge |  | /rsa-challenge/rsa_challenge/challenge.py |
+| Client-side verification site | rsa-challenge |  | /rsa-challenge/site/index.html |
+| Seeded challenge ladder | rsa-challenge |  | /rsa-challenge/challenges/challenges.json |
+| Constitution missions | rsa-challenge |  | /rsa-challenge/docs/constitution.md |
+| tools/schema_lint.py | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
+| Federation checks across submodule seams | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
+| DISTRIBUTION.yml + tools/schema_dist.py | SCHEMA |  | /SCHEMA/DISTRIBUTION.yml |
+| CLAUDE.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
+| Seed templates and lint-green example fixture repos | SCHEMA |  | /SCHEMA/templates/SCHEMA.template.md |
+| Scenario test suite | SCHEMA |  | /SCHEMA/tests/test_schema_lint.py |
+| Lexer tokenizing identifiers, strings and punctuation, with spans and errors | schema-lang | phase-1 | /schema-lang/Cargo.toml |
+| CLI that reads a .schema file and prints tokens | schema-lang | phase-1 | /schema-lang/src/main.rs |
+| Standard CI gate | schema-lang | ci | /schema-lang/.github/workflows/ci.yml |
+| Constitution missions | schema-lang |  | /schema-lang/docs/constitution.md |
+| Project initialization wizard | scripts | scaffolding | /scripts/project-init.sh |
+| ForkMe repository forking/cloning | scripts | github | /scripts/FORKME/forkme.sh |
+| StashMe multi-repo cloud stash | scripts | multi-repo, backup | /scripts/STASHME/stashme.sh |
+| Git + GitHub repository creator | scripts | github, scaffolding | /scripts/git_init.sh |
+| Safe directory rename | scripts | filesystem | /scripts/rename-directory.sh |
+| Python package bootstrap | scripts | scaffolding, python | /scripts/create_package.sh |
+| Markdown prose unwrapper | scripts | docs, lint | /scripts/tools/unwrap-prose.py |
+| install.sh standalone installer | scripts |  | /scripts/install.sh |
+| install.sh --uninstall | scripts | install | /scripts/install.sh |
+| Shell completions for the toolbelt | scripts | dx, completions | /scripts/completions/ |
+| Minimal app binds to 127.0.0.1 only and serves a health route, with te | sec-lab | phase-1 | /sec-lab/pyproject.toml |
+| Standard CI gate | sec-lab | ci | /sec-lab/.github/workflows/ci.yml |
+| Constitution missions | sec-lab |  | /sec-lab/docs/constitution.md |
 
 
 ## Requested / Backlog Features
@@ -402,6 +506,68 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Quest editorial charter | it-journey | governance, editorial, quests |  |
 | Editorial charter CI checks | it-journey | governance, ci, quests |  |
 | Missions in constitution §1 | it-journey |  |  |
+| Write-ahead log with crash recovery | kvlite | phase-1 |  |
+| SSTable flush and point lookups across levels | kvlite | phase-2 |  |
+| Background compaction and bloom filters | kvlite | phase-2 |  |
+| Raft leader election and log replication | kvlite | phase-3 |  |
+| Network API (gRPC) and a CLI client | kvlite | phase-3 |  |
+| Missions in constitution §1 | kvlite |  |  |
+| Interactive knowledge graph explorer | law-ai |  | /law-ai/backend/law_ai/graph |
+| Analysis Studio | law-ai |  | /law-ai/backend/law_ai/analysis |
+| Matters workspace | law-ai |  | /law-ai/backend/law_ai/matters |
+| Multi-agent collaboration and GraphRAG (Phase 2) | law-ai |  |  |
+| Expansion (Phase 3) | law-ai |  |  |
+| Global norm taxonomy and ontology | law-ai |  |  |
+| Open legal corpus adoption plan | law-ai |  |  |
+| AI governance register | law-ai |  |  |
+| Obligation and control crosswalk | law-ai |  |  |
+| Bounded rules-as-code pilots | law-ai |  |  |
+| Temporal validity and horizon scanning | law-ai |  |  |
+| Governance-as-code fleet worked example | law-ai |  |  |
+| LSAT Section (exam) mode | law-ai |  |  |
+| LSAT performance by question type | law-ai |  |  |
+| External citation verification | law-ai |  |  |
+| GraphRAG retrieval benchmark | law-ai |  |  |
+| lawmode legal-risk review for code (folded in) | law-ai |  | /law-ai/backend/law_ai/lawmode |
+| Hub-originated publishing in character voice | lifehacker.dev |  | /lifehacker.dev/_data/hub_intake.yml |
+| Concurrent port range scan with rate limiting | netprobe | phase-1 |  |
+| DNS lookup subcommand (A/AAAA/MX/TXT) | netprobe | phase-2 |  |
+| Traceroute view | netprobe | phase-2 |  |
+| Bubble Tea TUI dashboard combining probes | netprobe | phase-3 |  |
+| JSON output for scripting | netprobe | phase-3 |  |
+| Missions in constitution §1 | netprobe |  |  |
+| On-machine vision pass (local VLM cross-check) | ocrmd |  | /ocrmd/ocrmd/llm.py |
+| Structure-aware digital-PDF path | ocrmd |  | /ocrmd/ocrmd/pdfsrc.py |
+| Table-structure reconstruction for camera scans | ocrmd |  | /ocrmd/ocrmd/ocr.py |
+| index the full archive and reach eval hit@5 ≥ 0.85 on eval/questions.j | ragio-ai | roadmap, phase-1 |  |
+| route questions to candidate episodes via the summary collection befor | ragio-ai | roadmap, phase-2 |  |
+| GPU deep-listen mode re-transcribing cited ranges with a larger Whispe | ragio-ai | roadmap, phase-3 |  |
+| creative modes and an episode/people/themes knowledge graph | ragio-ai | roadmap, phase-4 |  |
+| speaker diarization attached to transcript segments | ragio-ai | roadmap, phase-5 |  |
+| Export pipeline metrics and traces over OTLP to bamr87/fleet-observe | ragio-ai | roadmap, phase-5 |  |
+| Missions in constitution §1 | ragio-ai |  |  |
+| Missions in constitution §1 | README |  |  |
+| Neutral schemas and the single monthly number | recon-engine | build-step-1, core |  |
+| Six-bucket decomposition, gross not net, with transfer logging | recon-engine | build-step-2, core |  |
+| Django ERP adapter and a minimal period view | recon-engine | build-step-3, adapter |  |
+| Learned expectation: one regression per GL account | recon-engine | build-step-4, statistical-layer |  |
+| Anomaly detection on standardized residuals | recon-engine | build-step-5, statistical-layer |  |
+| File and API adapters for standalone use | recon-engine | build-step-6, adapter |  |
+| Missions in constitution §1 | recon-engine |  |  |
+| Missions in constitution §1 | rewind-arcade |  |  |
+| Missions in constitution §1 | SCHEMA |  |  |
+| schema_lint check --json | SCHEMA |  | /SCHEMA/tools/schema_lint.py |
+| AGENTS.md protocol snippet | SCHEMA |  | /SCHEMA/protocol |
+| Recursive-descent parser producing an AST | schema-lang | phase-2 |  |
+| Semantic checks with span-based diagnostics | schema-lang | phase-2 |  |
+| Emit SCHEMA.md contracts and gitorio blueprints | schema-lang | phase-3 |  |
+| Language server (LSP) for editors | schema-lang | phase-3 |  |
+| Missions in constitution §1 | scripts |  |  |
+| Safety guard: refuses to start on a non-loopback bind without an expli | sec-lab | phase-1 |  |
+| First challenge set: SQL injection and XSS with flags | sec-lab | phase-2 |  |
+| SAST workflow (Semgrep + Bandit) publishing SARIF | sec-lab | phase-2 |  |
+| DAST baseline scan with OWASP ZAP in CI against a container | sec-lab | phase-3 |  |
+| Fix write-ups linked per challenge | sec-lab | phase-3 |  |
 
 
 ---
@@ -409,4 +575,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-26T02:11:51Z
+Last updated: 2026-11-27T02:12:15Z
