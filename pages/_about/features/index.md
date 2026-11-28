@@ -6,7 +6,7 @@ permalink: /about/features/
 sidebar:
   nav: about
 date: 2024-12-08T14:08:06-07:00
-lastmod: 2026-11-27T02:12:15Z
+lastmod: 2026-11-28T02:11:40Z
 ---
 
 
@@ -89,6 +89,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Claude Code OTel telemetry in the console and MCP | bamr87 | console, observability, claude-code, otel, mcp | /bamr87/tools/console/claude_telemetry.py |
 | Claude subscription shown as a discounted rate off API list prices | bamr87 | console, cost, claude, observability | /bamr87/tools/console/subscription.py |
 | GitHub Projects in the console: cross-owner aggregation, linked view and guarded write-back | bamr87 | projects, console, github | /bamr87/tools/console/gh_projects.py |
+| Centrally managed loop kill switches | bamr87 | loops, kill-switch, console, governance | /bamr87/tools/console/switches.py |
 | Agentic design patterns map | bamr87 | docs, agents, ai | /bamr87/docs/agentic-patterns/patterns.json |
 | JEV: loop step specs — one spec per agent step, rendered the same in CI and locally | bamr87 | jev, ai, loops, specs | /bamr87/tools/jev/steps/README.md |
 | JEV: run a loop's agent step locally (the loop runner) | bamr87 | jev, ai, loops, local, sandbox | /bamr87/tools/jev/loop.py |
@@ -250,6 +251,7 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Terraform root module validates and plans with no cloud credentials | fleet-infra | phase-1 | /fleet-infra/main.tf |
 | A base Helm chart lints cleanly and renders a namespace + deployment | fleet-infra | phase-1 | /fleet-infra/charts/fleet-base |
 | Standard CI gate | fleet-infra | ci | /fleet-infra/.github/workflows/ci.yml |
+| Missions in constitution §1 | fleet-infra |  |  |
 | Shared Kotlin module with a fleet status model and JVM unit tests | fleet-mobile | phase-1 | /fleet-mobile/settings.gradle.kts |
 | Gradle build of the shared module in CI | fleet-mobile | phase-1 | /fleet-mobile/.github/workflows/ci.yml |
 | Standard CI gate | fleet-mobile | ci | /fleet-mobile/.github/workflows/ci.yml |
@@ -432,7 +434,6 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | Tag selectors for --target | bamr87 | fanout, cli, selectors | /bamr87/tools/fanout.sh |
 | Copier-style 3-way kit upgrade for hand-edited files | bamr87 | fanout, kits, upgrade | /bamr87/tools/fanout.sh |
 | Governance records lint: amendment status, constitution order, doc links | bamr87 | governance, lint | /bamr87/tools/governance_lint.py |
-| Centrally managed loop kill switches | bamr87 | loops, kill-switch, console, governance | /bamr87/_data/fleet.yml |
 | Fleet activity replay: live and historical animated view of agents, harnesses and containers (proposed) | bamr87 | console, otel, phoenix, epic, observability, activity-log, replay, timeline, docker, storage, visualization | /bamr87/docs/prd/FLEET-ACTIVITY-REPLAY.md |
 | Common harness protocol and platform: one agent-loop contract for console, CI, local and JEV harnesses (proposed) | bamr87 | harness, protocol, agent-loop, mcp, otel, phoenix, a2a, uhp, jev, epic | /bamr87/docs/prd/HARNESS-PROTOCOL.md |
 | Visual evidence standard: screenshots and front-end evidence for tutorials, guides and setup docs | bamr87 | docs, guides, evidence, console, lint, standards | /bamr87/tools/guides_visual_lint.py |
@@ -464,6 +465,8 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | one-os: bashOS and Amrchy as bootable systems | bashos |  | /bashos/one-os/docs/epics/0001-bashos-and-amrchy.md |
 | Missions in constitution §1 | bashos |  |  |
 | Template gallery | cv-pro |  | /cv-pro/app/src/lib/latex-templates.ts |
+| JSON Resume interchange | cv-pro |  | /cv-pro/app/src/lib/cv-json.ts |
+| Builder typographic preview | cv-pro |  | /cv-pro/cv/builder/html.ts |
 | Fiscal periods, lock dates and period-close entry | djangoerp |  | /djangoerp/journal/models.py |
 | Fetch company submissions JSON with rate limiting (10 req/s cap) | edgar-pipeline | phase-1 |  |
 | Dagster assets for raw submissions and company facts | edgar-pipeline | phase-2 |  |
@@ -474,7 +477,9 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 | GitOps controller bootstrap that reconciles charts/ from main | fleet-infra | phase-2 |  |
 | Per-service Helm charts for fleet apps (ragio-ai, fredgar-ai) | fleet-infra | phase-3 |  |
 | Secrets management via SOPS/age, never plaintext in git | fleet-infra | phase-3 |  |
-| Missions in constitution §1 | fleet-infra |  |  |
+| Rendered-manifest and IaC policy gate in CI | fleet-infra | phase-2, deep-dive |  |
+| Ephemeral k3d smoke install of every chart in CI | fleet-infra | phase-2, deep-dive |  |
+| Namespace security baseline: restricted Pod Security labels and default-deny NetworkPolicy | fleet-infra | phase-3, deep-dive |  |
 | Ktor client fetching hub fleet data | fleet-mobile | phase-2 |  |
 | Android app shell with a repo status list | fleet-mobile | phase-2 |  |
 | iOS target and Compose Multiplatform UI | fleet-mobile | phase-3 |  |
@@ -575,4 +580,4 @@ The site runbook contains a validator `scripts/validate_features.py` and a workf
 *This index is generated automatically by `/scripts/generate_features_index.py`.
 
 
-Last updated: 2026-11-27T02:12:15Z
+Last updated: 2026-11-28T02:11:40Z
